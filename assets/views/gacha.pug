@@ -1,0 +1,26 @@
+html
+  head
+    link(
+      rel='stylesheet'
+      href='/styles/gacha.css'
+    )
+  body
+    .gacha-div
+      .gacha-container
+        .gacha
+          .gacha-result
+            .card-container
+              each card in cards
+                .card(class=`star-${card.student.rarity}`)
+                  if card.isPickup
+                    img.result-badge.pickUp(src='/images/gacha/pickup.png')
+                  .chara-container
+                    img.chara(src=`/images/students/icons/${card.key}.webp`)
+                  .star-container
+                    - for (let i = 0; i < card.student.rarity; i++)
+                      img.star(src='/images/gacha/star.png')
+
+            .shadow-container
+              each card in cards
+                .card-shadow-container
+                  div(class=`card-shadow-${card.student.rarity}`)

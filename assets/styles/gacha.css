@@ -1,0 +1,260 @@
+body {
+  margin: 0;
+  line-height: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  vertical-align: middle;
+  max-height: 100%;
+}
+
+.gacha-div {
+  overflow: hidden;
+}
+
+.gacha-container {
+  max-width: 1120px;
+  width: 1120px;
+}
+
+.gacha {
+  overflow: hidden;
+  user-select: none;
+  background: url('/images/gacha/background.png') center;
+  background-size: cover;
+  z-index: 0;
+  position: relative;
+  height: 640px;
+  transform: scale(1);
+  left: 0px;
+  height: 640px;
+  transform-origin: left top 0px;
+}
+
+.gacha::before {
+  content: '';
+  position: absolute;
+  top: -10%;
+  right: 25%;
+  width: 20%;
+  height: 120%;
+  background: url('/images/gacha/background.png') center;
+  background-size: 1120px;
+  filter: blur(15px);
+  z-index: 0;
+}
+
+.gacha-result {
+  position: absolute;
+  left: 0;
+  top: 0px;
+  width: 100%;
+  height: 640px;
+  background: url('/images/gacha/background.png') center;
+  background-size: auto;
+  background-size: cover;
+  z-index: 4;
+}
+
+.shadow-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  padding: 0 190px;
+  z-index: -1;
+}
+
+.card-container {
+  height: 640px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  padding: 0 190px;
+}
+
+.card-container .card {
+  width: 115px;
+  height: 140px;
+  transform: skewX(-10deg);
+  margin: 25px 15px;
+  position: relative;
+}
+
+.card-container .card::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 111px;
+  height: 40px;
+  background: rgb(98, 112, 130);
+  border: 2px solid white;
+  border-radius: 4px;
+  box-sizing: content-box;
+}
+
+.chara-container {
+  position: relative;
+  width: 100%;
+  height: 110px;
+  border: 2px solid white;
+  border-radius: 4px;
+  overflow: hidden;
+  background: rgb(222, 235, 240);
+  z-index: 1;
+}
+
+.chara-container::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -12px;
+  width: 134px;
+  transform: skewX(10deg);
+  height: 110px;
+  background: url('/images/gacha/chara-card-bg.png') top;
+  background-size: cover;
+}
+
+.chara-container .chara {
+  position: relative;
+  left: -13px;
+  top: 0;
+  width: 138px;
+  max-width: 138px;
+  transform: skewX(10deg);
+}
+
+.star-1::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  border-radius: 4px;
+  box-shadow: 0 4px 4px 1px rgb(187 199 209/1);
+}
+
+.star-2::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  border-radius: 4px;
+  box-shadow:
+    0 4px 4px 1px #f3e7ad,
+    0 0px 5px 4px #faf7c5;
+}
+
+.card-shadow-container {
+  width: 115px;
+  margin: 25px 15px;
+  height: 140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: skewX(-10deg);
+}
+
+.card-shadow-2 {
+  position: absolute;
+  width: 137px;
+  height: 400px;
+  background: linear-gradient(
+    to top,
+    rgb(255 255 255/0) 12.5%,
+    rgb(250 250 250/0.3) 25%,
+    rgb(245 245 245/0.7) 45%,
+    rgb(255 255 255/0.9) 50%,
+    rgb(245 245 245/0.7) 55%,
+    rgb(250 250 250/0.3) 75%,
+    rgb(255 255 255/0) 87.5%
+  );
+  animation: shadow2 5s cubic-bezier(0.65, 0.05, 0.36, 1) infinite;
+}
+
+.star-2 .chara-container img {
+  background: rgb(252 245 120/90%);
+}
+
+.star-3::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  border-radius: 4px;
+  box-shadow:
+    0 4px 4px 1px #c5a7ee,
+    0 0px 5px 4px #fadbed;
+}
+
+.card-shadow-3 {
+  position: absolute;
+  width: 137px;
+  height: 400px;
+  background: linear-gradient(
+    to top,
+    rgb(211 225 250/0.2),
+    rgb(245 228 252/0.65) 20%,
+    rgb(250 250 250/0.9) 40%,
+    rgb(255 255 255/1) 50%,
+    rgb(250 250 250/0.9) 60%,
+    rgb(245 228 252/0.65) 80%,
+    rgb(211 225 250/0.2)
+  );
+  animation: shadow2 5s cubic-bezier(0.65, 0.05, 0.36, 1) infinite;
+}
+
+.star-3 .chara-container img {
+  background: rgb(249 195 219/0.85);
+}
+
+.star-container {
+  height: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid white;
+}
+
+.star-container .star {
+  width: 20px;
+  transform: skewX(10deg);
+  z-index: 1;
+}
+
+.result-badge {
+  position: absolute;
+  z-index: 2;
+  transform: skewX(10deg);
+  left: -15px;
+}
+
+.result-badge.new {
+  top: -10px;
+  height: 17px;
+}
+
+.result-badge.pickUp {
+  top: -10px;
+  height: 20px;
+  left: -10px;
+}

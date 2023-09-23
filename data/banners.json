@@ -1,0 +1,20 @@
+[
+  {
+    "id": "regular",
+    "name": "Regular Recruitment"
+  },
+
+  {
+    "id": "haruna_track",
+    "name": "Haruna (Track)",
+    "pickupRate": 0.007,
+    "pickupPoolStudents": ["haruna_track"]
+  },
+
+  {
+    "id": "yuuka_mari_track",
+    "name": "Yuuka (Track) / Mari (Track)",
+    "pickupRate": 0.007,
+    "pickupPoolStudents": ["yuuka_track", "mari_track"]
+  }
+]
