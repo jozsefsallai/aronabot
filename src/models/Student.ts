@@ -35,6 +35,8 @@ export class Student {
     public rarity: Rarity,
     public isWelfare: boolean,
     public isLimited: boolean,
+
+    public releaseDate: Date | null = null,
   ) {
     this.birthdayData = parseBirthday(this.birthday);
   }
@@ -61,6 +63,8 @@ export class Student {
       json['rarity'] as Rarity,
       json['isWelfare'] ?? false,
       json['isLimited'] ?? false,
+
+      json['releaseDate'] ? new Date(json['releaseDate']) : null,
     );
   };
 

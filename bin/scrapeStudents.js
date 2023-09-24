@@ -105,6 +105,8 @@ function parseStudentRow($, row) {
   studentDetails.usesCover =
     $(row).find('td:nth-child(11)').text().trim() === 'Yes';
 
+  studentDetails.releaseDate = $(row).find('td:nth-child(15)').text();
+
   studentMap.set(key, studentDetails);
 }
 

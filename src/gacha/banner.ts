@@ -7,6 +7,8 @@ export interface GachaBannerParams {
   id: string;
   name: string;
 
+  date: string;
+
   threeStarRate?: number;
   pickupRate?: number;
   extraRate?: number;
@@ -20,6 +22,8 @@ export interface GachaBannerParams {
 class GachaBanner {
   readonly id: string;
   readonly name: string;
+
+  readonly date: Date;
 
   private _threeStarRate: number;
   private _pickupRate: number;
@@ -40,6 +44,8 @@ class GachaBanner {
   constructor(params: GachaBannerParams) {
     this.id = params.id;
     this.name = params.name;
+
+    this.date = new Date(params.date);
 
     this._threeStarRate = params.threeStarRate ?? 0.03;
     this._pickupRate = params.pickupRate ?? 0;
@@ -63,7 +69,10 @@ class GachaBanner {
     additionalCondition: (student: Student) => boolean,
   ): boolean {
     return (
-      !student.isLimited && !student.isWelfare && additionalCondition(student)
+      !student.isLimited &&
+      !student.isWelfare &&
+      student.releaseDate! <= this.date &&
+      additionalCondition(student)
     );
   }
 

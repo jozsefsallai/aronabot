@@ -1,12 +1,39 @@
 [
   {
     "id": "regular",
-    "name": "Regular Recruitment"
+    "name": "Regular Recruitment (Global)",
+    "date": "2023/03/08"
+  },
+
+  {
+    "id": "shiroko_cycling",
+    "name": "Shiroko (Cycling)",
+    "date": "2023/03/08",
+
+    "pickupRate": 0.007,
+    "pickupPoolStudents": ["shiroko_cycling"]
+  },
+
+  {
+    "id": "azusa",
+    "name": "Azusa",
+    "date": "2023/03/08",
+
+    "pickupRate": 0.007,
+    "pickupPoolStudents": ["azusa"]
+  },
+
+  {
+    "id": "regular_jp",
+    "name": "Regular Recruitment (JP)",
+    "date": "2023/09/15"
   },
 
   {
     "id": "haruna_track",
     "name": "Haruna (Track)",
+    "date": "2023/09/15",
+
     "pickupRate": 0.007,
     "pickupPoolStudents": ["haruna_track"]
   },
@@ -14,6 +41,8 @@
   {
     "id": "yuuka_mari_track",
     "name": "Yuuka (Track) / Mari (Track)",
+    "date": "2023/09/15",
+
     "pickupRate": 0.007,
     "pickupPoolStudents": ["yuuka_track", "mari_track"]
   }
