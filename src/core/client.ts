@@ -12,12 +12,14 @@ import { REST } from '@discordjs/rest';
 
 import CommandHandler from './handler/CommandHandler';
 import commands from '../commands';
+import AutocompleteHandler from './handler/AutocompleteHandler';
 
 class Client {
   private client: Discord;
   private rest: REST;
 
   private commandHandler: CommandHandler;
+  private autocompleteHandler: AutocompleteHandler;
 
   constructor() {
     this.client = new Discord({
@@ -31,8 +33,18 @@ class Client {
     this.rest = new REST({ version: '9' }).setToken(config.bot.token);
 
     this.commandHandler = new CommandHandler();
+    this.autocompleteHandler = new AutocompleteHandler();
 
     this.client.on('interactionCreate', async (interaction) => {
+      if (interaction.isAutocomplete()) {
+        await this.autocompleteHandler.emit(interaction.commandName, {
+          interaction,
+          client: this,
+        });
+
+        return;
+      }
+
       if (interaction.isCommand() || interaction.isContextMenuCommand()) {
         await this.commandHandler.emit(interaction.commandName, {
           interaction,
@@ -57,6 +69,10 @@ class Client {
         command.meta.name,
         command.permissions,
       );
+
+      if (command.autocomplete) {
+        this.autocompleteHandler.on(command.meta.name, command.autocomplete);
+      }
     });
 
     console.log('Application commands updated successfully.');

@@ -35,6 +35,16 @@ function normalizeName(name) {
     .replace('Kid', 'Small');
 }
 
+function getWikiImage($, row) {
+  const url = $(row).find('td:nth-child(1) img').attr('src');
+
+  if (!url) {
+    return;
+  }
+
+  return 'https:' + url.split('/').slice(0, -1).join('/').replace('/thumb', '');
+}
+
 function parseStudentRow($, row) {
   const name = normalizeName($(row).find('td:nth-child(2)').text());
 
@@ -84,6 +94,16 @@ function parseStudentRow($, row) {
       studentDetails.isWelfare = true;
     }
   }
+
+  const wikiImage = getWikiImage($, row);
+  if (wikiImage) {
+    studentDetails.wikiImage = wikiImage;
+  }
+
+  studentDetails.combatPosition = $(row).find('td:nth-child(6)').text();
+  studentDetails.weaponType = $(row).find('td:nth-child(10)').text();
+  studentDetails.usesCover =
+    $(row).find('td:nth-child(11)').text().trim() === 'Yes';
 
   studentMap.set(key, studentDetails);
 }

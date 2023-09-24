@@ -4,9 +4,13 @@ import {
   SlashCommandSubcommandsOnlyBuilder,
   ContextMenuCommandBuilder,
 } from 'discord.js';
+
 import { CommandContext } from '../core/handler/CommandHandler';
+import { AutocompleteContext } from '../core/handler/AutocompleteHandler';
 
 import * as gacha from './fun/gacha';
+
+import * as student from './utils/student';
 
 interface CommandData {
   meta:
@@ -16,8 +20,9 @@ interface CommandData {
     | ContextMenuCommandBuilder;
   handler: (ctx: CommandContext<any>) => void | Promise<void>;
   permissions?: ApplicationCommandPermissionData[];
+  autocomplete?: (ctx: AutocompleteContext<any>) => void | Promise<void>;
 }
 
-const commands: CommandData[] = [gacha];
+const commands: CommandData[] = [gacha, student];
 
 export default commands;

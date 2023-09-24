@@ -4,6 +4,7 @@ import { CombatPosition } from './CombatPosition';
 import { CombatRole } from './CombatRole';
 import { DefenseType } from './DefenseType';
 import { Rarity } from './Rarity';
+import { School } from './School';
 import { WeaponType } from './WeaponType';
 
 export class Student {
@@ -11,11 +12,12 @@ export class Student {
     // basic info and trivia
     public name: string,
     public fullName: string,
-    public school: string,
+    public school: School,
     public age: string,
     public birthday: string,
-    public height: number,
+    public height: string,
     public hobbies: string | null,
+    public wikiImage: string | null,
 
     // combat info
     public attackType: AttackType | null,
@@ -36,11 +38,12 @@ export class Student {
     return new Student(
       json['name'],
       json['fullName'],
-      json['school'],
+      School.fromString(json['school']),
       json['age'],
       json['birthday'],
       json['height'],
       json['hobbies'],
+      json['wikiImage'],
 
       AttackType.fromString(json['attackType']),
       DefenseType.fromString(json['defenseType']),
@@ -55,4 +58,18 @@ export class Student {
       json['isLimited'] ?? false,
     );
   };
+
+  get schaledbUrl(): string {
+    let name = this.name.replace(/\s/g, '_').replace(/[^a-zA-Z0-9_]/g, '');
+
+    if (name.includes('Bunny_Girl')) {
+      name = name.replace('Bunny_Girl', 'Bunny');
+    }
+
+    if (name.includes('New_Year')) {
+      name = name.replace('New_Year', 'NewYear');
+    }
+
+    return `https://schale.gg/?chara=${name}`;
+  }
 }

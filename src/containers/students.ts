@@ -62,6 +62,28 @@ export class StudentContainer {
   all(): Record<string, Student> {
     return Object.fromEntries(this.students.entries());
   }
+
+  findManyByName(name: string): Student[] {
+    function normalize(str: string): string {
+      return str.toLowerCase().replace(/[^a-z0-9]/g, '');
+    }
+
+    name = normalize(name);
+
+    return this.getStudentsWhere((student) => {
+      return normalize(student.name).includes(name);
+    });
+  }
+
+  getByName(name: string): Student | null {
+    const students = this.findManyByName(name);
+
+    if (students.length > 0) {
+      return students[0];
+    }
+
+    return null;
+  }
 }
 
 export const studentContainer = new StudentContainer();
