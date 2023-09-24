@@ -3,7 +3,6 @@ import locateChrome from 'locate-chrome';
 
 export class GachaBrowser {
   private browser: puppeteer.Browser | undefined;
-  private page: puppeteer.Page | undefined;
 
   private static _instance: GachaBrowser;
 
@@ -19,27 +18,34 @@ export class GachaBrowser {
   }
 
   private async init(): Promise<void> {
-    const executablePath: string =
-      (await new Promise((resolve) =>
-        locateChrome((arg: any) => resolve(arg)),
-      )) || '';
+    const executablePath: string | undefined =
+      process.env.PUPPETEER_SKIP_CHROMIUM_DOWNLOAD === 'true'
+        ? await new Promise((resolve) =>
+            locateChrome((arg: any) => resolve(arg)),
+          )
+        : undefined;
 
     this.browser = await puppeteer.launch({
       executablePath,
       args: ['--no-sandbox', '--disable-setuid-sandbox'],
     });
-
-    this.page = await this.browser.newPage();
-    await this.page.setViewport({ width: 1120, height: 640 });
   }
 
   async getScreenshot(bannerName: string): Promise<Buffer> {
-    if (!this.page) {
-      throw new Error('Browser not initialized!');
+    if (!this.browser) {
+      throw new Error('Browser is not initialized');
     }
 
+    const page = await this.browser.newPage();
+    await page.setViewport({ width: 1120, height: 640 });
+
     const PORT = process.env.PORT || 3000;
-    await this.page.goto(`http://localhost:${PORT}/gacha?banner=${bannerName}`);
-    return await this.page.screenshot({ type: 'png' });
+    await page.goto(`http://localhost:${PORT}/gacha?banner=${bannerName}`);
+
+    const screenshot = await page.screenshot({ type: 'png' });
+
+    await page.close();
+
+    return screenshot;
   }
 }
