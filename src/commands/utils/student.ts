@@ -18,7 +18,7 @@ export const meta = new SlashCommandBuilder()
 export const autocomplete = async (ctx: AutocompleteContext) => {
   const focusedValue = ctx.interaction.options.getFocused();
 
-  if (!focusedValue || focusedValue.length < 3) {
+  if (!focusedValue || focusedValue.length < 2) {
     await ctx.interaction.respond([]);
     return;
   }
