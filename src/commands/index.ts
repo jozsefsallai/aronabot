@@ -12,6 +12,7 @@ import * as gacha from './fun/gacha';
 
 import * as student from './utils/student';
 import * as mission from './utils/mission';
+import * as birthdays from './utils/birthdays';
 
 interface CommandData {
   meta:
@@ -24,6 +25,6 @@ interface CommandData {
   autocomplete?: (ctx: AutocompleteContext<any>) => void | Promise<void>;
 }
 
-const commands: CommandData[] = [gacha, student, mission];
+const commands: CommandData[] = [gacha, student, mission, birthdays];
 
 export default commands;

@@ -66,7 +66,6 @@ export const handler = async (ctx: CommandContext) => {
         name: 'School',
         value: student.school.name,
       },
-      embedSeparator,
       {
         name: 'Age',
         value: student.age,
@@ -82,10 +81,15 @@ export const handler = async (ctx: CommandContext) => {
         value: student.height,
         inline: true,
       },
-      embedSeparator,
       {
         name: 'Hobbies',
         value: student.hobbies ?? 'N/A',
+        inline: true,
+      },
+      {
+        name: 'Next Birthday',
+        value: student.nextBirthdayString,
+        inline: true,
       },
       embedSeparator,
       {
@@ -114,7 +118,6 @@ export const handler = async (ctx: CommandContext) => {
         value: student.combatPosition?.name ?? 'N/A',
         inline: true,
       },
-      embedSeparator,
       {
         name: 'Uses Cover',
         value: student.usesCover ? 'Yes' : 'No',
@@ -130,7 +133,6 @@ export const handler = async (ctx: CommandContext) => {
         name: 'Rarity',
         value: rarity,
       },
-      embedSeparator,
       {
         name: 'View on schale.gg',
         value: student.schaledbUrl,

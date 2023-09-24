@@ -1,3 +1,4 @@
+import { Birthday, parseBirthday } from '../utils/date';
 import { AttackType } from './AttackType';
 import { CombatClass } from './CombatClass';
 import { CombatPosition } from './CombatPosition';
@@ -8,6 +9,8 @@ import { School } from './School';
 import { WeaponType } from './WeaponType';
 
 export class Student {
+  public birthdayData: Birthday | null = null;
+
   constructor(
     // basic info and trivia
     public name: string,
@@ -32,7 +35,9 @@ export class Student {
     public rarity: Rarity,
     public isWelfare: boolean,
     public isLimited: boolean,
-  ) {}
+  ) {
+    this.birthdayData = parseBirthday(this.birthday);
+  }
 
   static fromJSON = (json: any): Student => {
     return new Student(
@@ -71,5 +76,57 @@ export class Student {
     }
 
     return `https://schale.gg/?chara=${name}`;
+  }
+
+  get nextBirthday(): Date | null {
+    if (!this.birthdayData) {
+      return null;
+    }
+
+    const today = new Date();
+
+    const currentYear = today.getFullYear();
+    const currentMonth = today.getMonth();
+
+    const nextBirthdayYear =
+      currentMonth > this.birthdayData.month ? currentYear + 1 : currentYear;
+    const nextBirthdayMonth = this.birthdayData.month;
+    const nextBirthdayDay = this.birthdayData.day;
+
+    return new Date(nextBirthdayYear, nextBirthdayMonth, nextBirthdayDay);
+  }
+
+  hasBirthdayOnMonth(month: number): boolean {
+    if (!this.birthdayData) {
+      return false;
+    }
+
+    return this.birthdayData.month === month;
+  }
+
+  get hasBirthdayThisMonth(): boolean {
+    const today = new Date();
+    return this.hasBirthdayOnMonth(today.getMonth());
+  }
+
+  get hasBirthdayToday(): boolean {
+    if (!this.birthdayData) {
+      return false;
+    }
+
+    const today = new Date();
+    return (
+      this.birthdayData.month === today.getMonth() &&
+      this.birthdayData.day === today.getDate()
+    );
+  }
+
+  get nextBirthdayString(): string {
+    if (!this.nextBirthday) {
+      return 'N/A';
+    }
+
+    const timestamp = this.nextBirthday.getTime();
+    return `<t:${Math.floor(timestamp / 1000)}:R>`;
   }
 }
