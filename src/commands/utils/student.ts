@@ -2,7 +2,6 @@ import { EmbedBuilder, SlashCommandBuilder } from 'discord.js';
 import { CommandContext } from '../../core/handler/CommandHandler';
 import { studentContainer } from '../../containers/students';
 import { AutocompleteContext } from '../../core/handler/AutocompleteHandler';
-import { GAME_RED } from '../../utils/constants';
 import { embedSeparator } from '../../utils/embedSeparator';
 
 export const meta = new SlashCommandBuilder()

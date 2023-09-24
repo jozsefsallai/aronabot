@@ -11,6 +11,7 @@ import { AutocompleteContext } from '../core/handler/AutocompleteHandler';
 import * as gacha from './fun/gacha';
 
 import * as student from './utils/student';
+import * as mission from './utils/mission';
 
 interface CommandData {
   meta:
@@ -23,6 +24,6 @@ interface CommandData {
   autocomplete?: (ctx: AutocompleteContext<any>) => void | Promise<void>;
 }
 
-const commands: CommandData[] = [gacha, student];
+const commands: CommandData[] = [gacha, student, mission];
 
 export default commands;
