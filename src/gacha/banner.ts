@@ -191,6 +191,21 @@ class GachaBanner {
       throw new Error('Failed to pull 10 students...');
     }
 
+    // ensure last drop is always 2★ or higher
+    if (students[students.length - 1][0].rarity === Rarity.OneStar) {
+      const firstNonOneStar = students.findIndex((student) => {
+        return student[0].rarity !== Rarity.OneStar;
+      });
+
+      if (firstNonOneStar !== -1) {
+        const randomTwoStar = students[firstNonOneStar];
+        const randomOneStar = students[students.length - 1];
+
+        students[firstNonOneStar] = randomOneStar;
+        students[students.length - 1] = randomTwoStar;
+      }
+    }
+
     return students;
   }
 
