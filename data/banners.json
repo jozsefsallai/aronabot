@@ -2,25 +2,54 @@
   {
     "id": "regular",
     "name": "Regular Recruitment (Global)",
-    "date": "2023/03/08"
+    "date": "2023/03/22"
   },
 
   {
-    "id": "shiroko_cycling",
-    "name": "Shiroko (Cycling)",
-    "date": "2023/03/08",
+    "id": "kayoko_new_year",
+    "name": "Kayoko (New Year)",
+    "date": "2023/03/22",
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["shiroko_cycling"]
+    "pickupPoolStudents": ["kayoko_new_year"]
   },
 
   {
-    "id": "azusa",
-    "name": "Azusa",
-    "date": "2023/03/08",
+    "id": "haruka_new_year",
+    "name": "Haruka (New Year)",
+    "date": "2023/03/22",
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["azusa"]
+    "pickupPoolStudents": ["haruka_new_year"]
+  },
+
+  {
+    "id": "aru_new_year",
+    "name": "Aru (New Year)",
+    "date": "2023/03/22",
+
+    "pickupRate": 0.007,
+    "pickupPoolStudents": ["aru_new_year"],
+    "additionalThreeStarStudents": ["mutsuki_new_year"]
+  },
+
+  {
+    "id": "mutsuki_new_year",
+    "name": "Mutsuki (New Year)",
+    "date": "2023/03/22",
+
+    "pickupRate": 0.007,
+    "pickupPoolStudents": ["mutsuki_new_year"],
+    "additionalThreeStarStudents": ["aru_new_year"]
+  },
+
+  {
+    "id": "serika_new_year",
+    "name": "Serika (New Year)",
+    "date": "2023/03/22",
+
+    "pickupRate": 0.007,
+    "pickupPoolStudents": ["serika_new_year"]
   },
 
   {
@@ -39,11 +68,22 @@
   },
 
   {
-    "id": "yuuka_mari_track",
-    "name": "Yuuka (Track) / Mari (Track)",
+    "id": "yuuka_track",
+    "name": "Yuuka (Track)",
     "date": "2023/09/15",
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["yuuka_track", "mari_track"]
+    "pickupPoolStudents": ["yuuka_track"],
+    "additionalThreeStarStudents": ["mari_track"]
+  },
+
+  {
+    "id": "mari_track",
+    "name": "Mari (Track)",
+    "date": "2023/09/15",
+
+    "pickupRate": 0.007,
+    "pickupPoolStudents": ["mari_track"],
+    "additionalThreeStarStudents": ["yuuka_track"]
   }
 ]

@@ -12,8 +12,11 @@ export interface GachaBannerParams {
   threeStarRate?: number;
   pickupRate?: number;
   extraRate?: number;
+
   pickupPoolStudents?: string[];
   extraPoolStudents?: string[];
+  additionalThreeStarStudents?: string[];
+
   baseOneStarRate?: number;
   baseTwoStarRate?: number;
   baseThreeStarRate?: number;
@@ -61,7 +64,11 @@ class GachaBanner {
     this._twoStarPool = new GachaPool(this.twoStarRate);
     this._threeStarPool = new GachaPool(this.threeStarRate);
 
-    this.populatePools(params.pickupPoolStudents, params.extraPoolStudents);
+    this.populatePools(
+      params.pickupPoolStudents,
+      params.extraPoolStudents,
+      params.additionalThreeStarStudents,
+    );
   }
 
   private isPullable(
@@ -91,6 +98,7 @@ class GachaBanner {
   private populatePools(
     pickupPoolStudents?: string[],
     extraPoolStudents?: string[],
+    additionalThreeStarStudents?: string[],
   ): void {
     if (this._isBootstrapped) {
       return;
@@ -129,6 +137,12 @@ class GachaBanner {
     if (extraPoolStudents) {
       extraPoolStudents.forEach((student) =>
         this._extraPool.addStudent(student),
+      );
+    }
+
+    if (additionalThreeStarStudents) {
+      additionalThreeStarStudents.forEach((student) =>
+        this._threeStarPool.addStudent(student),
       );
     }
 
