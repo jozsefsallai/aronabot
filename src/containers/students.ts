@@ -21,7 +21,21 @@ export class StudentContainer {
       throw new Error('Student database not found! Please generate it first.');
     }
 
-    const data = fs.readFileSync(studentDatabasePath, 'utf8');
+    this.loadStudentsFromDatabase(studentDatabasePath);
+
+    const extraStudentDatabasePath = path.join(
+      __dirname,
+      '../..',
+      'data/students_extra.json',
+    );
+
+    if (fs.existsSync(extraStudentDatabasePath)) {
+      this.loadStudentsFromDatabase(extraStudentDatabasePath);
+    }
+  }
+
+  private loadStudentsFromDatabase(dbPath: string) {
+    const data = fs.readFileSync(dbPath, 'utf8');
     const students = JSON.parse(data);
 
     for (const [key, studentData] of Object.entries(students)) {

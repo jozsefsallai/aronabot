@@ -59,31 +59,20 @@
   },
 
   {
-    "id": "haruna_track",
-    "name": "Haruna (Track)",
-    "date": "2023/09/15",
+    "id": "ichika",
+    "name": "Ichika",
+    "date": "2023/09/27",
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["haruna_track"]
+    "pickupPoolStudents": ["ichika"]
   },
 
   {
-    "id": "yuuka_track",
-    "name": "Yuuka (Track)",
-    "date": "2023/09/15",
+    "id": "kasumi",
+    "name": "Kasumi",
+    "date": "2023/09/27",
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["yuuka_track"],
-    "additionalThreeStarStudents": ["mari_track"]
-  },
-
-  {
-    "id": "mari_track",
-    "name": "Mari (Track)",
-    "date": "2023/09/15",
-
-    "pickupRate": 0.007,
-    "pickupPoolStudents": ["mari_track"],
-    "additionalThreeStarStudents": ["yuuka_track"]
+    "pickupPoolStudents": ["kasumi"]
   }
 ]
