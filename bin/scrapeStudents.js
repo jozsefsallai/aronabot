@@ -11,9 +11,10 @@ const STUDENT_ICON_PATH = path.join(
   'assets/images/students/icons',
 );
 
-const CHARACTER_LIST_URL = 'https://bluearchive.wiki/wiki/Characters';
-const CHARACTER_TRIVIA_URL =
-  'https://bluearchive.wiki/wiki/Characters_trivia_list';
+const now = new Date().getTime(); // you should cache-invalidate yourself, NOW
+
+const CHARACTER_LIST_URL = `https://bluearchive.wiki/wiki/Characters?ts=${now}`;
+const CHARACTER_TRIVIA_URL = `https://bluearchive.wiki/wiki/Characters_trivia_list?ts=${now}`;
 const STUDENT_ICON_BASE_URL =
   'https://bluearchive.page/resource/image/students';
 

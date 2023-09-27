@@ -1001,6 +1001,25 @@
     "height": "145cm",
     "hobbies": "Afternoon naps, lazing around"
   },
+  "ichika": {
+    "name": "Ichika",
+    "attackType": "sonic",
+    "defenseType": "heavy",
+    "combatClass": "striker",
+    "combatRole": "attacker",
+    "school": "trinity",
+    "rarity": 3,
+    "wikiImage": "https://static.miraheze.org/bluearchivewiki/b/b3/Ichika.png",
+    "combatPosition": "Middle",
+    "weaponType": "AR",
+    "usesCover": true,
+    "releaseDate": "2023/09/27",
+    "fullName": "Nakamasa Ichika",
+    "age": "16",
+    "birthday": "November 11",
+    "height": "163cm",
+    "hobbies": "Helping people, trying her hand at various jobs"
+  },
   "iori": {
     "name": "Iori",
     "attackType": "penetration",
@@ -1290,6 +1309,25 @@
     "birthday": "February 2",
     "height": "170cm",
     "hobbies": "Cleaning"
+  },
+  "kasumi": {
+    "name": "Kasumi",
+    "attackType": "sonic",
+    "defenseType": "heavy",
+    "combatClass": "striker",
+    "combatRole": "attacker",
+    "school": "gehenna",
+    "rarity": 3,
+    "wikiImage": "https://static.miraheze.org/bluearchivewiki/6/6b/Kasumi.png",
+    "combatPosition": "Middle",
+    "weaponType": "HG",
+    "usesCover": true,
+    "releaseDate": "2023/09/27",
+    "fullName": "Kinugawa Kasumi",
+    "age": "16",
+    "birthday": "May 24",
+    "height": "148cm",
+    "hobbies": "Blasting, hot spring development"
   },
   "kayoko": {
     "name": "Kayoko",
