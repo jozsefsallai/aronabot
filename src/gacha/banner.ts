@@ -1,6 +1,7 @@
 import { studentContainer } from '../containers/students';
 import { Rarity } from '../models/Rarity';
 import { Student } from '../models/Student';
+import { BannerKind } from './kind';
 import { GachaPool } from './pool';
 
 export interface GachaBannerParams {
@@ -20,6 +21,8 @@ export interface GachaBannerParams {
   baseOneStarRate?: number;
   baseTwoStarRate?: number;
   baseThreeStarRate?: number;
+
+  kind: BannerKind;
 }
 
 class GachaBanner {
@@ -27,6 +30,7 @@ class GachaBanner {
   readonly name: string;
 
   readonly date: Date;
+  readonly kind: BannerKind;
 
   private _threeStarRate: number;
   private _pickupRate: number;
@@ -63,6 +67,8 @@ class GachaBanner {
     this._oneStarPool = new GachaPool(this.oneStarRate);
     this._twoStarPool = new GachaPool(this.twoStarRate);
     this._threeStarPool = new GachaPool(this.threeStarRate);
+
+    this.kind = params.kind;
 
     this.populatePools(
       params.pickupPoolStudents,

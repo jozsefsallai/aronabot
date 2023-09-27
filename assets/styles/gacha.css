@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
 body {
   margin: 0;
   line-height: 0;
+  font-family: 'Noto Sans', sans-serif;
 }
 
 * {
@@ -64,7 +67,7 @@ img {
   position: absolute;
   left: 0;
   top: 0;
-  height: 600px;
+  height: 530px;
   display: flex;
   justify-content: center;
   align-content: center;
@@ -74,7 +77,7 @@ img {
 }
 
 .card-container {
-  height: 640px;
+  height: 570px;
   display: flex;
   justify-content: center;
   align-content: center;
@@ -257,4 +260,74 @@ img {
   top: -10px;
   height: 20px;
   left: -10px;
+}
+
+.result-point-container {
+  position: absolute;
+  right: 55px;
+  bottom: 47px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.result-point {
+  width: 150px;
+  height: 54px;
+  transform: skewX(-10deg);
+  -webkit-transform: skewX(-10deg);
+  background: rgb(36, 90, 126);
+  border: 1px solid rgb(36, 90, 126);
+  border-radius: 3px;
+  margin-left: -17px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(75, 112, 155);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.result-point::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 50%;
+  background: white;
+}
+
+.result-point-text {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 13px;
+}
+
+.result-point-num {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.noskew {
+  transform: skewX(10deg);
+}
+
+.point-icon {
+  width: 57px;
+  padding-top: 5px;
+  z-index: 1;
 }

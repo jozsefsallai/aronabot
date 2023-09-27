@@ -24,3 +24,10 @@ html
               each card in cards
                 .card-shadow-container
                   div(class=`card-shadow-${card.student.rarity}`)
+
+            if points
+              .result-point-container
+                img.point-icon(src='/images/gacha/points-icon.png')
+                .result-point
+                  .result-point-text.noskew Recruitment Points
+                  .result-point-num.noskew.point= points

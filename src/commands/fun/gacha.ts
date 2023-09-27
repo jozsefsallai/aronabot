@@ -3,6 +3,7 @@ import { CommandContext } from '../../core/handler/CommandHandler';
 
 import { bannerContainer } from '../../containers/banners';
 import { GachaBrowser } from '../../gacha/browser';
+import recruitmentPointsManager from '../../gacha/points';
 
 function getBannerChoices() {
   return bannerContainer.all().map((banner) => {
@@ -15,7 +16,7 @@ function getBannerChoices() {
 
 export const meta = new SlashCommandBuilder()
   .setName('gacha')
-  .setDescription('Roll on the current banner.')
+  .setDescription('Roll on the current banners.')
   .addStringOption((option) => {
     return option
       .setName('banner')
@@ -34,8 +35,19 @@ export const handler = async (ctx: CommandContext) => {
     bannerName = 'regular';
   }
 
+  const guildId = ctx.interaction.guildId ?? '0';
+  const userId = ctx.interaction.user.id;
+
+  const banner = bannerContainer.getBanner(bannerName);
+
+  const points = await recruitmentPointsManager.incrementAndGet(
+    banner!.kind,
+    guildId,
+    userId,
+  );
+
   const browser = await GachaBrowser.getInstance();
-  const image = await browser.getScreenshot(bannerName);
+  const image = await browser.getScreenshot(bannerName, points);
 
   await ctx.interaction.editReply({
     files: [

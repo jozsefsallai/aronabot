@@ -1,3 +1,7 @@
+export interface RedisConfig {
+  url: string;
+}
+
 export interface BotConfig {
   token: string;
   clientId: string;
@@ -7,4 +11,5 @@ export interface BotConfig {
 
 export interface IConfig {
   bot: BotConfig;
+  redis?: RedisConfig;
 }

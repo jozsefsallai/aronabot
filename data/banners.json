@@ -2,7 +2,9 @@
   {
     "id": "regular",
     "name": "Regular Recruitment (Global)",
-    "date": "2023/03/22"
+    "date": "2023/03/22",
+
+    "kind": "global"
   },
 
   {
@@ -11,7 +13,9 @@
     "date": "2023/03/22",
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["kayoko_new_year"]
+    "pickupPoolStudents": ["kayoko_new_year"],
+
+    "kind": "global"
   },
 
   {
@@ -20,7 +24,9 @@
     "date": "2023/03/22",
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["haruka_new_year"]
+    "pickupPoolStudents": ["haruka_new_year"],
+
+    "kind": "global"
   },
 
   {
@@ -30,7 +36,9 @@
 
     "pickupRate": 0.007,
     "pickupPoolStudents": ["aru_new_year"],
-    "additionalThreeStarStudents": ["mutsuki_new_year"]
+    "additionalThreeStarStudents": ["mutsuki_new_year"],
+
+    "kind": "global"
   },
 
   {
@@ -40,7 +48,9 @@
 
     "pickupRate": 0.007,
     "pickupPoolStudents": ["mutsuki_new_year"],
-    "additionalThreeStarStudents": ["aru_new_year"]
+    "additionalThreeStarStudents": ["aru_new_year"],
+
+    "kind": "global"
   },
 
   {
@@ -49,13 +59,17 @@
     "date": "2023/03/22",
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["serika_new_year"]
+    "pickupPoolStudents": ["serika_new_year"],
+
+    "kind": "global"
   },
 
   {
     "id": "regular_jp",
     "name": "Regular Recruitment (JP)",
-    "date": "2023/09/15"
+    "date": "2023/09/15",
+
+    "kind": "jp"
   },
 
   {
@@ -64,7 +78,9 @@
     "date": "2023/09/27",
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["ichika"]
+    "pickupPoolStudents": ["ichika"],
+
+    "kind": "jp"
   },
 
   {
@@ -73,6 +89,8 @@
     "date": "2023/09/27",
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["kasumi"]
+    "pickupPoolStudents": ["kasumi"],
+
+    "kind": "jp"
   }
 ]
