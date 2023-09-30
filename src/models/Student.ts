@@ -13,6 +13,8 @@ export class Student {
   public birthdayData: Birthday | null = null;
 
   constructor(
+    public key: string,
+
     // basic info and trivia
     public name: string,
     public fullName: string,
@@ -43,8 +45,10 @@ export class Student {
     this.birthdayData = parseBirthday(this.birthday);
   }
 
-  static fromJSON = (json: any): Student => {
+  static fromJSON = (key: string, json: any): Student => {
     return new Student(
+      key,
+
       json['name'],
       json['fullName'],
       School.fromString(json['school']),

@@ -1,7 +1,8 @@
-import { EmbedBuilder, SlashCommandBuilder } from 'discord.js';
+import { SlashCommandBuilder } from 'discord.js';
 import { AutocompleteContext } from '../../core/handler/AutocompleteHandler';
 import { studentContainer } from '../../containers/students';
 import { CommandContext } from '../../core/handler/CommandHandler';
+import { handleStudentSkillsCommand } from '../../common/handlers/skills';
 
 export const meta = new SlashCommandBuilder()
   .setName('skills')
@@ -47,30 +48,5 @@ export const handler = async (ctx: CommandContext) => {
     return;
   }
 
-  if (!student.skills) {
-    await ctx.interaction.editReply({
-      content: `${student.name} currently does not have skill data.`,
-    });
-
-    return;
-  }
-
-  let embed = new EmbedBuilder()
-    .setTitle(`${student.name} Skills`)
-    .setURL(student.schaledbUrl);
-
-  if (student.wikiImage) {
-    embed = embed.setThumbnail(student.wikiImage);
-  }
-
-  for (const skill of student.skills) {
-    embed = embed.addFields({
-      name: `${skill.kind.name}: ${skill.title}`,
-      value: '> ' + skill.description.replace(/\n/g, '\n> '),
-    });
-  }
-
-  await ctx.interaction.editReply({
-    embeds: [embed],
-  });
+  await handleStudentSkillsCommand(student, ctx);
 };

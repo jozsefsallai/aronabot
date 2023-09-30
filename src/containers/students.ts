@@ -39,7 +39,7 @@ export class StudentContainer {
     const students = JSON.parse(data);
 
     for (const [key, studentData] of Object.entries(students)) {
-      this.addStudent(key, Student.fromJSON(studentData));
+      this.addStudent(key, Student.fromJSON(key, studentData));
     }
   }
 

@@ -11,8 +11,11 @@ import {
 import { REST } from '@discordjs/rest';
 
 import CommandHandler from './handler/CommandHandler';
-import commands from '../commands';
 import AutocompleteHandler from './handler/AutocompleteHandler';
+import ButtonHandler from './handler/ButtonHandler';
+
+import commands from '../commands';
+import buttons from '../buttons';
 
 class Client {
   private client: Discord;
@@ -20,6 +23,7 @@ class Client {
 
   private commandHandler: CommandHandler;
   private autocompleteHandler: AutocompleteHandler;
+  private buttonHandler: ButtonHandler;
 
   constructor() {
     this.client = new Discord({
@@ -34,6 +38,7 @@ class Client {
 
     this.commandHandler = new CommandHandler();
     this.autocompleteHandler = new AutocompleteHandler();
+    this.buttonHandler = new ButtonHandler();
 
     this.client.on('interactionCreate', async (interaction) => {
       if (interaction.isAutocomplete()) {
@@ -49,6 +54,19 @@ class Client {
         await this.commandHandler.emit(interaction.commandName, {
           interaction,
           client: this,
+        });
+      }
+
+      if (interaction.isButton()) {
+        const idComponents = interaction.customId.split('_');
+        const id = idComponents[0];
+        const uniqueId =
+          idComponents.length > 1 ? idComponents.slice(1).join('_') : undefined;
+
+        await this.buttonHandler.emit(id, {
+          interaction,
+          client: this,
+          uniqueId,
         });
       }
     });
@@ -76,6 +94,14 @@ class Client {
     });
 
     console.log('Application commands updated successfully.');
+
+    console.log('Registering button handlers...');
+
+    buttons.forEach((button) => {
+      this.buttonHandler.on(button.meta.id, button.handler);
+    });
+
+    console.log('Button handlers registered successfully.');
 
     await this.client.login(config.bot.token);
 
