@@ -5,29 +5,26 @@ html
       href='/styles/gacha.css'
     )
   body
-    .gacha-div
-      .gacha-container
-        .gacha
-          .gacha-result
-            .card-container
-              each card in cards
-                .card(class=`star-${card.student.rarity}`)
-                  if card.isPickup
-                    img.result-badge.pickUp(src='/images/gacha/pickup.png')
-                  .chara-container
-                    img.chara(src=`/images/students/icons/${card.key}.webp`)
-                  .star-container
-                    - for (let i = 0; i < card.student.rarity; i++)
-                      img.star(src='/images/gacha/star.png')
+    .gacha-result
+      .card-container
+        each card in cards
+          .card(class=`star-${card.student.rarity}`)
+            if card.isPickup
+              img.badge.pickup(src='/images/gacha/pickup.png')
+            .icon-container
+              img.icon(src=`/images/students/icons/${card.key}.webp`)
+            .star-container
+              - for (let i = 0; i < card.student.rarity; i++)
+                img.star(src='/images/gacha/star.png')
 
-            .shadow-container
-              each card in cards
-                .card-shadow-container
-                  div(class=`card-shadow-${card.student.rarity}`)
+      .shadow-container
+        each card in cards
+          .shadow-wrapper
+            .shadow(class=`shadow-${card.student.rarity}`)
 
-            if points
-              .result-point-container
-                img.point-icon(src='/images/gacha/points-icon.png')
-                .result-point
-                  .result-point-text.noskew Recruitment Points
-                  .result-point-num.noskew.point= points
+      if points
+        .points-container
+          img.points-icon(src='/images/gacha/points-icon.png')
+          .points
+            .points-text Recruitment Points
+            .points-count.point= points
