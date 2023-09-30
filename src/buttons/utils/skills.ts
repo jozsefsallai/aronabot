@@ -7,19 +7,18 @@ export const meta = {
 };
 
 export const handler = async (ctx: ButtonContext) => {
-  await ctx.interaction.deferReply();
-
   if (!ctx.uniqueId) {
-    await ctx.interaction.editReply('Button has no unique ID.');
+    await ctx.interaction.reply('Button has no unique ID.');
   }
 
   const studentKey = ctx.uniqueId!;
 
   const student = studentContainer.getStudent(studentKey);
   if (!student) {
-    await ctx.interaction.editReply('Student not found.');
+    await ctx.interaction.reply('Student not found.');
     return;
   }
 
-  await handleStudentSkillsCommand(student, ctx);
+  const response = await handleStudentSkillsCommand(student);
+  await ctx.interaction.update(response);
 };

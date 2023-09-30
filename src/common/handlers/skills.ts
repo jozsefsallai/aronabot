@@ -1,23 +1,19 @@
 import {
   ActionRowBuilder,
+  BaseMessageOptions,
   ButtonBuilder,
   ButtonStyle,
   EmbedBuilder,
 } from 'discord.js';
-import { ButtonContext } from '../../core/handler/ButtonHandler';
-import { CommandContext } from '../../core/handler/CommandHandler';
 import { Student } from '../../models/Student';
 
 export const handleStudentSkillsCommand = async (
   student: Student,
-  ctx: CommandContext | ButtonContext,
-) => {
+): Promise<BaseMessageOptions> => {
   if (!student.skills) {
-    await ctx.interaction.editReply({
+    return {
       content: `${student.name} currently does not have skill data.`,
-    });
-
-    return;
+    };
   }
 
   let embed = new EmbedBuilder()
@@ -44,8 +40,8 @@ export const handleStudentSkillsCommand = async (
     studentButton,
   );
 
-  await ctx.interaction.editReply({
+  return {
     embeds: [embed],
     components: [componentRow],
-  });
+  };
 };

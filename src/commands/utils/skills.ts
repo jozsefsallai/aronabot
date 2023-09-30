@@ -48,5 +48,6 @@ export const handler = async (ctx: CommandContext) => {
     return;
   }
 
-  await handleStudentSkillsCommand(student, ctx);
+  const response = await handleStudentSkillsCommand(student);
+  await ctx.interaction.editReply(response);
 };

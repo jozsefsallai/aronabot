@@ -1,18 +1,16 @@
 import {
   ActionRowBuilder,
+  BaseMessageOptions,
   ButtonBuilder,
   ButtonStyle,
   EmbedBuilder,
 } from 'discord.js';
-import { ButtonContext } from '../../core/handler/ButtonHandler';
-import { CommandContext } from '../../core/handler/CommandHandler';
 import { Student } from '../../models/Student';
 import { embedSeparator } from '../../utils/embedSeparator';
 
 export const handleStudentCommand = async (
   student: Student,
-  ctx: CommandContext | ButtonContext,
-) => {
+): Promise<BaseMessageOptions> => {
   let rarity = `${student.rarity}★`;
 
   if (student.isLimited) {
@@ -121,8 +119,8 @@ export const handleStudentCommand = async (
     skillsButton,
   );
 
-  await ctx.interaction.editReply({
+  return {
     embeds: [embed],
     components: [componentRow],
-  });
+  };
 };
