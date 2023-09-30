@@ -1,8 +1,9 @@
 {
   "name": "aronabot",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Blue Archive themed Discord bot.",
+  "main": "dist/index.js",
+  "private": true,
   "scripts": {
     "build": "rm -rf dist && tsc",
     "lint": "eslint src --ext .ts",
