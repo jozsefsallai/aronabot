@@ -6,6 +6,7 @@ import { CombatRole } from './CombatRole';
 import { DefenseType } from './DefenseType';
 import { Rarity } from './Rarity';
 import { School } from './School';
+import { Skill } from './Skill';
 import { WeaponType } from './WeaponType';
 
 export class Student {
@@ -30,6 +31,7 @@ export class Student {
     public combatPosition: CombatPosition | null,
     public usesCover: boolean,
     public weaponType: WeaponType | null,
+    public skills: Skill[] | undefined,
 
     // gacha
     public rarity: Rarity,
@@ -59,6 +61,7 @@ export class Student {
       CombatPosition.fromString(json['combatPosition']),
       json['usesCover'],
       WeaponType.fromString(json['weaponType']),
+      Skill.manyFromJSON(json['skills']),
 
       json['rarity'] as Rarity,
       json['isWelfare'] ?? false,

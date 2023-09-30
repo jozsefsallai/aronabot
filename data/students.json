@@ -16,7 +16,33 @@
     "age": "15",
     "birthday": "January 30",
     "height": "160cm",
-    "hobbies": "Looking for tasty sweets, tea parties"
+    "hobbies": "Looking for tasty sweets, tea parties",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "It's a waste but... umph!",
+        "description": "Deal **265~464%** damage to all enemies in a circular area, decrease their movement speed by **22.8%** and reduce attack speed by **20~26.2%** for **0~20 seconds**.",
+        "cost": "5"
+      },
+      {
+        "kind": "basic",
+        "name": "You might feel a little brain freeze...",
+        "description": "Every **25 seconds**, decrease one enemy's attack speed by **18.4~35.1%**. (Duration: **30 seconds**)",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "The power of pudding",
+        "description": "Increase Attack by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Airi's encouragement",
+        "description": "Increase Attack Speed of all allies by **9.1~17.3%**.",
+        "cost": null
+      }
+    ]
   },
   "akane": {
     "name": "Akane",
@@ -35,7 +61,33 @@
     "age": "16",
     "birthday": "April 1",
     "height": "164cm",
-    "hobbies": "Cleaning"
+    "hobbies": "Cleaning",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Elegant Removal",
+        "description": "Deal **547~876%** damage to one enemy and lower their defense by **29~37.7%** for **30 seconds**.",
+        "cost": "2"
+      },
+      {
+        "kind": "basic",
+        "name": "High-Quality Penetration",
+        "description": "Every **40 seconds**, deal **396~753%** damage to one enemy.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Swift Advance",
+        "description": "Increase movement speed by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Precise Suppression",
+        "description": "When attacking, there is a **10%** chance to reduce enemy evasion by **6.7~12.7%** for **30 seconds**. (Cooldown: **5 seconds**)",
+        "cost": null
+      }
+    ]
   },
   "akane_bunny_girl": {
     "name": "Akane (Bunny Girl)",
@@ -54,7 +106,33 @@
     "age": "16",
     "birthday": "April 1",
     "height": "164cm",
-    "hobbies": "Cleaning"
+    "hobbies": "Cleaning",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Careful Preparation",
+        "description": "Place a landmine that automatically explodes when enemy is within range, dealing **351~667%** damage. (Landmine disappears after **90 seconds**)",
+        "cost": "3"
+      },
+      {
+        "kind": "basic",
+        "name": "Graceful Cleanup",
+        "description": "Every **30 seconds**, deal **216~411%** damage to enemies within a circular area.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "To the Point",
+        "description": "Increase Attack by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Prompt Assistance",
+        "description": "Increase Attack of Mystic type allies by **12.7~24.2%**.",
+        "cost": null
+      }
+    ]
   },
   "akari": {
     "name": "Akari",
@@ -73,7 +151,33 @@
     "age": "17",
     "birthday": "December 9",
     "height": "167cm",
-    "hobbies": "Eating a lot"
+    "hobbies": "Eating a lot",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "One large serving of grenades!",
+        "description": "Deal **392~744%** Attack damage to enemies in circular area.",
+        "cost": "4"
+      },
+      {
+        "kind": "basic",
+        "name": "One spicy second serving!",
+        "description": "Normal attacks have **10%** chance to increase Attack by **38.7~73.6%** for **20 seconds**. (Cooldown: **15 seconds**)",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Thanks for the food!",
+        "description": "Increase HP by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "I can still eat more and more!",
+        "description": "Normal attacks have **10%** chance to increase Attack by **34.4~65.5%** for **26 seconds**. (Cooldown: **18 seconds**)",
+        "cost": null
+      }
+    ]
   },
   "ako": {
     "name": "Ako",
@@ -92,7 +196,33 @@
     "age": "17",
     "birthday": "December 22",
     "height": "165cm",
-    "hobbies": "President Hina"
+    "hobbies": "President Hina",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Reconnaissance report",
+        "description": "Increase the Critical Rate of one ally by **27.2~39.5%**, and additionally increase Critical Damage by **50.5~73.3%**. (Duration: **16 seconds**)",
+        "cost": "3"
+      },
+      {
+        "kind": "basic",
+        "name": "Supply plan B",
+        "description": "Every **45 seconds**, heal one ally for **129~245%** of Healing.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Providing support",
+        "description": "Increase Healing by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Leave the support to me",
+        "description": "Increase Critical Damage of all allies by **9.1~17.3%**.",
+        "cost": null
+      }
+    ]
   },
   "arisu": {
     "name": "Arisu",
@@ -111,7 +241,33 @@
     "age": "??",
     "birthday": "March 25",
     "height": "152cm",
-    "hobbies": "Games (Especially RPGs)"
+    "hobbies": "Games (Especially RPGs)",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "I'm breaking the world's rules!",
+        "description": "Deal **311~591%** damage to enemies in a straight line. Increase damage by **1.5** or **2** times based on energy charge level. Reset energy charge level after shooting.",
+        "cost": "6"
+      },
+      {
+        "kind": "basic",
+        "name": "The Light!",
+        "description": "Every **25 seconds**, increase Critical Rate by **17~32.3%**. (Cooldown: **20 seconds**)Increase energy charge level by 1. (Max 2 charges)",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "This is enhancement magic!",
+        "description": "Increase Attack by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Awaken, Super Nova!",
+        "description": "Increase Critical Rate by **12.1~22.9%** when using EX skill. (Cooldown: **20 seconds**)Increase effect by **1.5** or **2** based on energy charge level.",
+        "cost": null
+      }
+    ]
   },
   "arisu_maid": {
     "name": "Arisu (Maid)",
@@ -130,7 +286,33 @@
     "age": "??",
     "birthday": "March 25",
     "height": "152cm",
-    "hobbies": "Games (Especially RPGs)"
+    "hobbies": "Games (Especially RPGs)",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Arisu, clean up!",
+        "description": "Deal **594~1128%** damage to one enemy.",
+        "cost": "4"
+      },
+      {
+        "kind": "basic",
+        "name": "Meticulous care",
+        "description": "Every **15** normal attacks, add **21.8~38.1%** to Mystic damage bonus against the enemies weak to it, and increase Attack by **18.3~32%** for **30~40 seconds**.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "It's a job bonus!",
+        "description": "Increase Critical Damage by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Job Trait: Maid Hero!",
+        "description": "Normal attacks now hit 1 enemy and deal **15.8~30.1%** additional damage.",
+        "cost": null
+      }
+    ]
   },
   "aru": {
     "name": "Aru",
@@ -149,7 +331,33 @@
     "age": "16",
     "birthday": "March 12",
     "height": "160cm",
-    "hobbies": "Studying management"
+    "hobbies": "Studying management",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Hard boiled shot",
+        "description": "Deal **274~521%** damage to one enemy. Deal an additional **292~554%** damage to enemies in circular area around the targeted enemy.",
+        "cost": "4"
+      },
+      {
+        "kind": "basic",
+        "name": "Noir shoot",
+        "description": "Every **25 seconds**, deal **152~290%** damage to one enemy. **50%** chance to deal an additional **251~476%** damage to enemies in a circular area around the targeted enemy.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "President's Dignity",
+        "description": "Increase Critical Damage by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Outlaw Style",
+        "description": "Increase Critical Rate of EX skill by **20.1~38.3%**.",
+        "cost": null
+      }
+    ]
   },
   "aru_new_year": {
     "name": "Aru (New Year)",
@@ -169,7 +377,33 @@
     "age": "16",
     "birthday": "March 12",
     "height": "160cm",
-    "hobbies": "Studying management"
+    "hobbies": "Studying management",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Hard boiled Hanetsuki shot",
+        "description": "Restore **0.5~0.7** Skill Cost for each \"Bad deed\" that Aru currently holds, and reset the number of \"Bad deeds\" to zero.Deal **179~340%** damage against one enemy. For surrounding enemies that have not been hit,  deal a further **179~340%** damage (up to 11 times).",
+        "cost": "6"
+      },
+      {
+        "kind": "basic",
+        "name": "Noir Hanetsuki shot",
+        "description": "Every **30 seconds**, deal **169~321%** damage to enemies in a circular area.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Gorgeous President's Elegance",
+        "description": "Increase HP by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Perfect President's Style",
+        "description": "For every 6 enemies defeated by allies, Aru obtains one \"Bad deed\". Can hold up to **3~6** \"Bad deeds\", Defense is decreased by **26.8~5.3%** for every \"Bad deed\" currently held.",
+        "cost": null
+      }
+    ]
   },
   "asuna": {
     "name": "Asuna",
@@ -188,7 +422,33 @@
     "age": "17",
     "birthday": "March 24",
     "height": "167cm",
-    "hobbies": "Attacking"
+    "hobbies": "Attacking",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Here I go!",
+        "description": "After activating the skill increase Evasion by **43.4%** and Attack Speed by **30.2~57.3%** for **30 seconds**.",
+        "cost": "2"
+      },
+      {
+        "kind": "basic",
+        "name": "I'm gonna fire!",
+        "description": "Every **20 seconds**, deal **219~416%** damage to one enemy.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Does that hurt?",
+        "description": "Increase Critical Damage by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "We're gonna speed things up, okay?",
+        "description": "When EX skill is activated increase Attack Speed by **20.1~38.3%** for **30 seconds**.",
+        "cost": null
+      }
+    ]
   },
   "asuna_bunny_girl": {
     "name": "Asuna (Bunny Girl)",
@@ -207,7 +467,33 @@
     "age": "17",
     "birthday": "March 24",
     "height": "167cm",
-    "hobbies": "Attacking"
+    "hobbies": "Attacking",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Hey, hey, look at this!",
+        "description": "Decrease Defense of all enemies in a circular area by **18.9~24.6%** for **40 seconds**, then deal **274~438%** damage to them.",
+        "cost": "5"
+      },
+      {
+        "kind": "basic",
+        "name": "Let's have some fun!",
+        "description": "Every **35 seconds**, increase Attack by **18.4~29.5%** for **23 seconds**.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Let's have even more fun!",
+        "description": "Increase HP by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "That's a bonus!",
+        "description": "When EX skill is activated increase Attack Speed by **20.1~38.3%** for **30 seconds**.",
+        "cost": null
+      }
+    ]
   },
   "atsuko": {
     "name": "Atsuko",
@@ -226,7 +512,33 @@
     "age": "15",
     "birthday": "January 20",
     "height": "158cm",
-    "hobbies": "Tending to flowers"
+    "hobbies": "Tending to flowers",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "This is also my power...?",
+        "description": "Recover HP of all allies in a circular area around Atsuko by **28.4~53.9%** of Healing every **5 seconds**. (Duration: **30 seconds**)",
+        "cost": "4"
+      },
+      {
+        "kind": "basic",
+        "name": "Hiding",
+        "description": "Every **30 seconds**, deploy a smoke screen that increases Evasion of allies within range by **20.5~39.1%**. (Duration: **20 seconds**)",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "As instructed",
+        "description": "Increase Evasion by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "I'm used to pain",
+        "description": "Increase Evasion by **24.2~45.9%** when HP is below **30%**.",
+        "cost": null
+      }
+    ]
   },
   "ayane": {
     "name": "Ayane",
@@ -245,7 +557,33 @@
     "age": "15",
     "birthday": "November 12",
     "height": "153cm",
-    "hobbies": "Keeping the accounts, collecting antiques"
+    "hobbies": "Keeping the accounts, collecting antiques",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Care Package",
+        "description": "Heal all allies within a circular area for **118~224%** of Ayane's Healing.",
+        "cost": "4"
+      },
+      {
+        "kind": "basic",
+        "name": "Learning Support",
+        "description": "Every **30 seconds**, increase the critical hit resistance of all allies in a circular area by **15.5~29.4%**.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Passion for Learning",
+        "description": "Increase Healing by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Increasing Morale",
+        "description": "Increase HP of all allies by **9.1~17.3%**.",
+        "cost": null
+      }
+    ]
   },
   "ayane_swimsuit": {
     "name": "Ayane (Swimsuit)",
@@ -265,7 +603,33 @@
     "age": "15",
     "birthday": "November 12",
     "height": "153cm",
-    "hobbies": "Keeping the accounts, collecting antiques"
+    "hobbies": "Keeping the accounts, collecting antiques",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Nimbostratus, attacking!",
+        "description": "Ayane enters the battlefield aboard the Nimbostratus.Its Attack is increased by **12.5~47.5%** and Critical Rate is increased by **12.5~32.6%** of Ayane's. (Duration:**30 seconds**)Every **12 seconds**, The Nimbostratus will activate its \"Rainstorm Missile\" skill, dealing **297~401%** damage to one enemy. (This attack ignores **68~84%** of the enemy Defense)(Only one tactical support vehicle can be fielded at any given time)",
+        "cost": "4"
+      },
+      {
+        "kind": "basic",
+        "name": "Support from the sky",
+        "description": "Every **30 seconds**, deal **148~215%** damage to one enemy. (This attack ignores **60~84%** of the enemy Defense)",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Automatic targeting",
+        "description": "Increase Critical Rate by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Understanding the battlefield",
+        "description": "Increase Critical Damage of all allies by **9.1~17.3%**.",
+        "cost": null
+      }
+    ]
   },
   "azusa": {
     "name": "Azusa",
@@ -284,7 +648,33 @@
     "age": "16",
     "birthday": "December 26",
     "height": "149cm",
-    "hobbies": "None"
+    "hobbies": "None",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Bring Death",
+        "description": "Deal **1065~2023%** damage to a single enemy.",
+        "cost": "5"
+      },
+      {
+        "kind": "basic",
+        "name": "Arrow of Annihilation",
+        "description": "Every **30 seconds**, deal **292~468%** damage to a single enemy, and reduce their Defense by **18.9~24.6%**. (Duration: **20 seconds**)",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Rigorous training",
+        "description": "Increase Critical Rate by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Aim for the weak point",
+        "description": "When attacking weakened enemies, deal **46.6~88.5%** of Attack as additional damage.",
+        "cost": null
+      }
+    ]
   },
   "azusa_swimsuit": {
     "name": "Azusa (Swimsuit)",
@@ -304,7 +694,33 @@
     "age": "16",
     "birthday": "December 26",
     "height": "149cm",
-    "hobbies": "None"
+    "hobbies": "None",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Biting Water",
+        "description": "Deal **651~847%** damage to a single enemy and apply **406~650%** continuous chill damage over **20 seconds**.",
+        "cost": "5"
+      },
+      {
+        "kind": "basic",
+        "name": "Anger Beach",
+        "description": "Every **35 seconds**, increase Crit Damage by **21~40%**. (Duration: **30 seconds**)",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Freezing Temperature",
+        "description": "Increase Attack by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Saltwater in the Wound",
+        "description": "When attacking, there is a **30%** chance to reduce target's Defense by **8~15.3%** for **13 seconds**. (Cooldown: **5 seconds**)",
+        "cost": null
+      }
+    ]
   },
   "cherino": {
     "name": "Cherino",
@@ -323,7 +739,33 @@
     "age": "??",
     "birthday": "October 27",
     "height": "128cm",
-    "hobbies": "Purges, snowball fights"
+    "hobbies": "Purges, snowball fights",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Elite Guard, gather!",
+        "description": "Deal **515~605%** damage to all enemies in a circular area.",
+        "cost": "7~5"
+      },
+      {
+        "kind": "basic",
+        "name": "Regulate the enemy!",
+        "description": "Every **40 seconds**, apply a Focused Fire status to the enemy with the highest Attack, and lower their Critical Damage Resistance by **18.7~35.6%**. (Duration: **15 seconds**)",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "This is the power of the moustache!",
+        "description": "Increase Attack by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Kneel before the moustache!",
+        "description": "Increase cost recovery by **269~511**. If other Red Winter students are in the same team, increase the effect by **77~146** per student. (Cherino not included, up to a maximum of 3)",
+        "cost": null
+      }
+    ]
   },
   "cherino_hot_spring": {
     "name": "Cherino (Hot Spring)",
@@ -342,7 +784,33 @@
     "age": "??",
     "birthday": "October 27",
     "height": "128cm",
-    "hobbies": "Purges, snowball fights"
+    "hobbies": "Purges, snowball fights",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Purge-kun No. 1, attack!",
+        "description": "Cherino enters the battlefield riding Purge-kun No. 1. Its Attack is increased by **9~17.1%** of Cherino's Attack. (Duration: **50 seconds**) Every 3 normal attacks, Purge-kun No. 1 will activate its \"Purge them all!\" skill and deal **184~216%** damage to the targeted enemy, plus **276~324%** damage to the targeted enemy and in conical area behind them.(Only one tactical support vehicle can be fielded at any given time)",
+        "cost": "6"
+      },
+      {
+        "kind": "basic",
+        "name": "Sights set, purge!",
+        "description": "Every **15 seconds**, deal **136~259%** damage to enemies within a circular area.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Feel the wrath of the moustache!",
+        "description": "Increase Attack by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "This is the authority of the moustache!",
+        "description": "Increase Critical Damage of all allies by **9.1~17.3%**.",
+        "cost": null
+      }
+    ]
   },
   "chihiro": {
     "name": "Chihiro",
@@ -361,7 +829,33 @@
     "age": "17",
     "birthday": "April 26",
     "height": "160cm",
-    "hobbies": "Shopping for electronics"
+    "hobbies": "Shopping for electronics",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Override",
+        "description": "Deal **257~412%** damage to one enemy. If the enemy's defense type is Heavy armor, Stun them for **5.7~7.5 seconds**.",
+        "cost": "3"
+      },
+      {
+        "kind": "basic",
+        "name": "Into the backdoor",
+        "description": "Every **30 seconds**, decrease Attack of one enemy with the highest Attack by **30 seconds** for **16.9~32.2%**.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Exploit",
+        "description": "Increase Critical Damage by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Deploying firewall",
+        "description": "Increase CC Strength of all allies by **9.1~17.3%**.",
+        "cost": null
+      }
+    ]
   },
   "chinatsu": {
     "name": "Chinatsu",
@@ -380,7 +874,33 @@
     "age": "15",
     "birthday": "August 22",
     "height": "159cm",
-    "hobbies": "Reading philosophy books"
+    "hobbies": "Reading philosophy books",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Combat casualty aid",
+        "description": "Heal 1 ally for **195~342%** of Chinatsu's Healing, remove **0~1** debuff from the target.",
+        "cost": "4"
+      },
+      {
+        "kind": "basic",
+        "name": "Reshaping the battle",
+        "description": "Every **40 seconds**, increase Evasion of 1 ally with the lowest current HP by **50.9~67%**. (Duration **30 seconds**)",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Strengthened medical support",
+        "description": "Increase Healing by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Strengthened defensive support",
+        "description": "Increase Defense of all allies by **9.1~17.3%**.",
+        "cost": null
+      }
+    ]
   },
   "chinatsu_hot_spring": {
     "name": "Chinatsu (Hot Spring)",
@@ -399,7 +919,33 @@
     "age": "15",
     "birthday": "August 22",
     "height": "159cm",
-    "hobbies": "Reading philosophy books"
+    "hobbies": "Reading philosophy books",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Combat Type-A Energizer",
+        "description": "Increase the Attack Speed for one other ally by **31.5~60%** for **30 seconds**.",
+        "cost": "2"
+      },
+      {
+        "kind": "basic",
+        "name": "Enhanced combat support",
+        "description": "Every **25 seconds**, increase the Attack Speed of one other ally by **18.4~35%** for **20 seconds**.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Brief moment of rest",
+        "description": "Increase HP by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Cautious first-aid officer",
+        "description": "When using EX skill, generate a shield around self with HP equal to **108~205%** of Healing for **30 seconds**.",
+        "cost": null
+      }
+    ]
   },
   "chise": {
     "name": "Chise",
@@ -418,7 +964,33 @@
     "age": "16",
     "birthday": "July 13",
     "height": "159cm",
-    "hobbies": "Haiku"
+    "hobbies": "Haiku",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "This may hurt~",
+        "description": "Deal continuous damage in a circular area equivalent to **56~106%** of Chise's Attack. (Duration: **10 seconds**)",
+        "cost": "4"
+      },
+      {
+        "kind": "basic",
+        "name": "I'm going to shoot~",
+        "description": "Every **25 seconds**, deal damage equal to **219~416%** of Chise's Attack to enemies in a circular area.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Alright, let's do our best~",
+        "description": "Increase Attack by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "This will hurt a little~",
+        "description": "Normal attacks have **10%** chance to deal **53.7~102%** Attack of continuous burn damage for **20 seconds**. (Cooldown: **5 seconds**)",
+        "cost": null
+      }
+    ]
   },
   "chise_swimsuit": {
     "name": "Chise (Swimsuit)",
@@ -438,7 +1010,33 @@
     "age": "16",
     "birthday": "July 13",
     "height": "159cm",
-    "hobbies": "Haiku"
+    "hobbies": "Haiku",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Summer beach, fe~ver~",
+        "description": "Fire grenades sequentially at up to 3 enemies, dealing **232~372%** damage in circular area around targets and applying Stun for **2.1~2.7 seconds**.If the target is already affected by a CC state, deal **465~744%** damage and Stun them for **4.1~5.3 seconds** instead.",
+        "cost": "6"
+      },
+      {
+        "kind": "basic",
+        "name": "Beach ball, shoo~t",
+        "description": "Every **50 seconds**, deal **282~451%** damage to one enemy and Stun them for **2.4~3.1 seconds**.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Stroll, ready",
+        "description": "Increase Attack by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Brrr~ Getting chilly?",
+        "description": "When using EX skill, additionally deal **30~57%** continuous chill damage for **20 seconds**.",
+        "cost": null
+      }
+    ]
   },
   "eimi": {
     "name": "Eimi",
@@ -457,7 +1055,33 @@
     "age": "15",
     "birthday": "May 1",
     "height": "167cm",
-    "hobbies": "Zoning out, listening to music"
+    "hobbies": "Zoning out, listening to music",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Unflinching will",
+        "description": "Regenerate HP equal to **8.6~16.4%** Healing + **3.4%** lost HP. (Duration: **20 seconds**)",
+        "cost": "4"
+      },
+      {
+        "kind": "basic",
+        "name": "A furious fixated attack",
+        "description": "Every **15 seconds**, deal **297~564%** damage to enemies within a fan shaped area.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Specialist's rest",
+        "description": "Increase healing received by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Tenacious force of will",
+        "description": "When HP is under **50%** increase CC Resistance by **20.1~38.3%**.",
+        "cost": null
+      }
+    ]
   },
   "fubuki": {
     "name": "Fubuki",
@@ -477,7 +1101,33 @@
     "age": "15",
     "birthday": "October 21",
     "height": "148cm",
-    "hobbies": "Crosswords, radio"
+    "hobbies": "Crosswords, radio",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "First of all, rest well",
+        "description": "Increase Attack by **36.5~69.4%** for **46 seconds**.",
+        "cost": "4"
+      },
+      {
+        "kind": "basic",
+        "name": "One last bite!",
+        "description": "Whenever ammo count reaches 3 or less, deal **225~361%** damage to one enemy and Stun them for **1.9~2.5 seconds**.Reduce Ammo count by **3**.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Traffic control",
+        "description": "Increase CC Strength by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "I think I'll take you up on that",
+        "description": "When any ally uses an EX skill, increases Fubuki's Attack by **17.6~33.5%** for **10 seconds**.",
+        "cost": null
+      }
+    ]
   },
   "fuuka": {
     "name": "Fuuka",
@@ -496,7 +1146,33 @@
     "age": "16",
     "birthday": "April 30",
     "height": "159cm",
-    "hobbies": "Home cooking, making bento"
+    "hobbies": "Home cooking, making bento",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Lunch Time!",
+        "description": "Fuuka moves allies (max 4) in circular area to a specified position and recovers their HP by **109~207%** of her Healing.",
+        "cost": "5"
+      },
+      {
+        "kind": "basic",
+        "name": "Kindness of School Lunch Club",
+        "description": "Every **20 seconds**, Fuuka increases Defense of an ally with the highest HP by **18.1~34.4%**. (Duration: **16 seconds**)",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Let's gather fresh ingredients",
+        "description": "Increase Healing by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Pride of School Lunch Club",
+        "description": "Increase Critical Rate Resistance of all allies by **9.1~17.3%**.",
+        "cost": null
+      }
+    ]
   },
   "fuuka_new_year": {
     "name": "Fuuka (New Year)",
@@ -516,7 +1192,33 @@
     "age": "16",
     "birthday": "April 30",
     "height": "159cm",
-    "hobbies": "Home cooking, making bento"
+    "hobbies": "Home cooking, making bento",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Lunch Club Osechi",
+        "description": "Reduce EX skill cost for one other ally by up to **50%** (reduction active until EX is activated **1** time). The discount is rounded down to the nearest whole number.Increase Critical Damage by **18.3~32.1%** for **35 seconds**.",
+        "cost": "3~2"
+      },
+      {
+        "kind": "basic",
+        "name": "Tasting time!",
+        "description": "Every **60 seconds**, grant a shield to an ally with the lowest HP (shield HP is **119~227%** of Fuuka's Healing). (Duration: **20 seconds**)",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "The best bite",
+        "description": "Increase Healing by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Lunch Club delivery",
+        "description": "Increase Attack of all allies by **9.1~17.3%**.",
+        "cost": null
+      }
+    ]
   },
   "hanae": {
     "name": "Hanae",
@@ -535,7 +1237,33 @@
     "age": "15",
     "birthday": "May 12",
     "height": "150cm",
-    "hobbies": "Dance, cheerleading"
+    "hobbies": "Dance, cheerleading",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "It's treatment time～!",
+        "description": "Continuously recover one ally HP by **54.1~102%** of Healing. (Duration: **20 seconds**)",
+        "cost": "4"
+      },
+      {
+        "kind": "basic",
+        "name": "You mustn't collapse!",
+        "description": "Every **25 seconds**, increase Defense of an ally with the lowest HP by **17.7~33.7%**. (Duration: **20 seconds**)",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Ability improvement",
+        "description": "Increase Healing by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Do your very best, everyone～!",
+        "description": "Increase Critical Damage of all allies by **9.1~17.3%**.",
+        "cost": null
+      }
+    ]
   },
   "hanae_christmas": {
     "name": "Hanae (Christmas)",
@@ -554,7 +1282,33 @@
     "age": "15",
     "birthday": "May 12",
     "height": "150cm",
-    "hobbies": "Dance, cheerleading"
+    "hobbies": "Dance, cheerleading",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "It's gifts time～",
+        "description": "Grant 1 \"Holy Night Blessing\" to allies within a circular area (\"Holy Night Blessing\" stacks up to 15 times) and continuously recover their HP by **7~13.4%** of Healing for **60 seconds**.Healing effect is increased by **0.3~0.7%** for each active \"Holy Night Blessing\".",
+        "cost": "5"
+      },
+      {
+        "kind": "basic",
+        "name": "Cheer up!",
+        "description": "Every **35 seconds**, increase the Recovery Rate of an ally with the lowest HP by **22.7~43.2%** for **15 seconds**.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Blessed relief",
+        "description": "Increase Healing by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "I'm rooting for you!",
+        "description": "Increase Critical Damage of all allies by **9.1~17.3%**.",
+        "cost": null
+      }
+    ]
   },
   "hanako": {
     "name": "Hanako",
@@ -573,7 +1327,33 @@
     "age": "16",
     "birthday": "January 3",
     "height": "161cm",
-    "hobbies": "Wandering around"
+    "hobbies": "Wandering around",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Let's begin the forbidden games",
+        "description": "Apply continuous healing equivalent to **26.9~51.1%** of Hanako's Healing to allies in a certain area. (Duration: **8 seconds**)",
+        "cost": "5"
+      },
+      {
+        "kind": "basic",
+        "name": "Beco~me tougher♪",
+        "description": "Every **20 seconds**, increase Defense of an ally with the lowest HP by **24.2~46%**. (Duration: **13 seconds**)",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "I'm feeling pumped up!",
+        "description": "Increase Hanako's Healing by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "It's not embarrassing if we're together!",
+        "description": "Increase Healing of all allies by **9.1~17.3%**.",
+        "cost": null
+      }
+    ]
   },
   "hanako_swimsuit": {
     "name": "Hanako (Swimsuit)",
@@ -593,7 +1373,33 @@
     "age": "16",
     "birthday": "January 3",
     "height": "161cm",
-    "hobbies": "Wandering around"
+    "hobbies": "Wandering around",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "I'm going to douse you ♡",
+        "description": "Deal **337~642%** damage to enemies within a fan-shaped area.If the water gauge is 1 or more, EX skill card remains in hand. Subtract 1 water gauge charge.",
+        "cost": "2"
+      },
+      {
+        "kind": "basic",
+        "name": "Take good care of it ♡",
+        "description": "Every **30 seconds**, deal **118~225%** damage to enemies within a circular area.Additionally, decrease their Defense by **10.9~20.7%** for **20 seconds**.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "True feelings hidden in midsummer",
+        "description": "Increase Attack by **11.2~16.2%** and Critical Damage by **11.2~16.2%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "We're all pumped up ♡",
+        "description": "Charge the water gauge by **40%** when any other ally uses an EX skill.For every 100% charge, increase Attack by **20.1~38.3%** for **20 seconds**.(The water gauge can hold up to 2 full charges)",
+        "cost": null
+      }
+    ]
   },
   "hare": {
     "name": "Hare",
@@ -612,7 +1418,33 @@
     "age": "16",
     "birthday": "April 19",
     "height": "153cm",
-    "hobbies": "Video games, watching movies"
+    "hobbies": "Video games, watching movies",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Deploy EMP Drone",
+        "description": "Deal **271~435%** damage to enemies in a circular area and Stun them for **2.7~3.5 seconds**.",
+        "cost": "4"
+      },
+      {
+        "kind": "basic",
+        "name": "Subversion: Plan A",
+        "description": "Every **30 seconds**, decrease one enemy's recovery rate by **26.7~50.7%**. (Duration: **15 seconds**)",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Armament Strengthening: Plan B",
+        "description": "Increase Critical Rate by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Operate Interception System",
+        "description": "Increase Evasion of all allies by **9.1~17.3%**.",
+        "cost": null
+      }
+    ]
   },
   "haruka": {
     "name": "Haruka",
@@ -631,7 +1463,33 @@
     "age": "15",
     "birthday": "May 13",
     "height": "157cm",
-    "hobbies": "Growing weeds"
+    "hobbies": "Growing weeds",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Erratic Shooting",
+        "description": "Deal **821~1560%** damage to enemies in a fan-shaped area.",
+        "cost": "4"
+      },
+      {
+        "kind": "basic",
+        "name": "Trigger Over",
+        "description": "Every **20 seconds**, Haruka's Defense is increased by **18.9~36%**. (Duration: **20 seconds**)",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "I-I'll do my best!",
+        "description": "Increase HP by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Uwaaaaah!?",
+        "description": "When Haruka takes damage, **5%** chance of increasing defense by **18.1~34.4%** for **15 seconds**. (Cooldown: **10 seconds**)",
+        "cost": null
+      }
+    ]
   },
   "haruka_new_year": {
     "name": "Haruka (New Year)",
@@ -650,7 +1508,33 @@
     "age": "15",
     "birthday": "May 13",
     "height": "157cm",
-    "hobbies": "Growing weeds"
+    "hobbies": "Growing weeds",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Who gave permission……?",
+        "description": "Lower Critical Resistance and Critical Damage Resistance of one enemy by **21.8~41.5%** for **50 seconds**. Deal **182~345%** damage to them.",
+        "cost": "4"
+      },
+      {
+        "kind": "basic",
+        "name": "Proper greeting",
+        "description": "Every **30 seconds**, lower the Critical Damage Resistance of one enemy by **16.2~30.8%** for **20 seconds**.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Unforgivable, unforgivable",
+        "description": "Increase Attack by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "With all my heart",
+        "description": "Increase Cost Recovery of allies by **10.6~20.2%**.",
+        "cost": null
+      }
+    ]
   },
   "haruna": {
     "name": "Haruna",
@@ -669,7 +1553,33 @@
     "age": "17",
     "birthday": "March 1",
     "height": "163cm",
-    "hobbies": "Looking for delicious things"
+    "hobbies": "Looking for delicious things",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Piercing Elegance",
+        "description": "Attack a selected enemy with **506~887%** of Haruna's Attack, bullet will penetrate target and damage subsequent targets at sequential **10%** damage reduction per target. (Damage reduction caps at a low of **30%**)",
+        "cost": "4~3"
+      },
+      {
+        "kind": "basic",
+        "name": "Exploding Exotic",
+        "description": "Every **30 seconds**, attack one enemy with **200~380%** of Haruna's Attack.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "The Dignity of the Gourmet",
+        "description": "Increase HP by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "The Serenity of the Gourmet",
+        "description": "When not moving, increase Attack by **10~19.1%**.",
+        "cost": null
+      }
+    ]
   },
   "haruna_new_year": {
     "name": "Haruna (New Year)",
@@ -689,7 +1599,33 @@
     "age": "17",
     "birthday": "March 1",
     "height": "163cm",
-    "hobbies": "Looking for delicious things"
+    "hobbies": "Looking for delicious things",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Gourmet's Wrath",
+        "description": "Target up to 5 enemies, dealing **106~202%** damage to each in turn, additinally deal **52~98.7%** damage within a circular area around each hit.",
+        "cost": "5"
+      },
+      {
+        "kind": "basic",
+        "name": "Gourmet's Belief",
+        "description": "Every **40 seconds**, increase Attack by **15.9~30.3%** for **30 seconds**.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "New Year's Viando",
+        "description": "Increase Attack by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Farewell Dessert",
+        "description": "When attacking, there is a **20%** chance to reduce enemy Defense by **7.8~14.8%** for **17 seconds**. (Cooldown: **5 seconds**)",
+        "cost": null
+      }
+    ]
   },
   "haruna_track": {
     "name": "Haruna (Track)",
@@ -708,7 +1644,33 @@
     "age": "17",
     "birthday": "March 1",
     "height": "163cm",
-    "hobbies": "Looking for delicious things"
+    "hobbies": "Looking for delicious things",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Gourmet endorsement",
+        "description": "Move up to 4 allies within circular area to the specified position and heal them for **63~119%** of Healing.",
+        "cost": "3"
+      },
+      {
+        "kind": "basic",
+        "name": "Gourmet approach",
+        "description": "Every **40 seconds**, deal **161~306%** damage to 6 enemies.Decrease their Defense by **5.8~11%** for **20 seconds**.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Healing sweets",
+        "description": "Increase Healing by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Sports banquet",
+        "description": "Increase Attack of all allies by **9.1~17.3%**.",
+        "cost": null
+      }
+    ]
   },
   "hasumi": {
     "name": "Hasumi",
@@ -727,7 +1689,33 @@
     "age": "17",
     "birthday": "December 12",
     "height": "179cm",
-    "hobbies": "Reading, watching people"
+    "hobbies": "Reading, watching people",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Armour-piercing ammo",
+        "description": "Deal **574~1091%** damage to one enemy.",
+        "cost": "5"
+      },
+      {
+        "kind": "basic",
+        "name": "A composed mind",
+        "description": "After defeating an enemy immediately reload and increase Critical Damage by **30~57%** for **13 seconds**.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Target in sights",
+        "description": "Increase Critical Damage by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Searching for target",
+        "description": "After reloading increase Critical Rate by **50~95%** for one attack.",
+        "cost": null
+      }
+    ]
   },
   "hasumi_track": {
     "name": "Hasumi (Track)",
@@ -747,7 +1735,33 @@
     "age": "17",
     "birthday": "December 12",
     "height": "179cm",
-    "hobbies": "Reading, watching people"
+    "hobbies": "Reading, watching people",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Iron Will Piercing Bullet",
+        "description": "Deal **452~859%** damage to one enemy.Additionally consume up to 2 Cost, increasing damage dealt by 30% for every extra Cost paid.(Cost reduction effects will only affect the base skill cost)",
+        "cost": "3"
+      },
+      {
+        "kind": "basic",
+        "name": "Sports shooting",
+        "description": "Every **25 seconds**, deal **247~470%** damage to one enemy.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Preparing to participate",
+        "description": "Increase Critical Damage by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Excitement of the competition",
+        "description": "When attacking large enemies, deal **21.8~41.5%** of Attack as additional damage.",
+        "cost": null
+      }
+    ]
   },
   "hatsune_miku": {
     "name": "Hatsune Miku",
@@ -767,7 +1781,33 @@
     "age": "16",
     "birthday": "August 31",
     "height": "158cm",
-    "hobbies": "Singing, dancing"
+    "hobbies": "Singing, dancing",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Putting my heart into it at every moment!",
+        "description": "Heal allies within a circular area for **111~144%** of Miku's Healing. While Miku is dancing on the field (duration: **26 seconds**), additionally increase their Attack by **21.2~34%**.",
+        "cost": "5"
+      },
+      {
+        "kind": "basic",
+        "name": "The Passion of Hatsune Miku",
+        "description": "Every **30 seconds**, increase Critical Rate of allies within a circular area by **19.8~37.7%**. (Duration: **20 seconds**)",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "The Cheering of Hatsune Miku",
+        "description": "Increase Healing by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "The Blessing of Hatsune Miku",
+        "description": "Increase all allies' incoming healing by **9.1~17.3%**.",
+        "cost": null
+      }
+    ]
   },
   "hibiki": {
     "name": "Hibiki",
@@ -786,7 +1826,33 @@
     "age": "15",
     "birthday": "April 2",
     "height": "154cm",
-    "hobbies": "Shopping, cosplay"
+    "hobbies": "Shopping, cosplay",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "There's a high probability this will hurt",
+        "description": "Deal **311~591%** damage to enemies in 5 circular areas.",
+        "cost": "4"
+      },
+      {
+        "kind": "basic",
+        "name": "Plenty of firepower",
+        "description": "Every **20 seconds**, deal **144~275%** damage to enemies in circular area centered on the enemy with the lowest HP.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Might be dangerous",
+        "description": "Increase Critical Damage by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Hope that helps",
+        "description": "Increase Critical Damage of all allies by **9.1~17.3%**.",
+        "cost": null
+      }
+    ]
   },
   "hibiki_cheer_squad": {
     "name": "Hibiki (Cheer Squad)",
@@ -806,7 +1872,33 @@
     "age": "15",
     "birthday": "April 2",
     "height": "154cm",
-    "hobbies": "Shopping, cosplay"
+    "hobbies": "Shopping, cosplay",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "It might be a little hot",
+        "description": "Deal **107~140%** damage to enemies within a circular area.Inflict continuous Passionate cheering damage of **29.9~47.9%** for **120 seconds**.",
+        "cost": "7"
+      },
+      {
+        "kind": "basic",
+        "name": "If this voice reaches you",
+        "description": "Every **40 seconds**, increase the Attack of an ally with the highest Attack and self by **15.5~22.5%** for **30 seconds**.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Just enough passion",
+        "description": "Increase Attack by **17.9~34%**, decrease Critical Damage by **11.2%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "It's a little embarrassing...",
+        "description": "When attacking an enemy, deal **3.4~6.4%** as additional damage.The farther the enemy is, the more damage is done, and the closer the enemy, the weaker the damage.(Maximum multiplier of x2, minimum of x0.5)",
+        "cost": null
+      }
+    ]
   },
   "hifumi": {
     "name": "Hifumi",
@@ -825,7 +1917,33 @@
     "age": "16",
     "birthday": "November 27",
     "height": "158cm",
-    "hobbies": "Collecting Peroro goods, collecting cute things, shopping, giving advice"
+    "hobbies": "Collecting Peroro goods, collecting cute things, shopping, giving advice",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Help me, Peroro-sama!",
+        "description": "Summon a Peroro Doll, dealing **202~386%** damage to enemies in a circular area and taunting them for **3.4~3.9 seconds**. The Peroro Doll has **160%** of Hifumi's Max HP.",
+        "cost": "5"
+      },
+      {
+        "kind": "basic",
+        "name": "Peroro-sama's Support",
+        "description": "Every **35 seconds**, deal **212%** damage to one enemy and reduce their accuracy by **16.8~32%** for **30 seconds**.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Collector's Spirit",
+        "description": "Increase HP by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Nimble Collector",
+        "description": "When using EX skill, increase skill cost recovery speed by **980~1861**. (Duration: **5 seconds**)",
+        "cost": null
+      }
+    ]
   },
   "hifumi_swimsuit": {
     "name": "Hifumi (Swimsuit)",
@@ -844,7 +1962,33 @@
     "age": "16",
     "birthday": "November 27",
     "height": "158cm",
-    "hobbies": "Collecting Peroro goods, collecting cute things, shopping, giving advice"
+    "hobbies": "Collecting Peroro goods, collecting cute things, shopping, giving advice",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Crusader-chan, please!",
+        "description": "Hifumi enters the battlefield riding Crusader-chan.Its Attack is increased by **19.4~36.8%** of Hifumi's Attack. (Duration: **50 seconds**)Every **20 seconds**, Crusader-chan will activate its \"2-pounder loaded with HE shell!\" skill and deal **266~359%** damage to enemies in an area.(Only one tactical support vehicle can be fielded at any given time)",
+        "cost": "1"
+      },
+      {
+        "kind": "basic",
+        "name": "Peroro-sama's Attack",
+        "description": "Every **25 seconds**, deal **159~302%** damage to enemies in an area.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Collector's Fighting Spirit",
+        "description": "Increase Attack by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Angry Adelie's Blessing",
+        "description": "Increase Attack Speed of all allies by **9.1~17.3%**.",
+        "cost": null
+      }
+    ]
   },
   "himari": {
     "name": "Himari",
@@ -863,7 +2007,33 @@
     "age": "17",
     "birthday": "December 10",
     "height": "162cm",
-    "hobbies": "Fortune-telling, occult in general"
+    "hobbies": "Fortune-telling, occult in general",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Let me show you what I can do",
+        "description": "Increase Attack of one ally by **55.2~105%** for **13 seconds**.",
+        "cost": "3"
+      },
+      {
+        "kind": "basic",
+        "name": "You might be a little surprised",
+        "description": "Every **30 seconds**, deal **185~241%** damage to one enemy.Decrease their Evasion by **16.9~27.1%** for **23 seconds**.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Delicate clifftop flower",
+        "description": "Increase Attack by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "The true worth of a super genius delicate sickly beautiful girl",
+        "description": "Increase Cost Recovery of allies by **10.6~20.2%**.",
+        "cost": null
+      }
+    ]
   },
   "hina": {
     "name": "Hina",
@@ -882,7 +2052,33 @@
     "age": "17",
     "birthday": "February 19",
     "height": "142cm",
-    "hobbies": "Sleeping, resting"
+    "hobbies": "Sleeping, resting",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Ending scene: Ishbóshet",
+        "description": "Deal **636~1208%** damage to enemies in fan-shaped area.",
+        "cost": "7"
+      },
+      {
+        "kind": "basic",
+        "name": "Reload and Destroy",
+        "description": "When out of bullets, Hina immediately reloads and increases Attack by **21~39.9%**. (Duration: **16 seconds**)",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Cool-headed Disciplinary committee",
+        "description": "Increase Attack Speed by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "From beginning to end",
+        "description": "When Hina attacks enemies that aren't taking cover, deal bonus damage of **2.7~5.2%** Attack.",
+        "cost": null
+      }
+    ]
   },
   "hina_swimsuit": {
     "name": "Hina (Swimsuit)",
@@ -902,7 +2098,33 @@
     "age": "17",
     "birthday": "February 19",
     "height": "142cm",
-    "hobbies": "Sleeping, resting"
+    "hobbies": "Sleeping, resting",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Distant seas: Ishbóshet",
+        "description": "Deal **232~441%** damage to up to 5 enemies in fan-shaped area.",
+        "cost": "3"
+      },
+      {
+        "kind": "basic",
+        "name": "Slow and Knock out",
+        "description": "Every **20 seconds**, deal **141~226%** damage to a single enemy and stun them for **1.6~2 seconds**.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Merciless Disciplinary Committee",
+        "description": "Increase Critical Rate by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Use of Force",
+        "description": "When EX skill is activated, increase Attack by **8.7~16.5%**. Stacks up to a maximum of **5** times.",
+        "cost": null
+      }
+    ]
   },
   "hinata": {
     "name": "Hinata",
@@ -921,7 +2143,33 @@
     "age": "17",
     "birthday": "May 17",
     "height": "166cm",
-    "hobbies": "Prayer, tidying up"
+    "hobbies": "Prayer, tidying up",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Last resort",
+        "description": "Deal **250~476%** damage to enemies within 5 circular areas.",
+        "cost": "6"
+      },
+      {
+        "kind": "basic",
+        "name": "Let's talk first...!",
+        "description": "Every **20 seconds**, deal **223~425%** damage to one enemy with the highest HP.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Unexpected development",
+        "description": "Increase Critical Damage by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "I'll do the heavy lifting!",
+        "description": "When attacking medium-sized enemies, deal **21.8~41.5%** of Attack as additional damage.",
+        "cost": null
+      }
+    ]
   },
   "hinata_swimsuit": {
     "name": "Hinata (Swimsuit)",
@@ -941,7 +2189,33 @@
     "age": "17",
     "birthday": "May 17",
     "height": "166cm",
-    "hobbies": "Prayer, tidying up"
+    "hobbies": "Prayer, tidying up",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Fun waterplay",
+        "description": "Deal **479~911%** damage to enemies within a circular range. (this attack ignores **40~80%** of enemy Defense)",
+        "cost": "6"
+      },
+      {
+        "kind": "basic",
+        "name": "Refreshing dip",
+        "description": "Every **40 seconds**, throw a water balloon to deal **86.3~164%** damage to 1 enemy. If there are enemies around the target that have not yet been attacked, the water balloon will bounce in that direction and deal the same damage (up to 6 times).(This attack ignores **50~80%** of the enemy Defense)",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Expeditionary passion",
+        "description": "Increase Attack by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Caring hands",
+        "description": "Increase Attack of all allies by **9.1~17.3%**.",
+        "cost": null
+      }
+    ]
   },
   "hiyori": {
     "name": "Hiyori",
@@ -960,7 +2234,33 @@
     "age": "16",
     "birthday": "January 8",
     "height": "155cm",
-    "hobbies": "Collecting magazines"
+    "hobbies": "Collecting magazines",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "I-i'll support you now!",
+        "description": "Fires a bullet that flies in a straight line and deals **207~331%** damage to the first enemy it hits.If there are two or fewer Arius Squad students in the same team, reduce Defense of the hit enemy by **23.2~30.1%**; if there are three or more, reduce their Defence by **39.7~51.6%** instead. (Duration: **30 seconds**)",
+        "cost": "3"
+      },
+      {
+        "kind": "basic",
+        "name": "O-oh, this will hurt!",
+        "description": "Every **40 seconds**, deal **255~409%** damage to one enemy and reduce their defense by **7.7~10%** for **30 seconds**.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "I read it in a magazine",
+        "description": "Increase Critical Damage by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Power of the appendix",
+        "description": "Increase Attack of all allies by **9.1~17.3%**.",
+        "cost": null
+      }
+    ]
   },
   "hoshino": {
     "name": "Hoshino",
@@ -979,7 +2279,33 @@
     "age": "17",
     "birthday": "January 2",
     "height": "145cm",
-    "hobbies": "Afternoon naps, lazing around"
+    "hobbies": "Afternoon naps, lazing around",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Tactical Suppression",
+        "description": "Deal **435~697%** of Hoshino's Attack as damage to enemies within a conical area and stun them for **0~1.4 seconds**.",
+        "cost": "4"
+      },
+      {
+        "kind": "basic",
+        "name": "Emergency Field Aid",
+        "description": "When HP falls to **30%**, continuously regenerate **100~191%** of Healing power for **20 seconds**. (Can only be used **1** per battle)",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Countermeasures Council President",
+        "description": "Increase Defense by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Supression Veteran",
+        "description": "When EX skill is in use, activate a shield that has **108~205%** Healing power in health.",
+        "cost": null
+      }
+    ]
   },
   "hoshino_swimsuit": {
     "name": "Hoshino (Swimsuit)",
@@ -999,7 +2325,33 @@
     "age": "17",
     "birthday": "January 2",
     "height": "145cm",
-    "hobbies": "Afternoon naps, lazing around"
+    "hobbies": "Afternoon naps, lazing around",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Aquatic support",
+        "description": "Increase the Attack of all allies around Hoshino by **26.5~38.5%**, and add **68.3~99%** to the Explosion damage bonus against the enemies weak to it. (Duration: **50 seconds**)",
+        "cost": "6~5"
+      },
+      {
+        "kind": "basic",
+        "name": "Aquatic assault",
+        "description": "Every **40 seconds**, deal **283~454%** damage to one enemy. Additionally, heal herself by **75~97.6%** of Healing.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Heat wave endurance",
+        "description": "Increase Defense by **11.2~16.2%** and Attack by **11.2~16.2%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Fun at the beach",
+        "description": "While EX skill is active, increase Cost Recovery by **360~684**.",
+        "cost": null
+      }
+    ]
   },
   "ichika": {
     "name": "Ichika",
@@ -1018,7 +2370,33 @@
     "age": "16",
     "birthday": "November 11",
     "height": "163cm",
-    "hobbies": "Helping people, trying her hand at various jobs"
+    "hobbies": "Helping people, trying her hand at various jobs",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Excuse me for a moment",
+        "description": "Deal **726~1380%** damage to enemies within a cone-shaped area.",
+        "cost": "6"
+      },
+      {
+        "kind": "basic",
+        "name": "Justice Actualization Committee contact network",
+        "description": "Every **30 seconds**, add **32.9~63.1%** to Sonic Efficiency for **20~25 seconds**.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Sharp instincts",
+        "description": "Increase Accuracy by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Everybody has bad days",
+        "description": "When attacking enemies that are not in cover, deal **2.3~4.4%** as additional damage.",
+        "cost": null
+      }
+    ]
   },
   "iori": {
     "name": "Iori",
@@ -1037,7 +2415,33 @@
     "age": "16",
     "birthday": "November 8",
     "height": "157cm",
-    "hobbies": "Patrolling, raising her voice"
+    "hobbies": "Patrolling, raising her voice",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Total Arrest",
+        "description": "Fires 3 shots at an enemy. Each shot has **350~666%** Attack power and deals damage in a conical shape behind the enemy.",
+        "cost": "3"
+      },
+      {
+        "kind": "basic",
+        "name": "Wanted List",
+        "description": "Every **25 seconds**, deal damage equal to **229~436%** of Attack power against one enemy.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Hitting the mark in one shot",
+        "description": "Increase Accuracy by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Bravery of the Disciplinary Committee",
+        "description": "When Iori is not taking cover, attacks deal **22.6~43.1%** of Attack as additional damage.",
+        "cost": null
+      }
+    ]
   },
   "iori_swimsuit": {
     "name": "Iori (Swimsuit)",
@@ -1057,7 +2461,33 @@
     "age": "16",
     "birthday": "November 8",
     "height": "157cm",
-    "hobbies": "Patrolling, raising her voice"
+    "hobbies": "Patrolling, raising her voice",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Storm and Stress",
+        "description": "Deal **463~880%** damage to enemies in a circular area.",
+        "cost": "4"
+      },
+      {
+        "kind": "basic",
+        "name": "Swift and Skilful Resolution",
+        "description": "Every **25 seconds**, deal **186~297%** damage to a single enemy. Additionally, inflict **51~66.3%** continuous chill damage. (Duration: **20 seconds**)",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Precise Shot",
+        "description": "Increase Attack by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Specialist's Might",
+        "description": "When attacking, there is a **25%** chance to inflict continuous chill damage equivalent to **34.1~64.8%** of Attack for **20 seconds**. (Cooldown: **10 seconds**)",
+        "cost": null
+      }
+    ]
   },
   "iroha": {
     "name": "Iroha",
@@ -1076,7 +2506,33 @@
     "age": "16",
     "birthday": "November 16",
     "height": "151cm",
-    "hobbies": "Reading, skipping classes"
+    "hobbies": "Reading, skipping classes",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Let's go, Toramaru",
+        "description": "Iroha enters the battlefield riding Toramaru. Its Attack is increased by **11.2~38.5%** of Iroha's Attack. (Duration: **55 seconds**) Every **15 seconds**, Toramaru will activate its \"Main gun aim, fire\" skill, dealing **279~377%** damage to one enemy. Upon hit, shell fragments and deals the same damage to 2 nearby enemies, then deals the same damage to further 2 nearby enemies.(Only one tactical support vehicle can be fielded at any given time)",
+        "cost": "8~6"
+      },
+      {
+        "kind": "basic",
+        "name": "It's annoying...",
+        "description": "Every **40 seconds**, fire shells at up to 4 enemies. Deal **43.8~83.3%** damage within the circular area around targeted enemy.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "There's no choice",
+        "description": "Increase Attack by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Please stay strong",
+        "description": "Increase Attack of all allies by **9.1~17.3%**.",
+        "cost": null
+      }
+    ]
   },
   "izumi": {
     "name": "Izumi",
@@ -1095,7 +2551,33 @@
     "age": "16",
     "birthday": "May 11",
     "height": "161cm",
-    "hobbies": "Making and eating strange foods"
+    "hobbies": "Making and eating strange foods",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Cheese Chocolate Burger!",
+        "description": "Recover HP equal to **145~254%** of Healing; increase Attack Speed by **0~38.4%** for **0~21 seconds**.",
+        "cost": "3"
+      },
+      {
+        "kind": "basic",
+        "name": "Reeeady, Bang!",
+        "description": "Normal attacks have a **20%** chance to deal **275~523%** Attack damage to one enemy. (Cooldown: **10 seconds**)",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "What should I eat next?",
+        "description": "Increase healing received by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Tastiness really is the most important thing",
+        "description": "While attacking, deal additional damage of **0.4~0.7%** to **2.2~4.1%** Attack, proportional to current HP.",
+        "cost": null
+      }
+    ]
   },
   "izumi_swimsuit": {
     "name": "Izumi (Swimsuit)",
@@ -1115,7 +2597,33 @@
     "age": "16",
     "birthday": "May 11",
     "height": "161cm",
-    "hobbies": "Making and eating strange foods"
+    "hobbies": "Making and eating strange foods",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Filled with coconut juice!",
+        "description": "Throw coconut at an enemy, dealing **332~532%** damage. If there are other enemies around the target that have not been hit, the coconut will bounce in their direction and deal damage again (the amount of damage from the second time onwards is reduced by 10%) Deals up to 5 hits. Stun enemies hit for **2.4~3.1 seconds**.",
+        "cost": "4"
+      },
+      {
+        "kind": "basic",
+        "name": "Sweet and sour and delicious!",
+        "description": "Every **35 seconds**, increase Attack by **20.2~38.4%** for **30 seconds**.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Now, eat up and do your best~!",
+        "description": "Increase Attack Speed by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Ice-cold, but delicious~",
+        "description": "Attacks have a **10%** chance to stun for **1.23~2.34 seconds**. (Cooldown: **20 seconds**)",
+        "cost": null
+      }
+    ]
   },
   "izuna": {
     "name": "Izuna",
@@ -1134,7 +2642,33 @@
     "age": "15",
     "birthday": "December 16",
     "height": "155cm",
-    "hobbies": "Studying ninja arts, escorting her master"
+    "hobbies": "Studying ninja arts, escorting her master",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "This is The Izuna-Style Ninjutsu!",
+        "description": "Jump to the selected location, and increase Attack Speed by **27.4~52.1%** for **30 seconds**.",
+        "cost": "3"
+      },
+      {
+        "kind": "basic",
+        "name": "Secret technique! Explosive Shuriken!",
+        "description": "Every **6** normal attacks, deal **444~845%** damage to enemies in circular area.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Izuna-Style, Surprise Attack Jutsu",
+        "description": "Increase Critical Damage by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Izuna-Ryuu, Funki no Jutsu",
+        "description": "On EX skill use, increase Attack by **20.1~38.3%** for **30 seconds**.",
+        "cost": null
+      }
+    ]
   },
   "izuna_swimsuit": {
     "name": "Izuna (Swimsuit)",
@@ -1154,7 +2688,33 @@
     "age": "15",
     "birthday": "December 16",
     "height": "155cm",
-    "hobbies": "Studying ninja arts, escorting her master"
+    "hobbies": "Studying ninja arts, escorting her master",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Izuna-Style Ninjutsu・Summer Version!",
+        "description": "Deal **423~804%** damage to one enemy.  Apply Focused Fire status to the enemy for **30 seconds**.",
+        "cost": "2"
+      },
+      {
+        "kind": "basic",
+        "name": "Izuna-Style Ninjutsu! Bubble Technique!",
+        "description": "Every **6** normal attacks, deal **418~669%** damage to one enemy. Reduce their Critical Damage Resistance by **29.9~38.9%** for **20 seconds**.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Master! It's summer!",
+        "description": "Increase Attack Speed by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Izuna-Style Ninjutsu・Summer Version Secret Technique!",
+        "description": "Every **25** critical hits, increases Attack Speed by **16.2~30.9%** for **23 seconds**.",
+        "cost": null
+      }
+    ]
   },
   "junko": {
     "name": "Junko",
@@ -1173,7 +2733,33 @@
     "age": "15",
     "birthday": "December 27",
     "height": "149cm",
-    "hobbies": "Gourmet tour"
+    "hobbies": "Gourmet tour",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Hunger's Frustration",
+        "description": "Junko sacrifices **25.7%** of current HP and deals **746~1417%** damage to enemies in a straight line.",
+        "cost": "5"
+      },
+      {
+        "kind": "basic",
+        "name": "Don't talk to me when I'm hungry!",
+        "description": "Junko gains Immortal status for **12.8~24.3 seconds** when her HP is under **20%**. (Can only be used **1** per battle)",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Merit of being a petite",
+        "description": "Increase Evasion by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Gourmet on an empty stomach",
+        "description": "When attacking, Junko deals **0.9~1.7%**〜**4.9~9.4%** of her Attack as additional damage in proportion to lost HP.",
+        "cost": null
+      }
+    ]
   },
   "junko_new_year": {
     "name": "Junko (New Year)",
@@ -1193,7 +2779,33 @@
     "age": "15",
     "birthday": "December 27",
     "height": "149cm",
-    "hobbies": "Gourmet tour"
+    "hobbies": "Gourmet tour",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Food grudge",
+        "description": "Deal **344~653%** damage to enemies within a circular area.",
+        "cost": "2"
+      },
+      {
+        "kind": "basic",
+        "name": "I wanted to eat that...",
+        "description": "Every **21** normal attacks, deal **400~760%** damage to one enemy.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Let's get this over with!",
+        "description": "Increase Attack Speed by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "This was my only dress!",
+        "description": "When EX or Normal skill are activated, increase Critical Rate by **10.4~19.9%** for **20 seconds**.",
+        "cost": null
+      }
+    ]
   },
   "juri": {
     "name": "Juri",
@@ -1212,7 +2824,33 @@
     "age": "15",
     "birthday": "October 20",
     "height": "170cm",
-    "hobbies": "Self-styled culinary research"
+    "hobbies": "Self-styled culinary research",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Juri's Cooking Time!",
+        "description": "Reposition 4 enemies within a circular area, inflict a poisoning effect for **58.9~112%** of Juri's Attack. (Duration: **20 seconds**)",
+        "cost": "3"
+      },
+      {
+        "kind": "basic",
+        "name": "The Finest Cooking",
+        "description": "Every **20 seconds**, decrease the Attack Speed of 1 enemy with the highest attack by **18.1~34.4%**. (Duration: **16 seconds**)",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Plenty of Motivation!",
+        "description": "Increase Attack by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Bon Appétit!",
+        "description": "Increase HP of all allies by **9.1~17.3%**.",
+        "cost": null
+      }
+    ]
   },
   "kaede": {
     "name": "Kaede",
@@ -1231,7 +2869,33 @@
     "age": "15",
     "birthday": "July 9",
     "height": "142cm",
-    "hobbies": "Mischief (she tries to hold back as much as possible), catching beetles"
+    "hobbies": "Mischief (she tries to hold back as much as possible), catching beetles",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Flare gun, fire!!",
+        "description": "Grant a shield of **144~275%** Healing to the allies within a circular range. (Duration: **16 seconds**)",
+        "cost": "4"
+      },
+      {
+        "kind": "basic",
+        "name": "Beetle shield!",
+        "description": "Every **40 seconds**, increase Defense of one ally with the highest Defense by **15.8~30%** for **33 seconds**.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Healing wave!",
+        "description": "Increase Healing by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Keep doing your best!",
+        "description": "Increase HP of all allies by **9.1~17.3%**.",
+        "cost": null
+      }
+    ]
   },
   "kaho": {
     "name": "Kaho",
@@ -1250,7 +2914,33 @@
     "age": "17",
     "birthday": "October 9",
     "height": "173cm",
-    "hobbies": "Promoting Hyakkiyako culture, Collecting Hyakkiyako merchandise"
+    "hobbies": "Promoting Hyakkiyako culture, Collecting Hyakkiyako merchandise",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Being a fan",
+        "description": "Deal **745~1415%** damage to one enemy.",
+        "cost": "5"
+      },
+      {
+        "kind": "basic",
+        "name": "Clear mind",
+        "description": "Every **50 seconds**, apply \"Serenity\" status and increase Attack by **27.4~39.7%** for **25~40 seconds**.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Passionate dedication",
+        "description": "Increase Critical Damage by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Tranquil composure",
+        "description": "When \"Serenity\" status is active, deal **5.5~10.4%** of Attack as additional damage.",
+        "cost": null
+      }
+    ]
   },
   "kanna": {
     "name": "Kanna",
@@ -1269,7 +2959,33 @@
     "age": "17",
     "birthday": "September 7",
     "height": "166cm",
-    "hobbies": "Reading, watching movies (detectives)"
+    "hobbies": "Reading, watching movies (detectives)",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Chief of Public Security",
+        "description": "Deal **52.9~84.7%** damage to one enemy.After that, **30~50%** of the damage done by the allies to that enemy is added up for **15 seconds**, and the resulting damage is done again as Penetration type.(This damage can not be critical, maximum amount of damage that can be accumulated is **2070~2691%** of Kanna's Attack)",
+        "cost": "3"
+      },
+      {
+        "kind": "basic",
+        "name": "Intense interrogation",
+        "description": "Every **30 seconds**, deal **197~375%** damage to one enemy.Reduce their Defense by **7.6~14.4%** for **20 seconds**.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Mad Dog obsession",
+        "description": "Increase Attack by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "PSB special ammunition",
+        "description": "Increase Attack of Penetration type allies by **12.7~24.2%**.",
+        "cost": null
+      }
+    ]
   },
   "karin": {
     "name": "Karin",
@@ -1288,7 +3004,33 @@
     "age": "16",
     "birthday": "February 2",
     "height": "170cm",
-    "hobbies": "Cleaning"
+    "hobbies": "Cleaning",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Eliminating Target",
+        "description": "Deal **687~1099%** Attack damage to one enemy. If enemy is colossal-sized, deal an additional **481~625%** damage.",
+        "cost": "4"
+      },
+      {
+        "kind": "basic",
+        "name": "Initiate Fire Support",
+        "description": "Every **40 seconds**, deal **223~424%** Attack damage to one enemy, with a **50%** chance to stun. (Duration: **3.1 seconds**)",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Weapon Upgrade, Complete",
+        "description": "Increase Attack by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Initiating Support Actions",
+        "description": "Increase Attack of all allies by **9.1~17.3%**.",
+        "cost": null
+      }
+    ]
   },
   "karin_bunny_girl": {
     "name": "Karin (Bunny Girl)",
@@ -1308,7 +3050,33 @@
     "age": "16",
     "birthday": "February 2",
     "height": "170cm",
-    "hobbies": "Cleaning"
+    "hobbies": "Cleaning",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Promptly and precisely",
+        "description": "Deal **325~521%** damage to enemies in a conical area, ignoring **32~48%** of their defense.",
+        "cost": "7"
+      },
+      {
+        "kind": "basic",
+        "name": "Wide-area firing, commence",
+        "description": "Every **25 seconds**, deal **111~192%** damage to enemies in a circular area, ignoring **20~32%** of their defense.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Firepower upgrade, complete",
+        "description": "Increase Attack by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Carefully and correctly",
+        "description": "Upon activating EX skill, increase Critical Rate by **12.9~24.5%**. (Duration: **40 seconds**)",
+        "cost": null
+      }
+    ]
   },
   "kasumi": {
     "name": "Kasumi",
@@ -1327,7 +3095,33 @@
     "age": "16",
     "birthday": "May 24",
     "height": "148cm",
-    "hobbies": "Blasting, hot spring development"
+    "hobbies": "Blasting, hot spring development",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Giant Heel Crush",
+        "description": "For enemies within a circular area, decrease Defense by **17.6~33.5%** for **25 seconds**.Deal **227.6~432.5%** damage to them.",
+        "cost": "4"
+      },
+      {
+        "kind": "basic",
+        "name": "That's an important message",
+        "description": "Every **35 seconds**, deal **227~432%** damage to enemies within a circular area.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Madman's strategy",
+        "description": "Increase Critical Rate by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Did the drill stop?",
+        "description": "Every **3** EX skill uses, deal **633~1204%** additional damage.",
+        "cost": null
+      }
+    ]
   },
   "kayoko": {
     "name": "Kayoko",
@@ -1346,7 +3140,33 @@
     "age": "18",
     "birthday": "March 17",
     "height": "157cm",
-    "hobbies": "Collecting CDs"
+    "hobbies": "Collecting CDs",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Panic Bringer",
+        "description": "Deal **349~558%** damage and inflict Fear for **3.9~5.1 seconds** to enemies in a circular area.",
+        "cost": "6"
+      },
+      {
+        "kind": "basic",
+        "name": "Panic Shot",
+        "description": "Every **20 seconds**, deal **132~252%** damage to 1 enemy. **30%** chance to inflict Fear for **3.6 seconds**.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Scary face",
+        "description": "Increase CC Strength by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "It can't be helped",
+        "description": "When attacking a CC'd enemy, deal **74.8~142%** of Attack as extra damage.",
+        "cost": null
+      }
+    ]
   },
   "kayoko_new_year": {
     "name": "Kayoko (New Year)",
@@ -1365,7 +3185,33 @@
     "age": "18",
     "birthday": "March 17",
     "height": "157cm",
-    "hobbies": "Collecting CDs"
+    "hobbies": "Collecting CDs",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "New Year's Omamori",
+        "description": "For one other ally, add **48.8~92.8%** to the Mystic damage bonus against the enemies weak to it. (Duration: **40 seconds**)Grant them Omamori status.",
+        "cost": "2"
+      },
+      {
+        "kind": "basic",
+        "name": "Cat's protection",
+        "description": "Every **40 seconds**, increase Critical Rate of one other ally by **20.8~39.5%** for **25 seconds**.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Escalating misunderstandings",
+        "description": "Increase Attack by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Omamori bond",
+        "description": "When allies deal **200** critical hits, increase Attack by **13.1~24.9%**.For allies with an Omamori, add **22~41.8%** to the Mystic damage bonus against the enemies weak to it. (Duration: **50 seconds**)Afterwards, clear all Omamori from allies.",
+        "cost": null
+      }
+    ]
   },
   "kazusa": {
     "name": "Kazusa",
@@ -1384,7 +3230,33 @@
     "age": "15",
     "birthday": "August 5",
     "height": "155cm",
-    "hobbies": "Eating \"regular\" sweets"
+    "hobbies": "Eating \"regular\" sweets",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Sweet・fire",
+        "description": "Reload instantly after skill activation.Deal **933~1773%** damage to 1 enemy.",
+        "cost": "4"
+      },
+      {
+        "kind": "basic",
+        "name": "Force of habit",
+        "description": "Every **30 seconds**, Increase Attack by **23~43.8%** for **25 seconds**.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Sugar・high",
+        "description": "Increase Attack by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Nibble",
+        "description": "When reloading, decrease Attack Speed by **16.3%**, but increase Attack by **26.1~49.6%** for **15 seconds**.Stacks up to a maximum of **2** times.",
+        "cost": null
+      }
+    ]
   },
   "kirino": {
     "name": "Kirino",
@@ -1403,7 +3275,33 @@
     "age": "15",
     "birthday": "October 22",
     "height": "161cm",
-    "hobbies": "Eating on the go"
+    "hobbies": "Eating on the go",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "We're done talking!",
+        "description": "Deal **337~540%** damage to enemies within a circular area. Creates smoke screen for **20 seconds** that reduces Accuracy of enemies within it by **26.1~30%**.",
+        "cost": "3"
+      },
+      {
+        "kind": "basic",
+        "name": "Suppression!",
+        "description": "Every **20 seconds**, deal **199~289%** damage to the furthest targetable enemy, and reduce their Accuracy by **19.4~28.1%** for **13 seconds**.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Taking immediate action!",
+        "description": "Increase HP by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "No time to rest!",
+        "description": "Normal attacks have a **30%** chance to decrease enemy Recovery Rate by **22.7~43.2%** for **13 seconds**. (Cooldown: **5 seconds**)",
+        "cost": null
+      }
+    ]
   },
   "koharu": {
     "name": "Koharu",
@@ -1422,7 +3320,33 @@
     "age": "15",
     "birthday": "April 16",
     "height": "148cm",
-    "hobbies": "Daydreaming, delusions, collecting lewd magazines"
+    "hobbies": "Daydreaming, delusions, collecting lewd magazines",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Holy Hand Grenade",
+        "description": "Heal allies in an area for **101~192%** of Healing. For enemies, deal **227~431%** damage.",
+        "cost": "3"
+      },
+      {
+        "kind": "basic",
+        "name": "I-I'll heal you!",
+        "description": "For allies that are at less than **50%**, heal for **80.8~153%** of Healing. (Cooldown: **20 seconds**)",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "I'm giving it my all!",
+        "description": "Increase Attack by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Because I'm elite!",
+        "description": "Every **30 seconds**, increase Healing by **21.5~41%**. (Duration: **20 seconds**)",
+        "cost": null
+      }
+    ]
   },
   "koharu_swimsuit": {
     "name": "Koharu (Swimsuit)",
@@ -1442,7 +3366,33 @@
     "age": "15",
     "birthday": "April 16",
     "height": "148cm",
-    "hobbies": "Daydreaming, delusions, collecting lewd magazines"
+    "hobbies": "Daydreaming, delusions, collecting lewd magazines",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "It's not like that!",
+        "description": "Deal **439~834%** damage to enemies within a circular area.",
+        "cost": "3"
+      },
+      {
+        "kind": "basic",
+        "name": "Don't stare!",
+        "description": "Every **30 seconds**, increases Critical Rate by **20.8~39.6%** for **25 seconds**.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Elites' duty",
+        "description": "Increase Critical Rate by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Nothing naughty! Death penalty!",
+        "description": "When attacking medium-sized enemies, deal **10.4~19.8%** of Attack as additional damage.",
+        "cost": null
+      }
+    ]
   },
   "kokona": {
     "name": "Kokona",
@@ -1461,7 +3411,33 @@
     "age": "11",
     "birthday": "June 1",
     "height": "139cm",
-    "hobbies": "Reading picture books"
+    "hobbies": "Reading picture books",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Very well done!",
+        "description": "Heal one other ally for **152~290%** of Healing. Heal self for **101%** of Healing.Receive 1 Hanamaru Stamp.",
+        "cost": "2"
+      },
+      {
+        "kind": "basic",
+        "name": "I'm looking forward to next time!",
+        "description": "When allies deal **100** critical hits, heal one other ally with the lowest HP for **56.6~107%** Healing.Receive 1 Hanamaru Stamp.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Instructor's responsibilities",
+        "description": "Increase Healing by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Plum Blossom Garden teaching method",
+        "description": "When **5** Hanamaru Stamps are acquired, the EX skill cost of all allies other than Kokona herself is reduced by **1**. (Reduction active until EX is activated **1**)Remove all Hanamaru Stamps.Heal self for **57~108%** of Healing power.",
+        "cost": null
+      }
+    ]
   },
   "kotama": {
     "name": "Kotama",
@@ -1480,7 +3456,33 @@
     "age": "17",
     "birthday": "January 5",
     "height": "158cm",
-    "hobbies": "Radio communication, wiretapping"
+    "hobbies": "Radio communication, wiretapping",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Begin surveillance",
+        "description": "Increase the Attack of all allies in a circular area by **24.9~47.4%**. (Duration: **30 seconds**)",
+        "cost": "3"
+      },
+      {
+        "kind": "basic",
+        "name": "Scanning for vulnerabilities",
+        "description": "Every **30 seconds**, target 1 enemy for **237~450%** of Attack. Reduce enemy's Attack stat by **18.9%**. (Duration: **20 seconds**)",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Intensive analysis",
+        "description": "Increase Accuracy by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Spread spectrum",
+        "description": "Increase Attack of all allies by **9.1~17.3%**.",
+        "cost": null
+      }
+    ]
   },
   "kotori": {
     "name": "Kotori",
@@ -1499,7 +3501,33 @@
     "age": "15",
     "birthday": "December 31",
     "height": "151cm",
-    "hobbies": "Talking"
+    "hobbies": "Talking",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Black box",
+        "description": "Move 4 allies to the specified location and grant them shields of **175~334%** Healing power for **13 seconds**.",
+        "cost": "4"
+      },
+      {
+        "kind": "basic",
+        "name": "Sorry!",
+        "description": "Every **35 seconds**, deal **269~511%** damage to enemies within a fan shaped area.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Getting the point",
+        "description": "Increase Critical Damage by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Understood!",
+        "description": "After defeating an enemy, increase Critical Damage by **20.1~38.3%** for **30 seconds**.",
+        "cost": null
+      }
+    ]
   },
   "kotori_cheer_squad": {
     "name": "Kotori (Cheer Squad)",
@@ -1518,7 +3546,33 @@
     "age": "15",
     "birthday": "December 31",
     "height": "151cm",
-    "hobbies": "Talking"
+    "hobbies": "Talking",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "The origin of the gun salute is...",
+        "description": "Deal **205~390%** damage to enemies within a conical area..",
+        "cost": "3"
+      },
+      {
+        "kind": "basic",
+        "name": "Ah, that's right!",
+        "description": "Every **5** EX skill uses, increase Critical Rate of surrounding allies (except self) by **11.4~21.8%** for **30 seconds**.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Please ask me anything!",
+        "description": "Increase Attack by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Glad to be of service!",
+        "description": "Every time Normal skill buff is applied to an ally, increase own Attack by **6.6~12.6%** for **30 seconds**. (stacks up to **5**)",
+        "cost": null
+      }
+    ]
   },
   "koyuki": {
     "name": "Koyuki",
@@ -1537,7 +3591,33 @@
     "age": "15",
     "birthday": "February 14",
     "height": "149cm",
-    "hobbies": "Gambling, escapes"
+    "hobbies": "Gambling, escapes",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Tricky variables",
+        "description": "Throw a random bomb, dealing damage to enemies within a circular area.Bullet: Deal **233~444%** damageElectric Field: Deal **221~421%** damageExplosion: Deal **209~398%** damage",
+        "cost": "4"
+      },
+      {
+        "kind": "basic",
+        "name": "Did you think it was just you!?",
+        "description": "Every **30 seconds**, deal **202~385%** damage to one enemy. If there are enemies nearby, deal the same damage to 2 nearby enemies.Reload immediately after skill activation.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Do you believe in miracles?",
+        "description": "Increase Attack by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Chaos theory",
+        "description": "When EX skill is activated, increase Attack depending on the type of bomb used. (Duration: **40 seconds**)Bullet: Increase Attack by **15.3~29.1%**Electric Field:Increase Attack by **14.5~27.5%**Explosion: Increase Attack by **13.7~26%**",
+        "cost": null
+      }
+    ]
   },
   "maki": {
     "name": "Maki",
@@ -1556,7 +3636,33 @@
     "age": "15",
     "birthday": "August 1",
     "height": "149cm",
-    "hobbies": "Graffiti, video games"
+    "hobbies": "Graffiti, video games",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "To make a more vivid world!",
+        "description": "Target 1 enemy with **676~1081%** Attack, and increase Attack by **41.9~54.5%** for **30 seconds**.",
+        "cost": "5"
+      },
+      {
+        "kind": "basic",
+        "name": "Take this, paintball!",
+        "description": "Every **25 seconds**, reduce 1 enemy's Defense by **18.3~34.8%** and mark them for **15 seconds**.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Artistic Performance",
+        "description": "Increase Attack Speed by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "The Hardships of Art",
+        "description": "Marked enemies receive additional damage equal to **14.9~28.3%** of Maki's Attack.",
+        "cost": null
+      }
+    ]
   },
   "mari": {
     "name": "Mari",
@@ -1575,7 +3681,33 @@
     "age": "15",
     "birthday": "September 12",
     "height": "151cm",
-    "hobbies": "Prayer, thinking"
+    "hobbies": "Prayer, thinking",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Holy blessing",
+        "description": "Grant a shield of **172~328%** Healing to an ally for **20 seconds**, and cleanse **1** debuff from them.",
+        "cost": "2"
+      },
+      {
+        "kind": "basic",
+        "name": "Purifying baptism",
+        "description": "Every **25 seconds**, deal **191~364%** damage to enemies within a circular area.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Resolute mind",
+        "description": "Increase Critical Rate by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Compassionate heart",
+        "description": "Increase HP of all allies by **9.1~17.3%**.",
+        "cost": null
+      }
+    ]
   },
   "mari_track": {
     "name": "Mari (Track)",
@@ -1595,7 +3727,33 @@
     "age": "15",
     "birthday": "September 12",
     "height": "151cm",
-    "hobbies": "Prayer, thinking"
+    "hobbies": "Prayer, thinking",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Please have some water",
+        "description": "Recover HP by **167~318%** of Healing to all allies within range (except Mari herself).",
+        "cost": "3"
+      },
+      {
+        "kind": "basic",
+        "name": "Sister's support",
+        "description": "Every **45 seconds**, recover HP of one other ally with the highest Defense and self by **82.8~132%** of Healing. Increase Defense by **18.5~24.1%** for **40 seconds**.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Here to help",
+        "description": "Increase Healing by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Devoted encouragement",
+        "description": "When using EX or Normal skill, if target's HP is below 30%, additionally recover their HP by **90~171%** of Healing.",
+        "cost": null
+      }
+    ]
   },
   "marina": {
     "name": "Marina",
@@ -1614,7 +3772,33 @@
     "age": "16",
     "birthday": "November 4",
     "height": "166cm",
-    "hobbies": "Walks, charges"
+    "hobbies": "Walks, charges",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Revolutionary charge!",
+        "description": "Deal **335~636%** damage to enemies within an arch-shaped area. Reduce their Recovery Rate by **23.9~45.5%** for **30 seconds**.",
+        "cost": "3"
+      },
+      {
+        "kind": "basic",
+        "name": "Not a step back!",
+        "description": "When HP is **20%** or less, gain Immortal status for **12~22.8 seconds**. (Can only be used **1** per battle)",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "No retreat!",
+        "description": "Increase Evasion by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Iron discipline",
+        "description": "While EX skill is active, increase the Evasion by **20.1~38.3%**.",
+        "cost": null
+      }
+    ]
   },
   "mashiro": {
     "name": "Mashiro",
@@ -1633,7 +3817,33 @@
     "age": "15",
     "birthday": "June 5",
     "height": "155cm",
-    "hobbies": "Climbing to high places, keeping an observation diary"
+    "hobbies": "Climbing to high places, keeping an observation diary",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Shot of Justice",
+        "description": "Deal **415~664%** damage to one enemy, **50~75%** chance of additional **623~716%** damage.",
+        "cost": "3"
+      },
+      {
+        "kind": "basic",
+        "name": "Justice's Decision",
+        "description": "Every **20 seconds**, target a circular area with **150~286%** Attack.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Sprit of Justice",
+        "description": "Increase Critical Rate by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Justice Solidarity",
+        "description": "Increase Accuracy of all allies by **9.1~17.3%**.",
+        "cost": null
+      }
+    ]
   },
   "mashiro_swimsuit": {
     "name": "Mashiro (Swimsuit)",
@@ -1653,7 +3863,33 @@
     "age": "15",
     "birthday": "June 5",
     "height": "155cm",
-    "hobbies": "Climbing to high places, keeping an observation diary"
+    "hobbies": "Climbing to high places, keeping an observation diary",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Baptism of justice",
+        "description": "Decrease Evasion of a single enemy by **30.1~39.1%** for **30 seconds**. Then, deal **640~1025%** damage to that enemy.",
+        "cost": "4"
+      },
+      {
+        "kind": "basic",
+        "name": "Cooperation of justice",
+        "description": "Every **30 seconds**, increase Critical Damage of an ally with the highest Attack by **18.9~36%**. (Duration: **20**)",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Gaze of justice",
+        "description": "Increase Attack by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Blessing of justice",
+        "description": "Increase Accuracy of all allies by **9.1~17.3%**.",
+        "cost": null
+      }
+    ]
   },
   "megu": {
     "name": "Megu",
@@ -1672,7 +3908,33 @@
     "age": "17",
     "birthday": "April 25",
     "height": "164cm",
-    "hobbies": "Demolition"
+    "hobbies": "Demolition",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "I like it hot~!",
+        "description": "Deal **354~619%** damage enemies within a conical area.Increase Attack by **16.7~19.2%** and ignore normal attack delay for **30 seconds**.",
+        "cost": "5"
+      },
+      {
+        "kind": "basic",
+        "name": "I'll warm it up for you!",
+        "description": "Every **40 seconds**, inflict **17.9~34.1%** continuous damage to enemies within a circular area. (Duration: **10 seconds**)",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Give way!",
+        "description": "Increase Defense by **11.2~16.2%** and Attack by **11.2~16.2%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Ah, so refreshing!",
+        "description": "Every **50** attacks, recover HP by **30~57%** of Healing.",
+        "cost": null
+      }
+    ]
   },
   "meru": {
     "name": "Meru",
@@ -1691,7 +3953,33 @@
     "age": "16",
     "birthday": "December 21",
     "height": "137cm",
-    "hobbies": "Drawing manga, shipping"
+    "hobbies": "Drawing manga, shipping",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Great idea",
+        "description": "Deal **91.1~173%** damage to one enemy, and inflict **173~329%** of continuous Burn damage for **30 seconds**.Apply the Weak Point Exposed debuff on target for **30 seconds**.When attacked, an enemy with this debuff takes additional damage equal to **1.3~2.5%** of Meru's Attack.(This damage can not be critical, effect ends after **480 hits**)",
+        "cost": "5"
+      },
+      {
+        "kind": "basic",
+        "name": "Shipping has no limits",
+        "description": "Every **50 seconds**, deal **71.4~135.6%** damage to one enemy.Inflict **47.9~91.1%** of additional Burn damage for **30 seconds**.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Input",
+        "description": "Increase Attack by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Setting breakdown!",
+        "description": "Every **3** Normal attacks, fire enhanced bullets, dealing **139~264%** damage.",
+        "cost": null
+      }
+    ]
   },
   "michiru": {
     "name": "Michiru",
@@ -1711,7 +3999,33 @@
     "age": "17",
     "birthday": "February 22",
     "height": "153cm",
-    "hobbies": "Inventing new ninjutsu and making videos"
+    "hobbies": "Inventing new ninjutsu and making videos",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Michiru-style technique!!",
+        "description": "Launch a firework that flies in a straight line and deals **501~803%** damage to the first enemy hit. Additionally, inflict **149~194%** continuous burn damage for **20 seconds**.",
+        "cost": "5"
+      },
+      {
+        "kind": "basic",
+        "name": "Behold, hell's ninja sword!",
+        "description": "Every **30 seconds**, increases Attack by **21.4~40.6%** for **20 seconds**.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Look, look, my own ninjutsu!",
+        "description": "Increase Critical Damage by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Secret Michiru-style ninjutsu!",
+        "description": "Increase Critical Damage by **8.4~15.9%**. For each **1** student of the Ninjutsu Research Department within the same team, the  Critical Damage is increased by an additional **8.4~15.9%**. (Michiru not included, up to a maximum of 3)",
+        "cost": null
+      }
+    ]
   },
   "midori": {
     "name": "Midori",
@@ -1730,7 +4044,33 @@
     "age": "15",
     "birthday": "December 8",
     "height": "143cm",
-    "hobbies": "Drawing pictures"
+    "hobbies": "Drawing pictures",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Drawing Art",
+        "description": "Target up to 5 enemies, dealing damage equal to **119~191%** Attack per shot. If Momoi is in the same team, apply poison damage equal to **39.8~51.8%**. (Duration: **20 seconds**)",
+        "cost": "3"
+      },
+      {
+        "kind": "basic",
+        "name": "Brushup Sense",
+        "description": "Every **25 seconds**, heal 1 ally with the lowest HP for **77.5~147%** of Midori's Healing.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Artist Inspiration",
+        "description": "Increase Critical Rate by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Developer Synergy: Momoi",
+        "description": "Increase Attack Speed by **15.1~28.7%**. If Momoi is in the same team, increase by **18.1~34.4%** instead.",
+        "cost": null
+      }
+    ]
   },
   "mika": {
     "name": "Mika",
@@ -1750,7 +4090,33 @@
     "age": "17",
     "birthday": "May 8",
     "height": "157cm",
-    "hobbies": "Chatting, collecting accessories"
+    "hobbies": "Chatting, collecting accessories",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Kyrie Eleison",
+        "description": "Deal **810~1540%** damage to a single enemy.Damage is multiplied by x**1~2** depending on the target's current HP.The higher the target enemy's HP, the greater the damage.",
+        "cost": "6"
+      },
+      {
+        "kind": "basic",
+        "name": "Call of the Stars",
+        "description": "Every **5** normal attacks, deal **89.4~169%** damage to one enemy.Every 3 Normal Skill activations, a meteorite falls, dealing **178~339%** additional damage.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Gloria Patri",
+        "description": "Increase Attack by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Benedictio",
+        "description": "All attacks are guaranteed to be critical hits.Increase damage dealt by **12.7~24.2%** and reduce damage taken by **6.4~12.2%**.",
+        "cost": null
+      }
+    ]
   },
   "mimori": {
     "name": "Mimori",
@@ -1769,7 +4135,33 @@
     "age": "16",
     "birthday": "March 15",
     "height": "156cm",
-    "hobbies": "Shojo manga, doing household chores"
+    "hobbies": "Shojo manga, doing household chores",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "It's a beatiful day to watch cherry blossoms",
+        "description": "Move up to 5 allies within circular area to a specified position and increase their Attack Speed by **14.7~28%** for **40 seconds**.",
+        "cost": "3"
+      },
+      {
+        "kind": "basic",
+        "name": "I've packed lunch",
+        "description": "Every **45 seconds**, continuously regenerate HP of an ally with the lowest HP (except Mimori herself) at a rate of **22.8~43.4%** Healing for **20 seconds**.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "There's plenty more",
+        "description": "Increase Defense by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Would you like to taste it?",
+        "description": "Every **35 seconds**, increase Defense of allies within the circular area by **14.2~27.1%** for **23 seconds**.",
+        "cost": null
+      }
+    ]
   },
   "mimori_swimsuit": {
     "name": "Mimori (Swimsuit)",
@@ -1788,7 +4180,33 @@
     "age": "16",
     "birthday": "March 15",
     "height": "156cm",
-    "hobbies": "Shojo manga, doing household chores"
+    "hobbies": "Shojo manga, doing household chores",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "It's summer!",
+        "description": "Deploy a cover, and increases the Attack Speed of allies within a circular area by **16.6~31.6%** for **20 seconds**The cover inherits **49.5~94.1%** of Mimori's HP.",
+        "cost": "3"
+      },
+      {
+        "kind": "basic",
+        "name": "Do you want some?",
+        "description": "Every **50 seconds**, grant a shield to an ally with the lowest HP (shield HP is **105~201%** of Mimori's Healing). (Duration: **35 seconds**)",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "I brought plenty",
+        "description": "Increase HP by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Don't worry. I'm by your side.",
+        "description": "Increase Attack Speed of all allies by **9.1~17.3%**.",
+        "cost": null
+      }
+    ]
   },
   "mina": {
     "name": "Mina",
@@ -1807,7 +4225,33 @@
     "age": "16",
     "birthday": "September 9",
     "height": "166cm",
-    "hobbies": "Watching movies (mainly hard-boiled action)"
+    "hobbies": "Watching movies (mainly hard-boiled action)",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Clash of Giants",
+        "description": "Deal **312~593%** damage to one enemy.Decrease their Attack, Evasion, Accuracy by **15.9~30.2%** for **50 seconds**.",
+        "cost": "3"
+      },
+      {
+        "kind": "basic",
+        "name": "Unstoppable Force",
+        "description": "Every **8** normal attacks, reload instantly and deal **222~423%** damage to one enemy.Deal additional damage depending on the number of debuffs of the target:3 debuffs: **445~846%** damage4 debuffs: **668~1269%** damage5 or more debuffs: **891~1693%** damage.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Relentless",
+        "description": "Increase Evasion by **14~26.6%**",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Riding the Tiger",
+        "description": "When using EX skill, increase Attack, Evasion, and Accuracy by **18.8~35.8%** for **20 seconds**.",
+        "cost": null
+      }
+    ]
   },
   "mine": {
     "name": "Mine",
@@ -1826,7 +4270,33 @@
     "age": "17",
     "birthday": "November 23",
     "height": "168cm",
-    "hobbies": "Collecting medical supplies"
+    "hobbies": "Collecting medical supplies",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Pride and Faith",
+        "description": "Jump to the specified location, dealing **103~196%** damage to enemies within a circular area, reduce their Evasion and Defense by **6.8~13%** for **40 seconds**.If the enemy is medium-sized, Evasion and Defense reductions are increased by a factor of **2.5**.",
+        "cost": "4"
+      },
+      {
+        "kind": "basic",
+        "name": "Severe Sentence",
+        "description": "Whenever \"Ready for Rescue\" status ends, deal **475~902%** Defense damage to enemies within a circular area, and reduce their Evasion and Defense by **8~15.2%** for **30 seconds**.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Will of the Knights",
+        "description": "Increase HP by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Indomitable Courage",
+        "description": "When using EX skill, apply \"Ready for Rescue\" status, granting continuous HP recovery of **64.8~123%** Healing for **10 seconds**.If \"Ready for Rescue\" is already active, instead increase Critical Resistance by **19.3~36.7%** for **20 seconds**.",
+        "cost": null
+      }
+    ]
   },
   "minori": {
     "name": "Minori",
@@ -1845,7 +4315,33 @@
     "age": "17",
     "birthday": "July 14",
     "height": "158cm",
-    "hobbies": "Strikes, demonstrations, construction"
+    "hobbies": "Strikes, demonstrations, construction",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Raise up!",
+        "description": "Deal **462~878%** damage enemies within a circular area.Additionally consume up to 3 Cost, increasing damage by 35% per 1 Cost.(Cost reduction effects will only affect the base skill cost)",
+        "cost": "4"
+      },
+      {
+        "kind": "basic",
+        "name": "United will",
+        "description": "Every **25 seconds**, deal **77.8~147%** damage to enemies within a circular area.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Hand in hand",
+        "description": "Increase Accuracy by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Fruits of labor",
+        "description": "For all allies, increase Explosive damage bonus against the enemies weak to it by **15.9~30.2%**.",
+        "cost": null
+      }
+    ]
   },
   "misaki": {
     "name": "Misaki",
@@ -1864,7 +4360,33 @@
     "age": "16",
     "birthday": "January 13",
     "height": "163cm",
-    "hobbies": "Being alone"
+    "hobbies": "Being alone",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Empty world",
+        "description": "Deal **7.5~14.3%** damage to enemies within 7 circular areas each **4 seconds**. (Duration: **48 seconds**)(If this skill is used again while its previous effect is still active, previous effect disappears)",
+        "cost": "5"
+      },
+      {
+        "kind": "basic",
+        "name": "I can't wait to get this over with",
+        "description": "Every **50 seconds**, increase Attack by **19.5~37.1%** for **40 seconds**.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Pointless technology",
+        "description": "Increase Attack by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Equivalent exchange",
+        "description": "When attacking a weakened enemy, deal **1.1~2.1%/4.1%/6.2%/8.3%/10.3%** of Attack as additional damage, stacks up to 5 times depending on the number of weakening effects.",
+        "cost": null
+      }
+    ]
   },
   "miyako": {
     "name": "Miyako",
@@ -1883,7 +4405,33 @@
     "age": "15",
     "birthday": "January 7",
     "height": "156cm",
-    "hobbies": "Watching animal-related videos"
+    "hobbies": "Watching animal-related videos",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Self-propelled flash drone",
+        "description": "Deal **340~545%** damage to an enemy and Stun them for **4.2~5.5 seconds**.",
+        "cost": "3"
+      },
+      {
+        "kind": "basic",
+        "name": "Claymore",
+        "description": "Every **40 seconds**, 5 fragments are scattered from a small claymore, each dealing **84~160%** damage.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Special bulletproof plate",
+        "description": "Increase HP by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Operation reinforcements",
+        "description": "When using EX skill, reduce incoming damage by **19~36.1%** for **16 seconds**.",
+        "cost": null
+      }
+    ]
   },
   "miyako_swimsuit": {
     "name": "Miyako (Swimsuit)",
@@ -1902,7 +4450,33 @@
     "age": "15",
     "birthday": "January 7",
     "height": "156cm",
-    "hobbies": "Watching animal-related videos"
+    "hobbies": "Watching animal-related videos",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Flying drone operational",
+        "description": "Decrease Critical Damage Resistance of 1 enemy by **10.7~20.3%** for **50 seconds**.Deal **256~487%** damage to them.",
+        "cost": "2"
+      },
+      {
+        "kind": "basic",
+        "name": "Lightweight equipment",
+        "description": "Every **30 seconds**, increase Evasion by **18.4~35%** for **25 seconds**.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Steady training",
+        "description": "Increase HP by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Tactical maneuver",
+        "description": "After **50** evasions, increase Cost Recovery by **332~630** for **10 seconds**.",
+        "cost": null
+      }
+    ]
   },
   "miyu": {
     "name": "Miyu",
@@ -1921,7 +4495,33 @@
     "age": "15",
     "birthday": "July 12",
     "height": "149cm",
-    "hobbies": "Negative thoughts, escapism, pebble hunting"
+    "hobbies": "Negative thoughts, escapism, pebble hunting",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Observation of a timid person",
+        "description": "Apply the Weak Point Exposed debuff to one enemy for **10 seconds**. When attacked, an enemy with this debuff takes additional damage equal to **15.8~30%** of Miyu's Attack.(This damage can not be critical, effect ends after **120 hits**)",
+        "cost": "3"
+      },
+      {
+        "kind": "basic",
+        "name": "Attack from an unexpected angle",
+        "description": "Every **5** Normal attacks, deal **148~283%** damage to one enemy.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Take a deep breath",
+        "description": "Increase Critical Damage by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Special sniper rounds",
+        "description": "After reloading increase Critical Damage by **18.9~36%** for **13 seconds**.",
+        "cost": null
+      }
+    ]
   },
   "miyu_swimsuit": {
     "name": "Miyu (Swimsuit)",
@@ -1941,7 +4541,33 @@
     "age": "15",
     "birthday": "July 12",
     "height": "149cm",
-    "hobbies": "Negative thoughts, escapism, pebble hunting"
+    "hobbies": "Negative thoughts, escapism, pebble hunting",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Seagull attack",
+        "description": "Deal **388~737%** guaranteed critical damage to enemies within a straight line.",
+        "cost": "5"
+      },
+      {
+        "kind": "basic",
+        "name": "Stealth strike",
+        "description": "Every **70 seconds**, deal **369~702%** damage to enemies within a cone-shaped area.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Underwater composite ammo",
+        "description": "Increase Attack by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Observation status report",
+        "description": "Increase Critical Damage of all allies by **9.1~17.3%**.",
+        "cost": null
+      }
+    ]
   },
   "moe": {
     "name": "Moe",
@@ -1960,7 +4586,33 @@
     "age": "15",
     "birthday": "September 13",
     "height": "163cm",
-    "hobbies": "Fireworks"
+    "hobbies": "Fireworks",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Iron Rain",
+        "description": "Deal **306~489%** damage to enemies in a straight line.Apply **50.9~66.2%** of continuous burn damage for **20 seconds**.",
+        "cost": "4"
+      },
+      {
+        "kind": "basic",
+        "name": "Barrage",
+        "description": "Every **40 seconds**, deal **100~160%** damage to 5 enemies. Inflict Stun status for **1.2~1.6 seconds**.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Pleasure of ruination",
+        "description": "Increase Attack by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Operation support",
+        "description": "Increase Attack of all allies by **9.1~17.3%**.",
+        "cost": null
+      }
+    ]
   },
   "momiji": {
     "name": "Momiji",
@@ -1979,7 +4631,33 @@
     "age": "15",
     "birthday": "August 7",
     "height": "135cm",
-    "hobbies": "Collecting manga"
+    "hobbies": "Collecting manga",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Be quiet in the library",
+        "description": "Deal **187~356%** damage to enemies within a circular area.",
+        "cost": "4"
+      },
+      {
+        "kind": "basic",
+        "name": "Power of Knowledge",
+        "description": "Every **30 seconds**, increase Attack by **11.8~22.5%** for **20 seconds**.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Collector's ardour",
+        "description": "Increase Attack by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Beginning of the Journey",
+        "description": "At the beginning of combat, increase Attack by **9.4~17.8%**Normal attack damage radius is increased by x**0~1.5**.",
+        "cost": null
+      }
+    ]
   },
   "momoi": {
     "name": "Momoi",
@@ -1998,7 +4676,33 @@
     "age": "15",
     "birthday": "December 8",
     "height": "143cm",
-    "hobbies": "Video games"
+    "hobbies": "Video games",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "The anguish of creation",
+        "description": "Attack all enemies in a conical area with damage equal to **338~541%** Attack. If Midori is in the same team, inflict burn damage equal to **72~93.6%** Attack. (Duration: **20 seconds**)",
+        "cost": "3"
+      },
+      {
+        "kind": "basic",
+        "name": "Strict Deadlines",
+        "description": "Every **30 seconds**, increase Accuracy by **22.3~42.3%**. (Duration: **20 seconds**)",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Creative Sense",
+        "description": "Increase Critical Rate by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Developer Synergy: Midori",
+        "description": "Increase Attack by **15.1~28.7%**. If Midori is in the same team, increase by **18.1~34.4%** instead.",
+        "cost": null
+      }
+    ]
   },
   "mutsuki": {
     "name": "Mutsuki",
@@ -2017,7 +4721,33 @@
     "age": "16",
     "birthday": "July 29",
     "height": "144cm",
-    "hobbies": "Collecting bombs"
+    "hobbies": "Collecting bombs",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Scorching Serenade",
+        "description": "Deal damage equal to **409~778%** of Attack to enemies in 3 circular areas.",
+        "cost": "4"
+      },
+      {
+        "kind": "basic",
+        "name": "Exploding Aria",
+        "description": "Every **20 seconds**, place 3 landmines that deal **334~635%** damage. (Landmines disappear after **15 seconds**)",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Let's play!",
+        "description": "Increase Attack by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Let's go have fun?",
+        "description": "Normal attacks have a **25%** chance of increasing accuracy by **30.2~57.4%** for **30 seconds**. (Cooldown: **25 seconds**)",
+        "cost": null
+      }
+    ]
   },
   "mutsuki_new_year": {
     "name": "Mutsuki (New Year)",
@@ -2037,7 +4767,33 @@
     "age": "16",
     "birthday": "July 29",
     "height": "144cm",
-    "hobbies": "Collecting bombs"
+    "hobbies": "Collecting bombs",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Symphony of New Year",
+        "description": "Deal **159~302%** damage to enemies in an arch-shaped area.",
+        "cost": "2"
+      },
+      {
+        "kind": "basic",
+        "name": "Little devil chorus",
+        "description": "Every **50 seconds**, deal **217~315%** damage to enemies in a straight line. If Mutsuki currently holds 6 \"Little devils\", deal an additional **117~169%** damage.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "More fun ways to play!",
+        "description": "Increase Attack by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Little devil's cute plot",
+        "description": "Each time Mutsuki's EX Skill hits 3 enemies, she gains one \"Little devil\" for **56 seconds**. Can hold up to **6** \"Little devils\", Critical Damage is increased by **2.1~4.1%** for every \"Little devil\" that Mutsuki holds.",
+        "cost": null
+      }
+    ]
   },
   "nagisa": {
     "name": "Nagisa",
@@ -2057,7 +4813,33 @@
     "age": "17",
     "birthday": "July 4",
     "height": "160cm",
-    "hobbies": "Collecting tea leaves, making sweets, tending the garden"
+    "hobbies": "Collecting tea leaves, making sweets, tending the garden",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Time On Target",
+        "description": "Deal **482~772%** damage to enemies within a circular area.If the enemy has Light armor, decrease their Defense by **30.9~40.2%** before attacking, for **15 seconds**.",
+        "cost": "3"
+      },
+      {
+        "kind": "basic",
+        "name": "Afternoon Tea",
+        "description": "Every **50 seconds**, heal one ally with the lowest HP for **147~279%** of Healing.If the target is a student of Trinity, heal for **207~393%** of Healing instead.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Pride of Tea Party",
+        "description": "Increase Attack by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Noblesse oblige",
+        "description": "Increase Critical Damage of Explosive damage type allies by **12.7~24.2%**.",
+        "cost": null
+      }
+    ]
   },
   "natsu": {
     "name": "Natsu",
@@ -2076,7 +4858,33 @@
     "age": "15",
     "birthday": "December 4",
     "height": "152cm",
-    "hobbies": "Romantic things, thinking"
+    "hobbies": "Romantic things, thinking",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "It's the best thing to do in times like these",
+        "description": "Recover HP by **178~338%** of Healing and clear **1** debuff.",
+        "cost": "3"
+      },
+      {
+        "kind": "basic",
+        "name": "Eat this and cheer up",
+        "description": "Every **30 seconds**, increase Attack of an ally by **8.5~16.1%** for **20 seconds**. If there are other allies that do not have this buff (excluding self), apply it to them as well.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "When you're hungry...!",
+        "description": "Increase HP by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "A mouthful of happiness",
+        "description": "When activating EX skill, increase Recovery Rate by **7.2~13.8%**. Stacks up to a maximum of **3** times.",
+        "cost": null
+      }
+    ]
   },
   "neru": {
     "name": "Neru",
@@ -2095,7 +4903,33 @@
     "age": "17",
     "birthday": "August 17",
     "height": "146cm",
-    "hobbies": "Winning"
+    "hobbies": "Winning",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Huh? Do you have a fucking death wish?",
+        "description": "Attack 1 enemy with **476~762%** Attack power. When enraged, damage is multiplied **1.5~1.7**x.",
+        "cost": "2"
+      },
+      {
+        "kind": "basic",
+        "name": "Huh? Stop bullshitting!",
+        "description": "Every **30 seconds**, apply Enraged status to self. Increase Evasion by **17.8~33.9%**. (Duration: **20 seconds**)",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Call sign 00",
+        "description": "Increase Critical Damage by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Fury",
+        "description": "When enraged, increase Attack by **16.8~31.9%**. (**30 seconds** duration)",
+        "cost": null
+      }
+    ]
   },
   "neru_bunny_girl": {
     "name": "Neru (Bunny Girl)",
@@ -2115,7 +4949,33 @@
     "age": "17",
     "birthday": "August 17",
     "height": "146cm",
-    "hobbies": "Winning"
+    "hobbies": "Winning",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "You there, don't move!",
+        "description": "Move to chosen location, deploy a shield with HP equal to **276~401%** of Healing for **20 seconds**, and deal **366~531%** damage to enemies in a circular area. Taunt enemies in a circular area for **0~3 seconds**.",
+        "cost": "4"
+      },
+      {
+        "kind": "basic",
+        "name": "I said this ain't a show!",
+        "description": "Every **30 seconds**, increase Evasion by **22.1~41.9%**. (Duration: **23 seconds**)",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Bitter",
+        "description": "Increase Critical Damage by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "You like it even more painful?",
+        "description": "When attacking medium-sized enemies, deal **3.2~6.2%** of Attack as additional damage.",
+        "cost": null
+      }
+    ]
   },
   "noa": {
     "name": "Noa",
@@ -2134,7 +4994,33 @@
     "age": "16",
     "birthday": "April 13",
     "height": "161cm",
-    "hobbies": "Reading, reciting"
+    "hobbies": "Reading, reciting",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Because speed is the key to records",
+        "description": "Apply Focused Fire to one target enemy for **40 seconds**.Decrease their Defense by **21.3~40.5%** for **40 seconds**.",
+        "cost": "3"
+      },
+      {
+        "kind": "basic",
+        "name": "There are openings everywhere!",
+        "description": "Every **30 seconds**, deal **399~758%** damage to one enemy.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Secretary's leeway",
+        "description": "Increase HP by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Secretary's commitment",
+        "description": "When using Normal skill, increase debuff duration by **16.9~32.1%** for **13 seconds**.",
+        "cost": null
+      }
+    ]
   },
   "nodoka": {
     "name": "Nodoka",
@@ -2154,7 +5040,33 @@
     "age": "16",
     "birthday": "February 20",
     "height": "147cm",
-    "hobbies": "Astronomy"
+    "hobbies": "Astronomy",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Observatory Support",
+        "description": "Increase Accuracy of all allies in a circular area by **25.2~47.9%**. (Duration: **30 seconds**)",
+        "cost": "3"
+      },
+      {
+        "kind": "basic",
+        "name": "Stubborn sightlines",
+        "description": "Every **25 seconds**, deal **221~421%** damage to 1 enemy, decrease their Evasion by **17.7~33.7%**. (Duration: **20 seconds**)",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Aesthetics-based Observation",
+        "description": "Increase Accuracy by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "The Bond of the Special Class",
+        "description": "Increase Accuracy of all allies by **9.1~17.3%**.",
+        "cost": null
+      }
+    ]
   },
   "nodoka_hot_spring": {
     "name": "Nodoka (Hot Spring)",
@@ -2173,7 +5085,33 @@
     "age": "16",
     "birthday": "February 20",
     "height": "147cm",
-    "hobbies": "Astronomy"
+    "hobbies": "Astronomy",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "No. 227 Hot Spring Resort, Open for Business!",
+        "description": "Nodoka (Hot Spring) enters the battlefield. Every **3 seconds**, a random snack is thrown to one ally with the lowest HP in the circular area around Nodoka. (Duration: **32 seconds**)Hot Spring Manju: **20.3~38.6%** of HealingCorn Stick: **24.8~47.1%** of HealingMilk: **29.3~55.7%** of Healing",
+        "cost": "4"
+      },
+      {
+        "kind": "basic",
+        "name": "Landlady's Hospitality",
+        "description": "Every **25 seconds**, increase incoming healing of the ally with the lowest HP by **16.6~31.6%** for 20 seconds.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Spring Water's Cure",
+        "description": "Increase Healing by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Hot Spring's Feeling",
+        "description": "Increase Attack of all allies by **9.1~17.3%**.",
+        "cost": null
+      }
+    ]
   },
   "nonomi": {
     "name": "Nonomi",
@@ -2193,7 +5131,33 @@
     "age": "16",
     "birthday": "September 1",
     "height": "160cm",
-    "hobbies": "Shopping"
+    "hobbies": "Shopping",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "It's punishment time~♣",
+        "description": "Attack all enemies within a conical area for **432~821%** of Nonomi's Attack.",
+        "cost": "5"
+      },
+      {
+        "kind": "basic",
+        "name": "Ta-da☆",
+        "description": "Every **30 seconds**, increase Nonomi's Attack by **21.8~41.4%**. (Duration: **20 seconds**)",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "That's not okay!",
+        "description": "Increase Critical Damage by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "I'll clean up spick-and-span~♧",
+        "description": "When attacking large enemies, deal **6.7~12.8%** of Nonomi's Attack stat as additional damage.",
+        "cost": null
+      }
+    ]
   },
   "nonomi_swimsuit": {
     "name": "Nonomi (Swimsuit)",
@@ -2212,7 +5176,33 @@
     "age": "16",
     "birthday": "September 1",
     "height": "160cm",
-    "hobbies": "Shopping"
+    "hobbies": "Shopping",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Stay cool ♧",
+        "description": "Deal **695~1113%** damage to one enemy.Ignore delay between normal attacks **2~4** times until **100** bullets is consumed.Reload immediately after skill activation.",
+        "cost": "6"
+      },
+      {
+        "kind": "basic",
+        "name": "Have fun with everyone!",
+        "description": "Every **40 seconds**, increases the Attack Speed of allies within a circular area by **11.4~21.6%** for **30 seconds**.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "I can't wait ♧",
+        "description": "Increase Attack Speed by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "It's cold~!",
+        "description": "When EX skill is active, normal attacks deal additional damage of **10.9~20.9%** Attack.",
+        "cost": null
+      }
+    ]
   },
   "pina": {
     "name": "Pina",
@@ -2231,7 +5221,33 @@
     "age": "17",
     "birthday": "November 3",
     "height": "165cm",
-    "hobbies": "Watching yakuza movies"
+    "hobbies": "Watching yakuza movies",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Rapid-Fire Mode!",
+        "description": "Reloads and increases attack power by **29.1~46.6%** for **30 seconds** while ignoring attack delay **3~5** times.",
+        "cost": "4"
+      },
+      {
+        "kind": "basic",
+        "name": "Ignite once more!",
+        "description": "When HP drops to **20%**, heal self for **355~674%** of Healing power **1** per battle.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Sharp Intuition",
+        "description": "Increase Critical Rate by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Firing Preparations, OK!",
+        "description": "Increase Attack Speed by **20.1~38.3%** when standing still for **10 seconds**.",
+        "cost": null
+      }
+    ]
   },
   "reisa": {
     "name": "Reisa",
@@ -2250,7 +5266,33 @@
     "age": "15",
     "birthday": "May 31",
     "height": "153cm",
-    "hobbies": "Duel proposals, self-introductions"
+    "hobbies": "Duel proposals, self-introductions",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Come challenge me!",
+        "description": "Deal **372~707%** damage to enemies within a conical areaCleanse **1** debuff from self.",
+        "cost": "3"
+      },
+      {
+        "kind": "basic",
+        "name": "Victory pose!",
+        "description": "Every **50 seconds**, continuously regenerate HP at a rate of **22.7~43.1%** Healing for **30 seconds**.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "All day long!",
+        "description": "Increase Attack by **11.2~16.2%**, increase HP by **11.2~16.2%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "The presense of Uzawa Reisa",
+        "description": "When using EX skill, decrease target Defense by **6~11.4%** for **25 seconds**.Taunt them for **1 second**.",
+        "cost": null
+      }
+    ]
   },
   "rumi": {
     "name": "Rumi",
@@ -2269,7 +5311,33 @@
     "age": "17",
     "birthday": "March 5",
     "height": "168cm",
-    "hobbies": "Cooking, food development"
+    "hobbies": "Cooking, food development",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Best in the world!",
+        "description": "Toss fried rice to one other ally, healing them, and if there is an ally near the target that has not yet been healed, fried rice bounces in that direction and heals them as well (up to 4 times).1st and 4th target: heals **117~223%** of Healing, cleanses **0~1** debuff2nd and 3rd targets: heals **82.2~156%** of Healing",
+        "cost": "4"
+      },
+      {
+        "kind": "basic",
+        "name": "No complaints allowed!",
+        "description": "Every **30 seconds**, deals **226~430%** damage to enemies within a fan-shaped area.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Chairman's pride",
+        "description": "Increase normal attack Firing Range by **100** and Healing by **11.2~21.2%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Memorable taste",
+        "description": "For allies healed by EX skill, additionally continuously heal by **1.7~3.3%** of Healing for **60 seconds**.",
+        "cost": null
+      }
+    ]
   },
   "saki": {
     "name": "Saki",
@@ -2288,7 +5356,33 @@
     "age": "15",
     "birthday": "April 9",
     "height": "161cm",
-    "hobbies": "Firearms maintenance, gathering plants, etc."
+    "hobbies": "Firearms maintenance, gathering plants, etc.",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Support fire, commence!",
+        "description": "Deal **416~666%** damage to enemies in a circular area and Stun them for **3.9~5.1 seconds**.",
+        "cost": "4"
+      },
+      {
+        "kind": "basic",
+        "name": "Suppressive fire",
+        "description": "Every **35 seconds**, deal **185~343%** damage to one enemy. Apply continuous Burn damage, dealing **53.4~56%** damage every 4 seconds for **20 seconds**.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "All set",
+        "description": "Increase Attack by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Point man leading the way",
+        "description": "Increase Attack of all allies by **9.1~17.3%**.",
+        "cost": null
+      }
+    ]
   },
   "saki_swimsuit": {
     "name": "Saki (Swimsuit)",
@@ -2307,7 +5401,33 @@
     "age": "15",
     "birthday": "April 9",
     "height": "161cm",
-    "hobbies": "Firearms maintenance, gathering plants, etc."
+    "hobbies": "Firearms maintenance, gathering plants, etc.",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Signal flare away!",
+        "description": "Deal **290~552%** damage to a single enemy.Decrease their Defense, Attack, and Critical Resistance by **10.9~20.8%** for **50 seconds**.",
+        "cost": "4"
+      },
+      {
+        "kind": "basic",
+        "name": "Covering fire",
+        "description": "Every **15** normal attacks, deal **195~371%** damage to enemies within a conical area.Deal **97.7~185%** of Attack as additional damage against medium-sized enemies.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Meticulous maintenance",
+        "description": "Increase Accuracy by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Brothers-in-arms",
+        "description": "Increase Attack of self and Special students by **16.1~30.6%**.",
+        "cost": null
+      }
+    ]
   },
   "sakurako": {
     "name": "Sakurako",
@@ -2326,7 +5446,33 @@
     "age": "17",
     "birthday": "October 4",
     "height": "160cm",
-    "hobbies": "Prayer"
+    "hobbies": "Prayer",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Baptismal seal",
+        "description": "Deal **390~625%** damage to one enemy and apply Focused Fire for **30 seconds**.Normal attacks deal **9.4~17.9%** as additional damage for **30 seconds**.",
+        "cost": "4"
+      },
+      {
+        "kind": "basic",
+        "name": "Sister's garment",
+        "description": "Every **40 seconds**, increase Attack Speed by **12.3~23.4%** for **30 seconds**.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "One who judges the guilty",
+        "description": "Increase Attack Speed by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "May the light be with you",
+        "description": "Deal **4.8~9.1%** as additional damage against the enemies with Special armor.",
+        "cost": null
+      }
+    ]
   },
   "saori": {
     "name": "Saori",
@@ -2345,7 +5491,33 @@
     "age": "17",
     "birthday": "September 3",
     "height": "167cm",
-    "hobbies": "None"
+    "hobbies": "None",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "...and all is vanity!",
+        "description": "Deal **671~1275%** guaranteed critical hit to one enemy.",
+        "cost": "4"
+      },
+      {
+        "kind": "basic",
+        "name": "Leading the target",
+        "description": "Every **25 seconds**, Increase Critical Damage by **19.1~24.8%** for **16 seconds**.Deal **208~334%** guaranteed critical damage hit to one enemy.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Results of training",
+        "description": "Increase Critical Damage by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Leader's responsibility",
+        "description": "Increase Attack by **19.3~36.7%/55%/73.4%** respectively when there are 2/3/4 or more students from Arius Squad in the same unit, including self.(additionally includes all versions of Azusa)",
+        "cost": null
+      }
+    ]
   },
   "saya": {
     "name": "Saya",
@@ -2364,7 +5536,33 @@
     "age": "16",
     "birthday": "January 3",
     "height": "149cm",
-    "hobbies": "Research"
+    "hobbies": "Research",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "This is my masterpiece!",
+        "description": "Apply continuous damage in an area for **126~239%** of Saya's Attack. (Duration: **8 seconds**)",
+        "cost": "6"
+      },
+      {
+        "kind": "basic",
+        "name": "Exciting Experiment!",
+        "description": "Every **20 seconds**, decrease 1 enemy's Critical Rate by **12.1%**. (Duration: **20 seconds**)Apply continuous poison damage for **36.5~69.3%** of Saya's Attack. (Duration: **20 seconds**)",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "I really am great!",
+        "description": "Increase Attack by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Believe only in me!",
+        "description": "Increase Critical Rate of all allies by **9.1~17.3%**.",
+        "cost": null
+      }
+    ]
   },
   "saya_casual": {
     "name": "Saya (Casual)",
@@ -2383,7 +5581,33 @@
     "age": "16",
     "birthday": "January 3",
     "height": "149cm",
-    "hobbies": "Research"
+    "hobbies": "Research",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "It's a gift from me!",
+        "description": "Create a horizontal area, enemies within area are dealt **40~75.9%** continuous damage. (Duration: **20 seconds**)",
+        "cost": "5"
+      },
+      {
+        "kind": "basic",
+        "name": "Research never ends!",
+        "description": "Every **30 seconds**, deal **205~389%** damage to all enemies within a circular area.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Elixir of concentration",
+        "description": "Increase Critical Damage by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "It's not a suspicious drug!",
+        "description": "Increase Critical Damage of all allies by **9.1~17.3%**.",
+        "cost": null
+      }
+    ]
   },
   "sena": {
     "name": "Sena",
@@ -2402,7 +5626,33 @@
     "age": "17",
     "birthday": "April 7",
     "height": "155cm",
-    "hobbies": "Standing by, preparing medicine"
+    "hobbies": "Standing by, preparing medicine",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Emergency dispatch",
+        "description": "Sena enters the battlefield riding Emergency Vehicle No. 11. Its Healing is increased by **16.2~25.9%** of Sena's Healing power. (Duration: **50 seconds**)Attack of allies (excluding Sena herself) within the circular range around Emergency Vehicle No. 11 is increased by **17~22.1%**, and they are healed for **18.7~19.7%** Healing every **10 seconds**.(Only one tactical support vehicle can be fielded at any given time)",
+        "cost": "5~4"
+      },
+      {
+        "kind": "basic",
+        "name": "Stimulant injection",
+        "description": "Every **40 seconds**, increase Attack of one ally with the highest Attack by **16.8~31.9%** for **30 seconds**.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Emergency support",
+        "description": "Increase Healing by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "As soon as possible",
+        "description": "Increase Attack of all allies by **9.1~17.3%**.",
+        "cost": null
+      }
+    ]
   },
   "serika": {
     "name": "Serika",
@@ -2421,7 +5671,33 @@
     "age": "15",
     "birthday": "June 25",
     "height": "153cm",
-    "hobbies": "Saving money, working part-time"
+    "hobbies": "Saving money, working part-time",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "You're such a bother!",
+        "description": "Reload and increase Attack by **35.6~67.7%** for **30 seconds**.",
+        "cost": "2"
+      },
+      {
+        "kind": "basic",
+        "name": "Precision Shooting",
+        "description": "Every **25 seconds**, deal **223~425%** damage to one enemy.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Part-time Job Spirit",
+        "description": "Increase Attack by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Wrath of the Countermeasure Committe",
+        "description": "Increase Attack Speed by **20.1~38.3%** for **30 seconds** after activating her EX skill.",
+        "cost": null
+      }
+    ]
   },
   "serika_new_year": {
     "name": "Serika (New Year)",
@@ -2440,7 +5716,33 @@
     "age": "15",
     "birthday": "June 25",
     "height": "153cm",
-    "hobbies": "Saving money, working part-time"
+    "hobbies": "Saving money, working part-time",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "You're interrupting my work!",
+        "description": "Deal **247~395%** damage enemies in an arch-shaped area.Reduce their Critical Damage by **21.3~27.7%** for **30 seconds**.",
+        "cost": "3"
+      },
+      {
+        "kind": "basic",
+        "name": "As a shrine maiden, I'll pray for you!",
+        "description": "Every **40 seconds**, increase Attack of allies within a circular area by **8.6~16.4%**. (Duration: **30 seconds**)",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Shrine maiden's determination",
+        "description": "Increase Attack by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Shrine maiden's tenacity",
+        "description": "Increase Critical Damage Resistance of all allies by **9.1~17.3%**.",
+        "cost": null
+      }
+    ]
   },
   "serina": {
     "name": "Serina",
@@ -2459,7 +5761,33 @@
     "age": "16",
     "birthday": "January 6",
     "height": "156cm",
-    "hobbies": "Volunteering at hospitals"
+    "hobbies": "Volunteering at hospitals",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Intensive care set A",
+        "description": "Moves the closest ally to the first aid box and recovers their HP by **120~228%**.",
+        "cost": "2"
+      },
+      {
+        "kind": "basic",
+        "name": "Emergency care set B",
+        "description": "Every **35 seconds**, heals one ally by **94~178%**.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Angel in white",
+        "description": "Increase Healing by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Angel's smile",
+        "description": "Increase CC Resistance of all allies by **9.1~17.3%**.",
+        "cost": null
+      }
+    ]
   },
   "serina_christmas": {
     "name": "Serina (Christmas)",
@@ -2478,7 +5806,33 @@
     "age": "16",
     "birthday": "January 6",
     "height": "156cm",
-    "hobbies": "Volunteering at hospitals"
+    "hobbies": "Volunteering at hospitals",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "The sound of blessings",
+        "description": "Increase Critical Damage **27.2~43.5%** for **50 seconds** and grant 1 \"Holy Night Blessing\" to other allies within a circular area around Serina. (\"Holy Night Blessing\" stacks up to 15 times)Each \"Holy Night Blessing\" adds **2.3~3.7%** Penetration damage bonus against the enemies weak to it. (Duration: **50 seconds**)",
+        "cost": "4"
+      },
+      {
+        "kind": "basic",
+        "name": "Gift set C",
+        "description": "Every **21** normal attacks, throw random gifts to other allies within a circular area. (Duration: **30 seconds**)Green box: Increase Critical Damage by **11~21%**Red box: Increase Critical Damage by **12.6~24%**Stuffed bear: Increase Critical Damage by **14.2~27%**",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Guardian angel's will",
+        "description": "Increase HP by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Divine protection",
+        "description": "When reloading, increase Evasion by **18.1~34.4%** for **15 seconds**.",
+        "cost": null
+      }
+    ]
   },
   "shigure": {
     "name": "Shigure",
@@ -2497,7 +5851,33 @@
     "age": "16",
     "birthday": "January 22",
     "height": "156cm",
-    "hobbies": "Making homemade drinks"
+    "hobbies": "Making homemade drinks",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Shigure Special Bottle Grenade",
+        "description": "Deal **425~681%** damage to enemies within a straight line.Inflict **64~83.1%** continuous Burn damage for **20 seconds**.",
+        "cost": "5"
+      },
+      {
+        "kind": "basic",
+        "name": "How about a drink?",
+        "description": "Every **60 seconds**, increase Attack of one other ally with  the highest Attack by **26.4~50.2%**, but decrease the Accuracy by **27.5%**. (Duration: **30 seconds**)",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Sweet fermentation",
+        "description": "Increase Critical Rate by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Wild guess",
+        "description": "Normal attack damage radius is increased by x**1.5~2**, but attacks deal **61.6~83.8%** damage.",
+        "cost": null
+      }
+    ]
   },
   "shimiko": {
     "name": "Shimiko",
@@ -2516,7 +5896,33 @@
     "age": "15",
     "birthday": "November 30",
     "height": "157cm",
-    "hobbies": "Reading, making bookmarks"
+    "hobbies": "Reading, making bookmarks",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Shield Of Knowledge",
+        "description": "Deploy a cover, and increases any allies's Defense in circular area by **16.3~26.2%**. (Duration: **30 seconds**)Cover additionally inherits **0~38%** of Shimiko's HP.",
+        "cost": "3"
+      },
+      {
+        "kind": "basic",
+        "name": "Chicken soup for the Soul",
+        "description": "Every **35 seconds**, grant a shield to an ally with the lowest HP (shield HP is **119~226%** of Shimiko's Healing). (Duration: **16 seconds**)",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Let's accumulate more knowledge!",
+        "description": "Increase Healing by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Let's open a Book Club!",
+        "description": "Increase Defense of all allies by **9.1~17.3%**.",
+        "cost": null
+      }
+    ]
   },
   "shiroko": {
     "name": "Shiroko",
@@ -2535,7 +5941,33 @@
     "age": "16",
     "birthday": "May 16",
     "height": "156cm",
-    "hobbies": "Jogging, strength training, cycling"
+    "hobbies": "Jogging, strength training, cycling",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Summon Drone: Fire Support",
+        "description": "Deal **400~760%** of Shiroko's Attack as damage to one enemy.",
+        "cost": "2"
+      },
+      {
+        "kind": "basic",
+        "name": "Grenade Toss",
+        "description": "Every **25 seconds**, deal **193~368%** damage to enemies within a circular area.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Pinpoint",
+        "description": "Increase Critical Rate by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "High-speed Rapid Fire",
+        "description": "Normal attacks have a **20%** chance to increase Attack Speed by **30.2~57.4%** for **30 seconds**. (Cooldown: **25 seconds**)",
+        "cost": null
+      }
+    ]
   },
   "shiroko_cycling": {
     "name": "Shiroko (Cycling)",
@@ -2554,7 +5986,33 @@
     "age": "16",
     "birthday": "May 16",
     "height": "156cm",
-    "hobbies": "Jogging, strength training, cycling"
+    "hobbies": "Jogging, strength training, cycling",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Ride & Grenade",
+        "description": "Deal **431~690%** damage to enemies in a circular area and reduce their Attack by **38.4~50%** for **10 seconds**.",
+        "cost": "4"
+      },
+      {
+        "kind": "basic",
+        "name": "One-point breakthrough",
+        "description": "Every **40 seconds**, deal **194~369%** damage to enemies in a straight line.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Rapid Fire",
+        "description": "Increase Attack Speed by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Sharp Eyes",
+        "description": "When attacking weakened enemies, deal **3.8~7.3%** of Attack as additional damage.",
+        "cost": null
+      }
+    ]
   },
   "shiroko_swimsuit": {
     "name": "Shiroko (Swimsuit)",
@@ -2573,7 +6031,33 @@
     "age": "16",
     "birthday": "May 16",
     "height": "156cm",
-    "hobbies": "Jogging, strength training, cycling"
+    "hobbies": "Jogging, strength training, cycling",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Big catch",
+        "description": "Decrease Defense of one enemy by **18~34.2%** for **30 seconds**Deal **588~1117%** damage to them.",
+        "cost": "3"
+      },
+      {
+        "kind": "basic",
+        "name": "\"Right here\"",
+        "description": "At the beginning of combat, increase the Critical Rate of all other allies by **11.5~21.9%** for **60 seconds**, and reduce EX skill cost by **1**.(Reduction active until EX is activated **1** time)",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Slightly buoyant",
+        "description": "Increase Attack by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Toned body",
+        "description": "Increase Cost Recovery of all allies by **10.6~20.2%**.",
+        "cost": null
+      }
+    ]
   },
   "shizuko": {
     "name": "Shizuko",
@@ -2592,7 +6076,33 @@
     "age": "16",
     "birthday": "July 7",
     "height": "153cm",
-    "hobbies": "Serving customers with charm, attracting people into her shop"
+    "hobbies": "Serving customers with charm, attracting people into her shop",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Momoyo Hall Take-out!",
+        "description": "Deploy a piece of cover at designated location. Allies within radius of location receive **16.3~21.3%** increased accuracy for **30 seconds**. Cover's durability is a set amount plus **29.2~46.8%** of Shizuko's HP.",
+        "cost": "3"
+      },
+      {
+        "kind": "basic",
+        "name": "Don't interfere with Business!",
+        "description": "Every **25 seconds**, deal **184~341%** damage to one enemy and lower their Attack by **17.4~18.3%** for **21 seconds**.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Te, Tehepero?",
+        "description": "Increase Accuracy by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Nyan Nyan!",
+        "description": "Increase Critical Rate of all allies by **9.1~17.3%**.",
+        "cost": null
+      }
+    ]
   },
   "shizuko_swimsuit": {
     "name": "Shizuko (Swimsuit)",
@@ -2612,7 +6122,33 @@
     "age": "16",
     "birthday": "July 7",
     "height": "153cm",
-    "hobbies": "Serving customers with charm, attracting people into her shop"
+    "hobbies": "Serving customers with charm, attracting people into her shop",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Business trip, Momoyo summer stall!",
+        "description": "Move 4 allies in a circular area to the specified location and apply a shield equal to **76.8~145%** of Healing power for **30 seconds**.",
+        "cost": "3"
+      },
+      {
+        "kind": "basic",
+        "name": "Are you hot?",
+        "description": "Every **45 seconds**, increase the Critical Damage of one ally with the highest Critical Damage by **20.8~39.5%**. (Duration: **36 seconds**)",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Sales are on the rise!",
+        "description": "Increase Healing by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Good luck! Nyan Nyan!",
+        "description": "Increase Attack of all allies by **9.1~17.3%**.",
+        "cost": null
+      }
+    ]
   },
   "shun": {
     "name": "Shun",
@@ -2631,7 +6167,33 @@
     "age": "Top secret",
     "birthday": "February 5",
     "height": "174cm",
-    "hobbies": "Playing with children"
+    "hobbies": "Playing with children",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Where are the troublesome children?",
+        "description": "Increase normal attack damage to **153%**, firing range by **24.4%**, Critical Rate by **26.3~50%**, but decrease Attack Speed by **18.8%**. (Duration: **30 seconds**)",
+        "cost": "3"
+      },
+      {
+        "kind": "basic",
+        "name": "Everyone, pay attention!",
+        "description": "Acquire **2~3.8** Skill Cost at the beginning of combat. (Can only be used **1** per battle)",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "An instructor's dignity",
+        "description": "Increase Attack by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Meihua Yuan's Teachings",
+        "description": "When attacking medium-sized enemies, deal **50.7~96.4%** of Attack as additional damage.",
+        "cost": null
+      }
+    ]
   },
   "shun_small": {
     "name": "Shun (Small)",
@@ -2650,7 +6212,33 @@
     "age": "Top secret",
     "birthday": "February 5",
     "height": "Wasn't measured",
-    "hobbies": "Eating sweets"
+    "hobbies": "Eating sweets",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "That's not how it's supposed to work, okay?",
+        "description": "Deal **593~803%** damage to a single target. (Ignores **28~44%** of target's Defense)",
+        "cost": "5"
+      },
+      {
+        "kind": "basic",
+        "name": "That's dangerous!",
+        "description": "Every **25 seconds**, deal **167~317%** damage to one enemy.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Enthusiastic",
+        "description": "Increase Attack Speed by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Unbalanced",
+        "description": "When using EX skill, decrease Attack by **21.7%** for **20 seconds**. Afterwards, increase Attack by **34.6~65.7%** for **20 seconds**.",
+        "cost": null
+      }
+    ]
   },
   "sumire": {
     "name": "Sumire",
@@ -2669,7 +6257,33 @@
     "age": "16",
     "birthday": "August 20",
     "height": "167cm",
-    "hobbies": "Training, gardening"
+    "hobbies": "Training, gardening",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Spurt Forward!",
+        "description": "Attack all enemies in a conical area for **742~1410%** of Sumire's Attack.",
+        "cost": "3"
+      },
+      {
+        "kind": "basic",
+        "name": "Warming Up",
+        "description": "Every **40 seconds**, increase Attack by **25.2~47.9%**. (Duration: **20 seconds**)",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Pinpoint Attack",
+        "description": "Increase HP by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Tension Up",
+        "description": "When not under the effect of Crowd Control, increase Defense by **13.4~25.5%**.",
+        "cost": null
+      }
+    ]
   },
   "suzumi": {
     "name": "Suzumi",
@@ -2688,7 +6302,33 @@
     "age": "16",
     "birthday": "August 31",
     "height": "162cm",
-    "hobbies": "Patrolling, strolling"
+    "hobbies": "Patrolling, strolling",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Order-made Flashbang",
+        "description": "Attack all enemies within a circular area for **389~518%** Attack, inflict Stun status for **0~4.1 seconds**.",
+        "cost": "4"
+      },
+      {
+        "kind": "basic",
+        "name": "Hidden Strength of the Vigilante Corps",
+        "description": "Every **25 seconds**, attack 1 enemy for **233~443%** Attack.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Emergency Evasion",
+        "description": "Increase Evasion by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Vigilante Corps Fierce Assault",
+        "description": "Increase damage by **27.5~52.3%** of Attack on enemies under CC effects.",
+        "cost": null
+      }
+    ]
   },
   "toki": {
     "name": "Toki",
@@ -2708,7 +6348,33 @@
     "age": "16",
     "birthday": "August 16",
     "height": "165cm",
-    "hobbies": "Presently looking for one"
+    "hobbies": "Presently looking for one",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "System: Abi-Eshuh",
+        "description": "Switch to Abi-Eshuh mode; increase Attack by **26.1~41.8%**, Accuracy by **13.9~18.1%**, and Evasion by **12.2%**.(Exit the mode after using EX skill **3** times)After mode change, when using EX skill (5 cost) fire three shots; 1st and 2nd attack deal **87.5~167%** damage to enemies within a straight line, the final attack deals **607~1153%** damage to the targeted enemy, and **121~230%** to other enemies within a straight line. All 3 attacks ignore **40~60%** of enemy Defense.",
+        "cost": "2"
+      },
+      {
+        "kind": "basic",
+        "name": "Tactical judgment",
+        "description": "Every **35 seconds**, deal **486~778%** damage to a single enemy.In Abi-Eshuh mode, this attack ignores **30~60%** of enemy Defense.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Call sign zero four",
+        "description": "Increase Attack by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "An eye for an eye",
+        "description": "While in Abi-Eshuh mode, when using EX skill, deal additional damage depending on the number of usesFirst EX skill: **17.6~25.6%** damageSecond EX skill: **35.2~51.1%** damageThird EX skill: **52.9~76.7%** damage.This attack ignores **30~60%** of enemy Defense.",
+        "cost": null
+      }
+    ]
   },
   "toki_bunny_girl": {
     "name": "Toki (Bunny Girl)",
@@ -2727,7 +6393,33 @@
     "age": "16",
     "birthday": "August 16",
     "height": "165cm",
-    "hobbies": "Presently looking for one"
+    "hobbies": "Presently looking for one",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Special Weapon: Arm Gear",
+        "description": "Deal **550~1045%** damage to one enemy.",
+        "cost": "2"
+      },
+      {
+        "kind": "basic",
+        "name": "Agents' Secret Tools",
+        "description": "Every **40 seconds**, deal **311~591%** damage to 1 enemy. Reduce their Critical Damage Resistance by **19.9~25.9%** for **30 seconds**.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Expertise",
+        "description": "Increase Attack by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Arms Handling",
+        "description": "When EX skill is activated, add **18.6~35.4%** to Explosive damage bonus against the enemies weak to it. (Duration: **20 seconds**)",
+        "cost": null
+      }
+    ]
   },
   "tomoe": {
     "name": "Tomoe",
@@ -2747,7 +6439,33 @@
     "age": "17",
     "birthday": "November 10",
     "height": "165cm",
-    "hobbies": "Agitation"
+    "hobbies": "Agitation",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Everyone, please listen to me!",
+        "description": "Increase Critical Rate by **13.9~20.1%**, Critical Damage by **13.9~20.1%**, and the Movement Speed by **30.8%** for all allies around Tomoe; reduce their normal attack range by **38.5%**. (Duration: **30 seconds**)",
+        "cost": "3"
+      },
+      {
+        "kind": "basic",
+        "name": "Clever agitation",
+        "description": "Every **30 seconds**, deal **235~447%** damage to one enemy.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Practiced speech",
+        "description": "Increase Attack by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Irrefutable claims",
+        "description": "When attacking shielded enemies, deal **57.1~108%** of Attack as additional damage.",
+        "cost": null
+      }
+    ]
   },
   "tsubaki": {
     "name": "Tsubaki",
@@ -2766,7 +6484,33 @@
     "age": "16",
     "birthday": "February 3",
     "height": "162cm",
-    "hobbies": "Afternoon naps"
+    "hobbies": "Afternoon naps",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Combat shield, engaged",
+        "description": "Increase Defense by **28.1~44.9%** for **30 seconds** and taunt enemies in a circular area for **4.7~6.2 seconds**.",
+        "cost": "4"
+      },
+      {
+        "kind": "basic",
+        "name": "If you get tired, you should sleep",
+        "description": "When HP drops to **30%**, heal self for **349~663%** of Healing power **1** a battle.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Grit",
+        "description": "Increase Defense by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Dexterous reload",
+        "description": "While reloading reduce damage taken by **24~45.6%**.",
+        "cost": null
+      }
+    ]
   },
   "tsukuyo": {
     "name": "Tsukuyo",
@@ -2785,7 +6529,33 @@
     "age": "15",
     "birthday": "April 5",
     "height": "180cm",
-    "hobbies": "Body replacement technique, hiding"
+    "hobbies": "Body replacement technique, hiding",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Tsukuyo-style technique...!",
+        "description": "Each time character is attacked, recover **7~11.2%** of Healing.(Duration: **30 seconds**, applies up to a maximum of **100** times)Reduce Tsukuyo's own Attack by **28.8~20.2%** for **30 seconds**.",
+        "cost": "3"
+      },
+      {
+        "kind": "basic",
+        "name": "I practiced a lot, so...!",
+        "description": "Every **7** normal attacks, deal **418~659%** damage to one enemy.If the enemy is medium-sized, additionally reduce their Defense by **38.9~51.6%** for **20 seconds**.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Naturally gifted",
+        "description": "Increase HP by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "I can' t go down, yet...!",
+        "description": "Recover **97.5~185%** of Healing when affected by a CC state.",
+        "cost": null
+      }
+    ]
   },
   "tsurugi": {
     "name": "Tsurugi",
@@ -2804,7 +6574,33 @@
     "age": "17",
     "birthday": "June 24",
     "height": "162cm",
-    "hobbies": "Watching movies, reading (romance novels)"
+    "hobbies": "Watching movies, reading (romance novels)",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Strange and mysterious",
+        "description": "Reload immediately after activating the skill. Normal attack becomes a fan-shaped area attack that deals **138%** damage; increase Attack power by **25.8~45.2%**. (Effective until Tsurugi reloads **1~2**)",
+        "cost": "3"
+      },
+      {
+        "kind": "basic",
+        "name": "Passion",
+        "description": "When defeating an enemy, recover **116~221%** of Healing power. (Cooldown: **10 seconds**)",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Agility",
+        "description": "Increase movement speed by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Uncontrollable power",
+        "description": "**30~57%** chance to add **1** ammo when defeating an enemy.",
+        "cost": null
+      }
+    ]
   },
   "tsurugi_swimsuit": {
     "name": "Tsurugi (Swimsuit)",
@@ -2824,7 +6620,33 @@
     "age": "17",
     "birthday": "June 24",
     "height": "162cm",
-    "hobbies": "Watching movies, reading (romance novels)"
+    "hobbies": "Watching movies, reading (romance novels)",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Unstoppable torrent",
+        "description": "Normal attack deals additional **67~167%** damage. (Duration: **20~30 seconds**)",
+        "cost": "3"
+      },
+      {
+        "kind": "basic",
+        "name": "A burning blow",
+        "description": "Every **35 seconds**, deal **190~362%** damage to one enemy.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Light feelings",
+        "description": "Increase Attack Speed by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Burning body",
+        "description": "When Normal skill is activated, increase Attack Speed by **16.8~31.9%** for **30 seconds**.",
+        "cost": null
+      }
+    ]
   },
   "ui": {
     "name": "Ui",
@@ -2843,7 +6665,33 @@
     "age": "17",
     "birthday": "April 23",
     "height": "165cm",
-    "hobbies": "Reading, book management, old book research"
+    "hobbies": "Reading, book management, old book research",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Old book expert",
+        "description": "Reduce EX skill cost for one other ally by **50%** (reduction active until EX is activated **2**). The discount is rounded down to the nearest whole number.Increase Attack by **10~16.1%** for **46 seconds**.",
+        "cost": "5~3"
+      },
+      {
+        "kind": "basic",
+        "name": "Knowledge to be passed on",
+        "description": "Every **40 seconds**, increase Critical Rate of allies within a circular area by **13.6~25.9%** for **33 seconds**.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Expert knowledge",
+        "description": "Increase Critical Rate by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Jittery",
+        "description": "When using the EX skill, increase Attack Speed by **24.2~45.9%** for **20 seconds**.",
+        "cost": null
+      }
+    ]
   },
   "ui_swimsuit": {
     "name": "Ui (Swimsuit)",
@@ -2863,7 +6711,33 @@
     "age": "17",
     "birthday": "April 23",
     "height": "165cm",
-    "hobbies": "Reading, book management, old book research"
+    "hobbies": "Reading, book management, old book research",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Private cafe",
+        "description": "Move 4 other allies within a circular area to Ui's position, then add **36.9~70.1%** to their Penetration Efficiency for **45 seconds**.",
+        "cost": "4"
+      },
+      {
+        "kind": "basic",
+        "name": "Definitive clue",
+        "description": "When **3** Clues are obtained, add **15.2~28.9%** Penetration Efficiency to all Striker allies for **30 seconds**.Consume **3** Clues.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Seeker's will",
+        "description": "Increase Attack by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Identifying clues",
+        "description": "When other allies use **2** EX skills, increase Attack by **22.6~43.1%** for **30 seconds**. Acquire **1** Clue.",
+        "cost": null
+      }
+    ]
   },
   "utaha": {
     "name": "Utaha",
@@ -2882,7 +6756,33 @@
     "age": "17",
     "birthday": "November 13",
     "height": "162cm",
-    "hobbies": "Inventing and repairing in general"
+    "hobbies": "Inventing and repairing in general",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Rai-chan, Summon",
+        "description": "Summon a turret. The turret inherits **81.4~154%** of Utaha's Attack. (Duration: **30 seconds**)",
+        "cost": "4"
+      },
+      {
+        "kind": "basic",
+        "name": "Rai-chan MK-II, Active",
+        "description": "Every **30 seconds**, summon a turret. The turret inherits **38.2~72.6%** of Utaha's Attack. (Duration: **20 seconds**)",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Technological Revolution",
+        "description": "Increase Attack by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Meister's Oath",
+        "description": "Increase HP of all allies by **9.1~17.3%**.",
+        "cost": null
+      }
+    ]
   },
   "utaha_cheer_squad": {
     "name": "Utaha (Cheer Squad)",
@@ -2901,7 +6801,33 @@
     "age": "17",
     "birthday": "November 13",
     "height": "162cm",
-    "hobbies": "Inventing and repairing in general"
+    "hobbies": "Inventing and repairing in general",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Rai-chan MK-III, enhance",
+        "description": "Enhances the turret for **90 seconds**. While the turret is in Enhanced state, normal attacks will deal **115~146%** damage. Changes Normal skill activation conditions.",
+        "cost": "5"
+      },
+      {
+        "kind": "basic",
+        "name": "Passion Cannon",
+        "description": "Every **30 seconds**, deal **166~315%** damage to one enemy. While Rai-chan is Enhanced, this skill will activate every **6** attacks and deal **284~539%** damage to one enemy.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Cheerleader's Passion",
+        "description": "Increase Attack by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Cheerleader's Fighting Spirit",
+        "description": "When attacking weakened enemies, deal **5.1~9.7%** of Attack as additional damage.",
+        "cost": null
+      }
+    ]
   },
   "wakamo": {
     "name": "Wakamo",
@@ -2921,7 +6847,33 @@
     "age": "18",
     "birthday": "April 3",
     "height": "161cm",
-    "hobbies": "Destruction, pillaging"
+    "hobbies": "Destruction, pillaging",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Crimson Flower Divination",
+        "description": "Deal **203~325%** damage to one enemy. After that, the damage done by the allies to that enemy is added up for **10 seconds**, and the resulting damage is done again as Mystic type.(This damage can not be critical, maximum amount of damage that can be accumulated is **1017~1322%** of Wakamo's Attack)",
+        "cost": "4"
+      },
+      {
+        "kind": "basic",
+        "name": "Cherry Blossom Storm",
+        "description": "Every **25 seconds**, deal **194~369%** damage to one enemy.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Destructive urges in full bloom",
+        "description": "Increase Attack by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Fighting instincts in full bloom",
+        "description": "When attacking a BOSS, deal **15.6~29.7%** of Attack as additional damage.",
+        "cost": null
+      }
+    ]
   },
   "wakamo_swimsuit": {
     "name": "Wakamo (Swimsuit)",
@@ -2940,7 +6892,33 @@
     "age": "18",
     "birthday": "April 3",
     "height": "161cm",
-    "hobbies": "Destruction, pillaging"
+    "hobbies": "Destruction, pillaging",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Jade Flower Divination",
+        "description": "Deal **565~1074%** damage to one enemy.Each intermediate attack Stuns target for **0.8~1.1 seconds**, the last attack Stuns target for **3.2~4.1 seconds**.",
+        "cost": "5"
+      },
+      {
+        "kind": "basic",
+        "name": "Just for you",
+        "description": "Every **60 seconds**, increase Attack power while also increasing damage taken. Triggers up to 3 times.Attack increase is **21.7~31.5%/61.8%/99%**.Damage taken increase is **9.6%/19.2%/28.9%**.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Overflowing love",
+        "description": "Increase Attack by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Midsummer passion",
+        "description": "When attacking enemies with less than **30%** HP, deal additional damage of **51.6~98.1%** Attack to them.",
+        "cost": null
+      }
+    ]
   },
   "yoshimi": {
     "name": "Yoshimi",
@@ -2959,7 +6937,33 @@
     "age": "15",
     "birthday": "August 29",
     "height": "146cm",
-    "hobbies": "All kinds of events, touring cafés for limited edition sweets"
+    "hobbies": "All kinds of events, touring cafés for limited edition sweets",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "W-Who's panicking!?",
+        "description": "Attack all enemies within a circular area for **220~353%** of Attack, inflict Stun status for **2.2~2.9 seconds**.",
+        "cost": "4"
+      },
+      {
+        "kind": "basic",
+        "name": "Do you want to get hurt?!",
+        "description": "Every **25 seconds**, attack all enemies within a circular area for **191~364%** of Attack.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "D-Don't make fun of me!",
+        "description": "Increase Critical Rate by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Listen to what I have to say!",
+        "description": "Increase CC Strength of all allies by **9.1~17.3%**.",
+        "cost": null
+      }
+    ]
   },
   "yuuka": {
     "name": "Yuuka",
@@ -2978,7 +6982,33 @@
     "age": "16",
     "birthday": "March 14",
     "height": "156cm",
-    "hobbies": "Calculating things"
+    "hobbies": "Calculating things",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Q.E.D",
+        "description": "Generates a shield around Yuuka with HP equal to **190~248%** of her Healing. (Duration: **15~25 seconds**)",
+        "cost": "3"
+      },
+      {
+        "kind": "basic",
+        "name": "I.F.F",
+        "description": "Every **15 seconds**, deal **301~573%** damage to one enemy.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Derivation of Optimal solution",
+        "description": "Increase Defense by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "High speed Mental arithmetic",
+        "description": "When Yuuka takes cover, she recovers her HP by **75~142%** of her Healing power. (Cooldown: **10 seconds**)",
+        "cost": null
+      }
+    ]
   },
   "yuuka_track": {
     "name": "Yuuka (Track)",
@@ -2998,7 +7028,33 @@
     "age": "16",
     "birthday": "March 14",
     "height": "156cm",
-    "hobbies": "Calculating things"
+    "hobbies": "Calculating things",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "R.S.G!",
+        "description": "Move to the designated position and apply a shield of **168~320%** Healing to self for **25 seconds**.Set a rally flag for 3 other allies within range. When an ally reaches the flag, apply a shield of **168~320%** Healing to them for **25 seconds**.",
+        "cost": "3"
+      },
+      {
+        "kind": "basic",
+        "name": "Hydration",
+        "description": "Every **30 seconds**, if Yuuka doesn't have a shield, apply a shield of **115~220%** Healing for **23 seconds**.If Yuuka has a shield, increase Healing by **12.3~23.4%** for **90 seconds**. (Stacks up to a maximum of **3** times)",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Mathematical competition strategy",
+        "description": "Increase Attack Speed by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Optimal pathing calculation",
+        "description": "When Yuuka stops moving, she gains **31.1~59.1%** Mystic damage bonus against the enemies weak to it for **20 seconds**.",
+        "cost": null
+      }
+    ]
   },
   "yuzu": {
     "name": "Yuzu",
@@ -3017,7 +7073,33 @@
     "age": "16",
     "birthday": "August 12",
     "height": "150cm",
-    "hobbies": "Making games"
+    "hobbies": "Making games",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Game Start!",
+        "description": "Deal **312~594%** damage to enemies within a circular area centered on the specified opponent.",
+        "cost": "4"
+      },
+      {
+        "kind": "basic",
+        "name": "Continuous combo!",
+        "description": "Every **25 seconds**, deal **140~266%** damage to enemies a circular area centered on the highest attack power opponent.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Debugging...",
+        "description": "Increase Critical Damage by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Pluck up the courage",
+        "description": "When EX or Normal skill are activated, increase Critical Damage by **22.3~42.4%** for **6 seconds**.",
+        "cost": null
+      }
+    ]
   },
   "yuzu_maid": {
     "name": "Yuzu (Maid)",
@@ -3037,6 +7119,32 @@
     "age": "16",
     "birthday": "August 12",
     "height": "150cm",
-    "hobbies": "Making games"
+    "hobbies": "Making games",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Starting infiltration!",
+        "description": "Deal **682~1296%** damage to enemies within a circular area, then deal the same damage in surrounding circular areasIf the same enemy is attacked multiple times, followup attack will only deal **136~259%** damage.",
+        "cost": "5"
+      },
+      {
+        "kind": "basic",
+        "name": "High Score Attack",
+        "description": "Every **30 seconds**, deal **117~223%** damage to enemies within a circular area.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Clean Code",
+        "description": "Increase Critical Damage by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Bonds of the Game Development Club",
+        "description": "Increase Attack of all allies by **9.1~17.3%**.",
+        "cost": null
+      }
+    ]
   }
 }

@@ -4,6 +4,9 @@ const cheerio = require('cheerio');
 const fs = require('fs');
 const path = require('path');
 
+const { generateKey, normalizeName } = require('./common/studentNames');
+const mapToObject = require('./common/mapToObject');
+
 const STUDENT_DB_PATH = path.join(__dirname, '..', 'data/students.json');
 const STUDENT_ICON_PATH = path.join(
   __dirname,
@@ -19,21 +22,37 @@ const STUDENT_ICON_BASE_URL =
   'https://bluearchive.page/resource/image/students';
 
 const studentMap = new Map();
+const skillCache = new Map();
 
-function generateKey(name) {
-  return name
-    .toLowerCase()
-    .replace(/\s/g, '_')
-    .replace(/[^a-z0-9_]/g, '');
+function loadSkillCache() {
+  const studentsData = fs.readFileSync(STUDENT_DB_PATH);
+  const students = JSON.parse(studentsData);
+
+  for (const [key, studentDetails] of Object.entries(students)) {
+    if (!studentDetails.skills) {
+      continue;
+    }
+
+    skillCache.set(key, studentDetails.skills);
+  }
+
+  console.log(`Loaded ${skillCache.size} skills into cache.`);
 }
 
-function normalizeName(name) {
-  return name
-    .trim()
-    .replace('Sportswear', 'Track')
-    .replace('Cheerleader', 'Cheer Squad')
-    .replace('Riding', 'Cycling')
-    .replace('Kid', 'Small');
+function restoreSkillData() {
+  for (const [key, student] of studentMap) {
+    if (!skillCache.has(key)) {
+      console.warn(
+        `No skill data found for ${student.name}, consider re-fetching.`,
+      );
+      continue;
+    }
+
+    student.skills = skillCache.get(key);
+    studentMap.set(key, student);
+  }
+
+  console.log(`Restored ${skillCache.size} skills from cache.`);
 }
 
 function getWikiImage($, row) {
@@ -170,16 +189,6 @@ function normalizeDetails() {
   }
 }
 
-function mapToObject(map) {
-  const obj = {};
-
-  for (const [key, value] of map) {
-    obj[key] = value;
-  }
-
-  return obj;
-}
-
 function saveStudentData() {
   const studentData = mapToObject(studentMap);
   fs.writeFileSync(STUDENT_DB_PATH, JSON.stringify(studentData, null, 2));
@@ -256,10 +265,14 @@ async function scrapeStudentIcons() {
 }
 
 async function main() {
+  loadSkillCache();
+
   await populateStudents();
   await populateStudentTrivia();
 
   normalizeDetails();
+  restoreSkillData();
+
   saveStudentData();
 
   await scrapeStudentIcons();
