@@ -2,6 +2,9 @@
 
 A Blue Archive themed Discord bot.
 
+**INVITE LINK:** currently unavailable. If you'd like to try out the bot, send
+me a DM on Discord (`@joexyz`).
+
 ## Requirements
 
 - Node.js v18 or higher
