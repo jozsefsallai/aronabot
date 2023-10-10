@@ -1,1 +1,22 @@
-{}
+{
+  "shigure_hot_spring": {
+    "name": "Shigure (Hot Spring)",
+    "attackType": "penetration",
+    "defenseType": "special",
+    "combatClass": "special",
+    "combatRole": "healer",
+    "school": "red_winter",
+    "rarity": 3,
+    "isWelfare": false,
+    "wikiImage": null,
+    "weaponType": "GL",
+    "usesCover": false,
+    "releaseDate": "2023/10/11",
+    "fullName": "Mayoi Shigure",
+    "age": "16",
+    "birthday": "January 22",
+    "height": "156cm",
+    "hobbies": "Making homemade drinks",
+    "skills": []
+  }
+}

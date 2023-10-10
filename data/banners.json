@@ -32,29 +32,51 @@
   {
     "id": "regular_jp",
     "name": "Regular Recruitment (JP)",
-    "date": "2023/09/15",
+    "date": "2023/10/11",
 
     "kind": "jp"
   },
 
   {
-    "id": "ichika",
-    "name": "Ichika",
-    "date": "2023/09/27",
+    "id": "shigure_hot_spring",
+    "name": "Shigure (Hot Spring)",
+    "date": "2023/10/11",
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["ichika"],
+    "pickupPoolStudents": ["shigure_hot_spring"],
 
     "kind": "jp"
   },
 
   {
-    "id": "kasumi",
-    "name": "Kasumi",
-    "date": "2023/09/27",
+    "id": "nodoka_hot_spring",
+    "name": "Nodoka (Hot Spring)",
+    "date": "2023/10/11",
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["kasumi"],
+    "pickupPoolStudents": ["nodoka_hot_spring"],
+
+    "kind": "jp"
+  },
+
+  {
+    "id": "cherino_hot_spring",
+    "name": "Cherino (Hot Spring)",
+    "date": "2023/10/11",
+
+    "pickupRate": 0.007,
+    "pickupPoolStudents": ["cherino_hot_spring"],
+
+    "kind": "jp"
+  },
+
+  {
+    "id": "chinatsu_hot_spring",
+    "name": "Chinatsu (Hot Spring)",
+    "date": "2023/10/11",
+
+    "pickupRate": 0.007,
+    "pickupPoolStudents": ["chinatsu_hot_spring"],
 
     "kind": "jp"
   }

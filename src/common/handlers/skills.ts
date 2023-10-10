@@ -10,7 +10,7 @@ import { Student } from '../../models/Student';
 export const handleStudentSkillsCommand = async (
   student: Student,
 ): Promise<BaseMessageOptions> => {
-  if (!student.skills) {
+  if (!student.skills || student.skills.length === 0) {
     return {
       content: `${student.name} currently does not have skill data.`,
     };

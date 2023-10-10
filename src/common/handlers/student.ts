@@ -110,6 +110,12 @@ export const handleStudentCommand = async (
     embed = embed.setThumbnail(student.wikiImage);
   }
 
+  if (!student.skills || student.skills.length === 0) {
+    return {
+      embeds: [embed],
+    };
+  }
+
   const skillsButton = new ButtonBuilder()
     .setCustomId(`skills_${student.key}`)
     .setLabel('Skills')
