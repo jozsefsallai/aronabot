@@ -5879,6 +5879,51 @@
       }
     ]
   },
+  "shigure_hot_spring": {
+    "name": "Shigure (Hot Spring)",
+    "attackType": "penetration",
+    "defenseType": "special",
+    "combatClass": "special",
+    "combatRole": "healer",
+    "school": "red_winter",
+    "rarity": 3,
+    "wikiImage": "https://static.miraheze.org/bluearchivewiki/d/da/Shigure_%28Hot_Spring%29.png",
+    "combatPosition": "Back",
+    "weaponType": "GL",
+    "usesCover": false,
+    "releaseDate": "2023/10/11",
+    "fullName": "Mayoi Shigure",
+    "age": "16",
+    "birthday": "January 22",
+    "height": "156cm",
+    "hobbies": "Making homemade drinks",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Shigure Special Fruit Milk",
+        "description": "Recover HP by **21.3~40.4%** of Healing for all allies within a circular area every **4 seconds** for **30 seconds**.",
+        "cost": "6~5"
+      },
+      {
+        "kind": "basic",
+        "name": "How about a bite?",
+        "description": "Every **50 seconds**, heal 4 allies with the lowest HP by **67.6~128%** of Healing.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Warm four-and-a-half tatami room",
+        "description": "Increase Healing by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Tangy flavor",
+        "description": "Increase Critical Damage of all allies by **9.1~17.3%**.",
+        "cost": null
+      }
+    ]
+  },
   "shimiko": {
     "name": "Shimiko",
     "attackType": "explosive",
