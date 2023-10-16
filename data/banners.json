@@ -8,23 +8,23 @@
   },
 
   {
-    "id": "izuna",
-    "name": "Izuna",
+    "id": "marina",
+    "name": "Marina",
     "date": "2023/03/22",
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["izuna"],
+    "pickupPoolStudents": ["marina"],
 
     "kind": "global"
   },
 
   {
-    "id": "mimori",
-    "name": "Mimori",
+    "id": "cherino",
+    "name": "Cherino",
     "date": "2023/03/22",
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["mimori"],
+    "pickupPoolStudents": ["cherino"],
 
     "kind": "global"
   },
