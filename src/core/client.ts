@@ -42,15 +42,25 @@ class Client {
 
     this.client.on('interactionCreate', async (interaction) => {
       if (interaction.isAutocomplete()) {
-        await this.autocompleteHandler.emit(interaction.commandName, {
-          interaction,
-          client: this,
-        });
+        if (!config.isMaintenance) {
+          await this.autocompleteHandler.emit(interaction.commandName, {
+            interaction,
+            client: this,
+          });
+        }
 
         return;
       }
 
       if (interaction.isCommand() || interaction.isContextMenuCommand()) {
+        if (config.isMaintenance) {
+          await interaction.reply({
+            content: '⚠️ Maintenance in progress. Please try again later.',
+          });
+
+          return;
+        }
+
         await this.commandHandler.emit(interaction.commandName, {
           interaction,
           client: this,

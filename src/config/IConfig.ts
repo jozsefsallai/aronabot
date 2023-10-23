@@ -12,4 +12,5 @@ export interface BotConfig {
 export interface IConfig {
   bot: BotConfig;
   redis?: RedisConfig;
+  isMaintenance: boolean;
 }

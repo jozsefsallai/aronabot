@@ -20,6 +20,7 @@ const config: IConfig = {
     defaultActivity: process.env.BOT_DEFAULT_ACTIVITY,
     ownerId: process.env.OWNER_ID!,
   },
+  isMaintenance: process.env.IS_MAINTENANCE === 'true',
 };
 
 if (process.env.REDIS_URL) {
