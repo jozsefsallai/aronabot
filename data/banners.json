@@ -2,29 +2,51 @@
   {
     "id": "regular",
     "name": "Regular Recruitment (Global)",
-    "date": "2023/03/22",
+    "date": "2023/04/12",
 
     "kind": "global"
   },
 
   {
-    "id": "marina",
-    "name": "Marina",
-    "date": "2023/03/22",
+    "id": "kaho",
+    "name": "Kaho",
+    "date": "2023/04/12",
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["marina"],
+    "pickupPoolStudents": ["kaho"],
 
     "kind": "global"
   },
 
   {
-    "id": "cherino",
-    "name": "Cherino",
-    "date": "2023/03/22",
+    "id": "iroha",
+    "name": "Iroha",
+    "date": "2023/04/12",
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["cherino"],
+    "pickupPoolStudents": ["iroha"],
+
+    "kind": "global"
+  },
+
+  {
+    "id": "kaede",
+    "name": "Kaede",
+    "date": "2023/04/12",
+
+    "pickupRate": 0.007,
+    "pickupPoolStudents": ["kaede"],
+
+    "kind": "global"
+  },
+
+  {
+    "id": "tsukuyo",
+    "name": "Tsukuyo",
+    "date": "2023/04/12",
+
+    "pickupRate": 0.007,
+    "pickupPoolStudents": ["tsukuyo"],
 
     "kind": "global"
   },
@@ -38,23 +60,25 @@
   },
 
   {
-    "id": "shigure",
-    "name": "Shigure",
-    "date": "2023/10/11",
+    "id": "misaka_mikoto",
+    "name": "Misaka Mikoto",
+    "date": "2023/10/24",
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["shigure"],
+    "pickupPoolStudents": ["misaka_mikoto"],
+    "additionalThreeStarStudents": ["shokuhou_misaki"],
 
     "kind": "jp"
   },
 
   {
-    "id": "megu",
-    "name": "Megu",
-    "date": "2023/10/11",
+    "id": "shokuhou_misaki",
+    "name": "Shokuhou Misaki",
+    "date": "2023/10/24",
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["megu"],
+    "pickupPoolStudents": ["shokuhou_misaki"],
+    "additionalThreeStarStudents": ["misaka_mikoto"],
 
     "kind": "jp"
   }

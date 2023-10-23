@@ -1,1 +1,44 @@
-{}
+{
+  "misaka_mikoto": {
+    "name": "Misaka Mikoto",
+    "attackType": "penetration",
+    "defenseType": "heavy",
+    "combatClass": "striker",
+    "combatRole": "attacker",
+    "school": "etc",
+    "rarity": 3,
+    "isLimited": true,
+    "wikiImage": null,
+    "combatPosition": "Middle",
+    "weaponType": "AR",
+    "usesCover": false,
+    "releaseDate": "2023/10/24",
+    "fullName": "Misaka Mikoto",
+    "age": "14",
+    "birthday": "May 2",
+    "height": "161cm",
+    "hobbies": "N/A",
+    "skills": []
+  },
+  "shokuhou_misaki": {
+    "name": "Shokuhou Misaki",
+    "attackType": "explosive",
+    "defenseType": "heavy",
+    "combatClass": "special",
+    "combatRole": "support",
+    "school": "etc",
+    "rarity": 3,
+    "isLimited": true,
+    "wikiImage": null,
+    "combatPosition": "Middle",
+    "weaponType": "HG",
+    "usesCover": false,
+    "releaseDate": "2023/10/24",
+    "fullName": "Shokuhou Misaki",
+    "age": "14(?)",
+    "birthday": "N/A",
+    "height": "168-169cm",
+    "hobbies": "N/A",
+    "skills": []
+  }
+}
