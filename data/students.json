@@ -4343,6 +4343,52 @@
       }
     ]
   },
+  "misaka_mikoto": {
+    "name": "Misaka Mikoto",
+    "attackType": "penetration",
+    "defenseType": "heavy",
+    "combatClass": "striker",
+    "combatRole": "attacker",
+    "school": "tokiwadai",
+    "rarity": 3,
+    "isLimited": true,
+    "wikiImage": "https://static.miraheze.org/bluearchivewiki/7/76/Misaka_Mikoto.png",
+    "combatPosition": "Middle",
+    "weaponType": "AR",
+    "usesCover": true,
+    "releaseDate": "2023/10/24",
+    "fullName": "Misaka Mikoto",
+    "age": "14",
+    "birthday": "May 2",
+    "height": "161cm",
+    "hobbies": "Browsing magazines at the convenience store, collecting Gekota goods",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Tokiwadai Railgun",
+        "description": "Deal **544~1034%** damage to enemies in a straight line.",
+        "cost": "3"
+      },
+      {
+        "kind": "basic",
+        "name": "It's going to tingle!",
+        "description": "Every **50 seconds**, deal **120~228%** damage to enemies within a circular area.Apply **113~157%** continuous electric shock damage for **20~40 seconds**.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Electromaster",
+        "description": "Increase Accuracy by **14~26.6%**.Ignore Shokuhou Misaki's Confusion effect.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Don't make me repeat myself",
+        "description": "When Normal skill is activated, increase Attack by **10~21.4%** for **20~40 seconds**.",
+        "cost": null
+      }
+    ]
+  },
   "misaki": {
     "name": "Misaki",
     "attackType": "explosive",
@@ -5519,6 +5565,52 @@
       }
     ]
   },
+  "saten_ruiko": {
+    "name": "Saten Ruiko",
+    "attackType": "penetration",
+    "defenseType": "special",
+    "combatClass": "special",
+    "combatRole": "attacker",
+    "school": "sakugawa",
+    "rarity": 1,
+    "isWelfare": true,
+    "wikiImage": "https://static.miraheze.org/bluearchivewiki/b/b0/Saten_Ruiko.png",
+    "combatPosition": "Back",
+    "weaponType": "SMG",
+    "usesCover": false,
+    "releaseDate": "2023/10/24",
+    "fullName": "Saten Ruiko",
+    "age": "12",
+    "birthday": "-",
+    "height": "160cm",
+    "hobbies": "Online mahjong, trying out sweets",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Full swing",
+        "description": "Deal **446~847%** damage to enemies in a circular area.",
+        "cost": "4~3"
+      },
+      {
+        "kind": "basic",
+        "name": "Secret mackerel curry",
+        "description": "Every **45 seconds**, increase Attack of one ally by **10.9~20.6%** for **20 seconds**.Every time Ruiko uses a Normal skill, the number of targets increases by 1 (up to a maximum of 3).",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Going all out!",
+        "description": "Increase Attack by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Me too!",
+        "description": "Increase Attack of all allies  by **9.1~17.3%**.",
+        "cost": null
+      }
+    ]
+  },
   "saya": {
     "name": "Saya",
     "attackType": "explosive",
@@ -6191,6 +6283,52 @@
         "kind": "sub",
         "name": "Good luck! Nyan Nyan!",
         "description": "Increase Attack of all allies by **9.1~17.3%**.",
+        "cost": null
+      }
+    ]
+  },
+  "shokuhou_misaki": {
+    "name": "Shokuhou Misaki",
+    "attackType": "explosive",
+    "defenseType": "heavy",
+    "combatClass": "striker",
+    "combatRole": "support",
+    "school": "tokiwadai",
+    "rarity": 3,
+    "isLimited": true,
+    "wikiImage": "https://static.miraheze.org/bluearchivewiki/6/66/Shokuhou_Misaki.png",
+    "combatPosition": "Middle",
+    "weaponType": "HG",
+    "usesCover": true,
+    "releaseDate": "2023/10/24",
+    "fullName": "Shokuhou Misaki",
+    "age": "14",
+    "birthday": "-",
+    "height": "-",
+    "hobbies": "Drinking tea, eating organic food",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Mental Out",
+        "description": "Deal **772~1468%** damage to the target and two closest enemies within a circular area.Confuse them for **5~7 seconds**.",
+        "cost": "5"
+      },
+      {
+        "kind": "basic",
+        "name": "Would you help me out a little?",
+        "description": "Every **30 seconds**, deal **318~604%** damage to enemies within a circular area.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Queen of Tokiwadai",
+        "description": "Increase CC Strength by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "I'm the smartest here",
+        "description": "Every time Shokuhou Misaki's EX skill applies Confusion to an enemy, increase Defense and Evasion by **19.3~36.7%** for **20 seconds**.",
         "cost": null
       }
     ]

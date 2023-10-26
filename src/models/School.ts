@@ -17,6 +17,8 @@ export class School {
   static SRT = new School('srt', 'SRT Special Academy');
   static Trinity = new School('trinity', 'Trinity General School');
   static Valkyrie = new School('valkyrie', 'Valkyrie Police School');
+  static Tokiwadai = new School('tokiwadai', 'Tokiwadai Middle School');
+  static Sakugawa = new School('sakugawa', 'Sakugawa Middle School');
   static NoSchool = new School('etc', 'N/A');
 
   static fromString = (name: string | null): School => {
@@ -50,6 +52,10 @@ export class School {
         return School.Trinity;
       case 'valkyrie':
         return School.Valkyrie;
+      case 'tokiwadai':
+        return School.Tokiwadai;
+      case 'sakugawa':
+        return School.Sakugawa;
       default:
         return School.NoSchool;
     }
