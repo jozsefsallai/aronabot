@@ -8,23 +8,23 @@
   },
 
   {
-    "id": "kaho",
-    "name": "Kaho",
-    "date": "2023/04/12",
+    "id": "arisu_maid",
+    "name": "Arisu (Maid)",
+    "date": "2023/04/26",
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["kaho"],
+    "pickupPoolStudents": ["arisu_maid"],
 
     "kind": "global"
   },
 
   {
-    "id": "iroha",
-    "name": "Iroha",
-    "date": "2023/04/12",
+    "id": "toki_bunny_girl",
+    "name": "Toki (Bunny Girl)",
+    "date": "2023/04/26",
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["iroha"],
+    "pickupPoolStudents": ["toki_bunny_girl"],
 
     "kind": "global"
   },
