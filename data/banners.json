@@ -43,6 +43,8 @@
     "date": "2023/11/08",
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["yukari"]
+    "pickupPoolStudents": ["yukari"],
+
+    "kind": "jp"
   }
 ]
