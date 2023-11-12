@@ -2,29 +2,40 @@
   {
     "id": "regular",
     "name": "Regular Recruitment (Global)",
-    "date": "2023/04/12",
+    "date": "2023/05/10",
 
     "kind": "global"
   },
 
   {
-    "id": "arisu_maid",
-    "name": "Arisu (Maid)",
-    "date": "2023/04/26",
+    "id": "reisa",
+    "name": "Reisa",
+    "date": "2023/05/10",
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["arisu_maid"],
+    "pickupPoolStudents": ["reisa"],
 
     "kind": "global"
   },
 
   {
-    "id": "toki_bunny_girl",
-    "name": "Toki (Bunny Girl)",
-    "date": "2023/04/26",
+    "id": "kazusa",
+    "name": "Kazusa",
+    "date": "2023/05/10",
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["toki_bunny_girl"],
+    "pickupPoolStudents": ["kazusa"],
+
+    "kind": "global"
+  },
+
+  {
+    "id": "natsu",
+    "name": "Natsu",
+    "date": "2023/05/10",
+
+    "pickupRate": 0.007,
+    "pickupPoolStudents": ["natsu"],
 
     "kind": "global"
   },
