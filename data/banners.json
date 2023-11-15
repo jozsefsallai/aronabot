@@ -49,12 +49,23 @@
   },
 
   {
-    "id": "yukari",
-    "name": "Yukari",
+    "id": "saori",
+    "name": "Saori",
     "date": "2023/11/08",
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["yukari"],
+    "pickupPoolStudents": ["saori"],
+
+    "kind": "jp"
+  },
+
+  {
+    "id": "hiyori",
+    "name": "Hiyori",
+    "date": "2023/11/08",
+
+    "pickupRate": 0.007,
+    "pickupPoolStudents": ["hiyori"],
 
     "kind": "jp"
   }
