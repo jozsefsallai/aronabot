@@ -8,34 +8,36 @@
   },
 
   {
-    "id": "reisa",
-    "name": "Reisa",
+    "id": "azusa_swimsuit",
+    "name": "Azusa (Swimsuit)",
     "date": "2023/05/10",
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["reisa"],
+    "pickupPoolStudents": ["azusa_swimsuit"],
+    "additionalThreeStarStudents": ["mashiro_swimsuit"],
 
     "kind": "global"
   },
 
   {
-    "id": "kazusa",
-    "name": "Kazusa",
+    "id": "mashiro_swimsuit",
+    "name": "Mashiro (Swimsuit)",
     "date": "2023/05/10",
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["kazusa"],
+    "pickupPoolStudents": ["mashiro_swimsuit"],
+    "additionalThreeStarStudents": ["azusa_swimsuit"],
 
     "kind": "global"
   },
 
   {
-    "id": "natsu",
-    "name": "Natsu",
+    "id": "hifumi_swimsuit",
+    "name": "Hifumi (Swimsuit)",
     "date": "2023/05/10",
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["natsu"],
+    "pickupPoolStudents": ["hifumi_swimsuit"],
 
     "kind": "global"
   },
@@ -43,29 +45,29 @@
   {
     "id": "regular_jp",
     "name": "Regular Recruitment (JP)",
-    "date": "2023/11/08",
+    "date": "2023/11/22",
 
     "kind": "jp"
   },
 
   {
-    "id": "saori",
-    "name": "Saori",
-    "date": "2023/11/08",
+    "id": "renge",
+    "name": "Renge",
+    "date": "2023/11/22",
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["saori"],
+    "pickupPoolStudents": ["renge"],
 
     "kind": "jp"
   },
 
   {
-    "id": "hiyori",
-    "name": "Hiyori",
-    "date": "2023/11/08",
+    "id": "kikyou",
+    "name": "Kikyou",
+    "date": "2023/11/22",
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["hiyori"],
+    "pickupPoolStudents": ["kikyou"],
 
     "kind": "jp"
   }
