@@ -3258,6 +3258,51 @@
       }
     ]
   },
+  "kikyou": {
+    "name": "Kikyou",
+    "attackType": "sonic",
+    "defenseType": "heavy",
+    "combatClass": "striker",
+    "combatRole": "support",
+    "school": "hyakkiyako",
+    "rarity": 3,
+    "wikiImage": "https://static.miraheze.org/bluearchivewiki/6/62/Kikyou.png",
+    "combatPosition": "Back",
+    "weaponType": "SR",
+    "usesCover": true,
+    "releaseDate": "2023/11/22",
+    "fullName": "Kiryuu Kikyou",
+    "age": "16",
+    "birthday": "August 8",
+    "height": "160cm",
+    "hobbies": "Cat's cradle, reading military books, sunbathing",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Divinely calculated move",
+        "description": "Reduce Defense of enemies within a cross-shaped area by **17.6~28.1%** for **30 seconds**.Deal **252~480%** damage to them.",
+        "cost": "5"
+      },
+      {
+        "kind": "basic",
+        "name": "If you know the enemy and know yourself, you need not fear the result of a hundred battles",
+        "description": "Every **35 seconds**, add Sonic Efficiency to other allies within a circular area. (Duration: **25 seconds**)Effect depends on the number of allies affected:1 person: **14.6~27.8%**2 people: **18~34.2%**3 or more: **21.4~40.7%**.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Qualifications of a strategist",
+        "description": "Increase Attack by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Fūrinkazan strategy",
+        "description": "Every **30 seconds**, increase Attack by **17.2~32.8%** for **20 seconds**.Grant 1 Fūrinkazan (stacks up to a maximum of 3).When using an EX skill with 3 Fūrinkazan present, all Fūrinkazan will be consumed and the EX skill cost of all other allies will be reduced by **1**. (Reduction active until EX is activated **1** times)",
+        "cost": null
+      }
+    ]
+  },
   "kirino": {
     "name": "Kirino",
     "attackType": "explosive",
@@ -5336,6 +5381,51 @@
         "kind": "sub",
         "name": "The presense of Uzawa Reisa",
         "description": "When using EX skill, decrease target Defense by **6~11.4%** for **25 seconds**.Taunt them for **1 second**.",
+        "cost": null
+      }
+    ]
+  },
+  "renge": {
+    "name": "Renge",
+    "attackType": "sonic",
+    "defenseType": "heavy",
+    "combatClass": "striker",
+    "combatRole": "attacker",
+    "school": "hyakkiyako",
+    "rarity": 3,
+    "wikiImage": "https://static.miraheze.org/bluearchivewiki/e/e4/Renge.png",
+    "combatPosition": "Back",
+    "weaponType": "SR",
+    "usesCover": true,
+    "releaseDate": "2023/11/22",
+    "fullName": "Fuwa Renge",
+    "age": "16",
+    "birthday": "July 23",
+    "height": "157cm",
+    "hobbies": "Reading light novels, training",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Hyakkaryouran shooting technique",
+        "description": "Inflict **14.5~27.6%** continuous Burn damage to enemies within a fan-shaped area. (Duration: **20 seconds**)Deal **263.5~501.5%** damage.",
+        "cost": "3"
+      },
+      {
+        "kind": "basic",
+        "name": "Burning passion",
+        "description": "Every **30 seconds**, obtain Passion status, increasing Attack by **19.8~37.6%** for **22 seconds**.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Hyakkaryouran oni instructor",
+        "description": "Increase Attack by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Cutthroat captain's duty",
+        "description": "When attacking in Passion state, deal **4.5~8.6%** of Attack as additional damage.",
         "cost": null
       }
     ]
