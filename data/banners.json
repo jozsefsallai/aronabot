@@ -32,29 +32,29 @@
   {
     "id": "regular_jp",
     "name": "Regular Recruitment (JP)",
-    "date": "2023/11/22",
+    "date": "2023/12/06",
 
     "kind": "jp"
   },
 
   {
-    "id": "renge",
-    "name": "Renge",
-    "date": "2023/11/22",
+    "id": "eimi_swimsuit",
+    "name": "Eimi (Swimsuit)",
+    "date": "2023/12/06",
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["renge"],
+    "pickupPoolStudents": ["eimi_swimsuit"],
 
     "kind": "jp"
   },
 
   {
-    "id": "kikyou",
-    "name": "Kikyou",
-    "date": "2023/11/22",
+    "id": "himari",
+    "name": "Himari",
+    "date": "2023/12/06",
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["kikyou"],
+    "pickupPoolStudents": ["himari"],
 
     "kind": "jp"
   }
