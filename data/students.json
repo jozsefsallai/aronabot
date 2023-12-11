@@ -1083,6 +1083,51 @@
       }
     ]
   },
+  "eimi_swimsuit": {
+    "name": "Eimi (Swimsuit)",
+    "attackType": "mystic",
+    "defenseType": "special",
+    "combatClass": "special",
+    "combatRole": "support",
+    "school": "millennium",
+    "rarity": 3,
+    "wikiImage": "https://static.miraheze.org/bluearchivewiki/c/ce/Eimi_%28Swimsuit%29.png",
+    "combatPosition": "Back",
+    "weaponType": "SG",
+    "usesCover": false,
+    "releaseDate": "2023/12/06",
+    "fullName": "Izumimoto Eimi",
+    "age": "15",
+    "birthday": "May 1",
+    "height": "167cm",
+    "hobbies": "Zoning out, listening to music",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Reliable support",
+        "description": "Move 6 allies within a circular area to the specified location, grant them a shield of **104~197%** Healing and increase Attack by **0~12.6%** for **30 seconds**.",
+        "cost": "4"
+      },
+      {
+        "kind": "basic",
+        "name": "Eimi's confidence",
+        "description": "Every **45 seconds**, increase Attack Speed of 4 allies by **11~21%** for **25 seconds**.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Like fish in water",
+        "description": "Increase Healing by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Slippery",
+        "description": "Increase Attack Speed of all allies by **9.1~17.3%**.",
+        "cost": null
+      }
+    ]
+  },
   "fubuki": {
     "name": "Fubuki",
     "attackType": "penetration",

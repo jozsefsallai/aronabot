@@ -2,29 +2,40 @@
   {
     "id": "regular",
     "name": "Regular Recruitment (Global)",
-    "date": "2023/05/24",
+    "date": "2023/06/07",
 
     "kind": "global"
   },
 
   {
-    "id": "mina",
-    "name": "Mina",
-    "date": "2023/05/24",
+    "id": "minori",
+    "name": "Minori",
+    "date": "2023/06/07",
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["mina"],
+    "pickupPoolStudents": ["minori"],
 
     "kind": "global"
   },
 
   {
-    "id": "rumi",
-    "name": "Rumi",
-    "date": "2023/05/24",
+    "id": "miyako",
+    "name": "Miyako",
+    "date": "2023/06/07",
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["rumi"],
+    "pickupPoolStudents": ["miyako"],
+
+    "kind": "global"
+  },
+
+  {
+    "id": "saki",
+    "name": "Saki",
+    "date": "2023/06/07",
+
+    "pickupRate": 0.007,
+    "pickupPoolStudents": ["saki"],
 
     "kind": "global"
   },
