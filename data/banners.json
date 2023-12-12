@@ -49,23 +49,23 @@
   },
 
   {
-    "id": "eimi_swimsuit",
-    "name": "Eimi (Swimsuit)",
+    "id": "sumire",
+    "name": "Sumire",
     "date": "2023/12/06",
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["eimi_swimsuit"],
+    "pickupPoolStudents": ["sumire"],
 
     "kind": "jp"
   },
 
   {
-    "id": "himari",
-    "name": "Himari",
+    "id": "eimi",
+    "name": "Eimi",
     "date": "2023/12/06",
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["himari"],
+    "pickupPoolStudents": ["eimi"],
 
     "kind": "jp"
   }
