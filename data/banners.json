@@ -8,34 +8,23 @@
   },
 
   {
-    "id": "minori",
-    "name": "Minori",
+    "id": "miyu",
+    "name": "Miyu",
     "date": "2023/06/07",
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["minori"],
+    "pickupPoolStudents": ["miyu"],
 
     "kind": "global"
   },
 
   {
-    "id": "miyako",
-    "name": "Miyako",
+    "id": "moe",
+    "name": "Moe",
     "date": "2023/06/07",
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["miyako"],
-
-    "kind": "global"
-  },
-
-  {
-    "id": "saki",
-    "name": "Saki",
-    "date": "2023/06/07",
-
-    "pickupRate": 0.007,
-    "pickupPoolStudents": ["saki"],
+    "pickupPoolStudents": ["moe"],
 
     "kind": "global"
   },
