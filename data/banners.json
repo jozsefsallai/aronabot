@@ -38,23 +38,49 @@
   },
 
   {
-    "id": "sumire",
-    "name": "Sumire",
+    "id": "neru_bunny_girl",
+    "name": "Neru (Bunny Girl)",
     "date": "2023/12/06",
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["sumire"],
+    "pickupPoolStudents": ["neru_bunny_girl"],
+
+    "additionalThreeStarStudents": ["karin_bunny_girl"],
 
     "kind": "jp"
   },
 
   {
-    "id": "eimi",
-    "name": "Eimi",
+    "id": "karin_bunny_girl",
+    "name": "Karin (Bunny Girl)",
     "date": "2023/12/06",
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["eimi"],
+    "pickupPoolStudents": ["karin_bunny_girl"],
+
+    "additionalThreeStarStudents": ["neru_bunny_girl"],
+
+    "kind": "jp"
+  },
+
+  {
+    "id": "asuna_bunny_girl",
+    "name": "Asuna (Bunny Girl)",
+    "date": "2023/12/06",
+
+    "pickupRate": 0.007,
+    "pickupPoolStudents": ["asuna_bunny_girl"],
+
+    "kind": "jp"
+  },
+
+  {
+    "id": "akane_bunny_girl",
+    "name": "Akane (Bunny Girl)",
+    "date": "2023/12/06",
+
+    "pickupRate": 0.007,
+    "pickupPoolStudents": ["akane_bunny_girl"],
 
     "kind": "jp"
   }
