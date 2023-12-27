@@ -32,55 +32,29 @@
   {
     "id": "regular_jp",
     "name": "Regular Recruitment (JP)",
-    "date": "2023/12/06",
+    "date": "2023/12/27",
 
     "kind": "jp"
   },
 
   {
-    "id": "neru_bunny_girl",
-    "name": "Neru (Bunny Girl)",
-    "date": "2023/12/06",
+    "id": "hare_camping",
+    "name": "Hare (Camping)",
+    "date": "2023/12/27",
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["neru_bunny_girl"],
-
-    "additionalThreeStarStudents": ["karin_bunny_girl"],
+    "pickupPoolStudents": ["hare_camping"],
 
     "kind": "jp"
   },
 
   {
-    "id": "karin_bunny_girl",
-    "name": "Karin (Bunny Girl)",
-    "date": "2023/12/06",
+    "id": "kotama_camping",
+    "name": "Kotama (Camping)",
+    "date": "2023/12/27",
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["karin_bunny_girl"],
-
-    "additionalThreeStarStudents": ["neru_bunny_girl"],
-
-    "kind": "jp"
-  },
-
-  {
-    "id": "asuna_bunny_girl",
-    "name": "Asuna (Bunny Girl)",
-    "date": "2023/12/06",
-
-    "pickupRate": 0.007,
-    "pickupPoolStudents": ["asuna_bunny_girl"],
-
-    "kind": "jp"
-  },
-
-  {
-    "id": "akane_bunny_girl",
-    "name": "Akane (Bunny Girl)",
-    "date": "2023/12/06",
-
-    "pickupRate": 0.007,
-    "pickupPoolStudents": ["akane_bunny_girl"],
+    "pickupPoolStudents": ["kotama_camping"],
 
     "kind": "jp"
   }

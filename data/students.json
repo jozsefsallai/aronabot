@@ -1491,6 +1491,51 @@
       }
     ]
   },
+  "hare_camping": {
+    "name": "Hare (Camping)",
+    "attackType": "explosive",
+    "defenseType": "light",
+    "combatClass": "striker",
+    "combatRole": "support",
+    "school": "millennium",
+    "rarity": 3,
+    "wikiImage": "https://static.miraheze.org/bluearchivewiki/a/a2/Hare_%28Camping%29.png",
+    "combatPosition": "Middle",
+    "weaponType": "AR",
+    "usesCover": true,
+    "releaseDate": "2023/12/27",
+    "fullName": "Omagari Hare",
+    "age": "16",
+    "birthday": "April 19",
+    "height": "153cm",
+    "hobbies": "Video games, watching movies",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Campfire cooking",
+        "description": "Increase Attack of one other ally by **42.3~80.4%** for **26 seconds**.Additionally, give self 5 Freshly Roasted Sweet Potatoes. (Stacks up to a maximum of 15)",
+        "cost": "2"
+      },
+      {
+        "kind": "basic",
+        "name": "Spreading warmth",
+        "description": "Every **50 seconds**, increase Attack of allies within a circular area by **14.5~24.3%** for **30 seconds**.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Detox effect",
+        "description": "Increase Attack by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "The best part of camping",
+        "description": "When attacking an enemy while holding Freshly Roasted Sweet Potatoes, deal **51.6~98%** of Attack as additional damage.After that, reduce owned Freshly Roasted Sweet Potatoes count by 1.",
+        "cost": null
+      }
+    ]
+  },
   "haruka": {
     "name": "Haruka",
     "attackType": "explosive",
@@ -3570,6 +3615,51 @@
         "kind": "sub",
         "name": "Spread spectrum",
         "description": "Increase Attack of all allies by **9.1~17.3%**.",
+        "cost": null
+      }
+    ]
+  },
+  "kotama_camping": {
+    "name": "Kotama (Camping)",
+    "attackType": "penetration",
+    "defenseType": "heavy",
+    "combatClass": "striker",
+    "combatRole": "support",
+    "school": "millennium",
+    "rarity": 3,
+    "wikiImage": "https://static.miraheze.org/bluearchivewiki/1/19/Kotama_%28Camping%29.png",
+    "combatPosition": "Middle",
+    "weaponType": "HG",
+    "usesCover": true,
+    "releaseDate": "2023/12/27",
+    "fullName": "Otose Kotama",
+    "age": "17",
+    "birthday": "January 5",
+    "height": "158cm",
+    "hobbies": "Radio communication, wiretapping",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Bear bell toss",
+        "description": "Deal **477~906%** damage to one enemy and inflict Confusion for **7.2~11.5 seconds**.",
+        "cost": "6"
+      },
+      {
+        "kind": "basic",
+        "name": "Resonance effect",
+        "description": "Every **45 seconds**, increase Attack of one other ally and self by **5.9~11.3%** for **35 seconds**.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Noise amplification",
+        "description": "Increase Attack by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Radio interference",
+        "description": "When attacking an enemy, deal **24.1~45.8%** of Attack as additional damage.",
         "cost": null
       }
     ]
