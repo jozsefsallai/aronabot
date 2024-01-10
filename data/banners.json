@@ -8,23 +8,25 @@
   },
 
   {
-    "id": "miyako_swimsuit",
-    "name": "Miyako (Swimsuit)",
+    "id": "hina_swimsuit",
+    "name": "Hina (Swimsuit)",
     "date": "2023/06/21",
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["miyako_swimsuit"],
+    "pickupPoolStudents": ["hina_swimsuit"],
+    "additionalThreeStarStudents": ["iori_swimsuit"],
 
     "kind": "global"
   },
 
   {
-    "id": "saki_swimsuit",
-    "name": "Saki (Swimsuit)",
+    "id": "iori_swimsuit",
+    "name": "Iori (Swimsuit)",
     "date": "2023/06/21",
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["saki_swimsuit"],
+    "pickupPoolStudents": ["iori_swimsuit"],
+    "additionalThreeStarStudents": ["hina_swimsuit"],
 
     "kind": "global"
   },
@@ -38,23 +40,47 @@
   },
 
   {
-    "id": "hare_camping",
-    "name": "Hare (Camping)",
+    "id": "aru_new_year",
+    "name": "Aru (New Year)",
     "date": "2023/12/27",
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["hare_camping"],
+    "pickupPoolStudents": ["aru_new_year"],
+    "additionalThreeStarStudents": ["mutsuki_new_year"],
 
     "kind": "jp"
   },
 
   {
-    "id": "kotama_camping",
-    "name": "Kotama (Camping)",
+    "id": "mutsuki_new_year",
+    "name": "Mutsuki (New Year)",
     "date": "2023/12/27",
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["kotama_camping"],
+    "pickupPoolStudents": ["mutsuki_new_year"],
+    "additionalThreeStarStudents": ["aru_new_year"],
+
+    "kind": "jp"
+  },
+
+  {
+    "id": "kayoko_new_year",
+    "name": "Kayoko (New Year)",
+    "date": "2023/12/27",
+
+    "pickupRate": 0.007,
+    "pickupPoolStudents": ["kayoko_new_year"],
+
+    "kind": "jp"
+  },
+
+  {
+    "id": "haruka_new_year",
+    "name": "Haruka (New Year)",
+    "date": "2023/12/27",
+
+    "pickupRate": 0.007,
+    "pickupPoolStudents": ["haruka_new_year"],
 
     "kind": "jp"
   }
