@@ -8,25 +8,34 @@
   },
 
   {
-    "id": "hina_swimsuit",
-    "name": "Hina (Swimsuit)",
+    "id": "shun_small",
+    "name": "Shun (Small)",
     "date": "2023/06/21",
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["hina_swimsuit"],
-    "additionalThreeStarStudents": ["iori_swimsuit"],
+    "pickupPoolStudents": ["shun_small"],
 
     "kind": "global"
   },
 
   {
-    "id": "iori_swimsuit",
-    "name": "Iori (Swimsuit)",
+    "id": "saya_casual",
+    "name": "Saya (Casual)",
     "date": "2023/06/21",
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["iori_swimsuit"],
-    "additionalThreeStarStudents": ["hina_swimsuit"],
+    "pickupPoolStudents": ["saya_casual"],
+
+    "kind": "global"
+  },
+
+  {
+    "id": "kokona",
+    "name": "Kokona",
+    "date": "2023/06/21",
+
+    "pickupRate": 0.007,
+    "pickupPoolStudents": ["kokona"],
 
     "kind": "global"
   },
