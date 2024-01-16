@@ -49,47 +49,23 @@
   },
 
   {
-    "id": "aru_new_year",
-    "name": "Aru (New Year)",
+    "id": "misaki",
+    "name": "Misaki",
     "date": "2023/12/27",
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["aru_new_year"],
-    "additionalThreeStarStudents": ["mutsuki_new_year"],
+    "pickupPoolStudents": ["misaki"],
 
     "kind": "jp"
   },
 
   {
-    "id": "mutsuki_new_year",
-    "name": "Mutsuki (New Year)",
+    "id": "atsuko",
+    "name": "Atsuko",
     "date": "2023/12/27",
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["mutsuki_new_year"],
-    "additionalThreeStarStudents": ["aru_new_year"],
-
-    "kind": "jp"
-  },
-
-  {
-    "id": "kayoko_new_year",
-    "name": "Kayoko (New Year)",
-    "date": "2023/12/27",
-
-    "pickupRate": 0.007,
-    "pickupPoolStudents": ["kayoko_new_year"],
-
-    "kind": "jp"
-  },
-
-  {
-    "id": "haruka_new_year",
-    "name": "Haruka (New Year)",
-    "date": "2023/12/27",
-
-    "pickupRate": 0.007,
-    "pickupPoolStudents": ["haruka_new_year"],
+    "pickupPoolStudents": ["atsuko"],
 
     "kind": "jp"
   }
