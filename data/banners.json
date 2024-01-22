@@ -2,40 +2,40 @@
   {
     "id": "regular",
     "name": "Regular Recruitment (Global)",
-    "date": "2023/06/21",
+    "date": "2023/07/17",
 
     "kind": "global"
   },
 
   {
-    "id": "shun_small",
-    "name": "Shun (Small)",
-    "date": "2023/06/21",
+    "id": "shiroko_swimsuit",
+    "name": "Shiroko (Swimsuit)",
+    "date": "2023/07/17",
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["shun_small"],
+    "pickupPoolStudents": ["shiroko_swimsuit"],
 
     "kind": "global"
   },
 
   {
-    "id": "saya_casual",
-    "name": "Saya (Casual)",
-    "date": "2023/06/21",
+    "id": "wakamo_swimsuit",
+    "name": "Wakamo (Swimsuit)",
+    "date": "2023/07/17",
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["saya_casual"],
+    "pickupPoolStudents": ["wakamo_swimsuit"],
 
     "kind": "global"
   },
 
   {
-    "id": "kokona",
-    "name": "Kokona",
-    "date": "2023/06/21",
+    "id": "nonomi_swimsuit",
+    "name": "Nonomi (Swimsuit)",
+    "date": "2023/07/17",
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["kokona"],
+    "pickupPoolStudents": ["nonomi_swimsuit"],
 
     "kind": "global"
   },
