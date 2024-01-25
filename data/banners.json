@@ -70,5 +70,27 @@
     "additionalThreeStarStudents": ["makoto"],
 
     "kind": "jp"
+  },
+
+  {
+    "id": "hina_dress",
+    "name": "Hina (Dress)",
+    "date": "2024/01/24",
+
+    "threeStarRate": 0.06,
+    "baseThreeStarRate": 0.06,
+
+    "pickupRate": 0.007,
+    "pickupPoolStudents": ["hina_dress"],
+
+    "extraRate": 0.012,
+    "extraPoolStudents": [
+      "wakamo",
+      "hoshino_swimsuit",
+      "mika",
+      "hanako_swimsuit"
+    ],
+
+    "kind": "jp"
   }
 ]

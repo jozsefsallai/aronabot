@@ -13,7 +13,16 @@ const CHARACTER_URL = 'https://bluearchive.wiki/wiki';
 
 const studentMap = new Map();
 
-const skillTypes = ['ex', 'basic', 'enhanced', 'sub'];
+const skillTypes = {
+  'EX Skill': 'ex',
+  'Normal Skill': 'basic',
+  'Passive Skill': 'enhanced',
+  'Sub Skill': 'sub',
+  0: 'ex',
+  1: 'basic',
+  2: 'enhanced',
+  3: 'sub',
+};
 
 function makeSkill($, idx, skillElement) {
   const skillData = {
@@ -24,6 +33,16 @@ function makeSkill($, idx, skillElement) {
   };
 
   const firstColumn = $(skillElement).find('td:nth-child(1)').text();
+  const skillType = $(skillElement).find('td:nth-child(1) b').text().trim();
+
+  if (skillTypes[skillType]) {
+    skillData.kind = skillTypes[skillType];
+  }
+
+  if (typeof skillData.kind === 'undefined') {
+    return null;
+  }
+
   const costsMatches = firstColumn.match(/Cost \w/gm);
   if (costsMatches) {
     const costs = Array.from(costsMatches).map((cost) =>
@@ -72,11 +91,13 @@ async function getSkillsForStudent(studentKey) {
 
   const skillData = $('.skilltable .summary').toArray();
 
-  for (let i = 0; i < 4; ++i) {
+  for (let i = 0; i < skillData.length; ++i) {
     const skillElement = skillData[i];
     const skill = makeSkill($, i, skillElement);
 
-    skills.push(skill);
+    if (skill) {
+      skills.push(skill);
+    }
   }
 
   student.skills = skills;

@@ -232,6 +232,7 @@
     "combatRole": "support",
     "school": "gehenna",
     "rarity": 3,
+    "isLimited": true,
     "wikiImage": "https://static.miraheze.org/bluearchivewiki/f/fc/Ako_%28Dress%29.png",
     "combatPosition": "Middle",
     "weaponType": "HG",
@@ -2241,22 +2242,40 @@
         "cost": "6"
       },
       {
-        "kind": "basic",
+        "kind": "ex",
         "name": "First note of the melody",
         "description": "Deal **324~960%** damage to enemies in a straight line.Each time projectile penetrates an enemy, damage is reduced by **45%** (minimum **10%** damage).This attack is not affected by Stability and always does maximum damage.Maintain Concentrated Fire stance for **10 seconds** and prepare the next shot.",
         "cost": "0"
       },
       {
-        "kind": "enhanced",
+        "kind": "ex",
         "name": "Second note of the melody",
         "description": "Deal **324~960%** damage to enemies in a straight line.Each time projectile penetrates an enemy, damage is reduced by **45%** (minimum **10%** damage).This attack is not affected by Stability and always does maximum damage.Maintain Concentrated Fire stance for **10 seconds** and prepare the next shot.",
         "cost": "0"
       },
       {
-        "kind": "sub",
+        "kind": "ex",
         "name": "Closing note of the melody",
         "description": "Deal **680.4~2002%** damage to enemies in a straight line.Each time projectile penetrates an enemy, damage is reduced by **45%** (minimum **10%** damage).This attack is not affected by Stability and always does maximum damage.After shooting, exit Concentrated Fire stance.",
         "cost": "0"
+      },
+      {
+        "kind": "basic",
+        "name": "Thorough preparation",
+        "description": "At the beginning of combat, increase Explosive Efficiency by **34.17~64.91%** and Accuracy by **238~451**.(Can only be used **1** time per battle)",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Passionate performance",
+        "description": "Increase Attack by **11.2~16.2%**, increase Critical Rate by **11.2~16.2%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Sincerity",
+        "description": "While in a Concentrated Fire stance, increase Explosive Efficiency by **36.29~63.51%** and gain immunity to Taunt status.",
+        "cost": null
       }
     ]
   },
@@ -2560,21 +2579,27 @@
         "cost": "3"
       },
       {
-        "kind": "basic",
+        "kind": "ex",
         "name": "Patrol with Iroha-senpai!",
         "description": "When onboard Toramaru with Iroha, deal **246~367%** damage to enemies within a circular area.",
         "cost": "5"
       },
       {
-        "kind": "enhanced",
+        "kind": "basic",
         "name": "Bad kids get punished!",
         "description": "Every **30 seconds**, deal **204~388%** damage to one enemy.Additionally, decrease their Attack by **18.6~24.1%** for **20 seconds**.",
         "cost": null
       },
       {
-        "kind": "sub",
+        "kind": "enhanced",
         "name": "Well-behaved girl",
         "description": "Increase HP by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Pandemonium mascot",
+        "description": "When using EX skill, heal self for **90~171%** of Healing.",
         "cost": null
       }
     ]
@@ -3988,6 +4013,7 @@
     "combatRole": "attacker",
     "school": "gehenna",
     "rarity": 3,
+    "isLimited": true,
     "wikiImage": "https://static.miraheze.org/bluearchivewiki/2/20/Makoto.png",
     "combatPosition": "Back",
     "weaponType": "SR",
