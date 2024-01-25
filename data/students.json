@@ -2224,6 +2224,7 @@
     "combatRole": "attacker",
     "school": "gehenna",
     "rarity": 3,
+    "isLimited": true,
     "wikiImage": "https://static.miraheze.org/bluearchivewiki/2/20/Hina_%28Dress%29.png",
     "combatPosition": "Back",
     "weaponType": "MG",
