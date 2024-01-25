@@ -224,6 +224,51 @@
       }
     ]
   },
+  "ako_dress": {
+    "name": "Ako (Dress)",
+    "attackType": "explosive",
+    "defenseType": "special",
+    "combatClass": "striker",
+    "combatRole": "support",
+    "school": "gehenna",
+    "rarity": 3,
+    "wikiImage": "https://static.miraheze.org/bluearchivewiki/f/fc/Ako_%28Dress%29.png",
+    "combatPosition": "Middle",
+    "weaponType": "HG",
+    "usesCover": true,
+    "releaseDate": "2024/01/24",
+    "fullName": "Amau Ako",
+    "age": "17",
+    "birthday": "December 22",
+    "height": "165cm",
+    "hobbies": "President Hina",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Perfect agent",
+        "description": "For allies within a circular range, increase Critical Rate by **11.3~19.8%** and Critical Damage **32.8~57.5%** for **30 seconds**.Additionally, add 1 \"Perfect bodyguard\" to each ally (up to a maximum of **15**).",
+        "cost": "5"
+      },
+      {
+        "kind": "basic",
+        "name": "Don't miss the target!",
+        "description": "Every **35 seconds**, decrease the Defense of one enemy by **18.5~24%** for **22 seconds**.Deal damage depending on the number of \"Perfect bodyguards\" owned:3 or less: Deal **496~942%** damage4 to 7: Deal **531~1010%** damage8 to 11: Deal **584~1111%** damage12 or more: Deal **638~1212%** damage",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Agent confidence",
+        "description": "Increase HP by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Operation results",
+        "description": "Increase Attack by **3~5.7%** for each \"Perfect bodyguard\".",
+        "cost": null
+      }
+    ]
+  },
   "arisu": {
     "name": "Arisu",
     "attackType": "mystic",
@@ -2170,6 +2215,51 @@
       }
     ]
   },
+  "hina_dress": {
+    "name": "Hina (Dress)",
+    "attackType": "explosive",
+    "defenseType": "elastic",
+    "combatClass": "striker",
+    "combatRole": "attacker",
+    "school": "gehenna",
+    "rarity": 3,
+    "wikiImage": "https://static.miraheze.org/bluearchivewiki/2/20/Hina_%28Dress%29.png",
+    "combatPosition": "Back",
+    "weaponType": "MG",
+    "usesCover": false,
+    "releaseDate": "2024/01/31",
+    "fullName": "Sorasaki Hina",
+    "age": "17",
+    "birthday": "February 19",
+    "height": "142cm",
+    "hobbies": "Sleeping, resting",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Opening scene: Ishbóshet",
+        "description": "Switch to Concentrated Fire stance for **10 seconds**.While in Concentrated Fire stance, character can not perform normal attacks or move.(CC application cancels the effect)",
+        "cost": "6"
+      },
+      {
+        "kind": "basic",
+        "name": "First note of the melody",
+        "description": "Deal **324~960%** damage to enemies in a straight line.Each time projectile penetrates an enemy, damage is reduced by **45%** (minimum **10%** damage).This attack is not affected by Stability and always does maximum damage.Maintain Concentrated Fire stance for **10 seconds** and prepare the next shot.",
+        "cost": "0"
+      },
+      {
+        "kind": "enhanced",
+        "name": "Second note of the melody",
+        "description": "Deal **324~960%** damage to enemies in a straight line.Each time projectile penetrates an enemy, damage is reduced by **45%** (minimum **10%** damage).This attack is not affected by Stability and always does maximum damage.Maintain Concentrated Fire stance for **10 seconds** and prepare the next shot.",
+        "cost": "0"
+      },
+      {
+        "kind": "sub",
+        "name": "Closing note of the melody",
+        "description": "Deal **680.4~2002%** damage to enemies in a straight line.Each time projectile penetrates an enemy, damage is reduced by **45%** (minimum **10%** damage).This attack is not affected by Stability and always does maximum damage.After shooting, exit Concentrated Fire stance.",
+        "cost": "0"
+      }
+    ]
+  },
   "hina_swimsuit": {
     "name": "Hina (Swimsuit)",
     "attackType": "explosive",
@@ -2439,6 +2529,52 @@
         "kind": "sub",
         "name": "Fun at the beach",
         "description": "While EX skill is active, increase Cost Recovery by **360~684**.",
+        "cost": null
+      }
+    ]
+  },
+  "ibuki": {
+    "name": "Ibuki",
+    "attackType": "mystic",
+    "defenseType": "heavy",
+    "combatClass": "striker",
+    "combatRole": "support",
+    "school": "gehenna",
+    "rarity": 1,
+    "isWelfare": true,
+    "wikiImage": "https://static.miraheze.org/bluearchivewiki/7/75/Ibuki.png",
+    "combatPosition": "Middle",
+    "weaponType": "AR",
+    "usesCover": true,
+    "releaseDate": "2024/01/24",
+    "fullName": "Tanga Ibuki",
+    "age": "11",
+    "birthday": "April 14",
+    "height": "128cm",
+    "hobbies": "Homework, collecting stuffed animals",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Ibuki's drawing time!",
+        "description": "Increase Attack of all other allies within a circular area by **26.4~50.2%** for **35 seconds**.",
+        "cost": "3"
+      },
+      {
+        "kind": "basic",
+        "name": "Patrol with Iroha-senpai!",
+        "description": "When onboard Toramaru with Iroha, deal **246~367%** damage to enemies within a circular area.",
+        "cost": "5"
+      },
+      {
+        "kind": "enhanced",
+        "name": "Bad kids get punished!",
+        "description": "Every **30 seconds**, deal **204~388%** damage to one enemy.Additionally, decrease their Attack by **18.6~24.1%** for **20 seconds**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Well-behaved girl",
+        "description": "Increase HP by **14~26.6%**.",
         "cost": null
       }
     ]
@@ -3844,6 +3980,51 @@
       }
     ]
   },
+  "makoto": {
+    "name": "Makoto",
+    "attackType": "penetration",
+    "defenseType": "special",
+    "combatClass": "special",
+    "combatRole": "attacker",
+    "school": "gehenna",
+    "rarity": 3,
+    "wikiImage": "https://static.miraheze.org/bluearchivewiki/2/20/Makoto.png",
+    "combatPosition": "Back",
+    "weaponType": "SR",
+    "usesCover": false,
+    "releaseDate": "2024/01/24",
+    "fullName": "Hanuma Makoto",
+    "age": "18",
+    "birthday": "March 19",
+    "height": "169cm",
+    "hobbies": "Stratagems, tricks, playing with Ibuki",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "M-mistake!",
+        "description": "Deal damage to enemies depending on the number of them within the circular area:4 or less: Deal **155~296%** damage5 to 9: Deal **311~592%** damage10 or more: Deal **519~987%** damage",
+        "cost": "6"
+      },
+      {
+        "kind": "basic",
+        "name": "Listen!",
+        "description": "Every **55 seconds**, decrease the Defense of enemies within a circular area by **8.3~15.8%** for **35 seconds**.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Great Chairman of Pandemonium Society",
+        "description": "Increase Attack by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Invincible! The true leader of Gehenna!",
+        "description": "Increase Penetration Efficiency of all aliies by **15.9~30.2%**.",
+        "cost": null
+      }
+    ]
+  },
   "mari": {
     "name": "Mari",
     "attackType": "mystic",
@@ -4529,7 +4710,7 @@
     "defenseType": "heavy",
     "combatClass": "striker",
     "combatRole": "attacker",
-    "school": "tokiwadai",
+    "school": "etc",
     "rarity": 3,
     "isLimited": true,
     "wikiImage": "https://static.miraheze.org/bluearchivewiki/7/76/Misaka_Mikoto.png",
@@ -5796,7 +5977,7 @@
     "defenseType": "special",
     "combatClass": "special",
     "combatRole": "attacker",
-    "school": "sakugawa",
+    "school": "etc",
     "rarity": 1,
     "isWelfare": true,
     "wikiImage": "https://static.miraheze.org/bluearchivewiki/b/b0/Saten_Ruiko.png",
@@ -6518,7 +6699,7 @@
     "defenseType": "heavy",
     "combatClass": "striker",
     "combatRole": "support",
-    "school": "tokiwadai",
+    "school": "etc",
     "rarity": 3,
     "isLimited": true,
     "wikiImage": "https://static.miraheze.org/bluearchivewiki/6/66/Shokuhou_Misaki.png",

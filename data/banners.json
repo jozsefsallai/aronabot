@@ -43,29 +43,31 @@
   {
     "id": "regular_jp",
     "name": "Regular Recruitment (JP)",
-    "date": "2023/12/27",
+    "date": "2024/01/24",
 
     "kind": "jp"
   },
 
   {
-    "id": "misaki",
-    "name": "Misaki",
-    "date": "2023/12/27",
+    "id": "makoto",
+    "name": "Makoto",
+    "date": "2024/01/24",
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["misaki"],
+    "pickupPoolStudents": ["makoto"],
+    "additionalThreeStarStudents": ["ako_dress"],
 
     "kind": "jp"
   },
 
   {
-    "id": "atsuko",
-    "name": "Atsuko",
-    "date": "2023/12/27",
+    "id": "ako_dress",
+    "name": "Ako (Dress)",
+    "date": "2024/01/24",
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["atsuko"],
+    "pickupPoolStudents": ["ako_dress"],
+    "additionalThreeStarStudents": ["makoto"],
 
     "kind": "jp"
   }
