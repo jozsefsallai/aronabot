@@ -271,7 +271,7 @@ class GachaBanner {
   }
 
   isPickup(key: string): boolean {
-    return this._pickupPool.hasStudent(key) || this._extraPool.hasStudent(key);
+    return this._pickupPool.hasStudent(key);
   }
 
   private getRandomIndex(rates: number[]): number {
