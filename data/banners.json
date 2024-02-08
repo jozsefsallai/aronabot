@@ -2,31 +2,41 @@
   {
     "id": "regular",
     "name": "Regular Recruitment (Global)",
-    "date": "2023/07/24",
+    "date": "2023/08/02",
 
     "kind": "global"
   },
 
   {
-    "id": "ui_swimsuit",
-    "name": "Ui (Swimsuit)",
-    "date": "2023/07/24",
+    "id": "hanako_swimsuit",
+    "name": "[FES] Hanako (Swimsuit)",
+    "date": "2023/08/02",
+
+    "threeStarRate": 0.06,
+    "baseThreeStarRate": 0.06,
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["ui_swimsuit"],
-    "additionalThreeStarStudents": ["hinata_swimsuit"],
+    "pickupPoolStudents": ["hanako_swimsuit"],
+
+    "extraRate": 0.009,
+    "extraPoolStudents": ["wakamo", "hoshino_swimsuit", "mika"],
 
     "kind": "global"
   },
 
   {
-    "id": "hinata_swimsuit",
-    "name": "Hinata (Swimsuit)",
-    "date": "2023/07/24",
+    "id": "wakamo",
+    "name": "[FES] Wakamo",
+    "date": "2023/08/02",
+
+    "threeStarRate": 0.06,
+    "baseThreeStarRate": 0.06,
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["hinata_swimsuit"],
-    "additionalThreeStarStudents": ["ui_swimsuit"],
+    "pickupPoolStudents": ["wakamo"],
+
+    "extraRate": 0.009,
+    "extraPoolStudents": ["hoshino_swimsuit", "mika", "hanako_swimsuit"],
 
     "kind": "global"
   },
@@ -40,40 +50,23 @@
   },
 
   {
-    "id": "hina_dress",
-    "name": "[FES] Hina (Dress)",
+    "id": "serina_christmas",
+    "name": "Serina (Christmas)",
     "date": "2024/01/31",
 
-    "threeStarRate": 0.06,
-    "baseThreeStarRate": 0.06,
-
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["hina_dress"],
-
-    "extraRate": 0.012,
-    "extraPoolStudents": [
-      "wakamo",
-      "hoshino_swimsuit",
-      "mika",
-      "hanako_swimsuit"
-    ],
+    "pickupPoolStudents": ["serina_christmas"],
 
     "kind": "jp"
   },
 
   {
-    "id": "hoshino_swimsuit",
-    "name": "[FES] Hoshino (Swimsuit)",
+    "id": "hanae_christmas",
+    "name": "Hanae (Christmas)",
     "date": "2024/01/31",
 
-    "threeStarRate": 0.06,
-    "baseThreeStarRate": 0.06,
-
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["hoshino_swimsuit"],
-
-    "extraRate": 0.012,
-    "extraPoolStudents": ["wakamo", "hina_dress", "mika", "hanako_swimsuit"],
+    "pickupPoolStudents": ["hanae_christmas"],
 
     "kind": "jp"
   }
