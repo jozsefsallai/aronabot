@@ -1,0 +1,1392 @@
+[
+  {
+    "iconUrl": "https://static.miraheze.org/bluearchivewiki/thumb/f/fc/Item_Icon_Favor_22.png/81px-Item_Icon_Favor_22.png",
+    "rarity": 2,
+    "name": "30-Color Paint Set",
+    "description": "A professional paint set with tubes in a variety of thirty colors.Time to go and paint the whole wide world!",
+    "studentsFavorite": [
+      "ibuki",
+      "juri",
+      "maki",
+      "meru"
+    ],
+    "studentsLiked": [
+      "arisu_maid",
+      "kaede",
+      "kotama",
+      "kotama_camping",
+      "koyuki",
+      "megu",
+      "mutsuki",
+      "mutsuki_new_year",
+      "neru"
+    ]
+  },
+  {
+    "iconUrl": "https://static.miraheze.org/bluearchivewiki/thumb/8/8c/Item_Icon_Favor_2.png/81px-Item_Icon_Favor_2.png",
+    "rarity": 2,
+    "name": "A-Pods Pro",
+    "description": "Wireless earphones that are all the rage among Kivotos students. A bit expensive to buy on a tight budget, since they retail for about three months of part-time pay.",
+    "studentsFavorite": [
+      "chihiro",
+      "hibiki",
+      "hibiki_cheer_squad",
+      "kayoko",
+      "kayoko_new_year",
+      "moe",
+      "reisa"
+    ],
+    "studentsLiked": [
+      "eimi",
+      "eimi_swimsuit",
+      "ichika",
+      "utaha_cheer_squad",
+      "yuzu",
+      "yuzu_maid"
+    ]
+  },
+  {
+    "iconUrl": "https://static.miraheze.org/bluearchivewiki/thumb/3/32/Item_Icon_Favor_10.png/81px-Item_Icon_Favor_10.png",
+    "rarity": 2,
+    "name": "Astronomical Telescope",
+    "description": "This astronomical telescope is deemed the standard for hobbyists by the Kivotos Astronomy Observatory.",
+    "studentsFavorite": [
+      "nodoka",
+      "utaha",
+      "utaha_cheer_squad"
+    ],
+    "studentsLiked": [
+      "arisu_maid",
+      "ibuki",
+      "kaede",
+      "kasumi",
+      "kotama",
+      "kotama_camping",
+      "koyuki",
+      "maki",
+      "megu",
+      "meru",
+      "mutsuki",
+      "mutsuki_new_year",
+      "neru",
+      "nodoka_hot_spring"
+    ]
+  },
+  {
+    "iconUrl": "https://static.miraheze.org/bluearchivewiki/thumb/0/04/Item_Icon_Favor_Lv2_Package.png/81px-Item_Icon_Favor_Lv2_Package.png",
+    "rarity": 3,
+    "name": "Beautiful Bouquet",
+    "description": "A bouquet of ruby flowers, to be given to someone special.The beautiful red petals are sure to capture the heart of the recepient.",
+    "studentsFavorite": [],
+    "studentsLiked": []
+  },
+  {
+    "iconUrl": "https://static.miraheze.org/bluearchivewiki/thumb/7/75/Item_Icon_Favor_25.png/81px-Item_Icon_Favor_25.png",
+    "rarity": 2,
+    "name": "Brain Teaser Puzzle Cube",
+    "description": "\"If you can solve this, then you deserve your place at Millennium!\" A puzzle cube for advanced users certified by the Millennium Science School.",
+    "studentsFavorite": [
+      "arisu_maid",
+      "karin",
+      "koyuki",
+      "yuuka",
+      "yuuka_track"
+    ],
+    "studentsLiked": [
+      "ibuki",
+      "kaede",
+      "kotama",
+      "kotama_camping",
+      "kotori_cheer_squad",
+      "maki",
+      "megu",
+      "meru",
+      "mutsuki",
+      "mutsuki_new_year",
+      "neru"
+    ]
+  },
+  {
+    "iconUrl": "https://static.miraheze.org/bluearchivewiki/thumb/6/68/Item_Icon_Favor_17.png/81px-Item_Icon_Favor_17.png",
+    "rarity": 2,
+    "name": "Buried Treasure Map",
+    "description": "There's treasure out there somewhere!A map of the sites where the three great gold treasures of Kivotos are supposed to be buried.",
+    "studentsFavorite": [
+      "aru",
+      "aru_new_year",
+      "cherino_hot_spring",
+      "hoshino",
+      "hoshino_swimsuit",
+      "kasumi",
+      "makoto",
+      "michiru",
+      "natsu",
+      "shiroko_cycling",
+      "ui_swimsuit"
+    ],
+    "studentsLiked": [
+      "ako",
+      "ako_dress",
+      "cherino",
+      "chinatsu_hot_spring",
+      "eimi",
+      "eimi_swimsuit",
+      "himari",
+      "marina",
+      "mina",
+      "nagisa",
+      "saki",
+      "saki_swimsuit",
+      "serika",
+      "serika_new_year"
+    ]
+  },
+  {
+    "iconUrl": "https://static.miraheze.org/bluearchivewiki/thumb/8/86/Item_Icon_Favor_5.png/81px-Item_Icon_Favor_5.png",
+    "rarity": 2,
+    "name": "Cherry-Rose Lip Gloss",
+    "description": "A lip gloss with a subtle yet striking hue.It's one of the hottest selling items among young ladies interested in beauty and grooming.",
+    "studentsFavorite": [
+      "asuna",
+      "ichika",
+      "koharu",
+      "mine",
+      "nonomi",
+      "nonomi_swimsuit",
+      "saori"
+    ],
+    "studentsLiked": [
+      "hanae",
+      "hanako_swimsuit",
+      "kazusa",
+      "mika",
+      "mimori_swimsuit",
+      "momiji",
+      "shun"
+    ]
+  },
+  {
+    "iconUrl": "https://static.miraheze.org/bluearchivewiki/thumb/b/bc/Item_Icon_Favor_23.png/81px-Item_Icon_Favor_23.png",
+    "rarity": 2,
+    "name": "Classical Poetry Anthology",
+    "description": "An anthology of classical poetry. Very classy.Provides all the sophistication of classical literature right at your fingertips.",
+    "studentsFavorite": [
+      "chise",
+      "chise_swimsuit",
+      "kaho",
+      "kikyou",
+      "mimori_swimsuit",
+      "noa",
+      "tomoe",
+      "ui",
+      "ui_swimsuit"
+    ],
+    "studentsLiked": [
+      "ayane",
+      "ayane_swimsuit",
+      "chinatsu",
+      "chinatsu_hot_spring",
+      "hanako",
+      "iroha",
+      "kotori",
+      "meru",
+      "minori",
+      "momiji",
+      "shimiko"
+    ]
+  },
+  {
+    "iconUrl": "https://static.miraheze.org/bluearchivewiki/thumb/3/3b/Item_Icon_Favor_18.png/81px-Item_Icon_Favor_18.png",
+    "rarity": 2,
+    "name": "Cosplayer Coke-Bottle Glasses",
+    "description": "Wear these to instantly look like a genius! Einstein's got nothing on you (in appearance, anyway)! ※ Note: Wearing these will not raise your IQ.",
+    "studentsFavorite": [
+      "kaede",
+      "megu",
+      "mutsuki",
+      "mutsuki_new_year",
+      "neru",
+      "saya_casual"
+    ],
+    "studentsLiked": [
+      "arisu_maid",
+      "cherino",
+      "cherino_hot_spring",
+      "haruka",
+      "haruka_new_year",
+      "ibuki",
+      "kotama",
+      "kotama_camping",
+      "koyuki",
+      "maki",
+      "makoto",
+      "meru",
+      "mina",
+      "tsukuyo"
+    ]
+  },
+  {
+    "iconUrl": "https://static.miraheze.org/bluearchivewiki/thumb/e/e0/Item_Icon_Favor_24.png/81px-Item_Icon_Favor_24.png",
+    "rarity": 2,
+    "name": "Cute Dishware Set",
+    "description": "A dishware set painted with adorable animal characters.This product has made the top ten list of best selling dishware in Kivotos year after year.",
+    "studentsFavorite": [
+      "akane",
+      "akane_bunny_girl",
+      "fuuka",
+      "fuuka_new_year",
+      "hinata_swimsuit",
+      "hiyori",
+      "mimori",
+      "renge",
+      "rumi"
+    ],
+    "studentsLiked": [
+      "hibiki_cheer_squad",
+      "mimori_swimsuit"
+    ]
+  },
+  {
+    "iconUrl": "https://static.miraheze.org/bluearchivewiki/thumb/7/77/Item_Icon_Favor_31.png/81px-Item_Icon_Favor_31.png",
+    "rarity": 2,
+    "name": "Embroidered Handkerchief",
+    "description": "An exquisitely embroidered handkerchief.",
+    "studentsFavorite": [
+      "haruna",
+      "haruna_new_year",
+      "izuna",
+      "izuna_swimsuit",
+      "kayoko_new_year",
+      "kirino",
+      "mari",
+      "mari_track",
+      "mimori",
+      "miyu",
+      "miyu_swimsuit",
+      "rumi",
+      "yukari"
+    ],
+    "studentsLiked": [
+      "arisu_maid",
+      "azusa",
+      "hanako_swimsuit",
+      "hinata",
+      "hinata_swimsuit",
+      "ichika",
+      "tomoe"
+    ]
+  },
+  {
+    "iconUrl": "https://static.miraheze.org/bluearchivewiki/thumb/8/8d/Item_Icon_Favor_32.png/81px-Item_Icon_Favor_32.png",
+    "rarity": 2,
+    "name": "Encyclopedia",
+    "description": "From \"that tie thing\" for tying bread bags to \"the grass thing\" that goes in bento boxes, everything you ever wanted to read about can be found right here.",
+    "studentsFavorite": [
+      "atsuko",
+      "kikyou",
+      "kotori",
+      "kotori_cheer_squad",
+      "minori"
+    ],
+    "studentsLiked": [
+      "ako",
+      "ako_dress",
+      "ayane",
+      "ayane_swimsuit",
+      "chinatsu",
+      "chinatsu_hot_spring",
+      "chise",
+      "chise_swimsuit",
+      "hanako",
+      "iroha",
+      "kaho",
+      "kanna",
+      "meru",
+      "mimori_swimsuit",
+      "momiji",
+      "noa",
+      "saki",
+      "saki_swimsuit",
+      "saya",
+      "sena",
+      "shigure",
+      "shigure_hot_spring",
+      "shimiko",
+      "toki",
+      "toki_bunny_girl",
+      "ui",
+      "ui_swimsuit"
+    ]
+  },
+  {
+    "iconUrl": "https://static.miraheze.org/bluearchivewiki/thumb/8/8d/Item_Icon_Favor_29.png/81px-Item_Icon_Favor_29.png",
+    "rarity": 2,
+    "name": "Extravagant Gilded Jar of Greed",
+    "description": "An obviously exorbitant-looking jar gilt with gold leaf.Watch out for counterfeits!",
+    "studentsFavorite": [
+      "cherino",
+      "makoto",
+      "mina",
+      "serika",
+      "serika_new_year"
+    ],
+    "studentsLiked": [
+      "ako",
+      "ako_dress",
+      "aru",
+      "aru_new_year",
+      "cherino_hot_spring",
+      "chinatsu_hot_spring",
+      "eimi",
+      "eimi_swimsuit",
+      "haruka",
+      "haruka_new_year",
+      "himari",
+      "kaede",
+      "marina",
+      "megu",
+      "michiru",
+      "mutsuki",
+      "mutsuki_new_year",
+      "nagisa",
+      "saki",
+      "saki_swimsuit",
+      "saya_casual",
+      "tsukuyo"
+    ]
+  },
+  {
+    "iconUrl": "https://static.miraheze.org/bluearchivewiki/thumb/0/0d/Item_Icon_Favor_Lv2_8.png/81px-Item_Icon_Favor_Lv2_8.png",
+    "rarity": 3,
+    "name": "Fine Maple Bonsai",
+    "description": "Just looking at this top-quality maple bonsai is calming. The ever-changing leaves, shifting with the seasons as if they were changing clothes, create an air of elegance.",
+    "studentsFavorite": [
+      "haruka_new_year",
+      "tsubaki"
+    ],
+    "studentsLiked": [
+      "haruka",
+      "hinata",
+      "mari",
+      "mari_track",
+      "tsukuyo"
+    ]
+  },
+  {
+    "iconUrl": "https://static.miraheze.org/bluearchivewiki/thumb/e/ef/Item_Icon_Favor_3.png/81px-Item_Icon_Favor_3.png",
+    "rarity": 2,
+    "name": "Forbidden Love ~Beautiful Sin~",
+    "description": "The latest work from the popular romance novelist who wrote \"Koi About Love\"!Delve into a dizzying tale of forbidden love!",
+    "studentsFavorite": [
+      "hanako",
+      "koharu",
+      "koharu_swimsuit",
+      "momiji",
+      "renge",
+      "tsurugi",
+      "tsurugi_swimsuit"
+    ],
+    "studentsLiked": [
+      "ayane",
+      "ayane_swimsuit",
+      "chinatsu",
+      "chinatsu_hot_spring",
+      "chise",
+      "chise_swimsuit",
+      "iroha",
+      "kaho",
+      "kikyou",
+      "kotori",
+      "meru",
+      "mimori_swimsuit",
+      "minori",
+      "noa",
+      "shimiko",
+      "ui",
+      "ui_swimsuit"
+    ]
+  },
+  {
+    "iconUrl": "https://static.miraheze.org/bluearchivewiki/thumb/f/fc/Item_Icon_Favor_11.png/81px-Item_Icon_Favor_11.png",
+    "rarity": 2,
+    "name": "Gamegirl Color Replica",
+    "description": "\"Life is your arcade!\"Go wild with retromania with this vintage reproduction of the classic Gamegirl Color.",
+    "studentsFavorite": [
+      "momoi",
+      "neru_bunny_girl",
+      "yuzu",
+      "yuzu_maid"
+    ],
+    "studentsLiked": [
+      "arisu",
+      "arisu_maid",
+      "chihiro",
+      "hare",
+      "hare_camping",
+      "hibiki",
+      "hibiki_cheer_squad",
+      "ichika",
+      "iroha",
+      "kaede",
+      "kayoko",
+      "kayoko_new_year",
+      "moe",
+      "reisa",
+      "utaha_cheer_squad"
+    ]
+  },
+  {
+    "iconUrl": "https://static.miraheze.org/bluearchivewiki/thumb/6/64/Item_Icon_Favor_6.png/81px-Item_Icon_Favor_6.png",
+    "rarity": 2,
+    "name": "Glassy Glow BB Cream",
+    "description": "A hit product from the luxury cosmetics brand \"Samuela.\"This BB cream brightens and evens out skin tone and provides a natural finish for a healthy glow.",
+    "studentsFavorite": [
+      "hanae",
+      "hanako_swimsuit",
+      "mika",
+      "saori",
+      "shun"
+    ],
+    "studentsLiked": [
+      "asuna",
+      "ichika",
+      "koharu",
+      "mimori_swimsuit",
+      "mine",
+      "nonomi",
+      "nonomi_swimsuit"
+    ]
+  },
+  {
+    "iconUrl": "https://static.miraheze.org/bluearchivewiki/thumb/4/4a/Item_Icon_Favor_9.png/81px-Item_Icon_Favor_9.png",
+    "rarity": 2,
+    "name": "Guns, Charm, and Zeal",
+    "description": "Guns, charm, and zeal!The bestselling book of the year investigates and analyzes the origins and roots of Kivotos pop culture.",
+    "studentsFavorite": [
+      "ayane",
+      "ayane_swimsuit",
+      "chinatsu",
+      "chinatsu_hot_spring",
+      "kikyou",
+      "minori",
+      "miyako",
+      "miyako_swimsuit",
+      "ui",
+      "ui_swimsuit"
+    ],
+    "studentsLiked": [
+      "chise",
+      "chise_swimsuit",
+      "hanako",
+      "iroha",
+      "kaho",
+      "koharu_swimsuit",
+      "kotori",
+      "meru",
+      "mimori_swimsuit",
+      "momiji",
+      "noa",
+      "shimiko",
+      "tomoe"
+    ]
+  },
+  {
+    "iconUrl": "https://static.miraheze.org/bluearchivewiki/thumb/0/07/Item_Icon_Favor_SSR_2.png/81px-Item_Icon_Favor_SSR_2.png",
+    "rarity": 3,
+    "name": "Hatsune Miku photo card",
+    "description": "A special photo card distributed Hatsune Miku's live concert in Kivotos. The concert was a great success, and it became a rare item that any Hatsune Miku fan would want.This is a special event gift, it will be treated as favorite when given to any student.",
+    "studentsFavorite": [],
+    "studentsLiked": []
+  },
+  {
+    "iconUrl": "https://static.miraheze.org/bluearchivewiki/thumb/c/cc/Item_Icon_Favor_33.png/81px-Item_Icon_Favor_33.png",
+    "rarity": 2,
+    "name": "Health Food Supplement",
+    "description": "Feel rejuvenated with just one bite!This supplement is the perfect gift for your special someone.",
+    "studentsFavorite": [
+      "ako",
+      "ako_dress",
+      "fuuka_new_year",
+      "kanna",
+      "saya",
+      "shigure",
+      "shigure_hot_spring",
+      "shizuko",
+      "shizuko_swimsuit"
+    ],
+    "studentsLiked": [
+      "atsuko",
+      "hanae_christmas",
+      "kikyou",
+      "kotori",
+      "kotori_cheer_squad",
+      "minori",
+      "saki",
+      "saki_swimsuit",
+      "sena",
+      "serina_christmas",
+      "toki",
+      "toki_bunny_girl"
+    ]
+  },
+  {
+    "iconUrl": "https://static.miraheze.org/bluearchivewiki/thumb/9/95/Item_Icon_Favor_4.png/81px-Item_Icon_Favor_4.png",
+    "rarity": 2,
+    "name": "Hitgirls Gaming Magazine",
+    "description": "Stay up to date on the latest releases, strategies for classic games, new gaming merch and everything in between—this magazine covers it all!",
+    "studentsFavorite": [
+      "arisu",
+      "arisu_maid",
+      "hare",
+      "hare_camping",
+      "iroha"
+    ],
+    "studentsLiked": [
+      "ayane",
+      "ayane_swimsuit",
+      "chinatsu",
+      "chinatsu_hot_spring",
+      "chise",
+      "chise_swimsuit",
+      "hanako",
+      "kaede",
+      "kaho",
+      "kikyou",
+      "kotori",
+      "meru",
+      "mimori_swimsuit",
+      "minori",
+      "momiji",
+      "momoi",
+      "neru_bunny_girl",
+      "noa",
+      "shimiko",
+      "ui",
+      "ui_swimsuit",
+      "yuzu",
+      "yuzu_maid"
+    ]
+  },
+  {
+    "iconUrl": "https://static.miraheze.org/bluearchivewiki/thumb/7/78/Item_Icon_Favor_Lv2_5.png/81px-Item_Icon_Favor_Lv2_5.png",
+    "rarity": 3,
+    "name": "I-book Rare",
+    "description": "A famous laptop computer featured on the \"Top 3 Electronic Devices Most Wanted by Students in Kivotos\". Quite a luxury item. Everyone wants it! But it is so expensive!",
+    "studentsFavorite": [
+      "ayane_swimsuit",
+      "hare",
+      "hare_camping",
+      "kasumi",
+      "kotama_camping",
+      "kotori",
+      "miyako",
+      "utaha",
+      "utaha_cheer_squad",
+      "yuuka",
+      "yuzu_maid"
+    ],
+    "studentsLiked": [
+      "chihiro",
+      "hibiki",
+      "hibiki_cheer_squad",
+      "ichika",
+      "kayoko",
+      "kayoko_new_year",
+      "moe",
+      "reisa",
+      "yuzu"
+    ]
+  },
+  {
+    "iconUrl": "https://static.miraheze.org/bluearchivewiki/thumb/e/e0/Item_Icon_Favor_14.png/81px-Item_Icon_Favor_14.png",
+    "rarity": 2,
+    "name": "Jellies Cushion",
+    "description": "The star of \"Fruitjellies\" is back! In cushion form! They've managed to recreate the concept of a jelly eating another jelly of the same color in great detail!",
+    "studentsFavorite": [
+      "midori",
+      "serina",
+      "serina_christmas"
+    ],
+    "studentsLiked": [
+      "sena",
+      "tsubaki"
+    ]
+  },
+  {
+    "iconUrl": "https://static.miraheze.org/bluearchivewiki/thumb/4/41/Item_Icon_Favor_15.png/81px-Item_Icon_Favor_15.png",
+    "rarity": 2,
+    "name": "Jumping Detective Rabbit ~A trip through the misty hot springs~",
+    "description": "Whenever there's a case, these snow-white bunny ears are sure to crack it! Volume 3 of the Extraordinary Cottontail Detective series! The stage is set at the hot springs!",
+    "studentsFavorite": [
+      "ako_dress",
+      "kikyou",
+      "koharu",
+      "shimiko"
+    ],
+    "studentsLiked": [
+      "ayane",
+      "ayane_swimsuit",
+      "chinatsu",
+      "chinatsu_hot_spring",
+      "chise",
+      "chise_swimsuit",
+      "hanako",
+      "iroha",
+      "kaho",
+      "kotori",
+      "meru",
+      "mimori_swimsuit",
+      "minori",
+      "momiji",
+      "noa",
+      "ui",
+      "ui_swimsuit"
+    ]
+  },
+  {
+    "iconUrl": "https://static.miraheze.org/bluearchivewiki/thumb/7/79/Item_Icon_Favor_Lv2_0.png/81px-Item_Icon_Favor_Lv2_0.png",
+    "rarity": 3,
+    "name": "Lace Pillow",
+    "description": "Lace pillow made of luxury materials. The design looks simple at first glance, but it literally contains the dreams of girls.",
+    "studentsFavorite": [
+      "hoshino",
+      "hoshino_swimsuit",
+      "misaki",
+      "miyako_swimsuit",
+      "serina_christmas"
+    ],
+    "studentsLiked": [
+      "sena",
+      "tsubaki"
+    ]
+  },
+  {
+    "iconUrl": "https://static.miraheze.org/bluearchivewiki/thumb/2/2f/Item_Icon_Favor_26.png/81px-Item_Icon_Favor_26.png",
+    "rarity": 2,
+    "name": "Large Whole Cake",
+    "description": "The mere sight of this massive cake is enough to satisfy the senses.Its caloric info is detailed underneath.",
+    "studentsFavorite": [
+      "asuna_bunny_girl",
+      "cherino",
+      "hasumi",
+      "hasumi_track",
+      "sakurako"
+    ],
+    "studentsLiked": [
+      "airi",
+      "akari",
+      "fubuki",
+      "haruna_track",
+      "ibuki",
+      "iori",
+      "iori_swimsuit",
+      "izumi",
+      "izumi_swimsuit",
+      "junko",
+      "junko_new_year",
+      "kazusa",
+      "kokona",
+      "mika",
+      "natsu",
+      "nodoka",
+      "nodoka_hot_spring",
+      "reisa",
+      "shun_small",
+      "yoshimi",
+      "yukari"
+    ]
+  },
+  {
+    "iconUrl": "https://static.miraheze.org/bluearchivewiki/thumb/1/1f/Item_Icon_Favor_27.png/81px-Item_Icon_Favor_27.png",
+    "rarity": 2,
+    "name": "Luxury Buffet Ticket",
+    "description": "This ticket grants access to a luxury buffet operated by the best chef in all of Kivotos.As you might expect, it's very expensive.",
+    "studentsFavorite": [
+      "akari",
+      "nodoka_hot_spring"
+    ],
+    "studentsLiked": [
+      "hasumi",
+      "hasumi_track",
+      "hina_dress",
+      "renge"
+    ]
+  },
+  {
+    "iconUrl": "https://static.miraheze.org/bluearchivewiki/thumb/9/9f/Item_Icon_Favor_8.png/81px-Item_Icon_Favor_8.png",
+    "rarity": 2,
+    "name": "Luxury Cookie Set",
+    "description": "Schrödinger's set of exquisite luxury cookies. There is a good chance that something else will be inside instead of the cookies. Contents can not be confirmed unless the box is opened.",
+    "studentsFavorite": [
+      "airi",
+      "fubuki",
+      "haruna_new_year",
+      "haruna_track",
+      "ibuki",
+      "junko",
+      "junko_new_year",
+      "kazusa",
+      "kokona",
+      "shun_small",
+      "yoshimi"
+    ],
+    "studentsLiked": [
+      "asuna_bunny_girl",
+      "hasumi",
+      "hasumi_track",
+      "iori",
+      "iori_swimsuit",
+      "izumi",
+      "izumi_swimsuit",
+      "kirino",
+      "mika",
+      "nagisa",
+      "natsu",
+      "nodoka",
+      "nodoka_hot_spring",
+      "reisa",
+      "sakurako",
+      "saya_casual",
+      "yukari"
+    ]
+  },
+  {
+    "iconUrl": "https://static.miraheze.org/bluearchivewiki/thumb/1/1e/Item_Icon_Favor_12.png/81px-Item_Icon_Favor_12.png",
+    "rarity": 2,
+    "name": "MX-Ration C-Type Dessert Flavor",
+    "description": "Calories equal Combat Power!",
+    "studentsFavorite": [
+      "iori",
+      "iori_swimsuit",
+      "mashiro_swimsuit"
+    ],
+    "studentsLiked": [
+      "airi",
+      "asuna_bunny_girl",
+      "fubuki",
+      "haruna_track",
+      "hasumi",
+      "hasumi_track",
+      "ibuki",
+      "izumi",
+      "izumi_swimsuit",
+      "junko",
+      "junko_new_year",
+      "kazusa",
+      "kokona",
+      "mashiro",
+      "mika",
+      "miyako",
+      "miyako_swimsuit",
+      "miyu",
+      "miyu_swimsuit",
+      "moe",
+      "natsu",
+      "nodoka",
+      "nodoka_hot_spring",
+      "reisa",
+      "saki",
+      "saki_swimsuit",
+      "sakurako",
+      "shun_small",
+      "yoshimi",
+      "yukari"
+    ]
+  },
+  {
+    "iconUrl": "https://static.miraheze.org/bluearchivewiki/thumb/8/8b/Item_Icon_Favor_13.png/81px-Item_Icon_Favor_13.png",
+    "rarity": 2,
+    "name": "Matcha Ramune",
+    "description": "A matcha-flavored carbonated soft drink.Green and refreshing!",
+    "studentsFavorite": [
+      "izumi",
+      "izumi_swimsuit"
+    ],
+    "studentsLiked": [
+      "airi",
+      "asuna_bunny_girl",
+      "fubuki",
+      "haruna_track",
+      "hasumi",
+      "hasumi_track",
+      "ibuki",
+      "iori",
+      "iori_swimsuit",
+      "junko",
+      "junko_new_year",
+      "kazusa",
+      "kokona",
+      "mika",
+      "natsu",
+      "nodoka",
+      "nodoka_hot_spring",
+      "reisa",
+      "sakurako",
+      "shun_small",
+      "yoshimi",
+      "yukari"
+    ]
+  },
+  {
+    "iconUrl": "https://static.miraheze.org/bluearchivewiki/thumb/0/0c/Item_Icon_Favor_7.png/81px-Item_Icon_Favor_7.png",
+    "rarity": 2,
+    "name": "Military Camo Foundation Trio",
+    "description": "A hit product from luxury cosmetics brand \"Samuela.\"It provides lightweight camouflage capabilities that melt into your skin! Be camo-ready any time, any place!",
+    "studentsFavorite": [
+      "mashiro",
+      "saki",
+      "saki_swimsuit"
+    ],
+    "studentsLiked": [
+      "asuna",
+      "hanae",
+      "hanako_swimsuit",
+      "ichika",
+      "iori",
+      "iori_swimsuit",
+      "koharu",
+      "mashiro_swimsuit",
+      "mika",
+      "mimori_swimsuit",
+      "mine",
+      "miyako",
+      "miyako_swimsuit",
+      "miyu",
+      "miyu_swimsuit",
+      "moe",
+      "nonomi",
+      "nonomi_swimsuit",
+      "saori",
+      "shun"
+    ]
+  },
+  {
+    "iconUrl": "https://static.miraheze.org/bluearchivewiki/thumb/c/c8/Item_Icon_Favor_Lv2_4.png/81px-Item_Icon_Favor_Lv2_4.png",
+    "rarity": 3,
+    "name": "Mille-Feuille Traditional Parfait",
+    "description": "A parfait sold at the famous confectionery shop Cafe Mille-Feuille in Trinity. The harmony of pastry, syrup, whipped cream, and fruits piled on top of soft ice cream is truly historic!",
+    "studentsFavorite": [
+      "akari",
+      "asuna",
+      "haruna_track",
+      "hasumi_track",
+      "ibuki",
+      "junko_new_year",
+      "kirino",
+      "kokona",
+      "mika",
+      "reisa",
+      "sakurako"
+    ],
+    "studentsLiked": [
+      "airi",
+      "asuna_bunny_girl",
+      "fubuki",
+      "hasumi",
+      "iori",
+      "iori_swimsuit",
+      "izumi",
+      "izumi_swimsuit",
+      "junko",
+      "kazusa",
+      "natsu",
+      "nodoka",
+      "nodoka_hot_spring",
+      "shun_small",
+      "yoshimi",
+      "yukari"
+    ]
+  },
+  {
+    "iconUrl": "https://static.miraheze.org/bluearchivewiki/thumb/a/a1/Item_Icon_Favor_21.png/81px-Item_Icon_Favor_21.png",
+    "rarity": 2,
+    "name": "Movie Ticket",
+    "description": "\"Snuggle up with your special someone and watch a movie!\" This movie ticket is accepted at any theater, and admits two people!",
+    "studentsFavorite": [
+      "hina_dress",
+      "pina",
+      "renge"
+    ],
+    "studentsLiked": [
+      "nodoka_hot_spring"
+    ]
+  },
+  {
+    "iconUrl": "https://static.miraheze.org/bluearchivewiki/thumb/6/61/Item_Icon_Favor_Lv2_10.png/81px-Item_Icon_Favor_Lv2_10.png",
+    "rarity": 3,
+    "name": "Music Concert Ticket",
+    "description": "Admission ticket to regularly scheduled concerts in Kivotos. From classical to the latest popular music. The perfect gift for anyone who loves a variety of music of any kind.",
+    "studentsFavorite": [
+      "haruna",
+      "haruna_new_year",
+      "hina_dress",
+      "kayoko_new_year",
+      "suzumi"
+    ],
+    "studentsLiked": [
+      "nodoka_hot_spring",
+      "renge"
+    ]
+  },
+  {
+    "iconUrl": "https://static.miraheze.org/bluearchivewiki/thumb/8/83/Item_Icon_Favor_Lv2_7.png/81px-Item_Icon_Favor_Lv2_7.png",
+    "rarity": 3,
+    "name": "Nutrient-rich Multivitamin Jellies",
+    "description": "Gummy candy that is enriched with vitamins. Contains an assortment of fruit-flavored jellies and is fun to eat. Be careful you don't eat the whole pack before even noticing it!",
+    "studentsFavorite": [
+      "ako_dress",
+      "fuuka_new_year",
+      "juri",
+      "kanna",
+      "mashiro",
+      "mashiro_swimsuit",
+      "minori",
+      "saki_swimsuit",
+      "saya_casual",
+      "sena",
+      "serina",
+      "shigure",
+      "shigure_hot_spring",
+      "yuuka"
+    ],
+    "studentsLiked": [
+      "hanae_christmas",
+      "saya",
+      "serina_christmas",
+      "shizuko",
+      "shizuko_swimsuit"
+    ]
+  },
+  {
+    "iconUrl": "https://static.miraheze.org/bluearchivewiki/thumb/9/99/Item_Icon_Favor_1.png/81px-Item_Icon_Favor_1.png",
+    "rarity": 2,
+    "name": "Peroro Wheel",
+    "description": "The ninth product of the smash hit Momo Friends collaboration line-up. This Peroro-shaped exercise wheel is this year's most popular fitness accessory!",
+    "studentsFavorite": [
+      "hifumi",
+      "hifumi_swimsuit",
+      "shiroko",
+      "shiroko_swimsuit",
+      "toki",
+      "toki_bunny_girl"
+    ],
+    "studentsLiked": [
+      "azusa",
+      "azusa_swimsuit",
+      "hanae_christmas",
+      "haruna_track",
+      "kotori_cheer_squad",
+      "shiroko_cycling",
+      "sumire"
+    ]
+  },
+  {
+    "iconUrl": "https://static.miraheze.org/bluearchivewiki/thumb/a/a5/Item_Icon_Favor_28.png/81px-Item_Icon_Favor_28.png",
+    "rarity": 2,
+    "name": "Potted Bug-Eating Plant",
+    "description": "A potted plant that's popular among those with eccentric taste. Apparently, the way it devours insects is cuter than you'd think.",
+    "studentsFavorite": [
+      "haruka",
+      "haruka_new_year",
+      "hinata",
+      "tsukuyo"
+    ],
+    "studentsLiked": [
+      "cherino",
+      "cherino_hot_spring",
+      "kaede",
+      "makoto",
+      "mari",
+      "mari_track",
+      "megu",
+      "mina",
+      "mutsuki",
+      "mutsuki_new_year",
+      "saya_casual"
+    ]
+  },
+  {
+    "iconUrl": "https://static.miraheze.org/bluearchivewiki/thumb/b/bf/Item_Icon_Favor_Lv2_Special.png/81px-Item_Icon_Favor_Lv2_Special.png",
+    "rarity": 3,
+    "name": "Refreshing Bouquet",
+    "description": "Bouquet of emerald flowers to commemorate day with a special someone.The neat buds will put your mind at ease.",
+    "studentsFavorite": [],
+    "studentsLiked": []
+  },
+  {
+    "iconUrl": "https://static.miraheze.org/bluearchivewiki/thumb/b/b6/Item_Icon_Favor_Lv2_3.png/81px-Item_Icon_Favor_Lv2_3.png",
+    "rarity": 3,
+    "name": "Retro Jewelled Egg",
+    "description": "A jewelled egg with beautiful jewels and geometric patterns on an oval body. Of course, even if you kept it warm, no chick will ever hatch.",
+    "studentsFavorite": [
+      "cherino_hot_spring",
+      "chinatsu",
+      "hifumi_swimsuit",
+      "himari",
+      "hoshino",
+      "hoshino_swimsuit",
+      "makoto",
+      "mina",
+      "nagisa",
+      "tomoe",
+      "ui"
+    ],
+    "studentsLiked": [
+      "ako",
+      "ako_dress",
+      "aru",
+      "aru_new_year",
+      "cherino",
+      "chinatsu_hot_spring",
+      "eimi",
+      "eimi_swimsuit",
+      "marina",
+      "michiru",
+      "saki",
+      "saki_swimsuit",
+      "serika",
+      "serika_new_year"
+    ]
+  },
+  {
+    "iconUrl": "https://static.miraheze.org/bluearchivewiki/thumb/3/3e/Item_Icon_Favor_16.png/81px-Item_Icon_Favor_16.png",
+    "rarity": 2,
+    "name": "Ring Bit",
+    "description": "\"Make fitness fun with games!\" This exercise equipment uses an O-ring to make working out at home easy and fun whether for strength training or slimming down!",
+    "studentsFavorite": [
+      "hanae_christmas",
+      "sumire"
+    ],
+    "studentsLiked": [
+      "arisu",
+      "arisu_maid",
+      "hare",
+      "hare_camping",
+      "haruna_track",
+      "iroha",
+      "kaede",
+      "kotori_cheer_squad",
+      "momoi",
+      "neru_bunny_girl",
+      "shiroko",
+      "shiroko_cycling",
+      "shiroko_swimsuit",
+      "toki",
+      "toki_bunny_girl",
+      "yuzu",
+      "yuzu_maid"
+    ]
+  },
+  {
+    "iconUrl": "https://static.miraheze.org/bluearchivewiki/thumb/5/5c/Item_Icon_Favor_Lv2_2.png/81px-Item_Icon_Favor_Lv2_2.png",
+    "rarity": 3,
+    "name": "Samuela \"The Beyond\"",
+    "description": "The finest perfume released by the luxury cosmetics manufacturer \"Samuela\".It is a super-hit work famous for the catchphrase \"Try it once and wear its charm\", and it is one of the 12 masterpieces of Samuela made by the rare genius perfumer \"The Beyond\"...",
+    "studentsFavorite": [
+      "asuna_bunny_girl",
+      "hifumi",
+      "hina",
+      "hina_swimsuit",
+      "ichika",
+      "koharu_swimsuit",
+      "mine",
+      "serina"
+    ],
+    "studentsLiked": [
+      "asuna",
+      "hanae",
+      "hanako_swimsuit",
+      "koharu",
+      "mika",
+      "mimori_swimsuit",
+      "nonomi",
+      "nonomi_swimsuit",
+      "saori",
+      "shun"
+    ]
+  },
+  {
+    "iconUrl": "https://static.miraheze.org/bluearchivewiki/thumb/e/e9/Item_Icon_Favor_Lv2_9.png/81px-Item_Icon_Favor_Lv2_9.png",
+    "rarity": 3,
+    "name": "Sewing Kit",
+    "description": "An expert's sewing kit with a selection of necessary tools for all kinds of situations. With this, if your clothes get ripped or your socks get holes, no problem!",
+    "studentsFavorite": [
+      "akane_bunny_girl",
+      "hibiki_cheer_squad",
+      "hinata",
+      "hinata_swimsuit",
+      "karin",
+      "karin_bunny_girl",
+      "mimori_swimsuit",
+      "pina",
+      "renge",
+      "toki_bunny_girl"
+    ],
+    "studentsLiked": [
+      "akane",
+      "fuuka",
+      "fuuka_new_year",
+      "hiyori",
+      "mimori"
+    ]
+  },
+  {
+    "iconUrl": "https://static.miraheze.org/bluearchivewiki/thumb/0/0e/Item_Icon_Favor_SSR_1.png/81px-Item_Icon_Favor_SSR_1.png",
+    "rarity": 3,
+    "name": "Shiny Bouquet",
+    "description": "A crystal bouquet perfect for giving to a special someone.It sparkles like a kaleidoscope in the light.This is a special event gift, it will be treated as favorite when given to any student.",
+    "studentsFavorite": [],
+    "studentsLiked": []
+  },
+  {
+    "iconUrl": "https://static.miraheze.org/bluearchivewiki/thumb/9/9e/Item_Icon_Favor_Lv2_1.png/81px-Item_Icon_Favor_Lv2_1.png",
+    "rarity": 3,
+    "name": "Street of Yankees Volume 1",
+    "description": "The first volume of the Street of Yankees series, a popular work famous for the \"We have nothing but duty and guts!\" line. You wouldn't think this from the cover, but the series got a lot of favorable reviews, citing primarily that the main character is surprisingly cute.",
+    "studentsFavorite": [
+      "kaho",
+      "kikyou",
+      "momiji",
+      "ui_swimsuit"
+    ],
+    "studentsLiked": [
+      "ayane",
+      "ayane_swimsuit",
+      "chinatsu",
+      "chinatsu_hot_spring",
+      "chise",
+      "chise_swimsuit",
+      "hanako",
+      "iroha",
+      "kotori",
+      "meru",
+      "mimori_swimsuit",
+      "minori",
+      "noa",
+      "shimiko",
+      "ui"
+    ]
+  },
+  {
+    "iconUrl": "https://static.miraheze.org/bluearchivewiki/thumb/2/24/Item_Icon_Favor_Lv2_6.png/81px-Item_Icon_Favor_Lv2_6.png",
+    "rarity": 3,
+    "name": "Stylish Comb",
+    "description": "A compact comb with a luxurious and fashionable design. Popular as a gift.",
+    "studentsFavorite": [
+      "arisu_maid",
+      "azusa_swimsuit",
+      "hanako_swimsuit",
+      "mari_track",
+      "miyu",
+      "miyu_swimsuit",
+      "rumi",
+      "tsurugi",
+      "tsurugi_swimsuit",
+      "wakamo",
+      "wakamo_swimsuit",
+      "yukari"
+    ],
+    "studentsLiked": [
+      "azusa",
+      "ichika",
+      "izuna",
+      "izuna_swimsuit",
+      "kayoko_new_year",
+      "mimori"
+    ]
+  },
+  {
+    "iconUrl": "https://static.miraheze.org/bluearchivewiki/thumb/0/0f/Item_Icon_Favor_34.png/81px-Item_Icon_Favor_34.png",
+    "rarity": 2,
+    "name": "Summer Tube",
+    "description": "It's summer! To the beach!A safety device for swimmers of all experience levels. Ready for anything with its cute and fancy design!",
+    "studentsFavorite": [
+      "ayane_swimsuit",
+      "azusa_swimsuit",
+      "chise_swimsuit",
+      "eimi_swimsuit",
+      "hanako_swimsuit",
+      "hifumi_swimsuit",
+      "hina_swimsuit",
+      "hinata_swimsuit",
+      "hoshino_swimsuit",
+      "iori_swimsuit",
+      "izumi_swimsuit",
+      "izuna_swimsuit",
+      "koharu_swimsuit",
+      "mashiro_swimsuit",
+      "mimori_swimsuit",
+      "miyako_swimsuit",
+      "miyu_swimsuit",
+      "nonomi_swimsuit",
+      "saki_swimsuit",
+      "shiroko_swimsuit",
+      "shizuko_swimsuit",
+      "tsurugi_swimsuit",
+      "ui_swimsuit",
+      "wakamo_swimsuit"
+    ],
+    "studentsLiked": []
+  },
+  {
+    "iconUrl": "https://static.miraheze.org/bluearchivewiki/thumb/5/51/Item_Icon_Favor_20.png/81px-Item_Icon_Favor_20.png",
+    "rarity": 2,
+    "name": "Teddy Bear with Bow",
+    "description": "An ordinary but absolutely darling teddy bear.A popular product among students who love all things cute and adorable.",
+    "studentsFavorite": [
+      "azusa",
+      "azusa_swimsuit",
+      "ibuki",
+      "karin_bunny_girl",
+      "kotama",
+      "kotama_camping",
+      "marina",
+      "misaki",
+      "suzumi",
+      "wakamo",
+      "wakamo_swimsuit"
+    ],
+    "studentsLiked": [
+      "arisu_maid",
+      "kaede",
+      "koyuki",
+      "maki",
+      "megu",
+      "meru",
+      "mutsuki",
+      "mutsuki_new_year",
+      "neru",
+      "shun_small"
+    ]
+  },
+  {
+    "iconUrl": "https://static.miraheze.org/bluearchivewiki/thumb/1/11/Item_Icon_Favor_Lv2_12.png/81px-Item_Icon_Favor_Lv2_12.png",
+    "rarity": 3,
+    "name": "\"The Life\" Board Game",
+    "description": "An entertaining board game where you can get a job, win a lottery, and even travel to space. Just like life, every dice roll leaves you just one step short of your goal.",
+    "studentsFavorite": [
+      "arisu",
+      "arisu_maid",
+      "atsuko",
+      "ibuki",
+      "koyuki",
+      "megu",
+      "meru",
+      "midori",
+      "momoi",
+      "neru_bunny_girl"
+    ],
+    "studentsLiked": [
+      "kaede",
+      "kotama",
+      "kotama_camping",
+      "maki",
+      "mutsuki",
+      "mutsuki_new_year",
+      "neru"
+    ]
+  },
+  {
+    "iconUrl": "https://static.miraheze.org/bluearchivewiki/thumb/3/3f/Item_Icon_Favor_Lv2_11.png/81px-Item_Icon_Favor_Lv2_11.png",
+    "rarity": 3,
+    "name": "Thrice-a-day Dumbbell Set",
+    "description": "A set of dumbbells of various weights. Use it three times a day. Build nice muscles by repeating your workout in the morning, at lunch, and in the evening!",
+    "studentsFavorite": [
+      "hanae_christmas",
+      "kotori_cheer_squad",
+      "shiroko_swimsuit",
+      "toki",
+      "toki_bunny_girl"
+    ],
+    "studentsLiked": [
+      "haruna_track",
+      "shiroko",
+      "shiroko_cycling",
+      "sumire"
+    ]
+  },
+  {
+    "iconUrl": "https://static.miraheze.org/bluearchivewiki/thumb/4/4c/Item_Icon_Favor_0.png/81px-Item_Icon_Favor_0.png",
+    "rarity": 2,
+    "name": "Wavecat Pillow",
+    "description": "The seventh product of the smash hit Momo Friends collaboration line-up! This Wavecat-shaped pillow is this year's third most popular bedding item.",
+    "studentsFavorite": [
+      "sena",
+      "tsubaki"
+    ],
+    "studentsLiked": [
+      "azusa",
+      "azusa_swimsuit",
+      "hifumi",
+      "hifumi_swimsuit",
+      "serina_christmas"
+    ]
+  },
+  {
+    "iconUrl": "https://static.miraheze.org/bluearchivewiki/thumb/7/70/Item_Icon_Favor_30.png/81px-Item_Icon_Favor_30.png",
+    "rarity": 2,
+    "name": "Wind-Up Music Box",
+    "description": "A fancy solid wood music box with vintage charm.Very popular among collectors.",
+    "studentsFavorite": [
+      "chinatsu_hot_spring",
+      "eimi",
+      "eimi_swimsuit",
+      "mina",
+      "nagisa"
+    ],
+    "studentsLiked": [
+      "ako",
+      "ako_dress",
+      "aru",
+      "aru_new_year",
+      "cherino",
+      "chihiro",
+      "hibiki_cheer_squad",
+      "himari",
+      "kayoko",
+      "kayoko_new_year",
+      "makoto",
+      "marina",
+      "michiru",
+      "reisa",
+      "saki",
+      "saki_swimsuit",
+      "serika",
+      "serika_new_year"
+    ]
+  },
+  {
+    "iconUrl": "https://static.miraheze.org/bluearchivewiki/thumb/9/98/Item_Icon_Favor_19.png/81px-Item_Icon_Favor_19.png",
+    "rarity": 2,
+    "name": "World's Most Useless Gadget",
+    "description": "Absolutely useless, but cute! Still, it's completely pointless. And yet, its cuteness totally makes up for it! This trinket is among the top five best toys to give to a special friend.",
+    "studentsFavorite": [
+      "hanako",
+      "himari",
+      "hina",
+      "hina_dress",
+      "hina_swimsuit",
+      "koyuki",
+      "makoto"
+    ],
+    "studentsLiked": [
+      "ako",
+      "ako_dress",
+      "aru",
+      "aru_new_year",
+      "cherino",
+      "chinatsu_hot_spring",
+      "eimi",
+      "eimi_swimsuit",
+      "kasumi",
+      "marina",
+      "michiru",
+      "mina",
+      "nagisa",
+      "saki",
+      "saki_swimsuit",
+      "serika",
+      "serika_new_year"
+    ]
+  }
+]

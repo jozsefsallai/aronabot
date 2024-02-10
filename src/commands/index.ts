@@ -15,6 +15,7 @@ import * as student from './utils/student';
 import * as skills from './utils/skills';
 import * as mission from './utils/mission';
 import * as birthdays from './utils/birthdays';
+import * as gifts from './utils/gifts';
 
 interface CommandData {
   meta:
@@ -34,6 +35,7 @@ const commands: CommandData[] = [
   skills,
   mission,
   birthdays,
+  gifts,
 ];
 
 export default commands;
