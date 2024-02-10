@@ -69,5 +69,27 @@
     "pickupPoolStudents": ["hanae_christmas"],
 
     "kind": "jp"
+  },
+
+  {
+    "id": "shiroko_chroma",
+    "name": "Shiroko",
+    "date": "2021/02/04",
+
+    "pickupRate": 1,
+    "pickupPoolStudents": ["shiroko_terror"],
+
+    "kind": "chroma"
+  },
+
+  {
+    "id": "regular_chroma",
+    "name": "Regular Recruitment",
+    "date": "2021/02/04",
+
+    "extraRate": 1,
+    "extraPoolStudents": ["shiroko_terror"],
+
+    "kind": "chroma"
   }
 ]

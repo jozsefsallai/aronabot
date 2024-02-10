@@ -4,6 +4,7 @@ import { BannerKind } from './kind';
 class RecruitmentPointsManager {
   private static readonly GLOBAL_PREFIX = 'gacha';
   private static readonly JP_PREFIX = 'gacha_jp';
+  private static readonly CHROMA_PREFIX = 'gacha_chroma';
 
   private static readonly POINTS_KEY = '{{prefix}}:{{guildId}}:{{userId}}';
 
@@ -61,6 +62,8 @@ class RecruitmentPointsManager {
         return RecruitmentPointsManager.GLOBAL_PREFIX;
       case BannerKind.JP:
         return RecruitmentPointsManager.JP_PREFIX;
+      case BannerKind.CHROMA:
+        return RecruitmentPointsManager.CHROMA_PREFIX;
     }
   }
 

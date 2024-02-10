@@ -4,14 +4,18 @@ import { CommandContext } from '../../core/handler/CommandHandler';
 import { bannerContainer } from '../../containers/banners';
 import { GachaBrowser } from '../../gacha/browser';
 import recruitmentPointsManager from '../../gacha/points';
+import { BannerKind } from '../../gacha/kind';
 
 function getBannerChoices() {
-  return bannerContainer.all().map((banner) => {
-    return {
-      name: banner.name,
-      value: banner.id,
-    };
-  });
+  return bannerContainer
+    .all()
+    .filter((b) => b.kind !== BannerKind.CHROMA)
+    .map((banner) => {
+      return {
+        name: banner.name,
+        value: banner.id,
+      };
+    });
 }
 
 export const meta = new SlashCommandBuilder()

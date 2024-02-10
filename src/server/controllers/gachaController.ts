@@ -13,6 +13,7 @@ interface Card {
 export function get(req: Request, res: Response) {
   const bannerId = (req.query.banner ?? 'regular') as string;
   const points = req.query.points && parseInt(req.query.points as string, 10);
+  const chroma = req.query.chroma === 'true';
 
   const banner = bannerContainer.getBanner(bannerId);
 
@@ -41,6 +42,7 @@ export function get(req: Request, res: Response) {
   res.render('gacha', {
     cards,
     points: points && !isNaN(points) ? points : undefined,
+    chroma,
   });
 }
 

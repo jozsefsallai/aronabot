@@ -1,6 +1,7 @@
 import { studentContainer } from '../containers/students';
 import { Rarity } from '../models/Rarity';
 import { Student } from '../models/Student';
+import { shirokoTerror } from '../utils/extraData';
 import { BannerKind } from './kind';
 import { GachaPool } from './pool';
 
@@ -262,7 +263,10 @@ class GachaBanner {
     const pool = pools[poolIndex];
 
     const isOneStar = pool === this._oneStarPool;
-    const student = pool.pull();
+    const student =
+      this.kind === BannerKind.CHROMA
+        ? ([shirokoTerror, 'shiroko_terror'] as [Student, string])
+        : pool.pull();
 
     return {
       student,

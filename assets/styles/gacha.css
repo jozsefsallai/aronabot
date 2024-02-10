@@ -28,6 +28,16 @@ img {
   z-index: 0;
 }
 
+.chroma {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: red;
+  opacity: 0.35;
+}
+
 /* ----- 0. BASIC STYLING END ----- */
 
 /* ----- 1. GACHA CARD CONTAINER BEGIN ----- */

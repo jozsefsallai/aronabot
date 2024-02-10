@@ -6,6 +6,9 @@ html
     )
   body
     .gacha-result
+      if chroma
+        .chroma
+
       .card-container
         each card in cards
           .card(class=`star-${card.student.rarity}`)
