@@ -2,41 +2,42 @@
   {
     "id": "regular",
     "name": "Regular Recruitment (Global)",
-    "date": "2023/08/02",
+    "date": "2023/08/16",
 
     "kind": "global"
   },
 
   {
-    "id": "hanako_swimsuit",
-    "name": "[FES] Hanako (Swimsuit)",
-    "date": "2023/08/02",
-
-    "threeStarRate": 0.06,
-    "baseThreeStarRate": 0.06,
+    "id": "izuna_swimsuit",
+    "name": "Izuna (Swimsuit)",
+    "date": "2023/08/16",
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["hanako_swimsuit"],
-
-    "extraRate": 0.009,
-    "extraPoolStudents": ["wakamo", "hoshino_swimsuit", "mika"],
+    "pickupPoolStudents": ["izuna_swimsuit"],
+    "additionalThreeStarStudents": ["chise_swimsuit"],
 
     "kind": "global"
   },
 
   {
-    "id": "wakamo",
-    "name": "[FES] Wakamo",
-    "date": "2023/08/02",
-
-    "threeStarRate": 0.06,
-    "baseThreeStarRate": 0.06,
+    "id": "chise_swimsuit",
+    "name": "Chise (Swimsuit)",
+    "date": "2023/08/16",
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["wakamo"],
+    "pickupPoolStudents": ["chise_swimsuit"],
+    "additionalThreeStarStudents": ["izuna_swimsuit"],
 
-    "extraRate": 0.009,
-    "extraPoolStudents": ["hoshino_swimsuit", "mika", "hanako_swimsuit"],
+    "kind": "global"
+  },
+
+  {
+    "id": "mimori_swimsuit",
+    "name": "Mimori (Swimsuit)",
+    "date": "2023/08/16",
+
+    "pickupRate": 0.007,
+    "pickupPoolStudents": ["mimori_swimsuit"],
 
     "kind": "global"
   },
@@ -44,29 +45,29 @@
   {
     "id": "regular_jp",
     "name": "Regular Recruitment (JP)",
-    "date": "2024/01/31",
+    "date": "2024/02/21",
 
     "kind": "jp"
   },
 
   {
-    "id": "serina_christmas",
-    "name": "Serina (Christmas)",
-    "date": "2024/01/31",
+    "id": "aru_dress",
+    "name": "Aru (Dress)",
+    "date": "2024/02/21",
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["serina_christmas"],
+    "pickupPoolStudents": ["aru_dress"],
 
     "kind": "jp"
   },
 
   {
-    "id": "hanae_christmas",
-    "name": "Hanae (Christmas)",
-    "date": "2024/01/31",
+    "id": "kayoko_dress",
+    "name": "Kayoko (Dress)",
+    "date": "2024/02/21",
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["hanae_christmas"],
+    "pickupPoolStudents": ["kayoko_dress"],
 
     "kind": "jp"
   },
