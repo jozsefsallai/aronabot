@@ -14,7 +14,9 @@ async function getMissionMap(name) {
   const response = await axios.get(`${MISSIONS_LIST_URL}/${name}`);
   const $ = cheerio.load(response.data);
 
-  const image = $('a.image img').attr('src');
+  const image = $('.wikitable .mw-default-size a img.mw-file-element').attr(
+    'src',
+  );
 
   if (!image) {
     return null;
