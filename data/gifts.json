@@ -32,6 +32,7 @@
       "hibiki",
       "hibiki_cheer_squad",
       "kayoko",
+      "kayoko_dress",
       "kayoko_new_year",
       "moe",
       "reisa"
@@ -84,7 +85,7 @@
     "iconUrl": "https://static.miraheze.org/bluearchivewiki/thumb/7/75/Item_Icon_Favor_25.png/81px-Item_Icon_Favor_25.png",
     "rarity": 2,
     "name": "Brain Teaser Puzzle Cube",
-    "description": "\"If you can solve this, then you deserve your place at Millennium!\" A puzzle cube for advanced users certified by the Millennium Science School.",
+    "description": "\"If you can solve this, then you deserve your place at Millennium!\" A puzzle cube for advanced users certified by Millennium Science School.",
     "studentsFavorite": [
       "arisu_maid",
       "karin",
@@ -113,6 +114,7 @@
     "description": "There's treasure out there somewhere!A map of the sites where the three great gold treasures of Kivotos are supposed to be buried.",
     "studentsFavorite": [
       "aru",
+      "aru_dress",
       "aru_new_year",
       "cherino_hot_spring",
       "hoshino",
@@ -324,6 +326,7 @@
     "name": "Extravagant Gilded Jar of Greed",
     "description": "An obviously exorbitant-looking jar gilt with gold leaf.Watch out for counterfeits!",
     "studentsFavorite": [
+      "aru_dress",
       "cherino",
       "makoto",
       "mina",
@@ -429,6 +432,7 @@
       "iroha",
       "kaede",
       "kayoko",
+      "kayoko_dress",
       "kayoko_new_year",
       "moe",
       "reisa",
@@ -577,6 +581,7 @@
       "hare",
       "hare_camping",
       "kasumi",
+      "kayoko_dress",
       "kotama_camping",
       "kotori",
       "miyako",
@@ -675,6 +680,7 @@
     "studentsLiked": [
       "airi",
       "akari",
+      "akari_new_year",
       "fubuki",
       "haruna_track",
       "ibuki",
@@ -703,6 +709,7 @@
     "description": "This ticket grants access to a luxury buffet operated by the best chef in all of Kivotos.As you might expect, it's very expensive.",
     "studentsFavorite": [
       "akari",
+      "akari_new_year",
       "nodoka_hot_spring"
     ],
     "studentsLiked": [
@@ -867,6 +874,7 @@
     "description": "A parfait sold at the famous confectionery shop Cafe Mille-Feuille in Trinity. The harmony of pastry, syrup, whipped cream, and fruits piled on top of soft ice cream is truly historic!",
     "studentsFavorite": [
       "akari",
+      "akari_new_year",
       "asuna",
       "haruna_track",
       "hasumi_track",
@@ -1019,6 +1027,7 @@
     "name": "Retro Jewelled Egg",
     "description": "A jewelled egg with beautiful jewels and geometric patterns on an oval body. Of course, even if you kept it warm, no chick will ever hatch.",
     "studentsFavorite": [
+      "aru_dress",
       "cherino_hot_spring",
       "chinatsu",
       "hifumi_swimsuit",
@@ -1141,8 +1150,8 @@
   {
     "iconUrl": "https://static.miraheze.org/bluearchivewiki/thumb/9/9e/Item_Icon_Favor_Lv2_1.png/81px-Item_Icon_Favor_Lv2_1.png",
     "rarity": 3,
-    "name": "Street of Yankees Volume 1",
-    "description": "The first volume of the Street of Yankees series, a popular work famous for the \"We have nothing but duty and guts!\" line. You wouldn't think this from the cover, but the series got a lot of favorable reviews, citing primarily that the main character is surprisingly cute.",
+    "name": "Streets of Thugs Vol. 1",
+    "description": "The first volume of the Streets of Thugs series, a popular work famous for the \"We have nothing but loyalty and guts!\" line. You wouldn't think this from the cover, but the series got a lot of favorable reviews, citing primarily that the main character is surprisingly cute.",
     "studentsFavorite": [
       "kaho",
       "kikyou",
@@ -1331,6 +1340,7 @@
       "chinatsu_hot_spring",
       "eimi",
       "eimi_swimsuit",
+      "kayoko_dress",
       "mina",
       "nagisa"
     ],
@@ -1338,6 +1348,7 @@
       "ako",
       "ako_dress",
       "aru",
+      "aru_dress",
       "aru_new_year",
       "cherino",
       "chihiro",
@@ -1361,6 +1372,7 @@
     "name": "World's Most Useless Gadget",
     "description": "Absolutely useless, but cute! Still, it's completely pointless. And yet, its cuteness totally makes up for it! This trinket is among the top five best toys to give to a special friend.",
     "studentsFavorite": [
+      "aru_dress",
       "hanako",
       "himari",
       "hina",

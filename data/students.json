@@ -179,6 +179,63 @@
       }
     ]
   },
+  "akari_new_year": {
+    "name": "Akari (New Year)",
+    "attackType": "mystic",
+    "defenseType": "special",
+    "combatClass": "special",
+    "combatRole": "tactical",
+    "school": "gehenna",
+    "rarity": 3,
+    "wikiImage": "https://static.miraheze.org/bluearchivewiki/a/ae/Akari_%28New_Year%29.png",
+    "combatPosition": "Back",
+    "weaponType": "AR",
+    "usesCover": false,
+    "releaseDate": "2024/03/06",
+    "fullName": "Wanibuchi Akari",
+    "age": "17",
+    "birthday": "December 9",
+    "height": "167cm",
+    "hobbies": "Eating a lot",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "I'm borrowing it for a bit!",
+        "description": "Akari enters the battlefield ridind School Lunch Promotion Vehicle. School Lunch Promotion Vehicle additionally inherits **27.6~52.5%** of of Akari's HP. (Duration: **30 seconds**)(School Lunch Promotion Vehicle does not attack enemies)(Only one tactical support vehicle can be fielded at any given time)",
+        "cost": "5"
+      },
+      {
+        "kind": "basic",
+        "name": "A special grenade, from the bottom of my heart!",
+        "description": "Akari, when riding the School Lunch Promotion Vehicle, activates \"A special grenade, from the bottom of my heart!\" skill every **13 seconds**, dealing **409~553%** damage to enemies within a circular area.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Is that how you feel today?",
+        "description": "When School Lunch Promotion Vehicle is present, increase the Attack Speed of other allies (except Akari herself) remaining within the circular area around the vehicle by **28.9~39%**, and add **23.3~31.5%** Mystic Efficiency.",
+        "cost": null
+      },
+      {
+        "kind": "basic",
+        "name": "How about this?",
+        "description": "Every **40 seconds**, increase Defense of allies within a circular area centered on the ally with the lowest HP by **12.8~24.4%** for **30 seconds**. (Effect applies only while within range)",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Lets' eat!",
+        "description": "Increase HP by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Want seconds?",
+        "description": "Increase Mystic Efficiency of all allies by **15.9~30.2%**.",
+        "cost": null
+      }
+    ]
+  },
   "ako": {
     "name": "Ako",
     "attackType": "mystic",
@@ -401,6 +458,51 @@
         "kind": "sub",
         "name": "Outlaw Style",
         "description": "Increase Critical Rate of EX skill by **20.1~38.3%**.",
+        "cost": null
+      }
+    ]
+  },
+  "aru_dress": {
+    "name": "Aru (Dress)",
+    "attackType": "penetration",
+    "defenseType": "heavy",
+    "combatClass": "striker",
+    "combatRole": "support",
+    "school": "gehenna",
+    "rarity": 3,
+    "wikiImage": "https://static.miraheze.org/bluearchivewiki/1/1f/Aru_%28Dress%29.png",
+    "combatPosition": "Back",
+    "weaponType": "SR",
+    "usesCover": true,
+    "releaseDate": "2024/02/21",
+    "fullName": "Rikuhachima Aru",
+    "age": "16",
+    "birthday": "March 12",
+    "height": "160cm",
+    "hobbies": "Studying management",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Fascinating proposal",
+        "description": "Increase Critical Damage by **47.7~83.4%** of one other ally for **30 seconds**.",
+        "cost": "3"
+      },
+      {
+        "kind": "basic",
+        "name": "Meaningful transaction",
+        "description": "Every **50 seconds**, heal one other ally with the lowest HP for **79.8~151%** of Healing.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Dress up",
+        "description": "Increase Attack by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Favorable trade",
+        "description": "Normal attacks have a 30% chance to reduce Critical Resistance of the target by **8~15.3%** for **13 seconds**. (Cooldown: **5** seconds)",
         "cost": null
       }
     ]
@@ -2894,7 +2996,7 @@
     "age": "15",
     "birthday": "December 16",
     "height": "155cm",
-    "hobbies": "Studying ninja arts, escorting her master",
+    "hobbies": "Studying ninja arts, escorting her lord",
     "skills": [
       {
         "kind": "ex",
@@ -3416,6 +3518,51 @@
         "kind": "sub",
         "name": "It can't be helped",
         "description": "When attacking a CC'd enemy, deal **74.8~142%** of Attack as extra damage.",
+        "cost": null
+      }
+    ]
+  },
+  "kayoko_dress": {
+    "name": "Kayoko (Dress)",
+    "attackType": "penetration",
+    "defenseType": "light",
+    "combatClass": "striker",
+    "combatRole": "attacker",
+    "school": "gehenna",
+    "rarity": 3,
+    "wikiImage": "https://static.miraheze.org/bluearchivewiki/9/9b/Kayoko_%28Dress%29.png",
+    "combatPosition": "Middle",
+    "weaponType": "HG",
+    "usesCover": true,
+    "releaseDate": "2024/02/21",
+    "fullName": "Onikata Kayoko",
+    "age": "18",
+    "birthday": "March 17",
+    "height": "157cm",
+    "hobbies": "Collecting CDs",
+    "skills": [
+      {
+        "kind": "ex",
+        "name": "Shadow Shot",
+        "description": "Deal **762~1219%** damage to one enemy (this attack ignores **48~64%** of enemy Defense).If Infiltration mode is active, this attack is a guaranteed critical hit. Afterwards, exit Infiltration mode.",
+        "cost": "5"
+      },
+      {
+        "kind": "basic",
+        "name": "Back in the groove",
+        "description": "Every **25 seconds**, increase Critical Damage by **13.5~25.8%** for **16 seconds**.",
+        "cost": null
+      },
+      {
+        "kind": "enhanced",
+        "name": "Assassins' eyes",
+        "description": "Increase Critical Damage by **14~26.6%**.",
+        "cost": null
+      },
+      {
+        "kind": "sub",
+        "name": "Infiltration tactics",
+        "description": "At the start of battle, activate Infiltration mode, this mode ends whenever Kayoko is attacked.After Infiltration mode ends, if Kayoko is not attacked for 10 seconds, enter Infiltration mode again.When in Infiltration mode, increase own Critical Damage by **33.6~63.8%**.",
         "cost": null
       }
     ]

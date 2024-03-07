@@ -2,42 +2,40 @@
   {
     "id": "regular",
     "name": "Regular Recruitment (Global)",
-    "date": "2023/08/16",
+    "date": "2023/08/23",
 
     "kind": "global"
   },
 
   {
-    "id": "izuna_swimsuit",
-    "name": "Izuna (Swimsuit)",
-    "date": "2023/08/16",
+    "id": "meru",
+    "name": "Meru",
+    "date": "2023/08/23",
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["izuna_swimsuit"],
-    "additionalThreeStarStudents": ["chise_swimsuit"],
+    "pickupPoolStudents": ["meru"],
 
     "kind": "global"
   },
 
   {
-    "id": "chise_swimsuit",
-    "name": "Chise (Swimsuit)",
-    "date": "2023/08/16",
+    "id": "cherino",
+    "name": "Cherino",
+    "date": "2023/08/23",
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["chise_swimsuit"],
-    "additionalThreeStarStudents": ["izuna_swimsuit"],
+    "pickupPoolStudents": ["cherino"],
 
     "kind": "global"
   },
 
   {
-    "id": "mimori_swimsuit",
-    "name": "Mimori (Swimsuit)",
-    "date": "2023/08/16",
+    "id": "marina",
+    "name": "Marina",
+    "date": "2023/08/23",
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["mimori_swimsuit"],
+    "pickupPoolStudents": ["marina"],
 
     "kind": "global"
   },
@@ -45,29 +43,42 @@
   {
     "id": "regular_jp",
     "name": "Regular Recruitment (JP)",
-    "date": "2024/02/21",
+    "date": "2024/03/06",
 
     "kind": "jp"
   },
 
   {
-    "id": "aru_dress",
-    "name": "Aru (Dress)",
-    "date": "2024/02/21",
+    "id": "akari_new_year",
+    "name": "Akari (New Year)",
+    "date": "2024/03/06",
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["aru_dress"],
+    "pickupPoolStudents": ["akari_new_year"],
 
     "kind": "jp"
   },
 
   {
-    "id": "kayoko_dress",
-    "name": "Kayoko (Dress)",
-    "date": "2024/02/21",
+    "id": "fuuka_new_year",
+    "name": "Fuuka (New Year)",
+    "date": "2024/03/06",
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["kayoko_dress"],
+    "pickupPoolStudents": ["fuuka_new_year"],
+    "additionalThreeStarStudents": ["haruna_new_year"],
+
+    "kind": "jp"
+  },
+
+  {
+    "id": "haruna_new_year",
+    "name": "Haruna (New Year)",
+    "date": "2024/03/06",
+
+    "pickupRate": 0.007,
+    "pickupPoolStudents": ["haruna_new_year"],
+    "additionalThreeStarStudents": ["fuuka_new_year"],
 
     "kind": "jp"
   },
