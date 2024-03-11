@@ -60,4 +60,26 @@ export class School {
         return School.NoSchool;
     }
   };
+
+  static all() {
+    return [
+      School.Abydos,
+      School.Arius,
+      School.Gehenna,
+      School.Hyakkiyako,
+      School.Millennium,
+      School.RedWinter,
+      School.Shanhaijing,
+      School.SRT,
+      School.Trinity,
+      School.Valkyrie,
+      School.Tokiwadai,
+      School.Sakugawa,
+      School.NoSchool,
+    ] as const;
+  }
+
+  static ids() {
+    return School.all().map((d) => d.id) as [string, ...string[]];
+  }
 }

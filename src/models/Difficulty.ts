@@ -1,17 +1,19 @@
 export class Difficulty {
+  id: string;
   name: string;
 
-  private constructor(name: string) {
+  private constructor(id: string, name: string) {
+    this.id = id;
     this.name = name;
   }
 
-  static Normal = new Difficulty('Normal');
-  static Hard = new Difficulty('Hard');
-  static VeryHard = new Difficulty('Very Hard');
-  static Hardcore = new Difficulty('Hardcore');
-  static Extreme = new Difficulty('Extreme');
-  static Insane = new Difficulty('Insane');
-  static Torment = new Difficulty('Torment');
+  static Normal = new Difficulty('normal', 'Normal');
+  static Hard = new Difficulty('hard', 'Hard');
+  static VeryHard = new Difficulty('veryhard', 'Very Hard');
+  static Hardcore = new Difficulty('hardcode', 'Hardcore');
+  static Extreme = new Difficulty('extreme', 'Extreme');
+  static Insane = new Difficulty('insane', 'Insane');
+  static Torment = new Difficulty('torment', 'Torment');
 
   static fromString = (name: string | null): Difficulty | null => {
     if (!name) {
@@ -38,4 +40,20 @@ export class Difficulty {
         return null;
     }
   };
+
+  static all() {
+    return [
+      Difficulty.Normal,
+      Difficulty.Hard,
+      Difficulty.VeryHard,
+      Difficulty.Hardcore,
+      Difficulty.Extreme,
+      Difficulty.Insane,
+      Difficulty.Torment,
+    ] as const;
+  }
+
+  static ids() {
+    return Difficulty.all().map((d) => d.id) as [string, ...string[]];
+  }
 }

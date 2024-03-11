@@ -1,8 +1,7 @@
+import 'dotenv/config';
+
 import axios from 'axios';
 import * as cheerio from 'cheerio';
-
-import * as fs from 'fs';
-import * as path from 'path';
 
 import { Mission } from '../models/Mission';
 
@@ -11,11 +10,9 @@ interface RawMission extends Omit<Mission, 'difficulty' | 'terrain'> {
   terrain?: string | null;
 }
 
-const MISSIONS_DB_PATH = path.join(__dirname, '../..', 'data/missions.json');
-
 const MISSIONS_LIST_URL = 'https://bluearchive.wiki/wiki/Missions';
 
-const missions = new Map();
+const missions = new Map<string, RawMission>();
 
 async function getMissionMap(name: string) {
   const response = await axios.get(`${MISSIONS_LIST_URL}/${name}`);
@@ -73,7 +70,7 @@ function parseMissionRow($: cheerio.CheerioAPI, row: cheerio.Element) {
   );
   details.drops = getDrops($, row);
 
-  missions.set(details.name, details);
+  missions.set(details.name, details as RawMission);
 
   return details.name;
 }
@@ -94,7 +91,7 @@ async function populateMissions() {
     const image = await getMissionMap(name);
 
     if (image) {
-      missions.get(name).stageImageUrl = image;
+      missions.get(name)!.stageImageUrl = image;
     }
 
     console.log(`Scraped mission data for ${name}.`);
@@ -105,25 +102,39 @@ function normalizeMissions() {
   for (const [_, missionDetails] of missions) {
     for (const [key, value] of Object.entries(missionDetails)) {
       if (typeof value === 'string') {
-        missionDetails[key] = value.trim();
+        (missionDetails as any)[key] = value.trim();
       }
 
       if (Array.isArray(value)) {
-        missionDetails[key] = value.map((item) => item.trim());
+        (missionDetails as any)[key] = value.map((item) => item.trim());
       }
     }
   }
 }
 
-function saveMissionsData() {
+async function saveMissionsData() {
+  console.log('Saving missions data to the database...');
+
   const data = Array.from(missions.values());
-  fs.writeFileSync(MISSIONS_DB_PATH, JSON.stringify(data, null, 2));
+  const promises = [];
+
+  for (const mission of data) {
+    const data = Mission.fromJSON(mission);
+    promises.push(data.save());
+  }
+
+  try {
+    await Promise.all(promises);
+    console.log('Missions data saved.');
+  } catch (error) {
+    console.error('Error saving missions data:', error);
+  }
 }
 
 async function main() {
   await populateMissions();
   normalizeMissions();
-  saveMissionsData();
+  await saveMissionsData();
 
   console.log('Done!');
 }

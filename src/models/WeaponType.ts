@@ -62,4 +62,24 @@ export class WeaponType {
         return null;
     }
   };
+
+  static all() {
+    return [
+      WeaponType.AssaultRifle,
+      WeaponType.Flamethrower,
+      WeaponType.GrenadeLauncher,
+      WeaponType.Handgun,
+      WeaponType.MachineGun,
+      WeaponType.Mortar,
+      WeaponType.Railgun,
+      WeaponType.RocketLauncher,
+      WeaponType.Shotgun,
+      WeaponType.SubmachineGun,
+      WeaponType.SniperRifle,
+    ] as const;
+  }
+
+  static codes() {
+    return WeaponType.all().map((d) => d.code) as [string, ...string[]];
+  }
 }

@@ -30,4 +30,17 @@ export class SkillType {
         return null;
     }
   };
+
+  static all() {
+    return [
+      SkillType.EX,
+      SkillType.Basic,
+      SkillType.Enhanced,
+      SkillType.Sub,
+    ] as const;
+  }
+
+  static codes() {
+    return SkillType.all().map((d) => d.code) as [string, ...string[]];
+  }
 }
