@@ -1,18 +1,28 @@
-const axios = require('axios').default;
-const cheerio = require('cheerio');
+import axios from 'axios';
+import * as cheerio from 'cheerio';
 
-const fs = require('fs');
-const path = require('path');
+import * as fs from 'fs';
+import * as path from 'path';
 
-const { generateKey, normalizeName } = require('./common/studentNames');
+import { generateKey, normalizeName } from './common/studentNames';
+import { Gift } from '../models/Gift';
 
-const GIFTS_DB_PATH = path.join(__dirname, '..', 'data/gifts.json');
+interface GiftData extends Omit<Gift, 'studentsFavorite' | 'studentsLiked'> {
+  studentsFavorite: string[];
+  studentsLiked: string[];
+}
+
+const GIFTS_DB_PATH = path.join(__dirname, '../..', 'data/gifts.json');
 
 const GIFTS_LIST_URL = 'https://bluearchive.wiki/wiki/Affection';
 
-const gifts = [];
+const gifts: GiftData[] = [];
 
-function getStudents($, row, index) {
+function getStudents(
+  $: cheerio.CheerioAPI,
+  row: cheerio.Element,
+  index: number,
+) {
   const students = [];
 
   const images = $(row).find(`td:nth-child(${index}) img`).toArray();
@@ -27,7 +37,7 @@ function getStudents($, row, index) {
   return students;
 }
 
-function parseGiftRow($, row) {
+function parseGiftRow($: cheerio.CheerioAPI, row: cheerio.Element) {
   let iconUrl = $(row).find('td:nth-child(1) img').attr('src');
   const rarity = $(row).find('td:nth-child(2) > span').toArray().length;
   const name = $(row).find('td:nth-child(3)').text().trim();

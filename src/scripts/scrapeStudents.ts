@@ -1,16 +1,44 @@
-const axios = require('axios').default;
-const cheerio = require('cheerio');
+import axios from 'axios';
+import * as cheerio from 'cheerio';
 
-const fs = require('fs');
-const path = require('path');
+import * as fs from 'fs';
+import * as path from 'path';
 
-const { generateKey, normalizeName } = require('./common/studentNames');
-const mapToObject = require('./common/mapToObject');
+import { generateKey, normalizeName } from './common/studentNames';
+import mapToObject from './common/mapToObject';
+import { Student } from '../models/Student';
+import { RawSkill } from './scrapeSkills';
 
-const STUDENT_DB_PATH = path.join(__dirname, '..', 'data/students.json');
+interface RawStudent
+  extends Omit<
+    Student,
+    | 'skills'
+    | 'rarity'
+    | 'attackType'
+    | 'defenseType'
+    | 'combatClass'
+    | 'combatRole'
+    | 'school'
+    | 'combatPosition'
+    | 'weaponType'
+    | 'releaseDate'
+  > {
+  skills?: RawSkill[];
+  rarity?: number;
+  attackType?: string;
+  defenseType?: string;
+  combatClass?: string;
+  combatRole?: string;
+  school?: string;
+  combatPosition?: string;
+  weaponType?: string;
+  releaseDate?: string;
+}
+
+const STUDENT_DB_PATH = path.join(__dirname, '../..', 'data/students.json');
 const STUDENT_ICON_PATH = path.join(
   __dirname,
-  '..',
+  '../..',
   'assets/images/students/icons',
 );
 
@@ -21,12 +49,12 @@ const CHARACTER_TRIVIA_URL = `https://bluearchive.wiki/wiki/Characters_trivia_li
 const STUDENT_ICON_BASE_URL =
   'https://bluearchive.page/resource/image/students';
 
-const studentMap = new Map();
-const skillCache = new Map();
+const studentMap = new Map<string, RawStudent>();
+const skillCache = new Map<string, RawSkill[]>();
 
 function loadSkillCache() {
-  const studentsData = fs.readFileSync(STUDENT_DB_PATH);
-  const students = JSON.parse(studentsData);
+  const studentsData = fs.readFileSync(STUDENT_DB_PATH, 'utf-8');
+  const students: Record<string, RawStudent> = JSON.parse(studentsData);
 
   for (const [key, studentDetails] of Object.entries(students)) {
     if (!studentDetails.skills) {
@@ -55,7 +83,7 @@ function restoreSkillData() {
   console.log(`Restored ${skillCache.size} skills from cache.`);
 }
 
-function getWikiImage($, row) {
+function getWikiImage($: cheerio.CheerioAPI, row: cheerio.Element) {
   const url = $(row).find('td:nth-child(1) img').attr('src');
 
   if (!url) {
@@ -65,7 +93,7 @@ function getWikiImage($, row) {
   return 'https:' + url.split('/').slice(0, -1).join('/').replace('/thumb', '');
 }
 
-function parseStudentRow($, row) {
+function parseStudentRow($: cheerio.CheerioAPI, row: cheerio.Element) {
   const name = normalizeName($(row).find('td:nth-child(2)').text());
 
   if (!name) {
@@ -77,9 +105,9 @@ function parseStudentRow($, row) {
   const key = generateKey(name);
   const studentDetails = {
     name,
-  };
+  } as RawStudent;
 
-  const rowClassNames = $(row).attr('class').split(' ');
+  const rowClassNames = ($(row).attr('class') ?? '').split(' ');
 
   for (const className of rowClassNames) {
     if (className.startsWith('attack-')) {
@@ -141,7 +169,7 @@ async function populateStudents() {
   }
 }
 
-function parseStudentTriviaRow($, row) {
+function parseStudentTriviaRow($: cheerio.CheerioAPI, row: cheerio.Element) {
   const name = normalizeName($(row).find('td:nth-child(1)').text());
 
   if (!name) {
@@ -183,7 +211,7 @@ function normalizeDetails() {
   for (const [_, studentDetails] of studentMap) {
     for (const [key, value] of Object.entries(studentDetails)) {
       if (typeof value === 'string') {
-        studentDetails[key] = value.trim();
+        (studentDetails as any)[key] = value.trim();
       }
     }
   }
@@ -194,7 +222,7 @@ function saveStudentData() {
   fs.writeFileSync(STUDENT_DB_PATH, JSON.stringify(studentData, null, 2));
 }
 
-function normalizeStudentIconName(key) {
+function normalizeStudentIconName(key: string) {
   key = key
     .replace('swimsuit', 'mizugi')
     .replace('cycling', 'riding')
@@ -233,7 +261,7 @@ function normalizeStudentIconName(key) {
   return `${key}.webp`;
 }
 
-async function fetchStudentIcon(iconName) {
+async function fetchStudentIcon(iconName: string) {
   const url = `${STUDENT_ICON_BASE_URL}/${iconName}`;
   const res = await axios.get(url, { responseType: 'arraybuffer' });
   return res.data;

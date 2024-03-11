@@ -1,16 +1,23 @@
-const axios = require('axios').default;
-const cheerio = require('cheerio');
+import axios from 'axios';
+import * as cheerio from 'cheerio';
 
-const fs = require('fs');
-const path = require('path');
+import * as fs from 'fs';
+import * as path from 'path';
 
-const MISSIONS_DB_PATH = path.join(__dirname, '..', 'data/missions.json');
+import { Mission } from '../models/Mission';
+
+interface RawMission extends Omit<Mission, 'difficulty' | 'terrain'> {
+  difficulty?: string | null;
+  terrain?: string | null;
+}
+
+const MISSIONS_DB_PATH = path.join(__dirname, '../..', 'data/missions.json');
 
 const MISSIONS_LIST_URL = 'https://bluearchive.wiki/wiki/Missions';
 
 const missions = new Map();
 
-async function getMissionMap(name) {
+async function getMissionMap(name: string) {
   const response = await axios.get(`${MISSIONS_LIST_URL}/${name}`);
   const $ = cheerio.load(response.data);
 
@@ -25,7 +32,7 @@ async function getMissionMap(name) {
   return `https:${image}`;
 }
 
-function getDrops($, row) {
+function getDrops($: cheerio.CheerioAPI, row: cheerio.Element) {
   const drops = [];
 
   const columns = $(row).find('td').toArray().slice(5);
@@ -49,8 +56,8 @@ function getDrops($, row) {
   return drops;
 }
 
-function parseMissionRow($, row) {
-  const details = {};
+function parseMissionRow($: cheerio.CheerioAPI, row: cheerio.Element) {
+  const details: Partial<RawMission> = {};
 
   details.name = $(row).find('td:nth-child(1)').text().trim();
 

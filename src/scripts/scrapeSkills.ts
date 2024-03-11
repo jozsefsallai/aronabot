@@ -1,13 +1,18 @@
-const axios = require('axios').default;
-const cheerio = require('cheerio');
+import axios from 'axios';
+import * as cheerio from 'cheerio';
 
-const fs = require('fs');
-const path = require('path');
+import * as fs from 'fs';
+import * as path from 'path';
 
-const { denormalizeName } = require('./common/studentNames');
-const mapToObject = require('./common/mapToObject');
+import { denormalizeName } from './common/studentNames';
+import mapToObject from './common/mapToObject';
+import { Skill } from '../models/Skill';
 
-const STUDENT_DB_PATH = path.join(__dirname, '..', 'data/students.json');
+export interface RawSkill extends Omit<Skill, 'kind'> {
+  kind: string;
+}
+
+const STUDENT_DB_PATH = path.join(__dirname, '../..', 'data/students.json');
 
 const CHARACTER_URL = 'https://bluearchive.wiki/wiki';
 
@@ -22,10 +27,14 @@ const skillTypes = {
   1: 'basic',
   2: 'enhanced',
   3: 'sub',
-};
+} as any;
 
-function makeSkill($, idx, skillElement) {
-  const skillData = {
+function makeSkill(
+  $: cheerio.CheerioAPI,
+  idx: number,
+  skillElement: cheerio.Element,
+) {
+  const skillData: Partial<RawSkill> = {
     kind: skillTypes[idx],
     name: '',
     description: '',
@@ -61,7 +70,7 @@ function makeSkill($, idx, skillElement) {
   }
 
   const name = $(skillElement).find('td:nth-child(2) p b').text();
-  skillData.name = name.split('•').pop().trim();
+  skillData.name = name.split('•').pop()?.trim();
 
   // remove the name element from the second column so we can get the description
   $(skillElement).find('td:nth-child(2) p b').remove();
@@ -79,7 +88,7 @@ function makeSkill($, idx, skillElement) {
   return skillData;
 }
 
-async function getSkillsForStudent(studentKey) {
+async function getSkillsForStudent(studentKey: string) {
   const student = studentMap.get(studentKey);
   const nameIdentifier = denormalizeName(student.name).replace(/\s/g, '_');
   const url = `${CHARACTER_URL}/${nameIdentifier}`;
@@ -107,7 +116,7 @@ async function getSkillsForStudent(studentKey) {
   console.log(`Scraped skills for ${student.name}.`);
 }
 
-async function populateStudentSkills(scrapeAll) {
+async function populateStudentSkills(scrapeAll: boolean) {
   for await (const [key, student] of studentMap) {
     if (!scrapeAll && student.skills) {
       continue;

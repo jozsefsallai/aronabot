@@ -1,10 +1,15 @@
-const dotenv = require('dotenv');
+import dotenv from 'dotenv';
 dotenv.config();
 
-const { Redis } = require('ioredis');
-const redis = new Redis(process.env.REDIS_URL);
+import { Redis } from 'ioredis';
 
-function getPrefix(banner) {
+if (!process.env.REDIS_URL) {
+  throw new Error('Missing REDIS_URL in environment');
+}
+
+const redis = new Redis(process.env.REDIS_URL!);
+
+function getPrefix(banner: string) {
   switch (banner) {
     case 'global':
       return 'gacha:';
@@ -15,7 +20,7 @@ function getPrefix(banner) {
   }
 }
 
-async function resetForBanner(banner) {
+async function resetForBanner(banner: string) {
   if (!['global', 'jp'].includes(banner)) {
     throw new Error('Invalid banner');
   }

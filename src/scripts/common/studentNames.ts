@@ -1,11 +1,11 @@
-function generateKey(name) {
+export function generateKey(name: string): string {
   return name
     .toLowerCase()
     .replace(/\s/g, '_')
     .replace(/[^a-z0-9_]/g, '');
 }
 
-function normalizeName(name) {
+export function normalizeName(name: string): string {
   return name
     .trim()
     .replace('Sportswear', 'Track')
@@ -14,7 +14,7 @@ function normalizeName(name) {
     .replace('Kid', 'Small');
 }
 
-function denormalizeName(name) {
+export function denormalizeName(name: string): string {
   return name
     .trim()
     .replace('Track', 'Sportswear')
@@ -22,9 +22,3 @@ function denormalizeName(name) {
     .replace('Cycling', 'Riding')
     .replace('Small', 'Kid');
 }
-
-module.exports = {
-  generateKey,
-  normalizeName,
-  denormalizeName,
-};

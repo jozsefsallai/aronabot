@@ -10,7 +10,12 @@
     "lint:fix": "npm run lint -- --fix",
     "prepack": "npm run build",
     "watch": "npm run build -- --watch",
-    "start": "node dist/index.js"
+    "start": "node dist/index.js",
+    "scripts:resetRecruitmentPoints": "tsx src/scripts/resetRecruitmentPoints.ts",
+    "scripts:scrapeGifts": "tsx src/scripts/scrapeGifts.ts",
+    "scripts:scrapeMissions": "tsx src/scripts/scrapeMissions.ts",
+    "scripts:scrapeSkills": "tsx src/scripts/scrapeSkills.ts",
+    "scripts:scrapeStudents": "tsx src/scripts/scrapeStudents.ts"
   },
   "repository": {
     "type": "git",
@@ -31,7 +36,8 @@
     "ioredis": "^5.3.2",
     "locate-chrome": "^0.1.1",
     "pug": "^3.0.2",
-    "puppeteer": "^21.3.4"
+    "puppeteer": "^21.3.4",
+    "tsx": "^4.7.1"
   },
   "devDependencies": {
     "@types/express": "^4.17.17",
