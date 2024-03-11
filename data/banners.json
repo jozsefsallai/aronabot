@@ -2,40 +2,40 @@
   {
     "id": "regular",
     "name": "Regular Recruitment (Global)",
-    "date": "2023/08/23",
+    "date": "2023/09/06",
 
     "kind": "global"
   },
 
   {
-    "id": "meru",
-    "name": "Meru",
-    "date": "2023/08/23",
+    "id": "kotori_cheer_squad",
+    "name": "Kotori (Cheer Squad)",
+    "date": "2023/09/06",
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["meru"],
+    "pickupPoolStudents": ["kotori_cheer_squad"],
 
     "kind": "global"
   },
 
   {
-    "id": "cherino",
-    "name": "Cherino",
-    "date": "2023/08/23",
+    "id": "noa",
+    "name": "Noa",
+    "date": "2023/09/06",
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["cherino"],
+    "pickupPoolStudents": ["noa"],
 
     "kind": "global"
   },
 
   {
-    "id": "marina",
-    "name": "Marina",
-    "date": "2023/08/23",
+    "id": "utaha_cheer_squad",
+    "name": "Utaha (Cheer Squad)",
+    "date": "2023/09/06",
 
     "pickupRate": 0.007,
-    "pickupPoolStudents": ["marina"],
+    "pickupPoolStudents": ["utaha_cheer_squad"],
 
     "kind": "global"
   },
