@@ -1,3 +1,6 @@
+import dotenv from 'dotenv';
+dotenv.config();
+
 import axios from 'axios';
 import * as cheerio from 'cheerio';
 
@@ -8,6 +11,10 @@ import { generateKey, normalizeName } from './common/studentNames';
 import mapToObject from './common/mapToObject';
 import { Student } from '../models/Student';
 import { RawSkill } from './scrapeSkills';
+
+import { Storage } from '../utils/storage';
+
+const storage = Storage.getInstance();
 
 interface RawStudent
   extends Omit<
@@ -36,11 +43,6 @@ interface RawStudent
 }
 
 const STUDENT_DB_PATH = path.join(__dirname, '../..', 'data/students.json');
-const STUDENT_ICON_PATH = path.join(
-  __dirname,
-  '../..',
-  'assets/images/students/icons',
-);
 
 const now = new Date().getTime(); // you should cache-invalidate yourself, NOW
 
@@ -268,20 +270,22 @@ async function fetchStudentIcon(iconName: string) {
 }
 
 async function scrapeStudentIcons() {
-  const dirContents = fs.readdirSync(STUDENT_ICON_PATH);
-
   for (const student of studentMap.keys()) {
     const iconName = normalizeStudentIconName(student);
-    const iconPath = path.join(STUDENT_ICON_PATH, `${student}.webp`);
+    const iconPath = `images/students/icons/${student}.webp`;
 
-    if (dirContents.includes(`${student}.webp`)) {
+    if (await storage.exists(iconPath)) {
       continue;
     }
 
     try {
       const buffer = await fetchStudentIcon(iconName);
       const icon = Buffer.from(buffer, 'binary');
-      fs.writeFileSync(iconPath, icon);
+      await storage.upload({
+        key: iconPath,
+        data: icon,
+        mimeType: 'image/webp',
+      });
 
       console.log(`Fetched icon for ${student}.`);
     } catch (err) {

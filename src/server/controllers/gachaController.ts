@@ -3,11 +3,13 @@ import { Request, Response } from 'express';
 import { bannerContainer } from '../../containers/banners';
 import { Student } from '../../models/Student';
 import { Rarity } from '../../models/Rarity';
+import { iconsContainer } from '../../containers/icons';
 
 interface Card {
   key: string;
   student: Student;
   isPickup: boolean;
+  icon: string;
 }
 
 export function get(req: Request, res: Response) {
@@ -28,10 +30,13 @@ export function get(req: Request, res: Response) {
     const students = banner.pullTen();
 
     for (const [student, key] of students) {
+      const icon = iconsContainer.getIcon(key);
+
       cards.push({
         key,
         student,
         isPickup: banner.isPickup(key),
+        icon: icon ?? '',
       });
     }
   } catch (err: any) {
