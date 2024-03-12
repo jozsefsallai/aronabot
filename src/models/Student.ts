@@ -1,3 +1,4 @@
+import { InferSelectModel, eq } from 'drizzle-orm';
 import { Birthday, parseBirthday } from '../utils/date';
 import { AttackType } from './AttackType';
 import { CombatClass } from './CombatClass';
@@ -8,6 +9,9 @@ import { Rarity } from './Rarity';
 import { School } from './School';
 import { Skill } from './Skill';
 import { WeaponType } from './WeaponType';
+import { students } from '../db/schema';
+import db from '../db';
+import { exists } from '../db/utils';
 
 export class Student {
   public birthdayData: Birthday | null = null;
@@ -65,7 +69,7 @@ export class Student {
       CombatPosition.fromString(json['combatPosition']),
       json['usesCover'],
       WeaponType.fromString(json['weaponType']),
-      Skill.manyFromJSON(json['skills']),
+      Skill.manyFromJSON(json['skills'] ?? []),
 
       json['rarity'] as Rarity,
       json['isWelfare'] ?? false,
@@ -139,5 +143,105 @@ export class Student {
 
     const timestamp = this.nextBirthday.getTime();
     return `<t:${Math.floor(timestamp / 1000)}:R>`;
+  }
+
+  static async all() {
+    return db
+      .select()
+      .from(students)
+      .orderBy(students.id)
+      .execute()
+      .then((entries) => Promise.all(entries.map(Student.fromDBEntry)));
+  }
+
+  static async fromDBEntry(
+    entry: InferSelectModel<typeof students>,
+  ): Promise<Student> {
+    const skills = await Skill.getSkillsForStudent(entry.id);
+
+    return new Student(
+      entry.id,
+      entry.name,
+      entry.fullName,
+      School.fromString(entry.school),
+      entry.age,
+      entry.birthday,
+      entry.height,
+      entry.hobbies,
+      entry.wikiImage,
+      AttackType.fromString(entry.attackType),
+      DefenseType.fromString(entry.defenseType),
+      CombatClass.fromString(entry.combatClass),
+      CombatRole.fromString(entry.combatRole),
+      CombatPosition.fromString(entry.combatPosition),
+      entry.usesCover,
+      WeaponType.fromString(entry.weaponType),
+      skills,
+      entry.rarity as Rarity,
+      entry.isWelfare,
+      entry.isLimited,
+      entry.releaseDate ? new Date(entry.releaseDate) : null,
+    );
+  }
+
+  toDBEntry(): InferSelectModel<typeof students> {
+    return {
+      id: this.key,
+      name: this.name,
+      fullName: this.fullName,
+      school: this.school.id,
+      age: this.age,
+      birthday: this.birthday,
+      height: this.height,
+      hobbies: this.hobbies,
+      wikiImage: this.wikiImage,
+      attackType: this.attackType?.id ?? null,
+      defenseType: this.defenseType?.id ?? null,
+      combatClass: this.combatClass?.id ?? null,
+      combatRole: this.combatRole?.id ?? null,
+      combatPosition: this.combatPosition?.id ?? null,
+      usesCover: this.usesCover,
+      weaponType: this.weaponType?.code ?? null,
+      rarity: this.rarity,
+      isWelfare: this.isWelfare,
+      isLimited: this.isLimited,
+      releaseDate: this.releaseDate?.toISOString() ?? null,
+    };
+  }
+
+  async save() {
+    const entry = this.toDBEntry();
+    if (await exists(db, students, eq(students.id, this.key))) {
+      await this.update(entry);
+    } else {
+      await this.insert(entry);
+    }
+  }
+
+  async insert(entry: InferSelectModel<typeof students>) {
+    await db.insert(students).values(entry).execute();
+  }
+
+  async update(entry: InferSelectModel<typeof students>) {
+    await db
+      .update(students)
+      .set(entry)
+      .where(eq(students.id, this.key))
+      .execute();
+  }
+
+  static async getFromDB(key: string): Promise<Student | null> {
+    return db
+      .select()
+      .from(students)
+      .where(eq(students.id, key))
+      .execute()
+      .then((entries) => {
+        if (entries.length === 0) {
+          return null;
+        }
+
+        return Student.fromDBEntry(entries[0]);
+      });
   }
 }

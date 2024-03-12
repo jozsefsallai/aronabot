@@ -36,6 +36,7 @@ export class Mission {
     return db
       .select()
       .from(missions)
+      .orderBy(missions.name)
       .execute()
       .then((entries) => entries.map(Mission.fromDBEntry));
   }

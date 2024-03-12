@@ -1,9 +1,13 @@
+import { InferSelectModel, eq } from 'drizzle-orm';
 import { studentContainer } from '../containers/students';
 import { Rarity } from '../models/Rarity';
 import { Student } from '../models/Student';
 import { shirokoTerror } from '../utils/extraData';
 import { BannerKind } from './kind';
 import { GachaPool } from './pool';
+import { banners } from '../db/schema';
+import db from '../db';
+import { exists } from '../db/utils';
 
 export interface GachaBannerParams {
   id: string;
@@ -297,6 +301,72 @@ class GachaBanner {
 
   static fromJSON(params: GachaBannerParams): GachaBanner {
     return new GachaBanner(params);
+  }
+
+  static async all() {
+    return db
+      .select()
+      .from(banners)
+      .execute()
+      .then((entries) => entries.map(GachaBanner.fromDBEntry));
+  }
+
+  static fromDBEntry(entry: InferSelectModel<typeof banners>): GachaBanner {
+    return new GachaBanner({
+      id: entry.id,
+      name: entry.name,
+      date: entry.date,
+      threeStarRate: entry.threeStarRate / 100,
+      pickupRate: entry.pickupRate / 100,
+      extraRate: entry.extraRate / 100,
+      pickupPoolStudents: entry.pickupPoolStudents ?? undefined,
+      extraPoolStudents: entry.extraPoolStudents ?? undefined,
+      additionalThreeStarStudents:
+        entry.additionalThreeStarStudents ?? undefined,
+      baseOneStarRate: entry.baseOneStarRate / 100,
+      baseTwoStarRate: entry.baseTwoStarRate / 100,
+      baseThreeStarRate: entry.baseThreeStarRate / 100,
+      kind: entry.kind,
+    });
+  }
+
+  toDBEntry(): InferSelectModel<typeof banners> {
+    return {
+      id: this.id,
+      name: this.name,
+      date: this.date.toISOString(),
+      threeStarRate: Math.floor(this._threeStarRate * 100),
+      pickupRate: Math.floor(this._pickupRate * 100),
+      extraRate: Math.floor(this._extraRate * 100),
+      pickupPoolStudents: this._pickupPool.students,
+      extraPoolStudents: this._extraPool.students,
+      additionalThreeStarStudents: this._threeStarPool.students,
+      baseOneStarRate: Math.floor(this._baseOneStarRate * 100),
+      baseTwoStarRate: Math.floor(this._baseTwoStarRate * 100),
+      baseThreeStarRate: Math.floor(this._baseThreeStarRate * 100),
+      kind: this.kind,
+    };
+  }
+
+  async save() {
+    const entry = this.toDBEntry();
+    if (await exists(db, banners, eq(banners.id, this.id))) {
+      await this.update(entry);
+    } else {
+      await this.insert(entry);
+    }
+  }
+
+  async insert(entry: InferSelectModel<typeof banners>) {
+    await db.insert(banners).values(entry).execute();
+  }
+
+  async update(entry: InferSelectModel<typeof banners>) {
+    await db
+      .update(banners)
+      .set(entry)
+      .where(eq(banners.id, this.id))
+      .execute();
   }
 }
 

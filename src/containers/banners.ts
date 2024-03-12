@@ -1,6 +1,3 @@
-import * as path from 'path';
-import * as fs from 'fs';
-
 import { GachaBanner } from '../gacha/banner';
 
 export class BannerContainer {
@@ -10,23 +7,12 @@ export class BannerContainer {
     this.bootstrap();
   }
 
-  bootstrap() {
-    const bannerDatabasePath = path.join(
-      __dirname,
-      '../..',
-      'data/banners.json',
-    );
+  async bootstrap() {
+    await this.reload();
+  }
 
-    if (!fs.existsSync(bannerDatabasePath)) {
-      throw new Error('Banner database not found! Please generate it first.');
-    }
-
-    const data = fs.readFileSync(bannerDatabasePath, 'utf8');
-    const banners = JSON.parse(data);
-
-    for (const bannerData of banners) {
-      this.addBanner(GachaBanner.fromJSON(bannerData));
-    }
+  async reload(): Promise<void> {
+    this.banners = await GachaBanner.all();
   }
 
   addBanner(banner: GachaBanner): void {

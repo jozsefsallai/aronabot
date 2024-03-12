@@ -1,0 +1,1 @@
+ALTER TABLE "banners" ALTER COLUMN "date" SET DATA TYPE varchar;

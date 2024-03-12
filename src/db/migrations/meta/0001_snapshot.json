@@ -1,0 +1,630 @@
+{
+  "id": "15e551d6-8d4a-4977-96c8-23a8d305a366",
+  "prevId": "9576c577-d0e4-4b17-8593-366773623e03",
+  "version": "5",
+  "dialect": "pg",
+  "tables": {
+    "banners": {
+      "name": "banners",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "varchar",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "name": {
+          "name": "name",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "date": {
+          "name": "date",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "three_star_rate": {
+          "name": "three_star_rate",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "default": 3
+        },
+        "pickup_rate": {
+          "name": "pickup_rate",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "default": 0
+        },
+        "extra_rate": {
+          "name": "extra_rate",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "default": 0
+        },
+        "pickup_pool_students": {
+          "name": "pickup_pool_students",
+          "type": "varchar[]",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "extra_pool_students": {
+          "name": "extra_pool_students",
+          "type": "varchar[]",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "additional_three_star_students": {
+          "name": "additional_three_star_students",
+          "type": "varchar[]",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "base_one_star_rate": {
+          "name": "base_one_star_rate",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "default": 785
+        },
+        "base_two_star_rate": {
+          "name": "base_two_star_rate",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "default": 185
+        },
+        "base_three_star_rate": {
+          "name": "base_three_star_rate",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "default": 30
+        },
+        "kind": {
+          "name": "kind",
+          "type": "banner_kind",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "favorite_gifts_to_students": {
+      "name": "favorite_gifts_to_students",
+      "schema": "",
+      "columns": {
+        "student_id": {
+          "name": "student_id",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "gift_id": {
+          "name": "gift_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "favorite_gifts_to_students_student_id_students_id_fk": {
+          "name": "favorite_gifts_to_students_student_id_students_id_fk",
+          "tableFrom": "favorite_gifts_to_students",
+          "tableTo": "students",
+          "columnsFrom": [
+            "student_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "favorite_gifts_to_students_gift_id_gifts_id_fk": {
+          "name": "favorite_gifts_to_students_gift_id_gifts_id_fk",
+          "tableFrom": "favorite_gifts_to_students",
+          "tableTo": "gifts",
+          "columnsFrom": [
+            "gift_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {
+        "favorite_gifts_to_students_student_id_gift_id_pk": {
+          "name": "favorite_gifts_to_students_student_id_gift_id_pk",
+          "columns": [
+            "student_id",
+            "gift_id"
+          ]
+        }
+      },
+      "uniqueConstraints": {}
+    },
+    "gifts": {
+      "name": "gifts",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "name": {
+          "name": "name",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "icon_url": {
+          "name": "icon_url",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "description": {
+          "name": "description",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "rarity": {
+          "name": "rarity",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "default": 1
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "liked_gifts_to_students": {
+      "name": "liked_gifts_to_students",
+      "schema": "",
+      "columns": {
+        "student_id": {
+          "name": "student_id",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "gift_id": {
+          "name": "gift_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "liked_gifts_to_students_student_id_students_id_fk": {
+          "name": "liked_gifts_to_students_student_id_students_id_fk",
+          "tableFrom": "liked_gifts_to_students",
+          "tableTo": "students",
+          "columnsFrom": [
+            "student_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "liked_gifts_to_students_gift_id_gifts_id_fk": {
+          "name": "liked_gifts_to_students_gift_id_gifts_id_fk",
+          "tableFrom": "liked_gifts_to_students",
+          "tableTo": "gifts",
+          "columnsFrom": [
+            "gift_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {
+        "liked_gifts_to_students_student_id_gift_id_pk": {
+          "name": "liked_gifts_to_students_student_id_gift_id_pk",
+          "columns": [
+            "student_id",
+            "gift_id"
+          ]
+        }
+      },
+      "uniqueConstraints": {}
+    },
+    "missions": {
+      "name": "missions",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "name": {
+          "name": "name",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "cost": {
+          "name": "cost",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "difficulty": {
+          "name": "difficulty",
+          "type": "difficulty",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "terrain": {
+          "name": "terrain",
+          "type": "terrain",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "recommended_level": {
+          "name": "recommended_level",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "drops": {
+          "name": "drops",
+          "type": "text[]",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "stage_image_url": {
+          "name": "stage_image_url",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "skills": {
+      "name": "skills",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "student_id": {
+          "name": "student_id",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "kind": {
+          "name": "kind",
+          "type": "skill_type",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "name": {
+          "name": "name",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "description": {
+          "name": "description",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "cost": {
+          "name": "cost",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "skills_student_id_students_id_fk": {
+          "name": "skills_student_id_students_id_fk",
+          "tableFrom": "skills",
+          "tableTo": "students",
+          "columnsFrom": [
+            "student_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "students": {
+      "name": "students",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "varchar",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "name": {
+          "name": "name",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "full_name": {
+          "name": "full_name",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "school": {
+          "name": "school",
+          "type": "school",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "age": {
+          "name": "age",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "birthday": {
+          "name": "birthday",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "height": {
+          "name": "height",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "hobbies": {
+          "name": "hobbies",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "wiki_image": {
+          "name": "wiki_image",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "attack_type": {
+          "name": "attack_type",
+          "type": "attack_type",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "defense_type": {
+          "name": "defense_type",
+          "type": "defense_type",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "combat_class": {
+          "name": "combat_class",
+          "type": "combat_class",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "combat_role": {
+          "name": "combat_role",
+          "type": "combat_role",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "combat_position": {
+          "name": "combat_position",
+          "type": "combat_position",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "uses_cover": {
+          "name": "uses_cover",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true,
+          "default": false
+        },
+        "weapon_type": {
+          "name": "weapon_type",
+          "type": "weapon_type",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "rarity": {
+          "name": "rarity",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "is_welfare": {
+          "name": "is_welfare",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true,
+          "default": false
+        },
+        "is_limited": {
+          "name": "is_limited",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true,
+          "default": false
+        },
+        "release_date": {
+          "name": "release_date",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    }
+  },
+  "enums": {
+    "attack_type": {
+      "name": "attack_type",
+      "values": {
+        "explosive": "explosive",
+        "piercing": "piercing",
+        "mystic": "mystic",
+        "sonic": "sonic"
+      }
+    },
+    "banner_kind": {
+      "name": "banner_kind",
+      "values": {
+        "global": "global",
+        "jp": "jp",
+        "chroma": "chroma"
+      }
+    },
+    "combat_class": {
+      "name": "combat_class",
+      "values": {
+        "striker": "striker",
+        "special": "special"
+      }
+    },
+    "combat_position": {
+      "name": "combat_position",
+      "values": {
+        "front": "front",
+        "middle": "middle",
+        "back": "back"
+      }
+    },
+    "combat_role": {
+      "name": "combat_role",
+      "values": {
+        "attacker": "attacker",
+        "healer": "healer",
+        "support": "support",
+        "t.s.": "t.s.",
+        "tank": "tank"
+      }
+    },
+    "defense_type": {
+      "name": "defense_type",
+      "values": {
+        "light": "light",
+        "heavy": "heavy",
+        "special": "special",
+        "elastic": "elastic"
+      }
+    },
+    "difficulty": {
+      "name": "difficulty",
+      "values": {
+        "normal": "normal",
+        "hard": "hard",
+        "veryhard": "veryhard",
+        "hardcode": "hardcode",
+        "extreme": "extreme",
+        "insane": "insane",
+        "torment": "torment"
+      }
+    },
+    "school": {
+      "name": "school",
+      "values": {
+        "abydos": "abydos",
+        "arius": "arius",
+        "gehenna": "gehenna",
+        "hyakkiyako": "hyakkiyako",
+        "millennium": "millennium",
+        "redwinter": "redwinter",
+        "shanhaijing": "shanhaijing",
+        "srt": "srt",
+        "trinity": "trinity",
+        "valkyrie": "valkyrie",
+        "tokiwadai": "tokiwadai",
+        "sakugawa": "sakugawa",
+        "etc": "etc"
+      }
+    },
+    "skill_type": {
+      "name": "skill_type",
+      "values": {
+        "ex": "ex",
+        "basic": "basic",
+        "enhanced": "enhanced",
+        "sub": "sub"
+      }
+    },
+    "terrain": {
+      "name": "terrain",
+      "values": {
+        "indoors": "indoors",
+        "outdoors": "outdoors",
+        "urban": "urban"
+      }
+    },
+    "weapon_type": {
+      "name": "weapon_type",
+      "values": {
+        "AR": "AR",
+        "FT": "FT",
+        "GL": "GL",
+        "HG": "HG",
+        "MG": "MG",
+        "MT": "MT",
+        "RG": "RG",
+        "RL": "RL",
+        "SG": "SG",
+        "SMG": "SMG",
+        "SR": "SR"
+      }
+    }
+  },
+  "schemas": {},
+  "_meta": {
+    "columns": {},
+    "schemas": {},
+    "tables": {}
+  }
+}

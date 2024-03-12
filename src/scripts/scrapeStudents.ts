@@ -1,14 +1,10 @@
-import dotenv from 'dotenv';
-dotenv.config();
+import 'dotenv/config';
 
 import axios from 'axios';
 import * as cheerio from 'cheerio';
 
-import * as fs from 'fs';
-import * as path from 'path';
-
 import { generateKey, normalizeName } from './common/studentNames';
-import mapToObject from './common/mapToObject';
+
 import { Student } from '../models/Student';
 import { RawSkill } from './scrapeSkills';
 
@@ -42,8 +38,6 @@ interface RawStudent
   releaseDate?: string;
 }
 
-const STUDENT_DB_PATH = path.join(__dirname, '../..', 'data/students.json');
-
 const now = new Date().getTime(); // you should cache-invalidate yourself, NOW
 
 const CHARACTER_LIST_URL = `https://bluearchive.wiki/wiki/Characters?ts=${now}`;
@@ -52,38 +46,6 @@ const STUDENT_ICON_BASE_URL =
   'https://bluearchive.page/resource/image/students';
 
 const studentMap = new Map<string, RawStudent>();
-const skillCache = new Map<string, RawSkill[]>();
-
-function loadSkillCache() {
-  const studentsData = fs.readFileSync(STUDENT_DB_PATH, 'utf-8');
-  const students: Record<string, RawStudent> = JSON.parse(studentsData);
-
-  for (const [key, studentDetails] of Object.entries(students)) {
-    if (!studentDetails.skills) {
-      continue;
-    }
-
-    skillCache.set(key, studentDetails.skills);
-  }
-
-  console.log(`Loaded ${skillCache.size} skills into cache.`);
-}
-
-function restoreSkillData() {
-  for (const [key, student] of studentMap) {
-    if (!skillCache.has(key)) {
-      console.warn(
-        `No skill data found for ${student.name}, consider re-fetching.`,
-      );
-      continue;
-    }
-
-    student.skills = skillCache.get(key);
-    studentMap.set(key, student);
-  }
-
-  console.log(`Restored ${skillCache.size} skills from cache.`);
-}
 
 function getWikiImage($: cheerio.CheerioAPI, row: cheerio.Element) {
   const url = $(row).find('td:nth-child(1) img').attr('src');
@@ -219,9 +181,37 @@ function normalizeDetails() {
   }
 }
 
-function saveStudentData() {
-  const studentData = mapToObject(studentMap);
-  fs.writeFileSync(STUDENT_DB_PATH, JSON.stringify(studentData, null, 2));
+async function saveStudentData() {
+  console.log('Saving student data to the database...');
+
+  const data = Array.from(studentMap.entries());
+  const promises = [];
+
+  for (const [key, student] of data) {
+    const data = Student.fromJSON(key, student);
+    promises.push(
+      (async () => {
+        await data.save();
+        return Student.getFromDB(key);
+      })(),
+    );
+  }
+
+  const students = await Promise.all(promises);
+
+  console.log(`Saved ${students.length} students to the database.`);
+
+  for (const student of students) {
+    if (!student) {
+      continue;
+    }
+
+    if (student.skills) {
+      console.warn(
+        `No skill data found for ${student.name}, consider re-fetching.`,
+      );
+    }
+  }
 }
 
 function normalizeStudentIconName(key: string) {
@@ -297,15 +287,11 @@ async function scrapeStudentIcons() {
 }
 
 async function main() {
-  loadSkillCache();
-
   await populateStudents();
   await populateStudentTrivia();
 
   normalizeDetails();
-  restoreSkillData();
-
-  saveStudentData();
+  await saveStudentData();
 
   await scrapeStudentIcons();
 

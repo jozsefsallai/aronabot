@@ -1,4 +1,7 @@
+import { InferSelectModel, eq } from 'drizzle-orm';
 import { SkillType } from './SkillType';
+import { skills } from '../db/schema';
+import db from '../db';
 
 export class Skill {
   constructor(
@@ -28,5 +31,53 @@ export class Skill {
     }
 
     return this.name;
+  }
+
+  static fromDBEntry(entry: InferSelectModel<typeof skills>): Skill {
+    return new Skill(
+      SkillType.fromString(entry.kind)!,
+      entry.name,
+      entry.description,
+      entry.cost ?? null,
+    );
+  }
+
+  toDBEntry(studentId: string): Omit<InferSelectModel<typeof skills>, 'id'> {
+    return {
+      kind: this.kind.code,
+      name: this.name,
+      description: this.description,
+      cost: this.cost ?? null,
+      studentId,
+    };
+  }
+
+  static async deleteAllForStudent(studentId: string) {
+    await db.delete(skills).where(eq(skills.studentId, studentId)).execute();
+  }
+
+  static async getSkillsForStudent(studentId: string) {
+    return db
+      .select()
+      .from(skills)
+      .where(eq(skills.studentId, studentId))
+      .orderBy(skills.id)
+      .execute()
+      .then((entries) => entries.map(Skill.fromDBEntry));
+  }
+
+  async insert(
+    studentId: string,
+    entry: Omit<InferSelectModel<typeof skills>, 'id'>,
+  ) {
+    await db
+      .insert(skills)
+      .values({ ...entry, studentId })
+      .execute();
+  }
+
+  async save(studentId: string) {
+    const entry = this.toDBEntry(studentId);
+    await this.insert(studentId, entry);
   }
 }

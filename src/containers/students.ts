@@ -1,8 +1,5 @@
 import { Student } from '../models/Student';
 
-import * as path from 'path';
-import * as fs from 'fs';
-
 export class StudentContainer {
   private students: Map<string, Student> = new Map();
 
@@ -10,36 +7,16 @@ export class StudentContainer {
     this.bootstrap();
   }
 
-  bootstrap(): void {
-    const studentDatabasePath = path.join(
-      __dirname,
-      '../..',
-      'data/students.json',
-    );
-
-    if (!fs.existsSync(studentDatabasePath)) {
-      throw new Error('Student database not found! Please generate it first.');
-    }
-
-    this.loadStudentsFromDatabase(studentDatabasePath);
-
-    const extraStudentDatabasePath = path.join(
-      __dirname,
-      '../..',
-      'data/students_extra.json',
-    );
-
-    if (fs.existsSync(extraStudentDatabasePath)) {
-      this.loadStudentsFromDatabase(extraStudentDatabasePath);
-    }
+  async bootstrap(): Promise<void> {
+    await this.reload();
   }
 
-  private loadStudentsFromDatabase(dbPath: string) {
-    const data = fs.readFileSync(dbPath, 'utf8');
-    const students = JSON.parse(data);
+  async reload(): Promise<void> {
+    this.students.clear();
 
-    for (const [key, studentData] of Object.entries(students)) {
-      this.addStudent(key, Student.fromJSON(key, studentData));
+    const students = await Student.all();
+    for (const student of students) {
+      this.addStudent(student.key, student);
     }
   }
 

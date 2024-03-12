@@ -153,7 +153,7 @@ export const banners = pgTable('banners', {
   id: varchar('id').primaryKey().notNull(),
   name: varchar('name').notNull(),
 
-  date: date('date').notNull(),
+  date: varchar('date').notNull(),
 
   threeStarRate: integer('three_star_rate').notNull().default(3),
   pickupRate: integer('pickup_rate').notNull().default(0),

@@ -1,22 +1,20 @@
+import 'dotenv/config';
+
 import axios from 'axios';
 import * as cheerio from 'cheerio';
 
-import * as fs from 'fs';
-import * as path from 'path';
-
 import { denormalizeName } from './common/studentNames';
-import mapToObject from './common/mapToObject';
+
 import { Skill } from '../models/Skill';
+import { Student } from '../models/Student';
 
 export interface RawSkill extends Omit<Skill, 'kind'> {
   kind: string;
 }
 
-const STUDENT_DB_PATH = path.join(__dirname, '../..', 'data/students.json');
-
 const CHARACTER_URL = 'https://bluearchive.wiki/wiki';
 
-const studentMap = new Map();
+const studentMap = new Map<string, Student>();
 
 const skillTypes = {
   'EX Skill': 'ex',
@@ -90,13 +88,13 @@ function makeSkill(
 
 async function getSkillsForStudent(studentKey: string) {
   const student = studentMap.get(studentKey);
-  const nameIdentifier = denormalizeName(student.name).replace(/\s/g, '_');
+  const nameIdentifier = denormalizeName(student!.name).replace(/\s/g, '_');
   const url = `${CHARACTER_URL}/${nameIdentifier}`;
 
   const response = await axios.get(url);
   const $ = cheerio.load(response.data);
 
-  const skills = [];
+  const skills: Partial<RawSkill>[] = [];
 
   const skillData = $('.skilltable .summary').toArray();
 
@@ -109,16 +107,19 @@ async function getSkillsForStudent(studentKey: string) {
     }
   }
 
-  student.skills = skills;
+  await Skill.deleteAllForStudent(studentKey);
 
-  studentMap.set(studentKey, student);
+  for await (const skill of skills) {
+    const data = Skill.fromJSON(skill);
+    await data.save(studentKey);
+  }
 
-  console.log(`Scraped skills for ${student.name}.`);
+  console.log(`Scraped skills for ${student!.name}.`);
 }
 
 async function populateStudentSkills(scrapeAll: boolean) {
   for await (const [key, student] of studentMap) {
-    if (!scrapeAll && student.skills) {
+    if (!scrapeAll && (student.skills?.length ?? 0) > 0) {
       continue;
     }
 
@@ -126,26 +127,20 @@ async function populateStudentSkills(scrapeAll: boolean) {
   }
 }
 
-function loadStudentMap() {
-  const studentData = fs.readFileSync(STUDENT_DB_PATH, 'utf8');
-  const parsedData = JSON.parse(studentData);
+async function loadStudentMap() {
+  const students = await Student.all();
 
-  for (const [key, value] of Object.entries(parsedData)) {
-    studentMap.set(key, value);
+  for (const student of students) {
+    studentMap.set(student.key, student);
   }
-}
-
-function saveStudentData() {
-  const studentData = mapToObject(studentMap);
-  fs.writeFileSync(STUDENT_DB_PATH, JSON.stringify(studentData, null, 2));
 }
 
 async function main() {
   const scrapeAll = process.argv.includes('--all');
 
-  loadStudentMap();
+  await loadStudentMap();
   await populateStudentSkills(scrapeAll);
-  saveStudentData();
+
   console.log('Done!');
 }
 
