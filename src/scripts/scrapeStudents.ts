@@ -206,7 +206,7 @@ async function saveStudentData() {
       continue;
     }
 
-    if (student.skills) {
+    if (!student.skills) {
       console.warn(
         `No skill data found for ${student.name}, consider re-fetching.`,
       );

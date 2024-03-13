@@ -7,6 +7,7 @@ import { denormalizeName } from './common/studentNames';
 
 import { Skill } from '../models/Skill';
 import { Student } from '../models/Student';
+import { studentContainer } from '../containers/students';
 
 export interface RawSkill extends Omit<Skill, 'kind'> {
   kind: string;
@@ -136,6 +137,8 @@ async function loadStudentMap() {
 }
 
 async function main() {
+  await studentContainer.bootstrap();
+
   const scrapeAll = process.argv.includes('--all');
 
   await loadStudentMap();

@@ -5,6 +5,7 @@ import * as cheerio from 'cheerio';
 
 import { generateKey, normalizeName } from './common/studentNames';
 import { Gift } from '../models/Gift';
+import { studentContainer } from '../containers/students';
 
 interface GiftData extends Omit<Gift, 'studentsFavorite' | 'studentsLiked'> {
   studentsFavorite: string[];
@@ -93,6 +94,8 @@ async function saveGiftData() {
 }
 
 async function main() {
+  await studentContainer.bootstrap();
+
   await populateGifts();
   await saveGiftData();
 
