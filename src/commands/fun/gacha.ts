@@ -6,6 +6,7 @@ import { GachaBrowser } from '../../gacha/browser';
 import recruitmentPointsManager from '../../gacha/points';
 import { BannerKind } from '../../gacha/kind';
 import { iconsContainer } from '../../containers/icons';
+import { AutocompleteContext } from '../../core/handler/AutocompleteHandler';
 
 function getBannerChoices() {
   return bannerContainer
@@ -26,8 +27,13 @@ export const meta = new SlashCommandBuilder()
     return option
       .setName('banner')
       .setDescription('The banner to pull on.')
-      .setChoices(...getBannerChoices());
+      .setRequired(true)
+      .setAutocomplete(true);
   });
+
+export const autocomplete = async (ctx: AutocompleteContext) => {
+  await ctx.interaction.respond(getBannerChoices());
+};
 
 export const handler = async (ctx: CommandContext) => {
   await ctx.interaction.deferReply();

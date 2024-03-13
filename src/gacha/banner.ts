@@ -7,7 +7,14 @@ import { BannerKind } from './kind';
 import { GachaPool } from './pool';
 import { banners } from '../db/schema';
 import db from '../db';
-import { exists } from '../db/utils';
+import {
+  DEFAULT_BASE_ONE_STAR_RATE,
+  DEFAULT_BASE_THREE_STAR_RATE,
+  DEFAULT_BASE_TWO_STAR_RATE,
+  DEFAULT_EXTRA_RATE,
+  DEFAULT_PICKUP_RATE,
+  DEFAULT_THREE_STAR_RATE,
+} from './constants';
 
 export interface GachaBannerParams {
   id: string;
@@ -59,13 +66,16 @@ class GachaBanner {
 
     this.date = new Date(params.date);
 
-    this._threeStarRate = params.threeStarRate ?? 0.03;
-    this._pickupRate = params.pickupRate ?? 0;
-    this._extraRate = params.extraRate ?? 0;
+    this._threeStarRate = params.threeStarRate ?? DEFAULT_THREE_STAR_RATE;
+    this._pickupRate = params.pickupRate ?? DEFAULT_PICKUP_RATE;
+    this._extraRate = params.extraRate ?? DEFAULT_EXTRA_RATE;
 
-    this._baseOneStarRate = params.baseOneStarRate ?? 0.785;
-    this._baseTwoStarRate = params.baseTwoStarRate ?? 0.185;
-    this._baseThreeStarRate = params.baseThreeStarRate ?? 0.03;
+    this._baseOneStarRate =
+      params.baseOneStarRate ?? DEFAULT_BASE_ONE_STAR_RATE;
+    this._baseTwoStarRate =
+      params.baseTwoStarRate ?? DEFAULT_BASE_TWO_STAR_RATE;
+    this._baseThreeStarRate =
+      params.baseThreeStarRate ?? DEFAULT_BASE_THREE_STAR_RATE;
 
     this._pickupPool = new GachaPool(this.pickupRate);
     this._extraPool = new GachaPool(this.extraRate);
@@ -307,6 +317,7 @@ class GachaBanner {
     return db
       .select()
       .from(banners)
+      .orderBy(banners.sortKey)
       .execute()
       .then((entries) => entries.map(GachaBanner.fromDBEntry));
   }
@@ -316,57 +327,18 @@ class GachaBanner {
       id: entry.id,
       name: entry.name,
       date: entry.date,
-      threeStarRate: entry.threeStarRate / 100,
-      pickupRate: entry.pickupRate / 100,
-      extraRate: entry.extraRate / 100,
+      threeStarRate: entry.threeStarRate / 1000,
+      pickupRate: entry.pickupRate / 1000,
+      extraRate: entry.extraRate / 1000,
       pickupPoolStudents: entry.pickupPoolStudents ?? undefined,
       extraPoolStudents: entry.extraPoolStudents ?? undefined,
       additionalThreeStarStudents:
         entry.additionalThreeStarStudents ?? undefined,
-      baseOneStarRate: entry.baseOneStarRate / 100,
-      baseTwoStarRate: entry.baseTwoStarRate / 100,
-      baseThreeStarRate: entry.baseThreeStarRate / 100,
+      baseOneStarRate: entry.baseOneStarRate / 1000,
+      baseTwoStarRate: entry.baseTwoStarRate / 1000,
+      baseThreeStarRate: entry.baseThreeStarRate / 1000,
       kind: entry.kind,
     });
-  }
-
-  toDBEntry(): InferSelectModel<typeof banners> {
-    return {
-      id: this.id,
-      name: this.name,
-      date: this.date.toISOString(),
-      threeStarRate: Math.floor(this._threeStarRate * 100),
-      pickupRate: Math.floor(this._pickupRate * 100),
-      extraRate: Math.floor(this._extraRate * 100),
-      pickupPoolStudents: this._pickupPool.students,
-      extraPoolStudents: this._extraPool.students,
-      additionalThreeStarStudents: this._threeStarPool.students,
-      baseOneStarRate: Math.floor(this._baseOneStarRate * 100),
-      baseTwoStarRate: Math.floor(this._baseTwoStarRate * 100),
-      baseThreeStarRate: Math.floor(this._baseThreeStarRate * 100),
-      kind: this.kind,
-    };
-  }
-
-  async save() {
-    const entry = this.toDBEntry();
-    if (await exists(db, banners, eq(banners.id, this.id))) {
-      await this.update(entry);
-    } else {
-      await this.insert(entry);
-    }
-  }
-
-  async insert(entry: InferSelectModel<typeof banners>) {
-    await db.insert(banners).values(entry).execute();
-  }
-
-  async update(entry: InferSelectModel<typeof banners>) {
-    await db
-      .update(banners)
-      .set(entry)
-      .where(eq(banners.id, this.id))
-      .execute();
   }
 }
 

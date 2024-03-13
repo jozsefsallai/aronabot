@@ -1,0 +1,1 @@
+ALTER TABLE "banners" ALTER COLUMN "sort_key" SET DEFAULT 0;

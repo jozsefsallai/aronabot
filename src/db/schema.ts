@@ -20,6 +20,14 @@ import { School } from '../models/School';
 import { WeaponType } from '../models/WeaponType';
 import { SkillType } from '../models/SkillType';
 import { BannerKind } from '../gacha/kind';
+import {
+  DEFAULT_BASE_ONE_STAR_RATE,
+  DEFAULT_BASE_THREE_STAR_RATE,
+  DEFAULT_BASE_TWO_STAR_RATE,
+  DEFAULT_EXTRA_RATE,
+  DEFAULT_PICKUP_RATE,
+  DEFAULT_THREE_STAR_RATE,
+} from '../gacha/constants';
 
 export const difficultyEnum = pgEnum('difficulty', Difficulty.ids());
 export const terrainEnum = pgEnum('terrain', Terrain.ids());
@@ -109,11 +117,19 @@ export const banners = pgTable('banners', {
   id: varchar('id').primaryKey().notNull(),
   name: varchar('name').notNull(),
 
+  sortKey: integer('sort_key').notNull().default(0),
+
   date: varchar('date').notNull(),
 
-  threeStarRate: integer('three_star_rate').notNull().default(3),
-  pickupRate: integer('pickup_rate').notNull().default(0),
-  extraRate: integer('extra_rate').notNull().default(0),
+  threeStarRate: integer('three_star_rate')
+    .notNull()
+    .default(Math.floor(DEFAULT_THREE_STAR_RATE * 1000)),
+  pickupRate: integer('pickup_rate')
+    .notNull()
+    .default(Math.floor(DEFAULT_PICKUP_RATE * 1000)),
+  extraRate: integer('extra_rate')
+    .notNull()
+    .default(Math.floor(DEFAULT_EXTRA_RATE * 1000)),
 
   pickupPoolStudents: varchar('pickup_pool_students').array(),
   extraPoolStudents: varchar('extra_pool_students').array(),
@@ -121,9 +137,15 @@ export const banners = pgTable('banners', {
     'additional_three_star_students',
   ).array(),
 
-  baseOneStarRate: integer('base_one_star_rate').notNull().default(785),
-  baseTwoStarRate: integer('base_two_star_rate').notNull().default(185),
-  baseThreeStarRate: integer('base_three_star_rate').notNull().default(30),
+  baseOneStarRate: integer('base_one_star_rate')
+    .notNull()
+    .default(Math.floor(DEFAULT_BASE_ONE_STAR_RATE * 1000)),
+  baseTwoStarRate: integer('base_two_star_rate')
+    .notNull()
+    .default(Math.floor(DEFAULT_BASE_TWO_STAR_RATE * 1000)),
+  baseThreeStarRate: integer('base_three_star_rate')
+    .notNull()
+    .default(Math.floor(DEFAULT_BASE_THREE_STAR_RATE * 1000)),
 
   kind: bannerKindEnum('kind').notNull(),
 });

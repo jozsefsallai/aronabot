@@ -22,6 +22,27 @@
       "when": 1710289120123,
       "tag": "0002_left_captain_universe",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1710291574094,
+      "tag": "0003_slow_zeigeist",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1710291600012,
+      "tag": "0004_peaceful_nextwave",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "5",
+      "when": 1710292299246,
+      "tag": "0005_motionless_moonstone",
+      "breakpoints": true
     }
   ]
 }
