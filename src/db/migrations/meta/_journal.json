@@ -15,6 +15,13 @@
       "when": 1710201709728,
       "tag": "0001_rare_the_call",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1710289120123,
+      "tag": "0002_left_captain_universe",
+      "breakpoints": true
     }
   ]
 }

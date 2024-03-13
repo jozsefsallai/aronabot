@@ -1,8 +1,7 @@
+import 'dotenv/config';
+
 import axios from 'axios';
 import * as cheerio from 'cheerio';
-
-import * as fs from 'fs';
-import * as path from 'path';
 
 import { generateKey, normalizeName } from './common/studentNames';
 import { Gift } from '../models/Gift';
@@ -11,8 +10,6 @@ interface GiftData extends Omit<Gift, 'studentsFavorite' | 'studentsLiked'> {
   studentsFavorite: string[];
   studentsLiked: string[];
 }
-
-const GIFTS_DB_PATH = path.join(__dirname, '../..', 'data/gifts.json');
 
 const GIFTS_LIST_URL = 'https://bluearchive.wiki/wiki/Affection';
 
@@ -61,7 +58,7 @@ function parseGiftRow($: cheerio.CheerioAPI, row: cheerio.Element) {
     description,
     studentsFavorite,
     studentsLiked,
-  });
+  } as GiftData);
 
   console.log(`Added ${name} to gifts list.`);
 }
@@ -77,13 +74,27 @@ async function populateGifts() {
   }
 }
 
-function saveGiftData() {
-  fs.writeFileSync(GIFTS_DB_PATH, JSON.stringify(gifts, null, 2));
+async function saveGiftData() {
+  console.log('Saving gift data to the database...');
+
+  const promises = [];
+
+  for (const gift of gifts) {
+    const giftInstance = Gift.fromJSON(gift);
+    promises.push(giftInstance.save());
+  }
+
+  try {
+    await Promise.all(promises);
+    console.log('Gift data saved successfully.');
+  } catch (error) {
+    console.error('Failed to save gift data:', error);
+  }
 }
 
 async function main() {
   await populateGifts();
-  saveGiftData();
+  await saveGiftData();
 
   console.log('Done.');
 }

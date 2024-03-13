@@ -3,10 +3,6 @@ import { Mission } from '../models/Mission';
 export class MissionContainer {
   private missions: Mission[] = [];
 
-  constructor() {
-    this.bootstrap();
-  }
-
   async bootstrap(): Promise<void> {
     await this.reload();
   }

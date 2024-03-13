@@ -8,12 +8,14 @@ export class IconsContainer {
 
   private _isReady = false;
 
-  constructor() {
-    this.bootstrap();
+  async bootstrap() {
+    await this.reload();
   }
 
-  async bootstrap() {
+  async reload() {
     console.log('Loading student icons from CDN...');
+
+    this._isReady = false;
 
     const students = studentContainer.all();
     await Promise.all(

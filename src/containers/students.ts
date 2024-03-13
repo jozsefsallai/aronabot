@@ -3,10 +3,6 @@ import { Student } from '../models/Student';
 export class StudentContainer {
   private students: Map<string, Student> = new Map();
 
-  constructor() {
-    this.bootstrap();
-  }
-
   async bootstrap(): Promise<void> {
     await this.reload();
   }

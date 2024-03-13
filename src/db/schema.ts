@@ -4,7 +4,6 @@ import {
   integer,
   pgEnum,
   pgTable,
-  primaryKey,
   serial,
   text,
   varchar,
@@ -20,7 +19,6 @@ import { DefenseType } from '../models/DefenseType';
 import { School } from '../models/School';
 import { WeaponType } from '../models/WeaponType';
 import { SkillType } from '../models/SkillType';
-import { relations } from 'drizzle-orm';
 import { BannerKind } from '../gacha/kind';
 
 export const difficultyEnum = pgEnum('difficulty', Difficulty.ids());
@@ -78,11 +76,6 @@ export const students = pgTable('students', {
   releaseDate: date('release_date'),
 });
 
-export const studentsRelations = relations(students, ({ many }) => ({
-  favoriteGiftsToStudents: many(favoriteGiftsToStudents),
-  likedGiftsToStudents: many(likedGiftsToStudents),
-}));
-
 export const skillTypeEnum = pgEnum('skill_type', SkillType.codes());
 
 export const skills = pgTable('skills', {
@@ -102,46 +95,9 @@ export const gifts = pgTable('gifts', {
   iconUrl: text('icon_url'),
   description: text('description'),
   rarity: integer('rarity').notNull().default(1),
+  studentsFavorite: varchar('students_favorite').array(),
+  studentsLiked: varchar('students_liked').array(),
 });
-
-export const giftsRelations = relations(gifts, ({ many }) => ({
-  favoriteGiftsToStudents: many(favoriteGiftsToStudents),
-  likedGiftsToStudents: many(likedGiftsToStudents),
-}));
-
-export const favoriteGiftsToStudents = pgTable(
-  'favorite_gifts_to_students',
-  {
-    studentId: varchar('student_id')
-      .notNull()
-      .references(() => students.id),
-    giftId: integer('gift_id')
-      .notNull()
-      .references(() => gifts.id),
-  },
-  (t) => ({
-    pk: primaryKey({
-      columns: [t.studentId, t.giftId],
-    }),
-  }),
-);
-
-export const likedGiftsToStudents = pgTable(
-  'liked_gifts_to_students',
-  {
-    studentId: varchar('student_id')
-      .notNull()
-      .references(() => students.id),
-    giftId: integer('gift_id')
-      .notNull()
-      .references(() => gifts.id),
-  },
-  (t) => ({
-    pk: primaryKey({
-      columns: [t.studentId, t.giftId],
-    }),
-  }),
-);
 
 export const bannerKindEnum = pgEnum('banner_kind', [
   BannerKind.GLOBAL,

@@ -3,10 +3,6 @@ import { GachaBanner } from '../gacha/banner';
 export class BannerContainer {
   private banners: GachaBanner[] = [];
 
-  constructor() {
-    this.bootstrap();
-  }
-
   async bootstrap() {
     await this.reload();
   }

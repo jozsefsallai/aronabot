@@ -1,28 +1,14 @@
 import { Gift } from '../models/Gift';
 
-import * as path from 'path';
-import * as fs from 'fs';
-
 export class GiftContainer {
   private gifts: Gift[] = [];
 
-  constructor() {
-    this.bootstrap();
+  async bootstrap(): Promise<void> {
+    await this.reload();
   }
 
-  bootstrap(): void {
-    const giftsDatabasePath = path.join(__dirname, '../..', 'data/gifts.json');
-
-    if (!fs.existsSync(giftsDatabasePath)) {
-      throw new Error('Gifts database not found! Please generate it first.');
-    }
-
-    const data = fs.readFileSync(giftsDatabasePath, 'utf8');
-    const gifts = JSON.parse(data);
-
-    for (const gift of gifts) {
-      this.addGift(Gift.fromJSON(gift));
-    }
+  async reload(): Promise<void> {
+    this.gifts = await Gift.all();
   }
 
   addGift(gift: Gift): void {
