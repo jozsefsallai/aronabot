@@ -138,6 +138,12 @@ class Client {
       ],
     });
   }
+
+  isStaff(userId: string) {
+    return (
+      config.bot.ownerId === userId || config.bot.staffIds.includes(userId)
+    );
+  }
 }
 
 export default Client;

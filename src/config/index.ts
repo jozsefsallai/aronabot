@@ -19,6 +19,7 @@ const config: IConfig = {
     clientId: process.env.BOT_CLIENT_ID!,
     defaultActivity: process.env.BOT_DEFAULT_ACTIVITY,
     ownerId: process.env.OWNER_ID!,
+    staffIds: process.env.STAFF_IDS?.split(',').map((id) => id.trim()) ?? [],
   },
   isMaintenance: process.env.IS_MAINTENANCE === 'true',
 };

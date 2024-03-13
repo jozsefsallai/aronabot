@@ -7,6 +7,7 @@ export interface BotConfig {
   clientId: string;
   defaultActivity?: string;
   ownerId: string;
+  staffIds: string[];
 }
 
 export interface IConfig {

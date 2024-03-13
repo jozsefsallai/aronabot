@@ -17,6 +17,8 @@ import * as mission from './utils/mission';
 import * as birthdays from './utils/birthdays';
 import * as gifts from './utils/gifts';
 
+import * as reload from './staff/reload';
+
 interface CommandData {
   meta:
     | SlashCommandBuilder
@@ -36,6 +38,7 @@ const commands: CommandData[] = [
   mission,
   birthdays,
   gifts,
+  reload,
 ];
 
 export default commands;
