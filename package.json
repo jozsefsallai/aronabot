@@ -45,12 +45,14 @@
     "postgres": "^3.4.3",
     "pug": "^3.0.2",
     "puppeteer": "^21.3.4",
+    "seedrandom": "^3.0.5",
     "tsx": "^4.7.1"
   },
   "devDependencies": {
     "@types/express": "^4.17.17",
     "@types/locate-chrome": "^0.1.0",
     "@types/node": "^20.6.3",
+    "@types/seedrandom": "^3.0.8",
     "@typescript-eslint/eslint-plugin": "^6.7.2",
     "@typescript-eslint/parser": "^6.7.2",
     "cheerio": "1.0.0-rc.12",

@@ -10,6 +10,7 @@ import { AutocompleteContext } from '../core/handler/AutocompleteHandler';
 
 import * as gacha from './fun/gacha';
 import * as spark from './fun/spark';
+import * as sotd from './fun/sotd';
 
 import * as student from './utils/student';
 import * as skills from './utils/skills';
@@ -33,6 +34,7 @@ interface CommandData {
 const commands: CommandData[] = [
   gacha,
   spark,
+  sotd,
   student,
   skills,
   mission,
