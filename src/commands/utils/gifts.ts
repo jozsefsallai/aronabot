@@ -1,8 +1,12 @@
-import { EmbedBuilder, SlashCommandBuilder } from 'discord.js';
+import { EmbedBuilder } from 'discord.js';
 import { AutocompleteContext } from '../../core/handler/AutocompleteHandler';
 import { giftContainer } from '../../containers/gifts';
 import { studentContainer } from '../../containers/students';
 import { CommandContext } from '../../core/handler/CommandHandler';
+import {
+  AppIntegrationType,
+  SlashCommandBuilder,
+} from '../../utils/slashCommandBuilder';
 
 enum Params {
   GIFT = 'gift',
@@ -13,6 +17,10 @@ export const meta = new SlashCommandBuilder()
   .setName('gifts')
   .setDescription(
     'Get information about a gift or the gifts liked by a student.',
+  )
+  .setIntegrationTypes(
+    AppIntegrationType.GuildInstall,
+    AppIntegrationType.UserInstall,
   )
   .addStringOption((option) => {
     return option

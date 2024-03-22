@@ -1,12 +1,19 @@
-import { SlashCommandBuilder } from 'discord.js';
 import { CommandContext } from '../../core/handler/CommandHandler';
 import { studentContainer } from '../../containers/students';
 import { AutocompleteContext } from '../../core/handler/AutocompleteHandler';
 import { handleStudentCommand } from '../../common/handlers/student';
+import {
+  AppIntegrationType,
+  SlashCommandBuilder,
+} from '../../utils/slashCommandBuilder';
 
 export const meta = new SlashCommandBuilder()
   .setName('student')
   .setDescription('Get information about a student.')
+  .setIntegrationTypes(
+    AppIntegrationType.GuildInstall,
+    AppIntegrationType.UserInstall,
+  )
   .addStringOption((option) => {
     return option
       .setName('name')

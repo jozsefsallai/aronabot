@@ -1,11 +1,19 @@
-import { EmbedBuilder, SlashCommandBuilder } from 'discord.js';
+import { EmbedBuilder } from 'discord.js';
 import { MONTHS } from '../../utils/date';
 import { CommandContext } from '../../core/handler/CommandHandler';
 import { studentContainer } from '../../containers/students';
+import {
+  AppIntegrationType,
+  SlashCommandBuilder,
+} from '../../utils/slashCommandBuilder';
 
 export const meta = new SlashCommandBuilder()
   .setName('birthdays')
   .setDescription('Get a list of student birthdays for the a given month.')
+  .setIntegrationTypes(
+    AppIntegrationType.GuildInstall,
+    AppIntegrationType.UserInstall,
+  )
   .addIntegerOption((option) => {
     return option
       .setName('month')

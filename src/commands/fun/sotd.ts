@@ -1,12 +1,20 @@
-import { EmbedBuilder, SlashCommandBuilder } from 'discord.js';
+import { EmbedBuilder } from 'discord.js';
 import { CommandContext } from '../../core/handler/CommandHandler';
 import seedrandom from 'seedrandom';
 import { studentContainer } from '../../containers/students';
 import { GAME_BLUE } from '../../utils/constants';
+import {
+  SlashCommandBuilder,
+  AppIntegrationType,
+} from '../../utils/slashCommandBuilder';
 
 export const meta = new SlashCommandBuilder()
   .setName('studentoftheday')
-  .setDescription('Find out who your student of the day is!');
+  .setDescription('Find out who your student of the day is!')
+  .setIntegrationTypes(
+    AppIntegrationType.GuildInstall,
+    AppIntegrationType.UserInstall,
+  );
 
 export const handler = async (ctx: CommandContext) => {
   await ctx.interaction.deferReply();

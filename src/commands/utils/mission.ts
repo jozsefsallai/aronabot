@@ -1,10 +1,18 @@
-import { EmbedBuilder, SlashCommandBuilder } from 'discord.js';
+import { EmbedBuilder } from 'discord.js';
 import { CommandContext } from '../../core/handler/CommandHandler';
 import { missionContainer } from '../../containers/missions';
+import {
+  AppIntegrationType,
+  SlashCommandBuilder,
+} from '../../utils/slashCommandBuilder';
 
 export const meta = new SlashCommandBuilder()
   .setName('mission')
   .setDescription('Get information and map preview about a mission.')
+  .setIntegrationTypes(
+    AppIntegrationType.GuildInstall,
+    AppIntegrationType.UserInstall,
+  )
   .addStringOption((option) => {
     return option
       .setName('name')

@@ -1,12 +1,20 @@
-import { EmbedBuilder, SlashCommandBuilder } from 'discord.js';
+import { EmbedBuilder } from 'discord.js';
 import { BannerKind } from '../../gacha/kind';
 import { CommandContext } from '../../core/handler/CommandHandler';
 import recruitmentPointsManager from '../../gacha/points';
 import { GAME_BLUE, GAME_RED } from '../../utils/constants';
+import {
+  AppIntegrationType,
+  SlashCommandBuilder,
+} from '../../utils/slashCommandBuilder';
 
 export const meta = new SlashCommandBuilder()
   .setName('spark')
   .setDescription('Use 200 recruitment points on a game region.')
+  .setIntegrationTypes(
+    AppIntegrationType.GuildInstall,
+    AppIntegrationType.UserInstall,
+  )
   .addStringOption((option) => {
     return option
       .setName('region')

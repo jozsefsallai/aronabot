@@ -1,6 +1,6 @@
 import { ApplicationCommandPermissions as ApplicationCommandPermissionData } from 'discord.js';
 import {
-  SlashCommandBuilder,
+  SlashCommandBuilder as DJSSlashCommandBuilder,
   SlashCommandSubcommandsOnlyBuilder,
   ContextMenuCommandBuilder,
 } from 'discord.js';
@@ -19,11 +19,13 @@ import * as birthdays from './utils/birthdays';
 import * as gifts from './utils/gifts';
 
 import * as reload from './staff/reload';
+import { SlashCommandBuilder } from '../utils/slashCommandBuilder';
 
 interface CommandData {
   meta:
+    | DJSSlashCommandBuilder
     | SlashCommandBuilder
-    | Omit<SlashCommandBuilder, 'addSubcommand' | 'addSubcommandGroup'>
+    | Omit<DJSSlashCommandBuilder, 'addSubcommand' | 'addSubcommandGroup'>
     | SlashCommandSubcommandsOnlyBuilder
     | ContextMenuCommandBuilder;
   handler: (ctx: CommandContext<any>) => void | Promise<void>;

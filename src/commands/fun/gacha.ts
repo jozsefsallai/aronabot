@@ -1,4 +1,3 @@
-import { SlashCommandBuilder } from 'discord.js';
 import { CommandContext } from '../../core/handler/CommandHandler';
 
 import { bannerContainer } from '../../containers/banners';
@@ -7,6 +6,10 @@ import recruitmentPointsManager from '../../gacha/points';
 import { BannerKind } from '../../gacha/kind';
 import { iconsContainer } from '../../containers/icons';
 import { AutocompleteContext } from '../../core/handler/AutocompleteHandler';
+import {
+  AppIntegrationType,
+  SlashCommandBuilder,
+} from '../../utils/slashCommandBuilder';
 
 function getBannerChoices() {
   return bannerContainer
@@ -23,6 +26,10 @@ function getBannerChoices() {
 export const meta = new SlashCommandBuilder()
   .setName('gacha')
   .setDescription('Roll on the current banners.')
+  .setIntegrationTypes(
+    AppIntegrationType.GuildInstall,
+    AppIntegrationType.UserInstall,
+  )
   .addStringOption((option) => {
     return option
       .setName('banner')
