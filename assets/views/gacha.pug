@@ -4,6 +4,15 @@ html
       rel='stylesheet'
       href='/styles/gacha.css'
     )
+
+    style(type='text/css').
+      .gacha-result {
+        background: url(#{assets.bg});
+      }
+
+      .card-container .card .icon-container::before {
+        background: url(#{assets.charaCardBg});
+      }
   body
     .gacha-result
       if chroma
@@ -13,12 +22,12 @@ html
         each card in cards
           .card(class=`star-${card.student.rarity}`)
             if card.isPickup
-              img.badge.pickup(src='/images/gacha/pickup.png')
+              img.badge.pickup(src=assets.pickup)
             .icon-container
               img.icon(src=`data:image/webp;base64,${card.icon}`)
             .star-container
               - for (let i = 0; i < card.student.rarity; i++)
-                img.star(src='/images/gacha/star.png')
+                img.star(src=assets.star)
 
       .shadow-container
         each card in cards
@@ -27,7 +36,7 @@ html
 
       if points
         .points-container
-          img.points-icon(src='/images/gacha/points-icon.png')
+          img.points-icon(src=assets.pointsIcon)
           .points
             .points-text Recruitment Points
             .points-count.point= points

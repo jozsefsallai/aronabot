@@ -22,8 +22,7 @@ img {
   overflow: hidden;
   width: 1120px;
   height: 640px;
-  background: url('/images/gacha/background.png') center;
-  background-size: cover;
+  background-size: cover !important;
   position: relative;
   z-index: 0;
 }
@@ -118,8 +117,7 @@ img {
   width: 134px;
   transform: skewX(10deg);
   height: 110px;
-  background: url('/images/gacha/chara-card-bg.png') top;
-  background-size: cover;
+  background-size: cover !important;
 }
 
 .card-container .card .icon-container .icon {
