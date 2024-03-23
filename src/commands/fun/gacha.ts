@@ -65,8 +65,13 @@ export const handler = async (ctx: CommandContext) => {
 
   const banner = bannerContainer.getBanner(bannerName);
 
+  if (!banner) {
+    await ctx.interaction.editReply('Invalid banner.');
+    return;
+  }
+
   const points = await recruitmentPointsManager.incrementAndGet(
-    banner!.kind,
+    banner.kind,
     guildId,
     userId,
   );
