@@ -43,7 +43,7 @@ export const handler = async (ctx: CommandContext) => {
     .setDescription(
       `${ctx.interaction.user.toString()}'s student of the day is **${
         student.name
-      }**.\n\nNext SOTD can be choosen <t:${tomorrowTimestamp}:R>`,
+      }**.\n\nNext student of the day can be chosen <t:${tomorrowTimestamp}:R>`,
     )
     .setImage(student.wikiImage)
     .setColor((student.attackType?.color ?? GAME_BLUE).toArray())
