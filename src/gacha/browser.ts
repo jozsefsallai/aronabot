@@ -4,8 +4,7 @@ import locateChrome from 'locate-chrome';
 const PORT = process.env.PORT || 3000;
 
 export class GachaBrowser {
-  private static readonly BANNER_URL = `http://localhost:${PORT}/gacha?banner={{banner}}`;
-  private static readonly BANNER_URL_WITH_POINTS = `http://localhost:${PORT}/gacha?banner={{banner}}&points={{points}}`;
+  private static readonly BANNER_URL = `http://localhost:${PORT}/gacha`;
 
   private browser: puppeteer.Browser | undefined;
 
@@ -39,6 +38,7 @@ export class GachaBrowser {
   async getScreenshot(
     bannerName: string,
     points?: number | null,
+    erodeEffect?: boolean,
   ): Promise<Buffer> {
     if (!this.browser) {
       throw new Error('Browser is not initialized');
@@ -47,7 +47,7 @@ export class GachaBrowser {
     const page = await this.browser.newPage();
     await page.setViewport({ width: 1120, height: 640 });
 
-    const url = this.makeBannerUrl(bannerName, points);
+    const url = this.makeBannerUrl(bannerName, points, erodeEffect);
     await page.goto(url);
 
     const screenshot = await page.screenshot({ type: 'png' });
@@ -57,14 +57,23 @@ export class GachaBrowser {
     return screenshot;
   }
 
-  private makeBannerUrl(bannerName: string, points?: number | null): string {
+  private makeBannerUrl(
+    bannerName: string,
+    points?: number | null,
+    erodeEffect?: boolean,
+  ): string {
+    const url = new URL(GachaBrowser.BANNER_URL);
+
+    url.searchParams.set('banner', bannerName);
+
     if (points) {
-      return GachaBrowser.BANNER_URL_WITH_POINTS.replace(
-        '{{banner}}',
-        bannerName,
-      ).replace('{{points}}', points.toString());
+      url.searchParams.set('points', points.toString());
     }
 
-    return GachaBrowser.BANNER_URL.replace('{{banner}}', bannerName);
+    if (erodeEffect) {
+      url.searchParams.set('erode', 'true');
+    }
+
+    return url.toString();
   }
 }

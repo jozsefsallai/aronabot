@@ -10,11 +10,19 @@ import {
   AppIntegrationType,
   SlashCommandBuilder,
 } from '../../utils/slashCommandBuilder';
+import config from '../../config';
+import { GachaBanner } from '../../gacha/banner';
+
+function chromaCondition(banner: GachaBanner): boolean {
+  return config.isChroma
+    ? banner.kind === BannerKind.CHROMA
+    : banner.kind !== BannerKind.CHROMA;
+}
 
 function getBannerChoices() {
   return bannerContainer
     .all()
-    .filter((b) => b.kind !== BannerKind.CHROMA)
+    .filter(chromaCondition)
     .map((banner) => {
       return {
         name: banner.name,
@@ -76,8 +84,15 @@ export const handler = async (ctx: CommandContext) => {
     userId,
   );
 
+  let erodeEffect = false;
+
+  if (banner.kind === BannerKind.CHROMA) {
+    const chance = Math.random();
+    erodeEffect = chance <= 0.007;
+  }
+
   const browser = await GachaBrowser.getInstance();
-  const image = await browser.getScreenshot(bannerName, points);
+  const image = await browser.getScreenshot(bannerName, points, erodeEffect);
 
   await ctx.interaction.editReply({
     files: [

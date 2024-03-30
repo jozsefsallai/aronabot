@@ -22,6 +22,7 @@ const config: IConfig = {
     staffIds: process.env.STAFF_IDS?.split(',').map((id) => id.trim()) ?? [],
   },
   isMaintenance: process.env.IS_MAINTENANCE === 'true',
+  isChroma: process.env.IS_CHROMA === 'true',
 };
 
 if (process.env.REDIS_URL) {
