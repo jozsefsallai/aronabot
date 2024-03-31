@@ -6,7 +6,8 @@ export const shirokoTerror = Student.fromJSON('shiroko_terror', {
   'combatRole': 'attacker',
   'school': 'abydos',
   'rarity': 3,
-  'wikiImage': null,
+  'wikiImage':
+    'https://static.miraheze.org/bluearchivewiki/0/02/Shiroko_%28Terror%29_00.png',
   'combatPosition': 'Middle',
   'weaponType': 'AR',
   'usesCover': true,

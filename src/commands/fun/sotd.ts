@@ -7,6 +7,8 @@ import {
   SlashCommandBuilder,
   AppIntegrationType,
 } from '../../utils/slashCommandBuilder';
+import config from '../../config';
+import { shirokoTerror } from '../../utils/extraData';
 
 export const meta = new SlashCommandBuilder()
   .setName('studentoftheday')
@@ -31,12 +33,16 @@ export const handler = async (ctx: CommandContext) => {
   const rng = seedrandom(seed);
 
   const students = studentContainer.getStudents();
-  const student = students[Math.floor(rng() * students.length)];
+  let student = students[Math.floor(rng() * students.length)];
 
   const tomorrow = new Date(today);
   tomorrow.setDate(tomorrow.getDate() + 1);
   tomorrow.setHours(0, 0, 0, 0);
   const tomorrowTimestamp = Math.floor(tomorrow.getTime() / 1000);
+
+  if (config.isChroma) {
+    student = shirokoTerror;
+  }
 
   const embed = new EmbedBuilder()
     .setTitle(student.fullName)
