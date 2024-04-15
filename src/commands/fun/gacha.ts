@@ -22,6 +22,7 @@ function chromaCondition(banner: GachaBanner): boolean {
 function getBannerChoices() {
   return bannerContainer
     .all()
+    .slice(0, 25)
     .filter(chromaCondition)
     .map((banner) => {
       return {

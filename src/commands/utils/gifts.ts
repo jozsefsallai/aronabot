@@ -1,7 +1,7 @@
 import { EmbedBuilder } from 'discord.js';
 import { AutocompleteContext } from '../../core/handler/AutocompleteHandler';
 import { giftContainer } from '../../containers/gifts';
-import { studentContainer } from '../../containers/students';
+import { StudentContainer, studentContainer } from '../../containers/students';
 import { CommandContext } from '../../core/handler/CommandHandler';
 import {
   AppIntegrationType,
@@ -48,7 +48,7 @@ export const autocomplete = async (ctx: AutocompleteContext) => {
   if (focusedValue.name === Params.GIFT) {
     const gifts = giftContainer.findManyByName(focusedValue.value);
     await ctx.interaction.respond(
-      gifts.map((gift) => {
+      gifts.slice(0, 25).map((gift) => {
         return {
           name: gift.name,
           value: gift.name,
@@ -61,12 +61,15 @@ export const autocomplete = async (ctx: AutocompleteContext) => {
   if (focusedValue.name === Params.STUDENT) {
     const students = studentContainer.findManyByName(focusedValue.value);
     await ctx.interaction.respond(
-      students.map((student) => {
-        return {
-          name: student.name,
-          value: student.name,
-        };
-      }),
+      students
+        .sort(StudentContainer.sortBySimilarity(focusedValue.value))
+        .slice(0, 25)
+        .map((student) => {
+          return {
+            name: student.name,
+            value: student.name,
+          };
+        }),
     );
     return;
   }

@@ -1,4 +1,5 @@
 import { Student } from '../models/Student';
+import { similarity } from '../utils/similarity';
 
 export class StudentContainer {
   private students: Map<string, Student> = new Map();
@@ -62,14 +63,26 @@ export class StudentContainer {
     });
   }
 
+  static sortBySimilarity(value: string) {
+    return (a: Student, b: Student) => {
+      const aName = a.name.toLowerCase();
+      const bName = b.name.toLowerCase();
+
+      value = value.toLowerCase();
+
+      const aSimilarity = similarity(aName, value);
+      const bSimilarity = similarity(bName, value);
+
+      return bSimilarity - aSimilarity;
+    };
+  }
+
   getByName(name: string): Student | null {
-    const students = this.findManyByName(name);
-
-    if (students.length > 0) {
-      return students[0];
-    }
-
-    return null;
+    return (
+      this.getStudents().find(
+        (student) => student.name.toLowerCase() === name.toLowerCase(),
+      ) ?? null
+    );
   }
 }
 

@@ -1,5 +1,5 @@
 import { AutocompleteContext } from '../../core/handler/AutocompleteHandler';
-import { studentContainer } from '../../containers/students';
+import { StudentContainer, studentContainer } from '../../containers/students';
 import { CommandContext } from '../../core/handler/CommandHandler';
 import { handleStudentSkillsCommand } from '../../common/handlers/skills';
 import {
@@ -32,12 +32,15 @@ export const autocomplete = async (ctx: AutocompleteContext) => {
 
   const students = studentContainer.findManyByName(focusedValue);
   await ctx.interaction.respond(
-    students.map((student) => {
-      return {
-        name: student.name,
-        value: student.name,
-      };
-    }),
+    students
+      .sort(StudentContainer.sortBySimilarity(focusedValue))
+      .slice(0, 25)
+      .map((student) => {
+        return {
+          name: student.name,
+          value: student.name,
+        };
+      }),
   );
 };
 
