@@ -16,18 +16,50 @@ export const meta = new SlashCommandBuilder()
   .setIntegrationTypes(
     AppIntegrationType.GuildInstall,
     AppIntegrationType.UserInstall,
+  )
+  .addStringOption((option) => {
+    return option
+      .setName('date')
+      .setDescription(
+        'The date to get the student of the day for (YYYY/MM/DD).',
+      )
+      .setRequired(false);
+  });
+
+const areSameDay = (d1: Date, d2: Date): boolean => {
+  return (
+    d1.getFullYear() === d2.getFullYear() &&
+    d1.getMonth() === d2.getMonth() &&
+    d1.getDate() === d2.getDate()
   );
+};
 
 export const handler = async (ctx: CommandContext) => {
   await ctx.interaction.deferReply();
 
   const userId = ctx.interaction.user.id;
 
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
-  const todayTimestamp = Math.floor(today.getTime() / 1000);
+  const dateArg = ctx.interaction.options.get('date')?.value as
+    | string
+    | undefined;
 
-  const seed = Buffer.from(`${todayTimestamp}/${userId}`, 'utf-8')
+  const today = new Date();
+
+  const date = dateArg ? new Date(dateArg) : today;
+  if (!date || isNaN(date.getTime())) {
+    await ctx.interaction.editReply('Invalid date provided.');
+    return;
+  }
+
+  if (date.getTime() > today.getTime()) {
+    await ctx.interaction.editReply('Input cannot be a future date.');
+    return;
+  }
+
+  date.setHours(0, 0, 0, 0);
+  const dateTimestamp = Math.floor(date.getTime() / 1000);
+
+  const seed = Buffer.from(`${dateTimestamp}/${userId}`, 'utf-8')
     .toString('base64')
     .replace(/=/g, '');
   const rng = seedrandom(seed);
@@ -44,13 +76,17 @@ export const handler = async (ctx: CommandContext) => {
     student = shirokoTerror;
   }
 
+  const description = areSameDay(date, today)
+    ? `${ctx.interaction.user.toString()}'s student of the day is **${
+        student.name
+      }**.\n\nNext student of the day can be chosen <t:${tomorrowTimestamp}:R>`
+    : `${ctx.interaction.user.toString()}'s student of the day on **${date.toDateString()}** was **${
+        student.name
+      }**.`;
+
   const embed = new EmbedBuilder()
     .setTitle(student.fullName)
-    .setDescription(
-      `${ctx.interaction.user.toString()}'s student of the day is **${
-        student.name
-      }**.\n\nNext student of the day can be chosen <t:${tomorrowTimestamp}:R>`,
-    )
+    .setDescription(description)
     .setImage(student.wikiImage)
     .setColor((student.attackType?.color ?? GAME_BLUE).toArray())
     .setFooter({
