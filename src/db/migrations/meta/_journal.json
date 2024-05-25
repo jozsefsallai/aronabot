@@ -43,6 +43,13 @@
       "when": 1710292299246,
       "tag": "0005_motionless_moonstone",
       "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "6",
+      "when": 1716636404108,
+      "tag": "0006_white_chat",
+      "breakpoints": true
     }
   ]
 }

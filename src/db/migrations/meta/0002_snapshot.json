@@ -1,10 +1,8 @@
 {
-  "id": "3d1ff84d-91d1-45d4-b498-cac7c6010ea8",
-  "prevId": "15e551d6-8d4a-4977-96c8-23a8d305a366",
-  "version": "5",
-  "dialect": "pg",
+  "version": "6",
+  "dialect": "postgresql",
   "tables": {
-    "banners": {
+    "public.banners": {
       "name": "banners",
       "schema": "",
       "columns": {
@@ -98,7 +96,7 @@
       "compositePrimaryKeys": {},
       "uniqueConstraints": {}
     },
-    "gifts": {
+    "public.gifts": {
       "name": "gifts",
       "schema": "",
       "columns": {
@@ -151,7 +149,7 @@
       "compositePrimaryKeys": {},
       "uniqueConstraints": {}
     },
-    "missions": {
+    "public.missions": {
       "name": "missions",
       "schema": "",
       "columns": {
@@ -209,7 +207,7 @@
       "compositePrimaryKeys": {},
       "uniqueConstraints": {}
     },
-    "skills": {
+    "public.skills": {
       "name": "skills",
       "schema": "",
       "columns": {
@@ -255,21 +253,21 @@
         "skills_student_id_students_id_fk": {
           "name": "skills_student_id_students_id_fk",
           "tableFrom": "skills",
-          "tableTo": "students",
           "columnsFrom": [
             "student_id"
           ],
+          "tableTo": "students",
           "columnsTo": [
             "id"
           ],
-          "onDelete": "no action",
-          "onUpdate": "no action"
+          "onUpdate": "no action",
+          "onDelete": "no action"
         }
       },
       "compositePrimaryKeys": {},
       "uniqueConstraints": {}
     },
-    "students": {
+    "public.students": {
       "name": "students",
       "schema": "",
       "columns": {
@@ -404,125 +402,138 @@
     }
   },
   "enums": {
-    "attack_type": {
+    "public.attack_type": {
       "name": "attack_type",
-      "values": {
-        "explosive": "explosive",
-        "piercing": "piercing",
-        "mystic": "mystic",
-        "sonic": "sonic"
-      }
+      "schema": "public",
+      "values": [
+        "explosive",
+        "piercing",
+        "mystic",
+        "sonic"
+      ]
     },
-    "banner_kind": {
+    "public.banner_kind": {
       "name": "banner_kind",
-      "values": {
-        "global": "global",
-        "jp": "jp",
-        "chroma": "chroma"
-      }
+      "schema": "public",
+      "values": [
+        "global",
+        "jp",
+        "chroma"
+      ]
     },
-    "combat_class": {
+    "public.combat_class": {
       "name": "combat_class",
-      "values": {
-        "striker": "striker",
-        "special": "special"
-      }
+      "schema": "public",
+      "values": [
+        "striker",
+        "special"
+      ]
     },
-    "combat_position": {
+    "public.combat_position": {
       "name": "combat_position",
-      "values": {
-        "front": "front",
-        "middle": "middle",
-        "back": "back"
-      }
+      "schema": "public",
+      "values": [
+        "front",
+        "middle",
+        "back"
+      ]
     },
-    "combat_role": {
+    "public.combat_role": {
       "name": "combat_role",
-      "values": {
-        "attacker": "attacker",
-        "healer": "healer",
-        "support": "support",
-        "t.s.": "t.s.",
-        "tank": "tank"
-      }
+      "schema": "public",
+      "values": [
+        "attacker",
+        "healer",
+        "support",
+        "t.s.",
+        "tank"
+      ]
     },
-    "defense_type": {
+    "public.defense_type": {
       "name": "defense_type",
-      "values": {
-        "light": "light",
-        "heavy": "heavy",
-        "special": "special",
-        "elastic": "elastic"
-      }
+      "schema": "public",
+      "values": [
+        "light",
+        "heavy",
+        "special",
+        "elastic"
+      ]
     },
-    "difficulty": {
+    "public.difficulty": {
       "name": "difficulty",
-      "values": {
-        "normal": "normal",
-        "hard": "hard",
-        "veryhard": "veryhard",
-        "hardcode": "hardcode",
-        "extreme": "extreme",
-        "insane": "insane",
-        "torment": "torment"
-      }
+      "schema": "public",
+      "values": [
+        "normal",
+        "hard",
+        "veryhard",
+        "hardcode",
+        "extreme",
+        "insane",
+        "torment"
+      ]
     },
-    "school": {
+    "public.school": {
       "name": "school",
-      "values": {
-        "abydos": "abydos",
-        "arius": "arius",
-        "gehenna": "gehenna",
-        "hyakkiyako": "hyakkiyako",
-        "millennium": "millennium",
-        "redwinter": "redwinter",
-        "shanhaijing": "shanhaijing",
-        "srt": "srt",
-        "trinity": "trinity",
-        "valkyrie": "valkyrie",
-        "tokiwadai": "tokiwadai",
-        "sakugawa": "sakugawa",
-        "etc": "etc"
-      }
+      "schema": "public",
+      "values": [
+        "abydos",
+        "arius",
+        "gehenna",
+        "hyakkiyako",
+        "millennium",
+        "redwinter",
+        "shanhaijing",
+        "srt",
+        "trinity",
+        "valkyrie",
+        "tokiwadai",
+        "sakugawa",
+        "etc"
+      ]
     },
-    "skill_type": {
+    "public.skill_type": {
       "name": "skill_type",
-      "values": {
-        "ex": "ex",
-        "basic": "basic",
-        "enhanced": "enhanced",
-        "sub": "sub"
-      }
+      "schema": "public",
+      "values": [
+        "ex",
+        "basic",
+        "enhanced",
+        "sub"
+      ]
     },
-    "terrain": {
+    "public.terrain": {
       "name": "terrain",
-      "values": {
-        "indoors": "indoors",
-        "outdoors": "outdoors",
-        "urban": "urban"
-      }
+      "schema": "public",
+      "values": [
+        "indoors",
+        "outdoors",
+        "urban"
+      ]
     },
-    "weapon_type": {
+    "public.weapon_type": {
       "name": "weapon_type",
-      "values": {
-        "AR": "AR",
-        "FT": "FT",
-        "GL": "GL",
-        "HG": "HG",
-        "MG": "MG",
-        "MT": "MT",
-        "RG": "RG",
-        "RL": "RL",
-        "SG": "SG",
-        "SMG": "SMG",
-        "SR": "SR"
-      }
+      "schema": "public",
+      "values": [
+        "AR",
+        "FT",
+        "GL",
+        "HG",
+        "MG",
+        "MT",
+        "RG",
+        "RL",
+        "SG",
+        "SMG",
+        "SR"
+      ]
     }
   },
   "schemas": {},
   "_meta": {
-    "columns": {},
     "schemas": {},
-    "tables": {}
-  }
+    "tables": {},
+    "columns": {}
+  },
+  "id": "3d1ff84d-91d1-45d4-b498-cac7c6010ea8",
+  "prevId": "15e551d6-8d4a-4977-96c8-23a8d305a366"
 }

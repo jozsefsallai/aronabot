@@ -66,6 +66,7 @@ export const students = pgTable('students', {
   height: varchar('height').notNull(),
   hobbies: text('hobbies'),
   wikiImage: text('wiki_image'),
+  recorobiLevel: integer('recorobi_level'),
 
   // combat info
   attackType: attackTypeEnum('attack_type'),

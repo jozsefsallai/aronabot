@@ -28,6 +28,7 @@ export class Student {
     public height: string,
     public hobbies: string | null,
     public wikiImage: string | null,
+    public recorobiLevel: number | null = null,
 
     // combat info
     public attackType: AttackType | null,
@@ -61,6 +62,7 @@ export class Student {
       json['height'],
       json['hobbies'],
       json['wikiImage'],
+      json['recorobiLevel'],
 
       AttackType.fromString(json['attackType']),
       DefenseType.fromString(json['defenseType']),
@@ -169,6 +171,7 @@ export class Student {
       entry.height,
       entry.hobbies,
       entry.wikiImage,
+      entry.recorobiLevel,
       AttackType.fromString(entry.attackType),
       DefenseType.fromString(entry.defenseType),
       CombatClass.fromString(entry.combatClass),
@@ -195,6 +198,7 @@ export class Student {
       height: this.height,
       hobbies: this.hobbies,
       wikiImage: this.wikiImage,
+      recorobiLevel: this.recorobiLevel,
       attackType: this.attackType?.id ?? null,
       defenseType: this.defenseType?.id ?? null,
       combatClass: this.combatClass?.id ?? null,

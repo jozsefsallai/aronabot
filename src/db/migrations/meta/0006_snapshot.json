@@ -1,4 +1,6 @@
 {
+  "id": "4d293224-6fab-4d9a-a8a4-e66d527c8a8f",
+  "prevId": "79813880-235c-4a22-bf16-327f3acf5718",
   "version": "6",
   "dialect": "postgresql",
   "tables": {
@@ -18,9 +20,16 @@
           "primaryKey": false,
           "notNull": true
         },
+        "sort_key": {
+          "name": "sort_key",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "default": 0
+        },
         "date": {
           "name": "date",
-          "type": "date",
+          "type": "varchar",
           "primaryKey": false,
           "notNull": true
         },
@@ -29,7 +38,7 @@
           "type": "integer",
           "primaryKey": false,
           "notNull": true,
-          "default": 3
+          "default": 30
         },
         "pickup_rate": {
           "name": "pickup_rate",
@@ -87,6 +96,7 @@
         "kind": {
           "name": "kind",
           "type": "banner_kind",
+          "typeSchema": "public",
           "primaryKey": false,
           "notNull": true
         }
@@ -94,63 +104,6 @@
       "indexes": {},
       "foreignKeys": {},
       "compositePrimaryKeys": {},
-      "uniqueConstraints": {}
-    },
-    "public.favorite_gifts_to_students": {
-      "name": "favorite_gifts_to_students",
-      "schema": "",
-      "columns": {
-        "student_id": {
-          "name": "student_id",
-          "type": "varchar",
-          "primaryKey": false,
-          "notNull": true
-        },
-        "gift_id": {
-          "name": "gift_id",
-          "type": "integer",
-          "primaryKey": false,
-          "notNull": true
-        }
-      },
-      "indexes": {},
-      "foreignKeys": {
-        "favorite_gifts_to_students_student_id_students_id_fk": {
-          "name": "favorite_gifts_to_students_student_id_students_id_fk",
-          "tableFrom": "favorite_gifts_to_students",
-          "columnsFrom": [
-            "student_id"
-          ],
-          "tableTo": "students",
-          "columnsTo": [
-            "id"
-          ],
-          "onUpdate": "no action",
-          "onDelete": "no action"
-        },
-        "favorite_gifts_to_students_gift_id_gifts_id_fk": {
-          "name": "favorite_gifts_to_students_gift_id_gifts_id_fk",
-          "tableFrom": "favorite_gifts_to_students",
-          "columnsFrom": [
-            "gift_id"
-          ],
-          "tableTo": "gifts",
-          "columnsTo": [
-            "id"
-          ],
-          "onUpdate": "no action",
-          "onDelete": "no action"
-        }
-      },
-      "compositePrimaryKeys": {
-        "favorite_gifts_to_students_student_id_gift_id_pk": {
-          "name": "favorite_gifts_to_students_student_id_gift_id_pk",
-          "columns": [
-            "student_id",
-            "gift_id"
-          ]
-        }
-      },
       "uniqueConstraints": {}
     },
     "public.gifts": {
@@ -187,68 +140,23 @@
           "primaryKey": false,
           "notNull": true,
           "default": 1
+        },
+        "students_favorite": {
+          "name": "students_favorite",
+          "type": "varchar[]",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "students_liked": {
+          "name": "students_liked",
+          "type": "varchar[]",
+          "primaryKey": false,
+          "notNull": false
         }
       },
       "indexes": {},
       "foreignKeys": {},
       "compositePrimaryKeys": {},
-      "uniqueConstraints": {}
-    },
-    "public.liked_gifts_to_students": {
-      "name": "liked_gifts_to_students",
-      "schema": "",
-      "columns": {
-        "student_id": {
-          "name": "student_id",
-          "type": "varchar",
-          "primaryKey": false,
-          "notNull": true
-        },
-        "gift_id": {
-          "name": "gift_id",
-          "type": "integer",
-          "primaryKey": false,
-          "notNull": true
-        }
-      },
-      "indexes": {},
-      "foreignKeys": {
-        "liked_gifts_to_students_student_id_students_id_fk": {
-          "name": "liked_gifts_to_students_student_id_students_id_fk",
-          "tableFrom": "liked_gifts_to_students",
-          "columnsFrom": [
-            "student_id"
-          ],
-          "tableTo": "students",
-          "columnsTo": [
-            "id"
-          ],
-          "onUpdate": "no action",
-          "onDelete": "no action"
-        },
-        "liked_gifts_to_students_gift_id_gifts_id_fk": {
-          "name": "liked_gifts_to_students_gift_id_gifts_id_fk",
-          "tableFrom": "liked_gifts_to_students",
-          "columnsFrom": [
-            "gift_id"
-          ],
-          "tableTo": "gifts",
-          "columnsTo": [
-            "id"
-          ],
-          "onUpdate": "no action",
-          "onDelete": "no action"
-        }
-      },
-      "compositePrimaryKeys": {
-        "liked_gifts_to_students_student_id_gift_id_pk": {
-          "name": "liked_gifts_to_students_student_id_gift_id_pk",
-          "columns": [
-            "student_id",
-            "gift_id"
-          ]
-        }
-      },
       "uniqueConstraints": {}
     },
     "public.missions": {
@@ -276,12 +184,14 @@
         "difficulty": {
           "name": "difficulty",
           "type": "difficulty",
+          "typeSchema": "public",
           "primaryKey": false,
           "notNull": false
         },
         "terrain": {
           "name": "terrain",
           "type": "terrain",
+          "typeSchema": "public",
           "primaryKey": false,
           "notNull": false
         },
@@ -328,6 +238,7 @@
         "kind": {
           "name": "kind",
           "type": "skill_type",
+          "typeSchema": "public",
           "primaryKey": false,
           "notNull": true
         },
@@ -355,15 +266,15 @@
         "skills_student_id_students_id_fk": {
           "name": "skills_student_id_students_id_fk",
           "tableFrom": "skills",
+          "tableTo": "students",
           "columnsFrom": [
             "student_id"
           ],
-          "tableTo": "students",
           "columnsTo": [
             "id"
           ],
-          "onUpdate": "no action",
-          "onDelete": "no action"
+          "onDelete": "no action",
+          "onUpdate": "no action"
         }
       },
       "compositePrimaryKeys": {},
@@ -394,6 +305,7 @@
         "school": {
           "name": "school",
           "type": "school",
+          "typeSchema": "public",
           "primaryKey": false,
           "notNull": true
         },
@@ -427,33 +339,44 @@
           "primaryKey": false,
           "notNull": false
         },
+        "recorobi_level": {
+          "name": "recorobi_level",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
         "attack_type": {
           "name": "attack_type",
           "type": "attack_type",
+          "typeSchema": "public",
           "primaryKey": false,
           "notNull": false
         },
         "defense_type": {
           "name": "defense_type",
           "type": "defense_type",
+          "typeSchema": "public",
           "primaryKey": false,
           "notNull": false
         },
         "combat_class": {
           "name": "combat_class",
           "type": "combat_class",
+          "typeSchema": "public",
           "primaryKey": false,
           "notNull": false
         },
         "combat_role": {
           "name": "combat_role",
           "type": "combat_role",
+          "typeSchema": "public",
           "primaryKey": false,
           "notNull": false
         },
         "combat_position": {
           "name": "combat_position",
           "type": "combat_position",
+          "typeSchema": "public",
           "primaryKey": false,
           "notNull": false
         },
@@ -467,6 +390,7 @@
         "weapon_type": {
           "name": "weapon_type",
           "type": "weapon_type",
+          "typeSchema": "public",
           "primaryKey": false,
           "notNull": false
         },
@@ -632,10 +556,8 @@
   },
   "schemas": {},
   "_meta": {
+    "columns": {},
     "schemas": {},
-    "tables": {},
-    "columns": {}
-  },
-  "id": "9576c577-d0e4-4b17-8593-366773623e03",
-  "prevId": "00000000-0000-0000-0000-000000000000"
+    "tables": {}
+  }
 }

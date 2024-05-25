@@ -95,7 +95,14 @@ export const handleStudentCommand = async (
       {
         name: 'Rarity',
         value: rarity,
+        inline: true,
       },
+      {
+        name: 'Rec. Lobby unlock level',
+        value: student.recorobiLevel ? `❤️ ${student.recorobiLevel}` : 'N/A',
+        inline: true,
+      },
+      embedSeparator,
       {
         name: 'View on schale.gg',
         value: student.schaledbUrl,
