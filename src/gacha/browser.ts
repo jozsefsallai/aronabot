@@ -38,7 +38,6 @@ export class GachaBrowser {
   async getScreenshot(
     bannerName: string,
     points?: number | null,
-    erodeEffect?: boolean,
   ): Promise<Buffer> {
     if (!this.browser) {
       throw new Error('Browser is not initialized');
@@ -47,7 +46,7 @@ export class GachaBrowser {
     const page = await this.browser.newPage();
     await page.setViewport({ width: 1120, height: 640 });
 
-    const url = this.makeBannerUrl(bannerName, points, erodeEffect);
+    const url = this.makeBannerUrl(bannerName, points);
     await page.goto(url);
 
     const screenshot = await page.screenshot({ type: 'png' });
@@ -57,21 +56,13 @@ export class GachaBrowser {
     return screenshot;
   }
 
-  private makeBannerUrl(
-    bannerName: string,
-    points?: number | null,
-    erodeEffect?: boolean,
-  ): string {
+  private makeBannerUrl(bannerName: string, points?: number | null): string {
     const url = new URL(GachaBrowser.BANNER_URL);
 
     url.searchParams.set('banner', bannerName);
 
     if (points) {
       url.searchParams.set('points', points.toString());
-    }
-
-    if (erodeEffect) {
-      url.searchParams.set('erode', 'true');
     }
 
     return url.toString();

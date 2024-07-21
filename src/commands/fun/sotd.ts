@@ -7,8 +7,6 @@ import {
   SlashCommandBuilder,
   AppIntegrationType,
 } from '../../utils/slashCommandBuilder';
-import config from '../../config';
-import { shirokoTerror } from '../../utils/extraData';
 
 export const meta = new SlashCommandBuilder()
   .setName('studentoftheday')
@@ -71,10 +69,6 @@ export const handler = async (ctx: CommandContext) => {
   tomorrow.setDate(tomorrow.getDate() + 1);
   tomorrow.setHours(0, 0, 0, 0);
   const tomorrowTimestamp = Math.floor(tomorrow.getTime() / 1000);
-
-  if (config.isChroma) {
-    student = shirokoTerror;
-  }
 
   const description = areSameDay(date, today)
     ? `${ctx.interaction.user.toString()}'s student of the day is **${

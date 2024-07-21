@@ -111,7 +111,6 @@ export const gifts = pgTable('gifts', {
 export const bannerKindEnum = pgEnum('banner_kind', [
   BannerKind.GLOBAL,
   BannerKind.JP,
-  BannerKind.CHROMA,
 ]);
 
 export const banners = pgTable('banners', {

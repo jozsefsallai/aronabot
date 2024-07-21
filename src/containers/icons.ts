@@ -22,8 +22,6 @@ export class IconsContainer {
       Object.keys(students).map(this.fetchStudentIcon.bind(this)),
     );
 
-    await this.fetchStudentIcon('shiroko_terror');
-
     this._isReady = true;
 
     console.log('Student icons loaded.');

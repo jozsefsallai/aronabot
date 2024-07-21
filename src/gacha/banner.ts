@@ -2,7 +2,6 @@ import { InferSelectModel, eq } from 'drizzle-orm';
 import { studentContainer } from '../containers/students';
 import { Rarity } from '../models/Rarity';
 import { Student } from '../models/Student';
-import { shirokoTerror } from '../utils/extraData';
 import { BannerKind } from './kind';
 import { GachaPool } from './pool';
 import { banners } from '../db/schema';
@@ -277,10 +276,7 @@ class GachaBanner {
     const pool = pools[poolIndex];
 
     const isOneStar = pool === this._oneStarPool;
-    const student =
-      this.kind === BannerKind.CHROMA
-        ? ([shirokoTerror, 'shiroko_terror'] as [Student, string])
-        : pool.pull();
+    const student = pool.pull();
 
     return {
       student,

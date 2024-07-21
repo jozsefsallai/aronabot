@@ -14,5 +14,4 @@ export interface IConfig {
   bot: BotConfig;
   redis?: RedisConfig;
   isMaintenance: boolean;
-  isChroma: boolean;
 }

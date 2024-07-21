@@ -3,27 +3,17 @@ import { CommandContext } from '../../core/handler/CommandHandler';
 import { bannerContainer } from '../../containers/banners';
 import { GachaBrowser } from '../../gacha/browser';
 import recruitmentPointsManager from '../../gacha/points';
-import { BannerKind } from '../../gacha/kind';
 import { iconsContainer } from '../../containers/icons';
 import { AutocompleteContext } from '../../core/handler/AutocompleteHandler';
 import {
   AppIntegrationType,
   SlashCommandBuilder,
 } from '../../utils/slashCommandBuilder';
-import config from '../../config';
-import { GachaBanner } from '../../gacha/banner';
-
-function chromaCondition(banner: GachaBanner): boolean {
-  return config.isChroma
-    ? banner.kind === BannerKind.CHROMA
-    : banner.kind !== BannerKind.CHROMA;
-}
 
 function getBannerChoices() {
   return bannerContainer
     .all()
     .slice(0, 25)
-    .filter(chromaCondition)
     .map((banner) => {
       return {
         name: banner.name,
@@ -85,15 +75,8 @@ export const handler = async (ctx: CommandContext) => {
     userId,
   );
 
-  let erodeEffect = false;
-
-  if (banner.kind === BannerKind.CHROMA) {
-    const chance = Math.random();
-    erodeEffect = chance <= 0.007;
-  }
-
   const browser = await GachaBrowser.getInstance();
-  const image = await browser.getScreenshot(bannerName, points, erodeEffect);
+  const image = await browser.getScreenshot(bannerName, points);
 
   await ctx.interaction.editReply({
     files: [
