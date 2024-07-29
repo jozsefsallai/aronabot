@@ -82,7 +82,10 @@ export class Student {
   };
 
   get schaledbUrl(): string {
-    let name = this.name.replace(/\s/g, '_').replace(/[^a-zA-Z0-9_]/g, '');
+    let name = this.name
+      .replace(/\s/g, '_')
+      .replace(/[^a-zA-Z0-9_]/g, '')
+      .replace(/_{2,}/g, '_');
 
     if (name.includes('Bunny_Girl')) {
       name = name.replace('Bunny_Girl', 'Bunny');

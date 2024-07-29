@@ -6,6 +6,7 @@ import * as cheerio from 'cheerio';
 import { generateKey, normalizeName } from './common/studentNames';
 import { Gift } from '../models/Gift';
 import { studentContainer } from '../containers/students';
+import { handleBattleHoshino } from './common/handleBattleHoshino';
 
 interface GiftData extends Omit<Gift, 'studentsFavorite' | 'studentsLiked'> {
   studentsFavorite: string[];
@@ -45,8 +46,8 @@ function parseGiftRow($: cheerio.CheerioAPI, row: cheerio.Element) {
     return;
   }
 
-  const studentsFavorite = getStudents($, row, 5);
-  const studentsLiked = getStudents($, row, 6);
+  const studentsFavorite = handleBattleHoshino(getStudents($, row, 5));
+  const studentsLiked = handleBattleHoshino(getStudents($, row, 6));
 
   if (iconUrl) {
     iconUrl = `https:${iconUrl}`;

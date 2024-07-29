@@ -1,7 +1,7 @@
 export function generateKey(name: string): string {
   return name
     .toLowerCase()
-    .replace(/\s/g, '_')
+    .replace(/\s|＊/g, '_')
     .replace(/[^a-z0-9_]/g, '');
 }
 

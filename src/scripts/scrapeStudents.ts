@@ -12,6 +12,8 @@ import { Storage } from '../utils/storage';
 
 const storage = Storage.getInstance();
 
+const IGNORED_STUDENTS = process.env.IGNORE_STUDENTS?.split(',') ?? [];
+
 interface RawStudent
   extends Omit<
     Student,
@@ -67,6 +69,12 @@ function parseStudentRow($: cheerio.CheerioAPI, row: cheerio.Element) {
   console.log(`Scraping ${name}...`);
 
   const key = generateKey(name);
+
+  if (IGNORED_STUDENTS.includes(key)) {
+    console.log(`Ignoring ${name}...`);
+    return;
+  }
+
   const studentDetails = {
     name,
   } as RawStudent;
