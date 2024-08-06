@@ -81,7 +81,7 @@ export const handler = async (ctx: CommandContext) => {
   const embed = new EmbedBuilder()
     .setTitle(student.fullName)
     .setDescription(description)
-    .setImage(student.wikiImage)
+    .setImage(student.portraitUrl)
     .setColor((student.attackType?.color ?? GAME_BLUE).toArray())
     .setFooter({
       text: `Seed: ${seed}`,

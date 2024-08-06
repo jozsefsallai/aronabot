@@ -294,6 +294,45 @@ async function scrapeStudentIcons() {
   }
 }
 
+async function fetchStudentPortrait(student: RawStudent) {
+  if (!student.wikiImage) {
+    return null;
+  }
+
+  const wikiImage = student.wikiImage;
+  const res = await axios.get(wikiImage, { responseType: 'arraybuffer' });
+  return res.data;
+}
+
+async function scrapeStudentPortraits() {
+  for (const [key, student] of studentMap.entries()) {
+    try {
+      const image = await fetchStudentPortrait(student);
+      if (!image) {
+        console.log(`No portrait found for ${key}.`);
+        continue;
+      }
+
+      const portraitPath = `images/students/portraits/${key}.png`;
+      if (await storage.exists(portraitPath)) {
+        continue;
+      }
+
+      await storage.upload({
+        key: portraitPath,
+        data: image,
+        mimeType: 'image/png',
+      });
+
+      console.log(`Fetched portrait for ${key}.`);
+    } catch (err) {
+      console.log(`!!! Failed to fetch portrait for ${key}.`);
+      console.error(err);
+      continue;
+    }
+  }
+}
+
 async function main() {
   await populateStudents();
   await populateStudentTrivia();
@@ -302,6 +341,7 @@ async function main() {
   await saveStudentData();
 
   await scrapeStudentIcons();
+  await scrapeStudentPortraits();
 
   console.log('Done.');
 }

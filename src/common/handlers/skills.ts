@@ -20,8 +20,8 @@ export const handleStudentSkillsCommand = async (
     .setTitle(`${student.name} Skills`)
     .setURL(student.schaledbUrl);
 
-  if (student.wikiImage) {
-    embed = embed.setThumbnail(student.wikiImage);
+  if (student.portraitUrl) {
+    embed = embed.setThumbnail(student.portraitUrl);
   }
 
   for (const skill of student.skills) {

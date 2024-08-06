@@ -113,8 +113,8 @@ export const handleStudentCommand = async (
     embed = embed.setColor(student.attackType.color.toArray());
   }
 
-  if (student.wikiImage) {
-    embed = embed.setThumbnail(student.wikiImage);
+  if (student.portraitUrl) {
+    embed = embed.setThumbnail(student.portraitUrl);
   }
 
   if (!student.skills || student.skills.length === 0) {

@@ -98,6 +98,14 @@ export class Student {
     return `https://schale.gg/?chara=${name}`;
   }
 
+  get portraitUrl(): string | null {
+    if (!this.wikiImage) {
+      return null;
+    }
+
+    return `${process.env.R2_PUBLIC_ACCESS_URL}/images/students/portraits/${this.key}.png`;
+  }
+
   get nextBirthday(): Date | null {
     if (!this.birthdayData) {
       return null;

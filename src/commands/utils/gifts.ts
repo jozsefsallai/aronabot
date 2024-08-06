@@ -176,8 +176,8 @@ const handleStudent = async (ctx: CommandContext, student: string) => {
 
   const embed = new EmbedBuilder().setTitle(studentData.name);
 
-  if (studentData.wikiImage) {
-    embed.setThumbnail(studentData.wikiImage);
+  if (studentData.portraitUrl) {
+    embed.setThumbnail(studentData.portraitUrl);
   }
 
   if (favoriteGifts.length > 0) {
