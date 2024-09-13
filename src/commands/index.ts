@@ -19,6 +19,9 @@ import * as birthdays from './utils/birthdays';
 import * as gifts from './utils/gifts';
 
 import * as reload from './staff/reload';
+import * as rrp from './staff/rrp';
+import * as simulateGacha from './staff/simulate-gacha';
+
 import { SlashCommandBuilder } from '../utils/slashCommandBuilder';
 
 interface CommandData {
@@ -43,6 +46,8 @@ const commands: CommandData[] = [
   birthdays,
   gifts,
   reload,
+  rrp,
+  simulateGacha,
 ];
 
 export default commands;

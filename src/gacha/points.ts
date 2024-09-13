@@ -55,6 +55,26 @@ class RecruitmentPointsManager {
     return points;
   }
 
+  async resetAll(bannerKind: BannerKind): Promise<boolean> {
+    if (!redis) {
+      return false;
+    }
+
+    const prefix = this.getPrefix(bannerKind);
+    const key = `${prefix}:*`;
+
+    const keys = await redis.keys(key);
+    const pipeline = redis.pipeline();
+
+    keys.forEach((key) => {
+      pipeline.set(key, '0');
+    });
+
+    await pipeline.exec();
+
+    return true;
+  }
+
   private getPrefix(bannerKind: BannerKind) {
     switch (bannerKind) {
       case BannerKind.GLOBAL:
