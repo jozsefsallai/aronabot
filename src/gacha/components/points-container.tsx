@@ -83,7 +83,6 @@ export const PointsContainer = ({ points }: PointsContainerProps) => {
         src={GACHA_POINTS_ICON_BUFFER}
         style={{
           width: 57,
-          paddingTop: 5,
         }}
       />
     </div>
