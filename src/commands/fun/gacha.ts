@@ -1,7 +1,6 @@
 import { CommandContext } from '../../core/handler/CommandHandler';
 
 import { bannerContainer } from '../../containers/banners';
-import { GachaBrowser } from '../../gacha/browser';
 import recruitmentPointsManager from '../../gacha/points';
 import { iconsContainer } from '../../containers/icons';
 import { AutocompleteContext } from '../../core/handler/AutocompleteHandler';
@@ -9,6 +8,9 @@ import {
   AppIntegrationType,
   SlashCommandBuilder,
 } from '../../utils/slashCommandBuilder';
+import { CardProps } from '../../gacha/components/card';
+import { generateGachaResult } from '../../gacha/generate-result';
+import { EmbedBuilder } from 'discord.js';
 
 function getBannerChoices() {
   return bannerContainer
@@ -75,15 +77,50 @@ export const handler = async (ctx: CommandContext) => {
     userId,
   );
 
-  const browser = await GachaBrowser.getInstance();
-  const image = await browser.getScreenshot(bannerName, points);
+  const cards: CardProps[] = [];
 
-  await ctx.interaction.editReply({
-    files: [
-      {
-        attachment: image,
-        name: 'gacha_result.png',
-      },
-    ],
-  });
+  try {
+    const students = banner.pullTen();
+
+    for (const [student, key] of students) {
+      const icon = iconsContainer.getIcon(key);
+
+      cards.push({
+        student,
+        isPickup: banner.isPickup(key),
+        icon: icon ?? '',
+      });
+    }
+  } catch (err: any) {
+    await ctx.interaction.editReply(err.message);
+    return;
+  }
+
+  try {
+    const png = await generateGachaResult({
+      cards,
+      points: points && !isNaN(points) ? points : undefined,
+    });
+
+    await ctx.interaction.editReply({
+      files: [
+        {
+          attachment: png,
+          name: 'gacha_result.png',
+        },
+      ],
+    });
+  } catch (err: any) {
+    const students = cards.map((card) => card.student.name).join(', ');
+    const embed = new EmbedBuilder()
+      .setTitle('Error')
+      .setDescription(
+        `An unexpected error occurred and the gacha result image couldn't be rendered. You rolled the following students:\n\`\`\`\n${students}\`\`\``,
+      )
+      .setColor(0xff0000);
+
+    await ctx.interaction.editReply({
+      embeds: [embed],
+    });
+  }
 };
