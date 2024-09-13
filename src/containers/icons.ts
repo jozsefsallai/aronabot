@@ -28,7 +28,7 @@ export class IconsContainer {
   }
 
   private async fetchStudentIcon(student: string) {
-    const key = `images/students/icons/${student}.webp`;
+    const key = `images/students/icons/${student}.png`;
     const data = await storage.read(key);
 
     if (!data) {

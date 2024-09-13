@@ -5,31 +5,10 @@ import { Student } from '../../models/Student';
 import { Rarity } from '../../models/Rarity';
 import { iconsContainer } from '../../containers/icons';
 
-import * as path from 'path';
-import { localFileToDataUri } from '../../utils/localFileToDataUri';
-
-const IMAGE_ASSETS_DIR = path.join(__dirname, '../../..', 'assets/images');
-
-const GACHA_BG_BUFFER = localFileToDataUri(
-  'image',
-  path.join(IMAGE_ASSETS_DIR, 'gacha', 'background.png'),
-);
-const GACHA_CHARA_CARD_BG_BUFFER = localFileToDataUri(
-  'image',
-  path.join(IMAGE_ASSETS_DIR, 'gacha', 'chara-card-bg.png'),
-);
-const GACHA_PICKUP_BUFFER = localFileToDataUri(
-  'image',
-  path.join(IMAGE_ASSETS_DIR, 'gacha', 'pickup.png'),
-);
-const GACHA_POINTS_ICON_BUFFER = localFileToDataUri(
-  'image',
-  path.join(IMAGE_ASSETS_DIR, 'gacha', 'points-icon.png'),
-);
-const GACHA_STAR_BUFFER = localFileToDataUri(
-  'image',
-  path.join(IMAGE_ASSETS_DIR, 'gacha', 'star.png'),
-);
+import {
+  generateGachaResult,
+  generateGachaResultSVG,
+} from '../../gacha/generate-result';
 
 interface Card {
   key: string;
@@ -38,7 +17,7 @@ interface Card {
   icon: string;
 }
 
-export function get(req: Request, res: Response) {
+export async function get(req: Request, res: Response) {
   const bannerId = (req.query.banner ?? 'regular') as string;
   const points = req.query.points && parseInt(req.query.points as string, 10);
 
@@ -69,17 +48,31 @@ export function get(req: Request, res: Response) {
     return;
   }
 
-  res.render('gacha', {
-    cards,
-    points: points && !isNaN(points) ? points : undefined,
-    assets: {
-      bg: GACHA_BG_BUFFER,
-      charaCardBg: GACHA_CHARA_CARD_BG_BUFFER,
-      pickup: GACHA_PICKUP_BUFFER,
-      pointsIcon: GACHA_POINTS_ICON_BUFFER,
-      star: GACHA_STAR_BUFFER,
-    },
-  });
+  // res.render('gacha', {
+  //   cards,
+  //   points: points && !isNaN(points) ? points : undefined,
+  //   assets: {
+  //     bg: GACHA_BG_BUFFER,
+  //     charaCardBg: GACHA_CHARA_CARD_BG_BUFFER,
+  //     pickup: GACHA_PICKUP_BUFFER,
+  //     pointsIcon: GACHA_POINTS_ICON_BUFFER,
+  //     star: GACHA_STAR_BUFFER,
+  //   },
+  // });
+
+  try {
+    const png = await generateGachaResult({
+      cards,
+      points: points && !isNaN(points) ? points : undefined,
+    });
+
+    res.setHeader('Content-Type', 'image/png');
+    res.send(png);
+    res.end();
+  } catch (err: any) {
+    console.error(err);
+    res.status(500).send(err.message);
+  }
 }
 
 export function simulate(req: Request, res: Response) {

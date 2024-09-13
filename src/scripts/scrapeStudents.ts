@@ -10,6 +10,8 @@ import { RawSkill } from './scrapeSkills';
 
 import { Storage } from '../utils/storage';
 
+import sharp from 'sharp';
+
 const storage = Storage.getInstance();
 
 const IGNORED_STUDENTS = process.env.IGNORE_STUDENTS?.split(',') ?? [];
@@ -270,7 +272,7 @@ async function fetchStudentIcon(iconName: string) {
 async function scrapeStudentIcons() {
   for (const student of studentMap.keys()) {
     const iconName = normalizeStudentIconName(student);
-    const iconPath = `images/students/icons/${student}.webp`;
+    const iconPath = `images/students/icons/${student}.png`;
 
     if (await storage.exists(iconPath)) {
       continue;
@@ -279,10 +281,11 @@ async function scrapeStudentIcons() {
     try {
       const buffer = await fetchStudentIcon(iconName);
       const icon = Buffer.from(buffer, 'binary');
+      const png = await sharp(icon).png().toBuffer();
       await storage.upload({
         key: iconPath,
-        data: icon,
-        mimeType: 'image/webp',
+        data: png,
+        mimeType: 'image/png',
       });
 
       console.log(`Fetched icon for ${student}.`);
