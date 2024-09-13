@@ -44,7 +44,7 @@ export const autocomplete = async (ctx: AutocompleteContext) => {
 export const handler = staffOnlyGuard(async (ctx: CommandContext) => {
   await ctx.interaction.deferReply({ ephemeral: true });
 
-  let bannerName = ctx.interaction.options.get('region')?.value as
+  let bannerName = ctx.interaction.options.get('banner')?.value as
     | string
     | undefined;
 
