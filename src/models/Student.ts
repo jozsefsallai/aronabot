@@ -46,6 +46,9 @@ export class Student {
     public isLimited: boolean,
 
     public releaseDate: Date | null = null,
+
+    // relations
+    public baseVariantId: string | null = null,
   ) {
     this.birthdayData = parseBirthday(this.birthday);
   }
@@ -78,6 +81,8 @@ export class Student {
       json['isLimited'] ?? false,
 
       json['releaseDate'] ? new Date(json['releaseDate']) : null,
+
+      json['baseVariantId'],
     );
   };
 
@@ -195,6 +200,7 @@ export class Student {
       entry.isWelfare,
       entry.isLimited,
       entry.releaseDate ? new Date(entry.releaseDate) : null,
+      entry.baseVariantId,
     );
   }
 
@@ -221,6 +227,7 @@ export class Student {
       isWelfare: this.isWelfare,
       isLimited: this.isLimited,
       releaseDate: this.releaseDate?.toISOString() ?? null,
+      baseVariantId: this.baseVariantId,
     };
   }
 

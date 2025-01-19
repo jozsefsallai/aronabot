@@ -1,4 +1,5 @@
 import {
+  AnyPgColumn,
   boolean,
   date,
   integer,
@@ -83,6 +84,11 @@ export const students = pgTable('students', {
   isLimited: boolean('is_limited').notNull().default(false),
 
   releaseDate: date('release_date'),
+
+  // relations
+  baseVariantId: varchar('base_variant_id').references(
+    (): AnyPgColumn => students.id,
+  ),
 });
 
 export const skillTypeEnum = pgEnum('skill_type', SkillType.codes());

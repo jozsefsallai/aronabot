@@ -8,6 +8,7 @@ import {
 import { CommandContext } from '../core/handler/CommandHandler';
 import { AutocompleteContext } from '../core/handler/AutocompleteHandler';
 
+import * as cafe from './fun/cafe';
 import * as gacha from './fun/gacha';
 import * as spark from './fun/spark';
 import * as sotd from './fun/sotd';
@@ -38,6 +39,7 @@ interface CommandData {
 }
 
 const commands: CommandData[] = [
+  cafe,
   gacha,
   spark,
   sotd,

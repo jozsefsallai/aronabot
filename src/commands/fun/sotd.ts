@@ -7,6 +7,11 @@ import {
   SlashCommandBuilder,
   AppIntegrationType,
 } from '../../utils/slashCommandBuilder';
+import {
+  currentTimeJST,
+  dateToJST,
+  resetTimeForDateJST,
+} from '../../utils/date';
 
 export const meta = new SlashCommandBuilder()
   .setName('studentoftheday')
@@ -32,6 +37,12 @@ const areSameDay = (d1: Date, d2: Date): boolean => {
   );
 };
 
+function getCustomDate(str: string): Date {
+  const date = new Date(str);
+  date.setDate(date.getDate() + 1);
+  return dateToJST(date);
+}
+
 export const handler = async (ctx: CommandContext) => {
   await ctx.interaction.deferReply();
 
@@ -41,9 +52,9 @@ export const handler = async (ctx: CommandContext) => {
     | string
     | undefined;
 
-  const today = new Date();
+  const today = currentTimeJST();
 
-  const date = dateArg ? new Date(dateArg) : today;
+  const date = dateArg ? getCustomDate(dateArg) : today;
   if (!date || isNaN(date.getTime())) {
     await ctx.interaction.editReply('Invalid date provided.');
     return;
@@ -54,8 +65,8 @@ export const handler = async (ctx: CommandContext) => {
     return;
   }
 
-  date.setHours(0, 0, 0, 0);
-  const dateTimestamp = Math.floor(date.getTime() / 1000);
+  const resetDate = resetTimeForDateJST(date);
+  const dateTimestamp = Math.floor(resetDate.getTime() / 1000);
 
   const seed = Buffer.from(`${dateTimestamp}/${userId}`, 'utf-8')
     .toString('base64')
@@ -67,14 +78,14 @@ export const handler = async (ctx: CommandContext) => {
 
   const tomorrow = new Date(today);
   tomorrow.setDate(tomorrow.getDate() + 1);
-  tomorrow.setHours(0, 0, 0, 0);
-  const tomorrowTimestamp = Math.floor(tomorrow.getTime() / 1000);
+  const tomorrowReset = resetTimeForDateJST(tomorrow);
+  const tomorrowTimestamp = Math.floor(tomorrowReset.getTime() / 1000);
 
   const description = areSameDay(date, today)
     ? `${ctx.interaction.user.toString()}'s student of the day is **${
         student.name
       }**.\n\nNext student of the day can be chosen <t:${tomorrowTimestamp}:R>`
-    : `${ctx.interaction.user.toString()}'s student of the day on **${date.toDateString()}** was **${
+    : `${ctx.interaction.user.toString()}'s student of the day on **${resetDate.toDateString()}** was **${
         student.name
       }**.`;
 

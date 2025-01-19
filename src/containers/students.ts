@@ -84,6 +84,22 @@ export class StudentContainer {
       ) ?? null
     );
   }
+
+  getBaseVariants() {
+    return this.getStudentsWhere((student) => student.baseVariantId === null);
+  }
+
+  getVariantsForBase(base: Student) {
+    const variants = [base];
+
+    for (const student of this.getStudents()) {
+      if (student.baseVariantId === base.key) {
+        variants.push(student);
+      }
+    }
+
+    return variants;
+  }
 }
 
 export const studentContainer = new StudentContainer();
