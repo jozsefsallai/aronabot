@@ -1,8 +1,8 @@
-import { bannerContainer } from '../banners';
-import { giftContainer } from '../gifts';
-import { iconsContainer } from '../icons';
-import { missionContainer } from '../missions';
-import { studentContainer } from '../students';
+import { bannerContainer } from "../banners";
+import { giftContainer } from "../gifts";
+import { iconsContainer } from "../icons";
+import { missionContainer } from "../missions";
+import { studentContainer } from "../students";
 
 export let _areContainersBootstrapped = false;
 
@@ -11,7 +11,7 @@ export async function bootstrapContainers() {
     return;
   }
 
-  console.log('Bootstrapping containers...');
+  console.log("Bootstrapping containers...");
 
   await studentContainer.bootstrap();
   await missionContainer.bootstrap();
@@ -19,7 +19,7 @@ export async function bootstrapContainers() {
   await iconsContainer.bootstrap();
   await bannerContainer.bootstrap();
 
-  console.log('Containers bootstrapped.');
+  console.log("Containers bootstrapped.");
 
   _areContainersBootstrapped = true;
 }

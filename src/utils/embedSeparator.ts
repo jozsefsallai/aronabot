@@ -1,5 +1,5 @@
 export const embedSeparator = {
-  name: ' ',
-  value: ' ',
+  name: " ",
+  value: " ",
   inline: true,
 };

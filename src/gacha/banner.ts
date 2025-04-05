@@ -1,11 +1,6 @@
-import { InferSelectModel, eq } from 'drizzle-orm';
-import { studentContainer } from '../containers/students';
-import { Rarity } from '../models/Rarity';
-import { Student } from '../models/Student';
-import { BannerKind } from './kind';
-import { GachaPool } from './pool';
-import { banners } from '../db/schema';
-import db from '../db';
+import { studentContainer } from "../containers/students";
+import { GachaPool } from "./pool";
+
 import {
   DEFAULT_BASE_ONE_STAR_RATE,
   DEFAULT_BASE_THREE_STAR_RATE,
@@ -13,7 +8,15 @@ import {
   DEFAULT_EXTRA_RATE,
   DEFAULT_PICKUP_RATE,
   DEFAULT_THREE_STAR_RATE,
-} from './constants';
+} from "./constants";
+import { db } from "../db/client";
+import type { Banner, Student, BannerKind } from "@prisma/client";
+
+export type DetailedGachaBanner = Banner & {
+  pickupPoolStudents: Student[];
+  extraPoolStudents: Student[];
+  additionalThreeStarStudents: Student[];
+};
 
 export interface GachaBannerParams {
   id: string;
@@ -25,9 +28,9 @@ export interface GachaBannerParams {
   pickupRate?: number;
   extraRate?: number;
 
-  pickupPoolStudents?: string[];
-  extraPoolStudents?: string[];
-  additionalThreeStarStudents?: string[];
+  pickupPoolStudents?: Student[];
+  extraPoolStudents?: Student[];
+  additionalThreeStarStudents?: Student[];
 
   baseOneStarRate?: number;
   baseTwoStarRate?: number;
@@ -91,6 +94,17 @@ class GachaBanner {
     );
   }
 
+  private isStudentAvailableInRegion(student: Student) {
+    switch (this.kind) {
+      case "Global":
+        return student.isReleasedGlobal;
+      case "JP":
+        return student.isReleasedJP;
+      default:
+        return false;
+    }
+  }
+
   private isPullable(
     student: Student,
     additionalCondition: (student: Student) => boolean,
@@ -98,44 +112,42 @@ class GachaBanner {
     return (
       !student.isLimited &&
       !student.isWelfare &&
-      student.releaseDate! <= this.date &&
+      this.isStudentAvailableInRegion(student) &&
       additionalCondition(student)
     );
   }
 
   private isOneStar(student: Student): boolean {
-    return student.rarity === Rarity.OneStar;
+    return student.rarity === 1;
   }
 
   private isTwoStar(student: Student): boolean {
-    return student.rarity === Rarity.TwoStar;
+    return student.rarity === 2;
   }
 
   private isThreeStar(student: Student): boolean {
-    return student.rarity === Rarity.ThreeStar;
+    return student.rarity === 3;
   }
 
   private populatePools(
-    pickupPoolStudents?: string[],
-    extraPoolStudents?: string[],
-    additionalThreeStarStudents?: string[],
+    pickupPoolStudents?: Student[],
+    extraPoolStudents?: Student[],
+    additionalThreeStarStudents?: Student[],
   ): void {
     if (this._isBootstrapped) {
       return;
     }
 
-    const oneStarStudents = studentContainer.getStudentKeysWhere((student) =>
+    const oneStarStudents = studentContainer.getStudentsWhere((student) =>
       this.isPullable(student, this.isOneStar),
     );
 
-    const twoStarStudents = studentContainer.getStudentKeysWhere((student) =>
+    const twoStarStudents = studentContainer.getStudentsWhere((student) =>
       this.isPullable(student, this.isTwoStar),
     );
 
     const threeStarStudents = studentContainer
-      .getStudentKeysWhere((student) =>
-        this.isPullable(student, this.isThreeStar),
-      )
+      .getStudentsWhere((student) => this.isPullable(student, this.isThreeStar))
       .filter(
         (student) =>
           !pickupPoolStudents?.includes(student) &&
@@ -231,13 +243,13 @@ class GachaBanner {
     }
 
     if (students.length < 10) {
-      throw new Error('Failed to pull 10 students...');
+      throw new Error("Failed to pull 10 students...");
     }
 
     // ensure last drop is always 2★ or higher
-    if (students[students.length - 1][0].rarity === Rarity.OneStar) {
+    if (students[students.length - 1][0].rarity === 1) {
       const firstNonOneStar = students.findIndex((student) => {
-        return student[0].rarity !== Rarity.OneStar;
+        return student[0].rarity !== 1;
       });
 
       if (firstNonOneStar !== -1) {
@@ -310,15 +322,23 @@ class GachaBanner {
   }
 
   static async all() {
-    return db
-      .select()
-      .from(banners)
-      .orderBy(banners.sortKey)
-      .execute()
-      .then((entries) => entries.map(GachaBanner.fromDBEntry));
+    return db.banner
+      .findMany({
+        orderBy: {
+          sortKey: "asc",
+        },
+        include: {
+          pickupPoolStudents: true,
+          extraPoolStudents: true,
+          additionalThreeStarStudents: true,
+        },
+      })
+      .then((entries) => {
+        return entries.map((entry) => GachaBanner.fromDBEntry(entry));
+      });
   }
 
-  static fromDBEntry(entry: InferSelectModel<typeof banners>): GachaBanner {
+  static fromDBEntry(entry: DetailedGachaBanner): GachaBanner {
     return new GachaBanner({
       id: entry.id,
       name: entry.name,

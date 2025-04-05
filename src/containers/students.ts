@@ -1,8 +1,17 @@
-import { Student } from '../models/Student';
-import { similarity } from '../utils/similarity';
+import type { Gift, Skill, Student } from "@prisma/client";
+import { similarity } from "../utils/similarity";
+import { db } from "../db/client";
+
+export type DetailedStudent = Student & {
+  baseVariant?: Student | null;
+  skills: Skill[];
+  giftsAdored: Gift[];
+  giftsLoved: Gift[];
+  giftsLiked: Gift[];
+};
 
 export class StudentContainer {
-  private students: Map<string, Student> = new Map();
+  private students: Map<string, DetailedStudent> = new Map();
 
   async bootstrap(): Promise<void> {
     await this.reload();
@@ -11,29 +20,40 @@ export class StudentContainer {
   async reload(): Promise<void> {
     this.students.clear();
 
-    const students = await Student.all();
+    const students = await db.student.findMany({
+      include: {
+        baseVariant: true,
+        skills: true,
+        giftsAdored: true,
+        giftsLoved: true,
+        giftsLiked: true,
+      },
+    });
+
     for (const student of students) {
-      this.addStudent(student.key, student);
+      this.addStudent(student.id, student);
     }
   }
 
-  addStudent(key: string, student: Student): void {
+  addStudent(key: string, student: DetailedStudent): void {
     this.students.set(key, student);
   }
 
-  getStudent(key: string): Student | null {
+  getStudent(key: string): DetailedStudent | null {
     if (this.students.has(key)) {
-      return this.students.get(key)!;
+      return this.students.get(key) ?? null;
     }
 
     return null;
   }
 
-  getStudents(): Student[] {
+  getStudents(): DetailedStudent[] {
     return Array.from(this.students.values());
   }
 
-  getStudentsWhere(predicate: (student: Student) => boolean): Student[] {
+  getStudentsWhere(
+    predicate: (student: DetailedStudent) => boolean,
+  ): DetailedStudent[] {
     return this.getStudents().filter(predicate);
   }
 
@@ -41,43 +61,45 @@ export class StudentContainer {
     return Array.from(this.students.keys());
   }
 
-  getStudentKeysWhere(predicate: (student: Student) => boolean): string[] {
+  getStudentKeysWhere(
+    predicate: (student: DetailedStudent) => boolean,
+  ): string[] {
     return Array.from(this.students.entries())
       .filter(([_, student]) => predicate(student))
       .map(([key, _]) => key);
   }
 
-  all(): Record<string, Student> {
+  all(): Record<string, DetailedStudent> {
     return Object.fromEntries(this.students.entries());
   }
 
-  findManyByName(name: string): Student[] {
+  findManyByName(name: string): DetailedStudent[] {
     function normalize(str: string): string {
-      return str.toLowerCase().replace(/[^a-z0-9]/g, '');
+      return str.toLowerCase().replace(/[^a-z0-9]/g, "");
     }
 
-    name = normalize(name);
+    const finalName = normalize(name);
 
     return this.getStudentsWhere((student) => {
-      return normalize(student.name).includes(name);
+      return normalize(student.name).includes(finalName);
     });
   }
 
   static sortBySimilarity(value: string) {
-    return (a: Student, b: Student) => {
+    return (a: DetailedStudent, b: DetailedStudent) => {
       const aName = a.name.toLowerCase();
       const bName = b.name.toLowerCase();
 
-      value = value.toLowerCase();
+      const finalValue = value.toLowerCase();
 
-      const aSimilarity = similarity(aName, value);
-      const bSimilarity = similarity(bName, value);
+      const aSimilarity = similarity(aName, finalValue);
+      const bSimilarity = similarity(bName, finalValue);
 
       return bSimilarity - aSimilarity;
     };
   }
 
-  getByName(name: string): Student | null {
+  getByName(name: string): DetailedStudent | null {
     return (
       this.getStudents().find(
         (student) => student.name.toLowerCase() === name.toLowerCase(),
@@ -89,11 +111,11 @@ export class StudentContainer {
     return this.getStudentsWhere((student) => student.baseVariantId === null);
   }
 
-  getVariantsForBase(base: Student) {
+  getVariantsForBase(base: DetailedStudent) {
     const variants = [base];
 
     for (const student of this.getStudents()) {
-      if (student.baseVariantId === base.key) {
+      if (student.baseVariantId === base.id) {
         variants.push(student);
       }
     }

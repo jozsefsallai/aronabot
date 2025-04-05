@@ -1,12 +1,12 @@
-import * as fs from 'fs';
+import * as fs from "node:fs";
 
 export function localFileToDataUri(type: string, filePath: string) {
   const buffer = fs.readFileSync(filePath);
-  const mimeType = filePath.split('.').pop();
+  const mimeType = filePath.split(".").pop();
 
   if (!mimeType) {
-    throw new Error('Invalid file path');
+    throw new Error("Invalid file path");
   }
 
-  return `data:${type}/${mimeType};base64,${buffer.toString('base64')}`;
+  return `data:${type}/${mimeType};base64,${buffer.toString("base64")}`;
 }

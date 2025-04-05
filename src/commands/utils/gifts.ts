@@ -1,22 +1,24 @@
-import { EmbedBuilder } from 'discord.js';
-import { AutocompleteContext } from '../../core/handler/AutocompleteHandler';
-import { giftContainer } from '../../containers/gifts';
-import { StudentContainer, studentContainer } from '../../containers/students';
-import { CommandContext } from '../../core/handler/CommandHandler';
+import { EmbedBuilder } from "discord.js";
+import type { AutocompleteContext } from "../../core/handler/AutocompleteHandler";
+import { giftContainer } from "../../containers/gifts";
+import { StudentContainer, studentContainer } from "../../containers/students";
+import type { CommandContext } from "../../core/handler/CommandHandler";
 import {
   AppIntegrationType,
   SlashCommandBuilder,
-} from '../../utils/slashCommandBuilder';
+} from "../../utils/slashCommandBuilder";
+import { getPortraitUrl } from "../../utils/student-utils";
+import { getGiftIcon } from "../../utils/gift-utils";
 
 enum Params {
-  GIFT = 'gift',
-  STUDENT = 'student',
+  GIFT = "gift",
+  STUDENT = "student",
 }
 
 export const meta = new SlashCommandBuilder()
-  .setName('gifts')
+  .setName("gifts")
   .setDescription(
-    'Get information about a gift or the gifts liked by a student.',
+    "Get information about a gift or the gifts liked by a student.",
   )
   .setIntegrationTypes(
     AppIntegrationType.GuildInstall,
@@ -25,14 +27,14 @@ export const meta = new SlashCommandBuilder()
   .addStringOption((option) => {
     return option
       .setName(Params.GIFT)
-      .setDescription('The name of the gift.')
+      .setDescription("The name of the gift.")
       .setRequired(false)
       .setAutocomplete(true);
   })
   .addStringOption((option) => {
     return option
       .setName(Params.STUDENT)
-      .setDescription('The name of the student.')
+      .setDescription("The name of the student.")
       .setRequired(false)
       .setAutocomplete(true);
   });
@@ -89,14 +91,14 @@ export const handler = async (ctx: CommandContext) => {
 
   if (!gift && !student) {
     await ctx.interaction.editReply({
-      content: 'You need to specify a gift or a student.',
+      content: "You need to specify a gift or a student.",
     });
     return;
   }
 
   if (gift && student) {
     await ctx.interaction.editReply({
-      content: 'You can only specify a gift or a student, not both.',
+      content: "You can only specify a gift or a student, not both.",
     });
     return;
   }
@@ -127,29 +129,44 @@ const handleGift = async (ctx: CommandContext, gift: string) => {
     embed.setDescription(giftData.description);
   }
 
-  if (giftData.iconUrl) {
-    embed.setThumbnail(giftData.iconUrl);
-  }
+  const iconUrl = getGiftIcon(giftData);
+  embed.setThumbnail(iconUrl);
 
-  embed.addFields({ name: 'Rarity', value: `${giftData.rarity}★` });
+  embed.addFields({ name: "Rarity", value: giftData.rarity });
 
-  if (giftData.studentsFavorite.length > 0) {
-    const studentsString = giftData.studentsFavorite
+  const adoredExp = 4 * giftData.expValue;
+  const lovedExp = 3 * giftData.expValue;
+  const likedExp = 2 * giftData.expValue;
+
+  if (giftData.adoredBy.length > 0) {
+    const studentsString = giftData.adoredBy
       .map((student) => student.name)
-      .join('\n- ');
+      .join("\n- ");
+
     embed.addFields({
-      name: 'Favorite gift of:',
+      name: `Adored by (${adoredExp} EXP):`,
       value: `- ${studentsString}`,
       inline: true,
     });
   }
 
-  if (giftData.studentsLiked.length > 0) {
-    const studentsString = giftData.studentsLiked
+  if (giftData.lovedBy.length > 0) {
+    const studentsString = giftData.lovedBy
       .map((student) => student.name)
-      .join('\n- ');
+      .join("\n- ");
     embed.addFields({
-      name: 'Liked gift of:',
+      name: `Loved by (${lovedExp} EXP):`,
+      value: `- ${studentsString}`,
+      inline: true,
+    });
+  }
+
+  if (giftData.likedBy.length > 0) {
+    const studentsString = giftData.likedBy
+      .map((student) => student.name)
+      .join("\n- ");
+    embed.addFields({
+      name: `Liked by (${likedExp} EXP):`,
       value: `- ${studentsString}`,
       inline: true,
     });
@@ -167,32 +184,39 @@ const handleStudent = async (ctx: CommandContext, student: string) => {
     return;
   }
 
-  const favoriteGifts = giftContainer
-    .getGifts()
-    .filter((gift) => gift.studentsFavorite.includes(studentData));
-  const likedGifts = giftContainer
-    .getGifts()
-    .filter((gift) => gift.studentsLiked.includes(studentData));
-
   const embed = new EmbedBuilder().setTitle(studentData.name);
 
-  if (studentData.portraitUrl) {
-    embed.setThumbnail(studentData.portraitUrl);
-  }
+  const portraitUrl = getPortraitUrl(studentData);
+  embed.setThumbnail(portraitUrl);
 
-  if (favoriteGifts.length > 0) {
-    const giftsString = favoriteGifts.map((gift) => gift.name).join('\n- ');
+  if (studentData.giftsAdored.length > 0) {
+    const giftsString = studentData.giftsAdored
+      .map((gift) => gift.name)
+      .join("\n- ");
     embed.addFields({
-      name: 'Favorite Gifts',
+      name: "Adored Gifts",
       value: `- ${giftsString}`,
       inline: true,
     });
   }
 
-  if (likedGifts.length > 0) {
-    const giftsString = likedGifts.map((gift) => gift.name).join('\n- ');
+  if (studentData.giftsLoved.length > 0) {
+    const giftsString = studentData.giftsLoved
+      .map((gift) => gift.name)
+      .join("\n- ");
     embed.addFields({
-      name: 'Liked Gifts',
+      name: "Loved Gifts",
+      value: `- ${giftsString}`,
+      inline: true,
+    });
+  }
+
+  if (studentData.giftsLiked.length > 0) {
+    const giftsString = studentData.giftsLiked
+      .map((gift) => gift.name)
+      .join("\n- ");
+    embed.addFields({
+      name: "Liked Gifts",
       value: `- ${giftsString}`,
       inline: true,
     });

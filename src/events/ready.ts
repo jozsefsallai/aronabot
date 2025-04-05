@@ -1,5 +1,5 @@
-import config from '../config';
-import Client from '../core/client';
+import config from "../config";
+import type Client from "../core/client";
 
 const handler = async (client: Client) => {
   if (config.bot.defaultActivity) {

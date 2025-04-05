@@ -1,0 +1,282 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum School {
+  Abydos
+  Arius
+  Gehenna
+  Hyakkiyako
+  Millennium
+  RedWinter
+  Shanhaijing
+  SRT
+  Trinity
+  Valkyrie
+  ETC
+  Tokiwadai
+  Sakugawa
+}
+
+enum Club {
+  Kohshinjo68
+  Justice
+  CleanNClearing
+  BookClub
+  Countermeasure
+  Engineer
+  FoodService
+  Fuuki
+  GourmetClub
+  HoukagoDessert
+  KnightsHospitaller
+  MatsuriOffice
+  Meihuayuan
+  Onmyobu
+  RemedialClass
+  SPTF
+  Shugyobu
+  Endanbou
+  TheSeminar
+  TrainingClub
+  TrinityVigilance
+  Veritas
+  NinpoKenkyubu
+  GameDev
+  RedwinterSecretary
+  anzenkyoku
+  SisterHood
+  Class227
+  Emergentology
+  RabbitPlatoon
+  PandemoniumSociety
+  AriusSqud
+  HotSpringsDepartment
+  TeaParty
+  PublicPeaceBureau
+  BlackTortoisePromenade
+  Genryumon
+  LaborParty
+  KnowledgeLiberationFront
+  Hyakkayouran
+  ShinySparkleSociety
+  AbydosStudentCouncil
+  EmptyClub
+}
+
+enum CombatClass {
+  Main
+  Support
+}
+
+enum AttackType {
+  Explosion
+  Pierce
+  Mystic
+  Normal
+  Sonic
+  Mixed
+}
+
+enum DefenseType {
+  LightArmor
+  HeavyArmor
+  Unarmed
+  ElasticArmor
+  Normal
+  Mixed
+}
+
+enum CombatRole {
+  DamageDealer
+  Tanker
+  Healer
+  Supporter
+  Vehicle
+}
+
+enum CombatPosition {
+  Back
+  Front
+  Middle
+}
+
+enum WeaponType {
+  SR
+  SG
+  AR
+  MG
+  SMG
+  RG
+  HG
+  GL
+  RL
+  FT
+  MT
+}
+
+enum EquipmentKind {
+  Hat
+  Hairpin
+  Watch
+  Shoes
+  Bag
+  Charm
+  Necklace
+  Gloves
+  Badge
+}
+
+enum Terrain {
+  Street
+  Outdoor
+  Indoor
+}
+
+enum SkillType {
+  EX
+  Basic
+  Enhanced
+  Sub
+}
+
+enum ItemRarity {
+  N
+  R
+  SR
+  SSR
+}
+
+enum MissionDifficulty {
+  Normal
+  Hard
+}
+
+enum BannerKind {
+  Global
+  JP
+}
+
+model Student {
+  id         String @id
+  devName    String
+  schaleDbId Int
+
+  // Basic info and trivia
+  name          String
+  lastName      String
+  firstName     String
+  school        School
+  club          Club
+  age           String
+  birthday      String
+  introduction  String?
+  hobbies       String?
+  voiceActor    String?
+  illustrator   String?
+  designer      String?
+  height        String?
+  memorobiLevel Int     @default(0)
+
+  // Combat info
+  combatClass             CombatClass
+  combatRole              CombatRole
+  combatPosition          CombatPosition
+  attackType              AttackType
+  defenseType             DefenseType
+  streetBattleAdaptation  Int
+  outdoorBattleAdaptation Int
+  indoorBattleAdaptation  Int
+  weaponType              WeaponType
+  usesCover               Boolean
+  equipment               EquipmentKind[]
+
+  // Gacha
+  rarity    Int
+  isWelfare Boolean
+  isLimited Boolean
+  isFest    Boolean
+
+  isReleasedJP     Boolean @default(false)
+  isReleasedGlobal Boolean @default(false)
+  isReleasedCN     Boolean @default(false)
+
+  baseVariantId String?
+  baseVariant   Student?  @relation("BaseVariant", fields: [baseVariantId], references: [id])
+  variants      Student[] @relation("BaseVariant")
+
+  skills Skill[]
+
+  giftsAdored Gift[] @relation("GiftAdoredBy")
+  giftsLoved  Gift[] @relation("GiftLovedBy")
+  giftsLiked  Gift[] @relation("GiftLikedBy")
+
+  bannersPickup              Banner[] @relation("PickupPoolStudents")
+  bannersExtra               Banner[] @relation("ExtraPoolStudents")
+  bannersAdditionalThreeStar Banner[] @relation("AdditionalThreeStarStudents")
+}
+
+model Skill {
+  id Int @id @default(autoincrement())
+
+  type        SkillType
+  name        String
+  description String
+  cost        String?
+
+  studentId String
+  student   Student @relation(fields: [studentId], references: [id], onDelete: Cascade)
+}
+
+model Gift {
+  id                Int        @id
+  name              String
+  description       String?
+  rarity            ItemRarity
+  expValue          Int        @default(0)
+  iconName          String
+  isLovedByEveryone Boolean    @default(false)
+
+  adoredBy Student[] @relation("GiftAdoredBy")
+  lovedBy  Student[] @relation("GiftLovedBy")
+  likedBy  Student[] @relation("GiftLikedBy")
+}
+
+model Mission {
+  id               Int                @id @default(autoincrement())
+  name             String
+  cost             Int
+  difficulty       MissionDifficulty?
+  terrain          Terrain?
+  recommendedLevel Int
+  drops            String[]
+  stageImageUrl    String?
+}
+
+model Banner {
+  id   String @id
+  name String
+
+  sortKey Int @default(0)
+
+  date String
+
+  threeStarRate Int @default(30)
+  pickupRate    Int @default(0)
+  extraRate     Int @default(0)
+
+  pickupPoolStudents          Student[] @relation("PickupPoolStudents")
+  extraPoolStudents           Student[] @relation("ExtraPoolStudents")
+  additionalThreeStarStudents Student[] @relation("AdditionalThreeStarStudents")
+
+  baseOneStarRate   Int @default(785)
+  baseTwoStarRate   Int @default(185)
+  baseThreeStarRate Int @default(30)
+
+  kind BannerKind
+}

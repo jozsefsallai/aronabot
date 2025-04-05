@@ -1,11 +1,11 @@
-import redis from '../utils/redis';
-import { BannerKind } from './kind';
+import type { BannerKind } from "@prisma/client";
+import redis from "../utils/redis";
 
 class RecruitmentPointsManager {
-  private static readonly GLOBAL_PREFIX = 'gacha';
-  private static readonly JP_PREFIX = 'gacha_jp';
+  private static readonly GLOBAL_PREFIX = "gacha";
+  private static readonly JP_PREFIX = "gacha_jp";
 
-  private static readonly POINTS_KEY = '{{prefix}}:{{guildId}}:{{userId}}';
+  private static readonly POINTS_KEY = "{{prefix}}:{{guildId}}:{{userId}}";
 
   async get(
     bannerKind: BannerKind,
@@ -19,7 +19,7 @@ class RecruitmentPointsManager {
     const key = this.makeKey(bannerKind, guildId, userId);
     const points = await redis.get(key);
 
-    return points ? parseInt(points, 10) : 0;
+    return points ? Number.parseInt(points, 10) : 0;
   }
 
   async set(
@@ -47,8 +47,8 @@ class RecruitmentPointsManager {
 
     const key = this.makeKey(bannerKind, guildId, userId);
 
-    const current = (await redis.get(key)) ?? '0';
-    const points = parseInt(current, 10) + 10;
+    const current = (await redis.get(key)) ?? "0";
+    const points = Number.parseInt(current, 10) + 10;
 
     await redis.set(key, points);
 
@@ -67,7 +67,7 @@ class RecruitmentPointsManager {
     const pipeline = redis.pipeline();
 
     keys.forEach((key) => {
-      pipeline.set(key, '0');
+      pipeline.set(key, "0");
     });
 
     await pipeline.exec();
@@ -77,20 +77,20 @@ class RecruitmentPointsManager {
 
   private getPrefix(bannerKind: BannerKind) {
     switch (bannerKind) {
-      case BannerKind.GLOBAL:
+      case "Global":
         return RecruitmentPointsManager.GLOBAL_PREFIX;
-      case BannerKind.JP:
+      case "JP":
         return RecruitmentPointsManager.JP_PREFIX;
     }
   }
 
   private makeKey(bannerKind: BannerKind, guildId: string, userId: string) {
     return RecruitmentPointsManager.POINTS_KEY.replace(
-      '{{prefix}}',
+      "{{prefix}}",
       this.getPrefix(bannerKind),
     )
-      .replace('{{guildId}}', guildId)
-      .replace('{{userId}}', userId);
+      .replace("{{guildId}}", guildId)
+      .replace("{{userId}}", userId);
   }
 }
 

@@ -1,29 +1,30 @@
-import { EmbedBuilder } from 'discord.js';
-import { CommandContext } from '../../core/handler/CommandHandler';
-import { missionContainer } from '../../containers/missions';
+import { EmbedBuilder } from "discord.js";
+import type { CommandContext } from "../../core/handler/CommandHandler";
+import { missionContainer } from "../../containers/missions";
 import {
   AppIntegrationType,
   SlashCommandBuilder,
-} from '../../utils/slashCommandBuilder';
+} from "../../utils/slashCommandBuilder";
+import { t } from "../../utils/localizeTable";
 
 export const meta = new SlashCommandBuilder()
-  .setName('mission')
-  .setDescription('Get information and map preview about a mission.')
+  .setName("mission")
+  .setDescription("Get information and map preview about a mission.")
   .setIntegrationTypes(
     AppIntegrationType.GuildInstall,
     AppIntegrationType.UserInstall,
   )
   .addStringOption((option) => {
     return option
-      .setName('name')
-      .setDescription('The name of the mission.')
+      .setName("name")
+      .setDescription("The name of the mission.")
       .setRequired(true);
   });
 
 export const handler = async (ctx: CommandContext) => {
   await ctx.interaction.deferReply();
 
-  const name = ctx.interaction.options.get('name')!.value as string;
+  const name = ctx.interaction.options.get("name")?.value as string;
 
   const mission = missionContainer.getMissionWithName(name);
 
@@ -35,37 +36,39 @@ export const handler = async (ctx: CommandContext) => {
     return;
   }
 
+  const mirahezeWikiUrl = `https://bluearchive.wiki/wiki/Missions/${mission.name}`;
+
   let embed = new EmbedBuilder()
     .setTitle(mission.name)
-    .setURL(mission.getMirahezeWikiUrl())
+    .setURL(mirahezeWikiUrl)
     .addFields(
       {
-        name: 'Cost',
+        name: "Cost",
         value: mission.cost.toString(),
         inline: true,
       },
       {
-        name: 'Difficulty',
-        value: mission.difficulty ? mission.difficulty.name : 'Unknown',
+        name: "Difficulty",
+        value: mission.difficulty ?? "Unknown",
         inline: true,
       },
       {
-        name: 'Terrain',
-        value: mission.terrain ? mission.terrain.name : 'Unknown',
+        name: "Terrain",
+        value: mission.terrain ? t(`terrain.${mission.terrain}`) : "Unknown",
         inline: true,
       },
       {
-        name: 'Rec. lvl',
+        name: "Rec. lvl",
         value: mission.recommendedLevel.toString(),
         inline: true,
       },
       {
-        name: 'Drops',
-        value: mission.drops.join(', '),
+        name: "Drops",
+        value: mission.drops.join(", "),
       },
       {
-        name: 'Text guide',
-        value: mission.getMirahezeWikiUrl(),
+        name: "Text guide",
+        value: mirahezeWikiUrl,
       },
     );
 

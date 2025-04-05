@@ -15,6 +15,7 @@ export class RGBValue {
     const key = (r << 16) + (g << 8) + b;
 
     if (RGBValue.cache.has(key)) {
+      // biome-ignore lint/style/noNonNullAssertion: ...
       return RGBValue.cache.get(key)!;
     }
 

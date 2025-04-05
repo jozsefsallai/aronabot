@@ -1,7 +1,7 @@
 import {
   SlashCommandBuilder as DJSSlashCommandBuilder,
-  RESTPostAPIChatInputApplicationCommandsJSONBody,
-} from 'discord.js';
+  type RESTPostAPIChatInputApplicationCommandsJSONBody,
+} from "discord.js";
 
 export enum AppIntegrationType {
   // App is installable to servers

@@ -1,4 +1,5 @@
-import { Mission } from '../models/Mission';
+import type { Mission } from "@prisma/client";
+import { db } from "../db/client";
 
 export class MissionContainer {
   private missions: Mission[] = [];
@@ -8,11 +9,11 @@ export class MissionContainer {
   }
 
   async reload(): Promise<void> {
-    this.missions = await Mission.all();
-  }
-
-  addMission(mission: Mission): void {
-    this.missions.push(mission);
+    this.missions = await db.mission.findMany({
+      orderBy: {
+        name: "asc",
+      },
+    });
   }
 
   getMissions(): Mission[] {
@@ -20,8 +21,11 @@ export class MissionContainer {
   }
 
   getMissionWithName(name: string): Mission | null {
-    name = name.toUpperCase().replace(/\s/g, '').replace('HARD', 'H');
-    return this.missions.find((mission) => mission.name === name) || null;
+    const finalName = name
+      .toUpperCase()
+      .replace(/\s/g, "")
+      .replace("HARD", "H");
+    return this.missions.find((mission) => mission.name === finalName) || null;
   }
 }
 

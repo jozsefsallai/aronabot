@@ -1,7 +1,7 @@
-import { ButtonContext } from '../core/handler/ButtonHandler';
+import type { ButtonContext } from "../core/handler/ButtonHandler";
 
-import * as student from './utils/student';
-import * as skills from './utils/skills';
+import * as student from "./utils/student";
+import * as skills from "./utils/skills";
 
 type ButtonHandler = (ctx: ButtonContext) => void | Promise<void>;
 

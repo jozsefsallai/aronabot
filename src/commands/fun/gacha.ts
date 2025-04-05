@@ -1,16 +1,16 @@
-import { CommandContext } from '../../core/handler/CommandHandler';
+import type { CommandContext } from "../../core/handler/CommandHandler";
 
-import { bannerContainer } from '../../containers/banners';
-import recruitmentPointsManager from '../../gacha/points';
-import { iconsContainer } from '../../containers/icons';
-import { AutocompleteContext } from '../../core/handler/AutocompleteHandler';
+import { bannerContainer } from "../../containers/banners";
+import recruitmentPointsManager from "../../gacha/points";
+import { iconsContainer } from "../../containers/icons";
+import type { AutocompleteContext } from "../../core/handler/AutocompleteHandler";
 import {
   AppIntegrationType,
   SlashCommandBuilder,
-} from '../../utils/slashCommandBuilder';
-import { CardProps } from '../../gacha/components/card';
-import { generateGachaResult } from '../../gacha/generate-result';
-import { EmbedBuilder } from 'discord.js';
+} from "../../utils/slashCommandBuilder";
+import type { CardProps } from "../../gacha/components/card";
+import { generateGachaResult } from "../../gacha/generate-result";
+import { EmbedBuilder } from "discord.js";
 
 function getBannerChoices() {
   return bannerContainer
@@ -25,16 +25,16 @@ function getBannerChoices() {
 }
 
 export const meta = new SlashCommandBuilder()
-  .setName('gacha')
-  .setDescription('Roll on the current banners.')
+  .setName("gacha")
+  .setDescription("Roll on the current banners.")
   .setIntegrationTypes(
     AppIntegrationType.GuildInstall,
     AppIntegrationType.UserInstall,
   )
   .addStringOption((option) => {
     return option
-      .setName('banner')
-      .setDescription('The banner to pull on.')
+      .setName("banner")
+      .setDescription("The banner to pull on.")
       .setRequired(true)
       .setAutocomplete(true);
   });
@@ -48,26 +48,26 @@ export const handler = async (ctx: CommandContext) => {
 
   if (!iconsContainer.isReady) {
     await ctx.interaction.editReply(
-      'Service currently unavailable. Please try again later...',
+      "Service currently unavailable. Please try again later...",
     );
     return;
   }
 
-  let bannerName = ctx.interaction.options.get('banner')?.value as
+  let bannerName = ctx.interaction.options.get("banner")?.value as
     | string
     | undefined;
 
   if (!bannerName) {
-    bannerName = 'regular';
+    bannerName = "regular";
   }
 
-  const guildId = ctx.interaction.guildId ?? '0';
+  const guildId = ctx.interaction.guildId ?? "0";
   const userId = ctx.interaction.user.id;
 
   const banner = bannerContainer.getBanner(bannerName);
 
   if (!banner) {
-    await ctx.interaction.editReply('Invalid banner.');
+    await ctx.interaction.editReply("Invalid banner.");
     return;
   }
 
@@ -88,7 +88,7 @@ export const handler = async (ctx: CommandContext) => {
       cards.push({
         student,
         isPickup: banner.isPickup(key),
-        icon: icon ?? '',
+        icon: icon ?? "",
       });
     }
   } catch (err: any) {
@@ -99,21 +99,21 @@ export const handler = async (ctx: CommandContext) => {
   try {
     const png = await generateGachaResult({
       cards,
-      points: points && !isNaN(points) ? points : undefined,
+      points: points && !Number.isNaN(points) ? points : undefined,
     });
 
     await ctx.interaction.editReply({
       files: [
         {
           attachment: png,
-          name: 'gacha_result.png',
+          name: "gacha_result.png",
         },
       ],
     });
   } catch (err: any) {
-    const students = cards.map((card) => card.student.name).join(', ');
+    const students = cards.map((card) => card.student.name).join(", ");
     const embed = new EmbedBuilder()
-      .setTitle('Error')
+      .setTitle("Error")
       .setDescription(
         `An unexpected error occurred and the gacha result image couldn't be rendered. You rolled the following students:\n\`\`\`\n${students}\`\`\``,
       )

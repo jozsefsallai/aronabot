@@ -1,30 +1,30 @@
-import { EmbedBuilder } from 'discord.js';
-import { CommandContext } from '../../core/handler/CommandHandler';
-import seedrandom from 'seedrandom';
-import { studentContainer } from '../../containers/students';
-import { GAME_BLUE } from '../../utils/constants';
+import { EmbedBuilder } from "discord.js";
+import type { CommandContext } from "../../core/handler/CommandHandler";
+import seedrandom from "seedrandom";
+import { studentContainer } from "../../containers/students";
 import {
   SlashCommandBuilder,
   AppIntegrationType,
-} from '../../utils/slashCommandBuilder';
+} from "../../utils/slashCommandBuilder";
 import {
   currentTimeJST,
   dateToJST,
   resetTimeForDateJST,
-} from '../../utils/date';
+} from "../../utils/date";
+import { getAttackTypeColor, getPortraitUrl } from "../../utils/student-utils";
 
 export const meta = new SlashCommandBuilder()
-  .setName('studentoftheday')
-  .setDescription('Find out who your student of the day is!')
+  .setName("studentoftheday")
+  .setDescription("Find out who your student of the day is!")
   .setIntegrationTypes(
     AppIntegrationType.GuildInstall,
     AppIntegrationType.UserInstall,
   )
   .addStringOption((option) => {
     return option
-      .setName('date')
+      .setName("date")
       .setDescription(
-        'The date to get the student of the day for (YYYY/MM/DD).',
+        "The date to get the student of the day for (YYYY/MM/DD).",
       )
       .setRequired(false);
   });
@@ -48,33 +48,33 @@ export const handler = async (ctx: CommandContext) => {
 
   const userId = ctx.interaction.user.id;
 
-  const dateArg = ctx.interaction.options.get('date')?.value as
+  const dateArg = ctx.interaction.options.get("date")?.value as
     | string
     | undefined;
 
   const today = currentTimeJST();
 
   const date = dateArg ? getCustomDate(dateArg) : today;
-  if (!date || isNaN(date.getTime())) {
-    await ctx.interaction.editReply('Invalid date provided.');
+  if (!date || Number.isNaN(date.getTime())) {
+    await ctx.interaction.editReply("Invalid date provided.");
     return;
   }
 
   if (date.getTime() > today.getTime()) {
-    await ctx.interaction.editReply('Input cannot be a future date.');
+    await ctx.interaction.editReply("Input cannot be a future date.");
     return;
   }
 
   const resetDate = resetTimeForDateJST(date);
   const dateTimestamp = Math.floor(resetDate.getTime() / 1000);
 
-  const seed = Buffer.from(`${dateTimestamp}/${userId}`, 'utf-8')
-    .toString('base64')
-    .replace(/=/g, '');
+  const seed = Buffer.from(`${dateTimestamp}/${userId}`, "utf-8")
+    .toString("base64")
+    .replace(/=/g, "");
   const rng = seedrandom(seed);
 
   const students = studentContainer.getStudents();
-  let student = students[Math.floor(rng() * students.length)];
+  const student = students[Math.floor(rng() * students.length)];
 
   const tomorrow = new Date(today);
   tomorrow.setDate(tomorrow.getDate() + 1);
@@ -89,11 +89,13 @@ export const handler = async (ctx: CommandContext) => {
         student.name
       }**.`;
 
+  const portraitUrl = getPortraitUrl(student);
+
   const embed = new EmbedBuilder()
-    .setTitle(student.fullName)
+    .setTitle(`${student.lastName} ${student.firstName}`)
     .setDescription(description)
-    .setImage(student.portraitUrl)
-    .setColor((student.attackType?.color ?? GAME_BLUE).toArray())
+    .setImage(portraitUrl)
+    .setColor(getAttackTypeColor(student.attackType).toArray())
     .setFooter({
       text: `Seed: ${seed}`,
     });

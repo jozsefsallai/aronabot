@@ -1,18 +1,18 @@
 export const JST_OFFSET = 9; // JST is UTC+9, in hours
 
 export const MONTHS = [
-  'January',
-  'February',
-  'March',
-  'April',
-  'May',
-  'June',
-  'July',
-  'August',
-  'September',
-  'October',
-  'November',
-  'December',
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
 ];
 
 export interface Birthday {
@@ -25,12 +25,12 @@ export function parseMonth(month: string): number {
 }
 
 export function parseBirthday(birthday: string): Birthday | null {
-  const [monthStr, dayStr] = birthday.split(' ');
+  const [monthStr, dayStr] = birthday.split(" ");
 
   const month = parseMonth(monthStr);
-  const day = parseInt(dayStr);
+  const day = Number.parseInt(dayStr);
 
-  if (month === -1 || isNaN(day)) {
+  if (month === -1 || Number.isNaN(day)) {
     return null;
   }
 

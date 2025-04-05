@@ -1,9 +1,9 @@
-import { handleStudentCommand } from '../../common/handlers/student';
-import { studentContainer } from '../../containers/students';
-import { ButtonContext } from '../../core/handler/ButtonHandler';
+import { handleStudentCommand } from "../../common/handlers/student";
+import { studentContainer } from "../../containers/students";
+import type { ButtonContext } from "../../core/handler/ButtonHandler";
 
 export const meta = {
-  id: 'student',
+  id: "student",
 };
 
 export const handler = async (ctx: ButtonContext) => {
@@ -11,7 +11,7 @@ export const handler = async (ctx: ButtonContext) => {
     ctx.interaction.message.interaction?.user.id !== ctx.interaction.user.id
   ) {
     await ctx.interaction.reply({
-      content: 'You cannot use this button.',
+      content: "You cannot use this button.",
       ephemeral: true,
     });
 
@@ -19,15 +19,15 @@ export const handler = async (ctx: ButtonContext) => {
   }
 
   if (!ctx.uniqueId) {
-    await ctx.interaction.reply('Button has no unique ID.');
+    await ctx.interaction.reply("Button has no unique ID.");
     return;
   }
 
-  const studentKey = ctx.uniqueId!;
+  const studentKey = ctx.uniqueId;
 
   const student = studentContainer.getStudent(studentKey);
   if (!student) {
-    await ctx.interaction.reply('Student not found.');
+    await ctx.interaction.reply("Student not found.");
     return;
   }
 

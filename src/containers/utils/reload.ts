@@ -1,11 +1,11 @@
-import { bannerContainer } from '../banners';
-import { giftContainer } from '../gifts';
-import { iconsContainer } from '../icons';
-import { missionContainer } from '../missions';
-import { studentContainer } from '../students';
+import { bannerContainer } from "../banners";
+import { giftContainer } from "../gifts";
+import { iconsContainer } from "../icons";
+import { missionContainer } from "../missions";
+import { studentContainer } from "../students";
 
 export async function reloadContainers() {
-  console.log('Reloading containers...');
+  console.log("Reloading containers...");
 
   await studentContainer.reload();
   await missionContainer.reload();
@@ -13,5 +13,5 @@ export async function reloadContainers() {
   await iconsContainer.reload();
   await bannerContainer.reload();
 
-  console.log('Containers reloaded.');
+  console.log("Containers reloaded.");
 }

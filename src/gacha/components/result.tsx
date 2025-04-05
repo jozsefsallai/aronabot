@@ -1,9 +1,10 @@
-import React from 'react';
-import { Card, CardProps } from './card';
-import { CardShadow } from './card-shadow';
-import { GACHA_BG_BUFFER } from '../preloaded-buffers';
-import { BannerKind } from '../kind';
-import { PointsContainer } from './points-container';
+import React from "react";
+
+import { Card, type CardProps } from "./card";
+import { CardShadow } from "./card-shadow";
+import { GACHA_BG_BUFFER } from "../preloaded-buffers";
+import { PointsContainer } from "./points-container";
+import type { BannerKind } from "@prisma/client";
 
 export interface GachaResultProps {
   cards: CardProps[];
@@ -16,28 +17,28 @@ export const GachaResult = ({ cards, points }: GachaResultProps) => {
     <div
       // gacha-result
       style={{
-        overflow: 'hidden',
+        overflow: "hidden",
         width: 1120,
         height: 640,
-        backgroundSize: 'cover',
-        position: 'relative',
-        display: 'flex',
+        backgroundSize: "cover",
+        position: "relative",
+        display: "flex",
         background: `url(${GACHA_BG_BUFFER})`,
       }}
     >
       <div
         // shadow-container
         style={{
-          position: 'absolute',
+          position: "absolute",
           top: 0,
           left: 0,
           height: 530,
           width: 1120,
-          display: 'flex',
-          justifyContent: 'center',
-          alignContent: 'center',
-          flexWrap: 'wrap',
-          padding: '0 190px',
+          display: "flex",
+          justifyContent: "center",
+          alignContent: "center",
+          flexWrap: "wrap",
+          padding: "0 190px",
         }}
       >
         {cards.map((card, i) => (
@@ -49,11 +50,11 @@ export const GachaResult = ({ cards, points }: GachaResultProps) => {
         // card-container
         style={{
           height: 570,
-          display: 'flex',
-          justifyContent: 'center',
-          alignContent: 'center',
-          flexWrap: 'wrap',
-          padding: '0 190px',
+          display: "flex",
+          justifyContent: "center",
+          alignContent: "center",
+          flexWrap: "wrap",
+          padding: "0 190px",
         }}
       >
         {cards.map((card, i) => (

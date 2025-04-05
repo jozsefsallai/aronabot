@@ -1,8 +1,8 @@
-import React from 'react';
-import satori from 'satori';
-import * as resvg from '@resvg/resvg-js';
-import { GachaResult, GachaResultProps } from './components/result';
-import { NOTOSANS_400_BYTES, NOTOSANS_700_BYTES } from './preloaded-buffers';
+import React from "react";
+import satori from "satori";
+import * as resvg from "@resvg/resvg-js";
+import { GachaResult, type GachaResultProps } from "./components/result";
+import { NOTOSANS_400_BYTES, NOTOSANS_700_BYTES } from "./preloaded-buffers";
 
 export async function generateGachaResultSVG(
   props: GachaResultProps,
@@ -12,16 +12,16 @@ export async function generateGachaResultSVG(
     height: 640,
     fonts: [
       {
-        name: 'NotoSans',
+        name: "NotoSans",
         data: NOTOSANS_400_BYTES,
         weight: 400,
-        style: 'normal',
+        style: "normal",
       },
       {
-        name: 'NotoSansBold',
+        name: "NotoSansBold",
         data: NOTOSANS_700_BYTES,
         weight: 700,
-        style: 'normal',
+        style: "normal",
       },
     ],
   });
@@ -35,7 +35,7 @@ export async function generateGachaResult(
   const svg = await generateGachaResultSVG(props);
   const renderer = new resvg.Resvg(svg, {
     fitTo: {
-      mode: 'width',
+      mode: "width",
       value: 1120,
     },
   });

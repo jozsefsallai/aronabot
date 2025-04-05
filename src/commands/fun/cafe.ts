@@ -1,17 +1,17 @@
-import seedrandom from 'seedrandom';
-import { studentContainer } from '../../containers/students';
-import { CommandContext } from '../../core/handler/CommandHandler';
-import { currentClosestBreakpointJST } from '../../utils/date';
+import seedrandom from "seedrandom";
+import { studentContainer } from "../../containers/students";
+import type { CommandContext } from "../../core/handler/CommandHandler";
+import { currentClosestBreakpointJST } from "../../utils/date";
 import {
   AppIntegrationType,
   SlashCommandBuilder,
-} from '../../utils/slashCommandBuilder';
-import { Student } from '../../models/Student';
-import { EmbedBuilder } from 'discord.js';
+} from "../../utils/slashCommandBuilder";
+import { EmbedBuilder } from "discord.js";
+import type { Student } from "@prisma/client";
 
 export const meta = new SlashCommandBuilder()
-  .setName('cafe')
-  .setDescription('Simulate bi-daily cafe visits.')
+  .setName("cafe")
+  .setDescription("Simulate bi-daily cafe visits.")
   .setIntegrationTypes(
     AppIntegrationType.GuildInstall,
     AppIntegrationType.UserInstall,
@@ -27,9 +27,9 @@ export const handler = async (ctx: CommandContext) => {
 
   const students = studentContainer.getBaseVariants();
 
-  const seed = Buffer.from(`${timestamp}/${userId}`, 'utf-8')
-    .toString('base64')
-    .replace(/=/g, '');
+  const seed = Buffer.from(`${timestamp}/${userId}`, "utf-8")
+    .toString("base64")
+    .replace(/=/g, "");
   const rng = seedrandom(seed);
 
   const cafe1: Student[] = [];
@@ -53,25 +53,25 @@ export const handler = async (ctx: CommandContext) => {
   next.setHours(next.getHours() + 12);
 
   const embed = new EmbedBuilder()
-    .setTitle('Cafe Visits')
-    .setDescription('Sensei! The following students have visited your cafes!')
+    .setTitle("Cafe Visits")
+    .setDescription("Sensei! The following students have visited your cafes!")
     .addFields(
       {
-        name: 'Cafe 1',
-        value: cafe1.map((student) => student.name).join('\n'),
+        name: "Cafe 1",
+        value: cafe1.map((student) => student.name).join("\n"),
         inline: true,
       },
       {
-        name: 'Cafe 2',
-        value: cafe2.map((student) => student.name).join('\n'),
+        name: "Cafe 2",
+        value: cafe2.map((student) => student.name).join("\n"),
         inline: true,
       },
       {
-        name: 'Next Cafe Visit',
+        name: "Next Cafe Visit",
         value: `<t:${Math.floor(next.getTime() / 1000)}:R>`,
       },
     )
-    .setColor('#58dcf3')
+    .setColor("#58dcf3")
     .setFooter({
       text: `Time: ${timestamp}`,
     });

@@ -1,25 +1,25 @@
-import config from '../config';
+import config from "../config";
 
-import onReady from '../events/ready';
+import onReady from "../events/ready";
 
 import {
   ActivityType,
   Client as Discord,
   IntentsBitField,
   Routes,
-} from 'discord.js';
-import { REST } from '@discordjs/rest';
+} from "discord.js";
+import { REST } from "@discordjs/rest";
 
-import CommandHandler from './handler/CommandHandler';
-import AutocompleteHandler from './handler/AutocompleteHandler';
-import ButtonHandler from './handler/ButtonHandler';
+import CommandHandler from "./handler/CommandHandler";
+import AutocompleteHandler from "./handler/AutocompleteHandler";
+import ButtonHandler from "./handler/ButtonHandler";
 
-import commands from '../commands';
-import buttons from '../buttons';
+import commands from "../commands";
+import buttons from "../buttons";
 import {
   areContainersBootstrapped,
   bootstrapContainers,
-} from '../containers/utils/bootstrap';
+} from "../containers/utils/bootstrap";
 
 class Client {
   private client: Discord;
@@ -38,13 +38,13 @@ class Client {
       ],
     });
 
-    this.rest = new REST({ version: '9' }).setToken(config.bot.token);
+    this.rest = new REST({ version: "9" }).setToken(config.bot.token);
 
     this.commandHandler = new CommandHandler();
     this.autocompleteHandler = new AutocompleteHandler();
     this.buttonHandler = new ButtonHandler();
 
-    this.client.on('interactionCreate', async (interaction) => {
+    this.client.on("interactionCreate", async (interaction) => {
       if (interaction.isAutocomplete()) {
         if (!config.isMaintenance) {
           await this.autocompleteHandler.emit(interaction.commandName, {
@@ -59,7 +59,7 @@ class Client {
       if (interaction.isCommand() || interaction.isContextMenuCommand()) {
         if (config.isMaintenance) {
           await interaction.reply({
-            content: '⚠️ Maintenance in progress. Please try again later.',
+            content: "⚠️ Maintenance in progress. Please try again later.",
           });
 
           return;
@@ -72,10 +72,10 @@ class Client {
       }
 
       if (interaction.isButton()) {
-        const idComponents = interaction.customId.split('_');
+        const idComponents = interaction.customId.split("_");
         const id = idComponents[0];
         const uniqueId =
-          idComponents.length > 1 ? idComponents.slice(1).join('_') : undefined;
+          idComponents.length > 1 ? idComponents.slice(1).join("_") : undefined;
 
         await this.buttonHandler.emit(id, {
           interaction,
@@ -85,7 +85,7 @@ class Client {
       }
     });
 
-    this.client.on('ready', () => onReady(this));
+    this.client.on("ready", () => onReady(this));
   }
 
   async login() {
@@ -93,7 +93,7 @@ class Client {
       await bootstrapContainers();
     }
 
-    console.log('Updating application commands...');
+    console.log("Updating application commands...");
 
     await this.rest.put(Routes.applicationCommands(config.bot.clientId), {
       body: commands.map((command) => command.meta.toJSON()),
@@ -111,24 +111,24 @@ class Client {
       }
     });
 
-    console.log('Application commands updated successfully.');
+    console.log("Application commands updated successfully.");
 
-    console.log('Registering button handlers...');
+    console.log("Registering button handlers...");
 
     buttons.forEach((button) => {
       this.buttonHandler.on(button.meta.id, button.handler);
     });
 
-    console.log('Button handlers registered successfully.');
+    console.log("Button handlers registered successfully.");
 
     await this.client.login(config.bot.token);
 
-    console.log('AronaBot started successfully.');
+    console.log("AronaBot started successfully.");
   }
 
   setPlayingStatus(message: string, type?: ActivityType, url?: string) {
     this.client.user?.setPresence({
-      status: 'online',
+      status: "online",
       activities: [
         {
           name: message,

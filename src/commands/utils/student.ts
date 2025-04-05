@@ -1,23 +1,23 @@
-import { CommandContext } from '../../core/handler/CommandHandler';
-import { StudentContainer, studentContainer } from '../../containers/students';
-import { AutocompleteContext } from '../../core/handler/AutocompleteHandler';
-import { handleStudentCommand } from '../../common/handlers/student';
+import type { CommandContext } from "../../core/handler/CommandHandler";
+import { StudentContainer, studentContainer } from "../../containers/students";
+import type { AutocompleteContext } from "../../core/handler/AutocompleteHandler";
+import { handleStudentCommand } from "../../common/handlers/student";
 import {
   AppIntegrationType,
   SlashCommandBuilder,
-} from '../../utils/slashCommandBuilder';
+} from "../../utils/slashCommandBuilder";
 
 export const meta = new SlashCommandBuilder()
-  .setName('student')
-  .setDescription('Get information about a student.')
+  .setName("student")
+  .setDescription("Get information about a student.")
   .setIntegrationTypes(
     AppIntegrationType.GuildInstall,
     AppIntegrationType.UserInstall,
   )
   .addStringOption((option) => {
     return option
-      .setName('name')
-      .setDescription('The name of the student.')
+      .setName("name")
+      .setDescription("The name of the student.")
       .setRequired(true)
       .setAutocomplete(true);
   });
@@ -47,7 +47,7 @@ export const autocomplete = async (ctx: AutocompleteContext) => {
 export const handler = async (ctx: CommandContext) => {
   await ctx.interaction.deferReply();
 
-  const name = ctx.interaction.options.get('name')!.value as string;
+  const name = ctx.interaction.options.get("name")?.value as string;
   const student = studentContainer.getByName(name);
 
   if (!student) {

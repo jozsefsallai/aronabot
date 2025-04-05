@@ -1,14 +1,16 @@
 import {
   ActionRowBuilder,
-  BaseMessageOptions,
+  type BaseMessageOptions,
   ButtonBuilder,
   ButtonStyle,
   EmbedBuilder,
-} from 'discord.js';
-import { Student } from '../../models/Student';
+} from "discord.js";
+import type { DetailedStudent } from "../../containers/students";
+import { getPortraitUrl, getSchaleDBUrl } from "../../utils/student-utils";
+import { t } from "../../utils/localizeTable";
 
 export const handleStudentSkillsCommand = async (
-  student: Student,
+  student: DetailedStudent,
 ): Promise<BaseMessageOptions> => {
   if (!student.skills || student.skills.length === 0) {
     return {
@@ -16,24 +18,27 @@ export const handleStudentSkillsCommand = async (
     };
   }
 
+  const schaledbUrl = getSchaleDBUrl(student);
+  const portraitUrl = getPortraitUrl(student);
+
   let embed = new EmbedBuilder()
     .setTitle(`${student.name} Skills`)
-    .setURL(student.schaledbUrl);
-
-  if (student.portraitUrl) {
-    embed = embed.setThumbnail(student.portraitUrl);
-  }
+    .setURL(schaledbUrl)
+    .setThumbnail(portraitUrl);
 
   for (const skill of student.skills) {
+    const kind = t(`skillType.${skill.type}`);
+    const description = skill.description;
+
     embed = embed.addFields({
-      name: `${skill.kind.name}: ${skill.title}`,
-      value: '> ' + skill.description.replace(/\n/g, '\n> '),
+      name: `${kind}: ${skill.name}`,
+      value: description,
     });
   }
 
   const studentButton = new ButtonBuilder()
-    .setCustomId(`student_${student.key}`)
-    .setLabel('Student Details')
+    .setCustomId(`student_${student.id}`)
+    .setLabel("Student Details")
     .setStyle(ButtonStyle.Primary);
 
   const componentRow = new ActionRowBuilder<ButtonBuilder>().addComponents(

@@ -1,34 +1,31 @@
-import { studentContainer } from '../containers/students';
-import { Student } from '../models/Student';
+import type { Student } from "@prisma/client";
 
 export class GachaPool {
   readonly rate: number;
 
-  readonly students: string[];
+  readonly students: Student[];
 
   constructor(rate: number) {
     this.rate = rate;
     this.students = [];
   }
 
-  addStudent(key: string): void {
-    this.students.push(key);
+  addStudent(student: Student): void {
+    this.students.push(student);
   }
 
   hasStudent(key: string): boolean {
-    return this.students.includes(key);
+    return this.students.some((student) => student.id === key);
   }
 
   pull(): [Student, string] | null {
     const index = Math.floor(Math.random() * this.students.length);
-    const key = this.students[index];
-
-    const student = studentContainer.getStudent(key);
+    const student = this.students[index];
 
     if (!student) {
       return null;
     }
 
-    return [student, key];
+    return [student, student.id];
   }
 }

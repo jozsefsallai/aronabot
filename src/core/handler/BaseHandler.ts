@@ -1,4 +1,8 @@
-import { EventHandlerMap, HandlerContext, IBaseHandler } from './IBaseHandler';
+import type {
+  EventHandlerMap,
+  HandlerContext,
+  IBaseHandler,
+} from "./IBaseHandler";
 
 class BaseHandler<T> implements IBaseHandler<T> {
   private handlers: EventHandlerMap<T> = {};

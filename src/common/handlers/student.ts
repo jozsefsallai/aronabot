@@ -1,15 +1,22 @@
 import {
   ActionRowBuilder,
-  BaseMessageOptions,
+  type BaseMessageOptions,
   ButtonBuilder,
   ButtonStyle,
   EmbedBuilder,
-} from 'discord.js';
-import { Student } from '../../models/Student';
-import { embedSeparator } from '../../utils/embedSeparator';
+} from "discord.js";
+import { embedSeparator } from "../../utils/embedSeparator";
+import type { DetailedStudent } from "../../containers/students";
+import {
+  getAttackTypeColor,
+  getPortraitUrl,
+  getSchaleDBUrl,
+  studentNextBirthdayString,
+} from "../../utils/student-utils";
+import { t } from "../../utils/localizeTable";
 
 export const handleStudentCommand = async (
-  student: Student,
+  student: DetailedStudent,
 ): Promise<BaseMessageOptions> => {
   let rarity = `${student.rarity}★`;
 
@@ -21,101 +28,115 @@ export const handleStudentCommand = async (
     rarity = `${rarity} (Welfare)`;
   }
 
+  const schaledbUrl = getSchaleDBUrl(student);
+  const portraitUrl = getPortraitUrl(student);
+  const nextBirthdayString = studentNextBirthdayString(student);
+
   let embed = new EmbedBuilder()
-    .setTitle(student.fullName)
-    .setURL(student.schaledbUrl)
+    .setTitle(`${student.lastName} ${student.firstName}`)
+    .setURL(schaledbUrl)
+    .setDescription(student.introduction)
     .addFields(
       {
-        name: 'School',
-        value: student.school.name,
+        name: "School",
+        value: t(`school.${student.school}`),
+        inline: true,
       },
       {
-        name: 'Age',
+        name: "Club",
+        value: t(`club.${student.club}`),
+        inline: true,
+      },
+      embedSeparator,
+      {
+        name: "Age",
         value: student.age,
         inline: true,
       },
       {
-        name: 'Birthday',
+        name: "Birthday",
         value: student.birthday,
         inline: true,
       },
       {
-        name: 'Height',
-        value: student.height,
+        name: "Height",
+        value: student.height ?? "N/A",
         inline: true,
       },
       {
-        name: 'Hobbies',
-        value: student.hobbies ?? 'N/A',
+        name: "Hobbies",
+        value: student.hobbies ?? "N/A",
         inline: true,
       },
       {
-        name: 'Next Birthday',
-        value: student.nextBirthdayString,
-        inline: true,
-      },
-      embedSeparator,
-      {
-        name: 'Attack Type',
-        value: student.attackType?.name ?? 'N/A',
-        inline: true,
-      },
-      {
-        name: 'Defense Type',
-        value: student.defenseType?.name ?? 'N/A',
+        name: "Next Birthday",
+        value: nextBirthdayString,
         inline: true,
       },
       embedSeparator,
       {
-        name: 'Class',
-        value: student.combatClass?.name ?? 'N/A',
+        name: "Attack Type",
+        value: student.attackType
+          ? t(`attackType.${student.attackType}`)
+          : "N/A",
         inline: true,
       },
       {
-        name: 'Role',
-        value: student.combatRole?.role ?? 'N/A',
-        inline: true,
-      },
-      {
-        name: 'Position',
-        value: student.combatPosition?.name ?? 'N/A',
-        inline: true,
-      },
-      {
-        name: 'Uses Cover',
-        value: student.usesCover ? 'Yes' : 'No',
-        inline: true,
-      },
-      {
-        name: 'Weapon Type',
-        value: student.weaponType?.name ?? 'N/A',
+        name: "Defense Type",
+        value: student.defenseType
+          ? t(`defenseType.${student.defenseType}`)
+          : "N/A",
         inline: true,
       },
       embedSeparator,
       {
-        name: 'Rarity',
+        name: "Class",
+        value: t(`combatClass.${student.combatClass}`),
+        inline: true,
+      },
+      {
+        name: "Role",
+        value: t(`combatRole.${student.combatRole}`),
+        inline: true,
+      },
+      {
+        name: "Position",
+        value: t(`combatPosition.${student.combatPosition}`),
+        inline: true,
+      },
+      {
+        name: "Uses Cover",
+        value: student.usesCover ? "Yes" : "No",
+        inline: true,
+      },
+      {
+        name: "Weapon Type",
+        value: t(`weaponType.${student.weaponType}`),
+        inline: true,
+      },
+      embedSeparator,
+      {
+        name: "Rarity",
         value: rarity,
         inline: true,
       },
       {
-        name: 'Rec. Lobby unlock level',
-        value: student.recorobiLevel ? `❤️ ${student.recorobiLevel}` : 'N/A',
+        name: "Rec. Lobby unlock level",
+        value: student.memorobiLevel ? `❤️ ${student.memorobiLevel}` : "N/A",
         inline: true,
       },
       embedSeparator,
       {
-        name: 'View on schale.gg',
-        value: student.schaledbUrl,
+        name: "View on schale.gg",
+        value: schaledbUrl,
       },
     );
 
   if (student.attackType) {
-    embed = embed.setColor(student.attackType.color.toArray());
+    embed = embed.setColor(getAttackTypeColor(student.attackType).toArray());
   }
 
-  if (student.portraitUrl) {
-    embed = embed.setThumbnail(student.portraitUrl);
-  }
+  embed = embed.setThumbnail(portraitUrl);
 
   if (!student.skills || student.skills.length === 0) {
     return {
@@ -124,8 +145,8 @@ export const handleStudentCommand = async (
   }
 
   const skillsButton = new ButtonBuilder()
-    .setCustomId(`skills_${student.key}`)
-    .setLabel('Skills')
+    .setCustomId(`skills_${student.id}`)
+    .setLabel("Skills")
     .setStyle(ButtonStyle.Primary);
 
   const componentRow = new ActionRowBuilder<ButtonBuilder>().addComponents(

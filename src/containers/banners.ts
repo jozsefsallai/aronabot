@@ -1,4 +1,4 @@
-import { GachaBanner } from '../gacha/banner';
+import { GachaBanner } from "../gacha/banner";
 
 export class BannerContainer {
   private banners: GachaBanner[] = [];

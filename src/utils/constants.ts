@@ -1,4 +1,4 @@
-import { RGBValue } from './rgb';
+import { RGBValue } from "./rgb";
 
 export const GAME_RED = RGBValue.make(147, 0, 8);
 export const GAME_YELLOW = RGBValue.make(191, 137, 1);

@@ -1,9 +1,8 @@
-import { SlashCommandBuilder } from 'discord.js';
-import { staffOnlyGuard } from '../../core/guards/staffOnly';
-import { CommandContext } from '../../core/handler/CommandHandler';
-import { bannerContainer } from '../../containers/banners';
-import { Rarity } from '../../models/Rarity';
-import { AutocompleteContext } from '../../core/handler/AutocompleteHandler';
+import { SlashCommandBuilder } from "discord.js";
+import { staffOnlyGuard } from "../../core/guards/staffOnly";
+import type { CommandContext } from "../../core/handler/CommandHandler";
+import { bannerContainer } from "../../containers/banners";
+import type { AutocompleteContext } from "../../core/handler/AutocompleteHandler";
 
 function getBannerChoices() {
   return bannerContainer
@@ -18,23 +17,23 @@ function getBannerChoices() {
 }
 
 export const meta = new SlashCommandBuilder()
-  .setName('simulate-gacha')
-  .setDescription('[STAFF] Simulate gacha pulls to audit rates.')
+  .setName("simulate-gacha")
+  .setDescription("[STAFF] Simulate gacha pulls to audit rates.")
   .setDefaultPermission(false)
   .addStringOption((option) => {
     return option
-      .setName('banner')
-      .setDescription('The banner to simulate.')
+      .setName("banner")
+      .setDescription("The banner to simulate.")
       .setRequired(true)
       .setAutocomplete(true);
   })
   .addIntegerOption((option) => {
-    return option.setName('count').setDescription('The number of simulations.');
+    return option.setName("count").setDescription("The number of simulations.");
   })
   .addIntegerOption((option) => {
     return option
-      .setName('pulls-per-simulation')
-      .setDescription('The number of pulls per simulation.');
+      .setName("pulls-per-simulation")
+      .setDescription("The number of pulls per simulation.");
   });
 
 export const autocomplete = async (ctx: AutocompleteContext) => {
@@ -44,16 +43,16 @@ export const autocomplete = async (ctx: AutocompleteContext) => {
 export const handler = staffOnlyGuard(async (ctx: CommandContext) => {
   await ctx.interaction.deferReply({ ephemeral: true });
 
-  let bannerName = ctx.interaction.options.get('banner')?.value as
+  let bannerName = ctx.interaction.options.get("banner")?.value as
     | string
     | undefined;
 
   if (!bannerName) {
-    bannerName = 'regular';
+    bannerName = "regular";
   }
 
-  let count = ctx.interaction.options.get('count')?.value as number | undefined;
-  let pullsPerSimulation = ctx.interaction.options.get('pulls-per-simulation')
+  let count = ctx.interaction.options.get("count")?.value as number | undefined;
+  let pullsPerSimulation = ctx.interaction.options.get("pulls-per-simulation")
     ?.value as number | undefined;
 
   if (!count) {
@@ -66,7 +65,7 @@ export const handler = staffOnlyGuard(async (ctx: CommandContext) => {
 
   const banner = bannerContainer.getBanner(bannerName);
   if (!banner) {
-    await ctx.interaction.editReply('Banner not found!');
+    await ctx.interaction.editReply("Banner not found!");
     return;
   }
 
@@ -82,11 +81,11 @@ export const handler = staffOnlyGuard(async (ctx: CommandContext) => {
         const students = banner.pullTen();
 
         for (const [student, _] of students) {
-          if (student.rarity === Rarity.OneStar) {
+          if (student.rarity === 1) {
             oneStarCount++;
-          } else if (student.rarity === Rarity.TwoStar) {
+          } else if (student.rarity === 2) {
             twoStarCount++;
-          } else if (student.rarity === Rarity.ThreeStar) {
+          } else if (student.rarity === 3) {
             threeStarCount++;
           }
         }
@@ -143,12 +142,12 @@ export const handler = staffOnlyGuard(async (ctx: CommandContext) => {
     2,
   );
 
-  const file = Buffer.from(json, 'utf-8');
+  const file = Buffer.from(json, "utf-8");
   await ctx.interaction.editReply({
     files: [
       {
         attachment: file,
-        name: 'gacha_simulation.json',
+        name: "gacha_simulation.json",
       },
     ],
   });

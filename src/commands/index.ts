@@ -1,36 +1,36 @@
-import { ApplicationCommandPermissions as ApplicationCommandPermissionData } from 'discord.js';
-import {
+import type { ApplicationCommandPermissions as ApplicationCommandPermissionData } from "discord.js";
+import type {
   SlashCommandBuilder as DJSSlashCommandBuilder,
   SlashCommandSubcommandsOnlyBuilder,
   ContextMenuCommandBuilder,
-} from 'discord.js';
+} from "discord.js";
 
-import { CommandContext } from '../core/handler/CommandHandler';
-import { AutocompleteContext } from '../core/handler/AutocompleteHandler';
+import type { CommandContext } from "../core/handler/CommandHandler";
+import type { AutocompleteContext } from "../core/handler/AutocompleteHandler";
 
-import * as cafe from './fun/cafe';
-import * as gacha from './fun/gacha';
-import * as spark from './fun/spark';
-import * as sotd from './fun/sotd';
+import * as cafe from "./fun/cafe";
+import * as gacha from "./fun/gacha";
+import * as spark from "./fun/spark";
+import * as sotd from "./fun/sotd";
 
-import * as student from './utils/student';
-import * as skills from './utils/skills';
-import * as mission from './utils/mission';
-import * as birthdays from './utils/birthdays';
-import * as gifts from './utils/gifts';
+import * as student from "./utils/student";
+import * as skills from "./utils/skills";
+import * as mission from "./utils/mission";
+import * as birthdays from "./utils/birthdays";
+import * as gifts from "./utils/gifts";
 
-import * as quickGacha from './staff/quick-gacha';
-import * as reload from './staff/reload';
-import * as rrp from './staff/rrp';
-import * as simulateGacha from './staff/simulate-gacha';
+import * as quickGacha from "./staff/quick-gacha";
+import * as reload from "./staff/reload";
+import * as rrp from "./staff/rrp";
+import * as simulateGacha from "./staff/simulate-gacha";
 
-import { SlashCommandBuilder } from '../utils/slashCommandBuilder';
+import type { SlashCommandBuilder } from "../utils/slashCommandBuilder";
 
 interface CommandData {
   meta:
     | DJSSlashCommandBuilder
     | SlashCommandBuilder
-    | Omit<DJSSlashCommandBuilder, 'addSubcommand' | 'addSubcommandGroup'>
+    | Omit<DJSSlashCommandBuilder, "addSubcommand" | "addSubcommandGroup">
     | SlashCommandSubcommandsOnlyBuilder
     | ContextMenuCommandBuilder;
   handler: (ctx: CommandContext<any>) => void | Promise<void>;

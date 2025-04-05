@@ -1,32 +1,32 @@
-import { EmbedBuilder } from 'discord.js';
-import { BannerKind } from '../../gacha/kind';
-import { CommandContext } from '../../core/handler/CommandHandler';
-import recruitmentPointsManager from '../../gacha/points';
-import { GAME_BLUE, GAME_RED } from '../../utils/constants';
+import { EmbedBuilder } from "discord.js";
+import type { CommandContext } from "../../core/handler/CommandHandler";
+import recruitmentPointsManager from "../../gacha/points";
+import { GAME_BLUE, GAME_RED } from "../../utils/constants";
 import {
   AppIntegrationType,
   SlashCommandBuilder,
-} from '../../utils/slashCommandBuilder';
+} from "../../utils/slashCommandBuilder";
+import type { BannerKind } from "@prisma/client";
 
 export const meta = new SlashCommandBuilder()
-  .setName('spark')
-  .setDescription('Use 200 recruitment points on a game region.')
+  .setName("spark")
+  .setDescription("Use 200 recruitment points on a game region.")
   .setIntegrationTypes(
     AppIntegrationType.GuildInstall,
     AppIntegrationType.UserInstall,
   )
   .addStringOption((option) => {
     return option
-      .setName('region')
-      .setDescription('The game region to reset.')
+      .setName("region")
+      .setDescription("The game region to reset.")
       .addChoices(
         {
-          name: 'Global',
-          value: BannerKind.GLOBAL,
+          name: "Global",
+          value: "Global",
         },
         {
-          name: 'JP',
-          value: BannerKind.JP,
+          name: "JP",
+          value: "JP",
         },
       );
   });
@@ -34,15 +34,15 @@ export const meta = new SlashCommandBuilder()
 export const handler = async (ctx: CommandContext) => {
   await ctx.interaction.deferReply();
 
-  let bannerKind = ctx.interaction.options.get('region')?.value as
+  let bannerKind = ctx.interaction.options.get("region")?.value as
     | BannerKind
     | undefined;
 
   if (!bannerKind) {
-    bannerKind = BannerKind.GLOBAL;
+    bannerKind = "Global";
   }
 
-  const guildId = ctx.interaction.guildId ?? '0';
+  const guildId = ctx.interaction.guildId ?? "0";
   const userId = ctx.interaction.user.id;
 
   const currentAmount = await recruitmentPointsManager.get(
@@ -51,13 +51,11 @@ export const handler = async (ctx: CommandContext) => {
     userId,
   );
 
-  const banner = bannerKind === BannerKind.GLOBAL ? 'Global' : 'JP';
-
   if (!currentAmount || currentAmount < 200) {
     const embed = new EmbedBuilder()
-      .setTitle('Recruitment Points Reset')
+      .setTitle("Recruitment Points Reset")
       .setDescription(
-        `You may not use this command until you have at least 200 recruitment points on **${banner}**.`,
+        `You may not use this command until you have at least 200 recruitment points on **${bannerKind}**.`,
       )
       .setColor(GAME_RED.toArray());
 
@@ -76,8 +74,8 @@ export const handler = async (ctx: CommandContext) => {
   );
 
   const embed = new EmbedBuilder()
-    .setTitle('Recruitment Points Reset')
-    .setDescription(`Used 200 of your recruitment points on **${banner}**.`)
+    .setTitle("Recruitment Points Reset")
+    .setDescription(`Used 200 of your recruitment points on **${bannerKind}**.`)
     .setColor(GAME_BLUE.toArray());
 
   await ctx.interaction.editReply({

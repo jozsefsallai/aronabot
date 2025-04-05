@@ -1,5 +1,5 @@
-import { Storage } from '../utils/storage';
-import { studentContainer } from './students';
+import { Storage } from "../utils/storage";
+import { studentContainer } from "./students";
 
 const storage = Storage.getInstance();
 
@@ -13,7 +13,7 @@ export class IconsContainer {
   }
 
   async reload() {
-    console.log('Loading student icons from CDN...');
+    console.log("Loading student icons from CDN...");
 
     this._isReady = false;
 
@@ -24,18 +24,18 @@ export class IconsContainer {
 
     this._isReady = true;
 
-    console.log('Student icons loaded.');
+    console.log("Student icons loaded.");
   }
 
   private async fetchStudentIcon(student: string) {
-    const key = `images/students/icons/${student}.png`;
+    const key = `v2/images/students/icons/${student}.png`;
     const data = await storage.read(key);
 
     if (!data) {
       throw new Error(`Icon not found for ${student}.`);
     }
 
-    const base64 = data.toString('base64');
+    const base64 = data.toString("base64");
     this.icons.set(student, base64);
   }
 

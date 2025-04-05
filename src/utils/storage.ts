@@ -1,4 +1,4 @@
-import { R2 } from './clients/r2';
+import { R2 } from "./clients/r2";
 
 export class Storage extends R2 {
   private constructor() {
@@ -8,7 +8,7 @@ export class Storage extends R2 {
     const BUCKET_NAME = process.env.R2_BUCKET_NAME;
 
     if (!ACCOUNT_ID || !ACCESS_KEY_ID || !SECRET_ACCESS_KEY || !BUCKET_NAME) {
-      throw new Error('R2 credentials not found');
+      throw new Error("R2 credentials not found");
     }
 
     super({
@@ -16,7 +16,7 @@ export class Storage extends R2 {
       accessKeyId: ACCESS_KEY_ID,
       secretAccessKey: SECRET_ACCESS_KEY,
       bucketName: BUCKET_NAME,
-      region: 'auto',
+      region: "auto",
     });
   }
 

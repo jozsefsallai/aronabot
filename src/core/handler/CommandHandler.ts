@@ -1,10 +1,10 @@
-import {
+import type {
   CommandInteraction,
   ContextMenuCommandInteraction as ContextMenuInteraction,
   ApplicationCommandPermissions as ApplicationCommandPermissionData,
-} from 'discord.js';
-import BaseHandler from './BaseHandler';
-import { HandlerContext } from './IBaseHandler';
+} from "discord.js";
+import BaseHandler from "./BaseHandler";
+import type { HandlerContext } from "./IBaseHandler";
 
 export type CommandContext<T = CommandInteraction | ContextMenuInteraction> =
   HandlerContext<T>;
