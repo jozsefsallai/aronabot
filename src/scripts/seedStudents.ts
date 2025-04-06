@@ -7,10 +7,12 @@ import { t } from "../utils/localizeTable";
 import { db } from "../db/client";
 import {
   fetchStudentsData,
+  type RawEffect,
   type RawStudentData,
   type RawStudentSkillsData,
 } from "./common";
 
+const KNOCKBACK_RE = /<kb:(\d+)>/g;
 const BUFFNAME_RE = /<([bcds])*:([a-zA-Z0-9_]+)>/g;
 const PARAMS_RE = /<\?(\d)+>/g;
 
@@ -32,6 +34,7 @@ function kindToLocalizeKey(kind: string): string {
 function serializeSkillDescription(
   template: string,
   params: Array<string[]>,
+  effects: RawEffect[] = [],
 ): string {
   let output = template
     .split("<b>")
@@ -45,10 +48,24 @@ function serializeSkillDescription(
     .split(/<br\s?\/?>/g)
     .join("\n");
 
-  output = output.replace(BUFFNAME_RE, (_, kind, name) => {
-    const prefix = kindToLocalizeKey(kind);
-    const localizedBuffName = t(`buffName.${prefix}_${name}` as any);
-    return `**${localizedBuffName}**`;
+  output = output.replace(KNOCKBACK_RE, (_, val) => {
+    const knockbackEffect = effects.filter((e) => e.Type === "Knockback")[
+      val - 1
+    ];
+
+    if (!knockbackEffect) {
+      return `**${val}**`;
+    }
+
+    const lowerBound = knockbackEffect.Scale[0];
+    const upperBound = knockbackEffect.Scale[knockbackEffect.Scale.length - 1];
+
+    const paramString =
+      lowerBound === upperBound
+        ? `**${lowerBound * 2} units**`
+        : `**${lowerBound * 2}~${upperBound * 2} units**`;
+
+    return paramString;
   });
 
   output = output.replace(PARAMS_RE, (_, idx) => {
@@ -57,11 +74,27 @@ function serializeSkillDescription(
       (v) => typeof v !== "undefined" && v !== null,
     );
     const upperBound = paramValue[paramValue.length - 1];
+
+    if (lowerBound === "") {
+      const firstValueIndex = paramValue.findIndex(
+        (v) => typeof v !== "undefined" && v !== null && v !== "",
+      );
+
+      const paramString = ` **${upperBound.trim()} ${firstValueIndex < 4 ? `(level ${firstValueIndex + 1} and above)` : `(level ${firstValueIndex + 1})`}**`;
+      return paramString;
+    }
+
     const paramString =
       lowerBound === upperBound
         ? `**${lowerBound}**`
         : `**${lowerBound}~${upperBound}**`;
     return paramString;
+  });
+
+  output = output.replace(BUFFNAME_RE, (_, kind, name) => {
+    const prefix = kindToLocalizeKey(kind);
+    const localizedBuffName = t(`buffName.${prefix}_${name}` as any);
+    return `\`${localizedBuffName}\``;
   });
 
   return output;
@@ -97,7 +130,11 @@ async function seedSkills(studentId: string, skillData: RawStudentSkillsData) {
     data: [
       {
         name: Ex.Name,
-        description: serializeSkillDescription(Ex.Desc, Ex.Parameters),
+        description: serializeSkillDescription(
+          Ex.Desc,
+          Ex.Parameters,
+          Ex.Effects,
+        ),
         type: "EX",
         cost: serializeCost(Ex.Cost),
         studentId,
@@ -107,6 +144,7 @@ async function seedSkills(studentId: string, skillData: RawStudentSkillsData) {
         description: serializeSkillDescription(
           extraSkill.Desc,
           extraSkill.Parameters,
+          extraSkill.Effects,
         ),
         type: "EX" as SkillType,
         cost: serializeCost(extraSkill.Cost),
@@ -114,7 +152,11 @@ async function seedSkills(studentId: string, skillData: RawStudentSkillsData) {
       })),
       {
         name: Public.Name,
-        description: serializeSkillDescription(Public.Desc, Public.Parameters),
+        description: serializeSkillDescription(
+          Public.Desc,
+          Public.Parameters,
+          Public.Effects,
+        ),
         type: "Basic",
         cost: null,
         studentId,
@@ -124,6 +166,7 @@ async function seedSkills(studentId: string, skillData: RawStudentSkillsData) {
         description: serializeSkillDescription(
           Passive.Desc,
           Passive.Parameters,
+          Passive.Effects,
         ),
         type: "Enhanced",
         cost: null,
@@ -134,6 +177,7 @@ async function seedSkills(studentId: string, skillData: RawStudentSkillsData) {
         description: serializeSkillDescription(
           ExtraPassive.Desc,
           ExtraPassive.Parameters,
+          ExtraPassive.Effects,
         ),
         type: "Sub",
         cost: null,

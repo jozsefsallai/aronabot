@@ -14,18 +14,25 @@ import axios from "axios";
 
 const STUDENTS_TABLE = "https://schaledb.com/data/en/students.min.json";
 
+export type RawEffect = {
+  Type: string;
+  Scale: number[];
+};
+
 export type RawExSkill = {
   Name: string;
   Desc: string;
   Parameters: Array<string[]>;
   Cost?: number[];
   ExtraSkills?: Array<RawExSkill>;
+  Effects: Array<RawEffect>;
 };
 
 export type RawPassiveSkill = {
   Name: string;
   Desc: string;
   Parameters: Array<string[]>;
+  Effects: Array<RawEffect>;
 };
 
 export type RawStudentSkillsData = {
