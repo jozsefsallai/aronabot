@@ -202,6 +202,18 @@ function sortAltsLast(a: RawStudentData, b: RawStudentData) {
   return 0;
 }
 
+function getStudentName(student: RawStudentData): string {
+  if (student.PathName === "hoshino_battle_dealer") {
+    return `${student.Name} / Dealer`;
+  }
+
+  if (student.PathName === "hoshino_battle_tank") {
+    return `${student.Name} / Tank`;
+  }
+
+  return student.Name;
+}
+
 async function seedStudents() {
   const studentsData = await fetchStudentsData();
   const rawStudents = Object.values(studentsData).sort(sortAltsLast);
@@ -221,13 +233,15 @@ async function seedStudents() {
       },
     });
 
+    const studentName = getStudentName(data);
+
     if (!student) {
       student = await db.student.create({
         data: {
           id: data.PathName,
           devName: data.DevName,
           schaleDbId: data.Id,
-          name: data.Name,
+          name: studentName,
           firstName: data.PersonalName,
           lastName: data.FamilyName,
           school: data.School,
@@ -270,7 +284,7 @@ async function seedStudents() {
         data: {
           devName: data.DevName,
           schaleDbId: data.Id,
-          name: data.Name,
+          name: studentName,
           firstName: data.PersonalName,
           lastName: data.FamilyName,
           school: data.School,
