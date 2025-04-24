@@ -55,6 +55,7 @@ export const localizeTable = {
       SRT: "SRT Academy",
       Trinity: "Trinity General School",
       Valkyrie: "Valkyrie Police School",
+      Highlander: "Highlander Railroad Academy",
       ETC: "ETC",
       Tokiwadai: "Tokiwadai Middle School",
       Sakugawa: "Sakugawa Middle School",
@@ -109,6 +110,8 @@ export const localizeTable = {
       Hyakkayouran: "Hyakkaryouran Resolution Council",
       ShinySparkleSociety: "Sparkle Club",
       AbydosStudentCouncil: "Abydos Student Council",
+      CentralControlCenter: "Central Control Center",
+      FreightLogisticsDepartment: "Freight Logistics Department",
       EmptyClub: "None",
     },
 
@@ -225,6 +228,7 @@ export const localizeTable = {
       Buff_Shield: "Barrier",
       Buff_Stability: "Stability",
       Buff_EnhanceExDamageRate: "EX Skill DMG Dealt",
+      Buff_ExtraCostChange: "Add. EX Skill Cost",
       Debuff_AmmoCount: "Mag Count",
       Debuff_ATK: "ATK",
       Debuff_AttackSpeed: "ATK SPD",
@@ -321,6 +325,8 @@ export const localizeTable = {
       Special_CH0280_Ex_01: "Duelling",
       Special_CH0280_Ex_02: "Ambition",
       Special_CH0245_Public: "Out",
+      Special_CH0259_ExtraPassive_01: "Battlefield Sense",
+      Special_CH0242_ExtraPassive_01: "Departure Signal",
     },
   },
 } as const;
