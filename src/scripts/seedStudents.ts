@@ -272,6 +272,7 @@ async function seedStudents() {
           isReleasedJP: data.IsReleased[0],
           isReleasedGlobal: data.IsReleased[1],
           isReleasedCN: data.IsReleased[2],
+          searchTags: data.SearchTags,
           equipment: data.Equipment,
           baseVariantId,
         },
@@ -316,6 +317,7 @@ async function seedStudents() {
           isReleasedGlobal: data.IsReleased[1],
           isReleasedCN: data.IsReleased[2],
           equipment: data.Equipment,
+          searchTags: data.SearchTags,
         },
       });
     }

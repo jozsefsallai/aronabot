@@ -78,6 +78,7 @@ export type RawStudentData = {
   FavorItemUniqueTags: string[];
   IsLimited: number; // 0 = Permanent, 1 = Limited, 2 = Welfare, 3 = Fest
   LinkedCharacterId?: number | null;
+  SearchTags: string[];
 };
 
 export async function fetchStudentsData(): Promise<
