@@ -1,6 +1,3 @@
-import dotenv from "dotenv";
-dotenv.config();
-
 import type { SkillType } from "@prisma/client";
 
 import { t } from "../utils/localizeTable";
@@ -10,7 +7,8 @@ import {
   type RawEffect,
   type RawStudentData,
   type RawStudentSkillsData,
-} from "./common";
+} from "./lib/common";
+import { logger, task } from "@trigger.dev/sdk";
 
 const KNOCKBACK_RE = /<kb:(\d+)>/g;
 const BUFFNAME_RE = /<([bcds])*:([a-zA-Z0-9_]+)>/g;
@@ -330,14 +328,14 @@ async function seedStudents() {
 
     await seedSkills(student.id, data.Skills);
 
-    console.log(`Seeded student: ${student.name}`);
+    logger.info(`Seeded student: ${student.name}`);
   }
 }
 
-seedStudents()
-  .then(() => {
-    console.log("All students seeded successfully.");
-  })
-  .catch((error) => {
-    console.error("Error seeding students:", error);
-  });
+export const seedStudentsTask = task({
+  id: "seed-students",
+  run: async () => {
+    await seedStudents();
+    logger.info("All students seeded successfully.");
+  },
+});

@@ -327,6 +327,9 @@ export const localizeTable = {
       Special_CH0245_Public: "Out",
       Special_CH0259_ExtraPassive_01: "Battlefield Sense",
       Special_CH0242_ExtraPassive_01: "Departure Signal",
+      Special_CH0257_Public: "Finished Leading",
+      Special_CH0221_ExtraPassive: "Rhythm Up",
+      Special_CH0302_Public: "Water Pressure",
     },
   },
 } as const;

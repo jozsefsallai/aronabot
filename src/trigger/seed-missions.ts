@@ -1,9 +1,8 @@
-import "dotenv/config";
-
 import axios from "axios";
 import * as cheerio from "cheerio";
 import type { Mission, MissionDifficulty, Terrain } from "@prisma/client";
 import { db } from "../db/client";
+import { logger, task } from "@trigger.dev/sdk";
 
 interface RawMission extends Omit<Mission, "difficulty" | "terrain"> {
   difficulty?: string | null;
@@ -131,7 +130,7 @@ async function populateMissions() {
       missions.get(name)!.stageImageUrl = image;
     }
 
-    console.log(`Scraped mission data for ${name}.`);
+    logger.info(`Scraped mission data for ${name}.`);
   }
 }
 
@@ -185,7 +184,7 @@ async function createOrUpdateMission(mission: RawMission) {
 }
 
 async function saveMissionsData() {
-  console.log("Saving missions data to the database...");
+  logger.info("Saving missions data to the database...");
 
   const data = Array.from(missions.values());
   const promises = [];
@@ -197,18 +196,18 @@ async function saveMissionsData() {
 
   try {
     await Promise.all(promises);
-    console.log("Missions data saved.");
+    logger.info("Missions data saved.");
   } catch (error) {
-    console.error("Error saving missions data:", error);
+    logger.error(`Error saving missions data: ${error}`);
   }
 }
 
-async function main() {
-  await populateMissions();
-  normalizeMissions();
-  await saveMissionsData();
-
-  console.log("Done!");
-}
-
-main().catch(console.error);
+export const seedMissionsTask = task({
+  id: "seed-missions",
+  run: async () => {
+    await populateMissions();
+    normalizeMissions();
+    await saveMissionsData();
+    logger.info("Missions data seeded successfully.");
+  },
+});

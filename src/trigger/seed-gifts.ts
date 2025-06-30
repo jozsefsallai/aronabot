@@ -1,11 +1,10 @@
-import dotenv from "dotenv";
-dotenv.config();
+import { logger, task } from "@trigger.dev/sdk";
 
 import axios from "axios";
 
 import type { ItemRarity } from "@prisma/client";
 import { db } from "../db/client";
-import { fetchStudentsData } from "./common";
+import { fetchStudentsData } from "./lib/common";
 
 const ITEMS_TABLE = "https://schaledb.com/data/en/items.min.json";
 
@@ -113,7 +112,7 @@ async function setFavorGifts(allGifts: RawGiftItemData[]) {
       },
     });
 
-    console.log(`Set favor gifts for student: ${item.Name}`);
+    logger.info(`Set favor gifts for student: ${item.Name}`);
   }
 }
 
@@ -140,7 +139,7 @@ async function seedGifts() {
         },
       });
 
-      console.log(`Created gift: ${item.Name}`);
+      logger.info(`Created gift: ${item.Name}`);
     } else {
       gift = await db.gift.update({
         where: {
@@ -155,17 +154,17 @@ async function seedGifts() {
         },
       });
 
-      console.log(`Updated gift: ${item.Name}`);
+      logger.info(`Updated gift: ${item.Name}`);
     }
   }
 
   setFavorGifts(allGifts);
 }
 
-seedGifts()
-  .then(() => {
-    console.log("Gifts seeded successfully");
-  })
-  .catch((error) => {
-    console.error("Error seeding gifts:", error);
-  });
+export const seedGiftsTask = task({
+  id: "seed-gifts",
+  run: async () => {
+    await seedGifts();
+    logger.info("Gifts seeded successfully");
+  },
+});
