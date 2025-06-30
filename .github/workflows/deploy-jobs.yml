@@ -27,4 +27,4 @@ jobs:
         env:
           TRIGGER_ACCESS_TOKEN: ${{ secrets.TRIGGER_ACCESS_TOKEN }}
         run: |
-          pnpm run jobs:deploy
+          pnpm run db:generate && pnpm run jobs:deploy
