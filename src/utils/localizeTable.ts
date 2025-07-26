@@ -184,6 +184,7 @@ export const localizeTable = {
       ElectricShockDamagedIncrease: "Shock DMG Taken",
       PoisonDamagedIncrease: "Poison DMG Taken",
       IgnoreDelayCount: "Ignore Delay",
+      MaxCostIncrease: "Maximum COST",
     },
 
     buffName: {
@@ -330,6 +331,7 @@ export const localizeTable = {
       Special_CH0257_Public: "Finished Leading",
       Special_CH0221_ExtraPassive: "Rhythm Up",
       Special_CH0302_Public: "Water Pressure",
+      Special_CH0291_ExtraPassive: "Watermelon Slice",
     },
   },
 } as const;
