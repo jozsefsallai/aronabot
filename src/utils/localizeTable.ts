@@ -56,6 +56,7 @@ export const localizeTable = {
       Trinity: "Trinity General School",
       Valkyrie: "Valkyrie Police School",
       Highlander: "Highlander Railroad Academy",
+      WildHunt: "Wildhunt Art Academy",
       ETC: "ETC",
       Tokiwadai: "Tokiwadai Middle School",
       Sakugawa: "Sakugawa Middle School",
@@ -112,6 +113,7 @@ export const localizeTable = {
       AbydosStudentCouncil: "Abydos Student Council",
       CentralControlCenter: "Central Control Center",
       FreightLogisticsDepartment: "Freight Logistics Department",
+      OccultClub: "Occult Research Society",
       EmptyClub: "None",
     },
 
@@ -332,6 +334,7 @@ export const localizeTable = {
       Special_CH0221_ExtraPassive: "Rhythm Up",
       Special_CH0302_Public: "Water Pressure",
       Special_CH0291_ExtraPassive: "Watermelon Slice",
+      Special_CH0304_ExtraPassive: "Magic Charge",
     },
   },
 } as const;
