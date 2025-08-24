@@ -63,11 +63,28 @@ class RecruitmentPointsManager {
     const prefix = this.getPrefix(bannerKind);
     const key = `${prefix}:*`;
 
-    const keys = await redis.keys(key);
+    const stream = redis.scanStream({
+      match: key,
+      count: 100,
+    });
+
     const pipeline = redis.pipeline();
 
-    keys.forEach((key) => {
-      pipeline.set(key, "0");
+    stream.on("data", (keys: string[]) => {
+      if (keys.length) {
+        keys.forEach((key) => {
+          pipeline.set(key, 0);
+        });
+      }
+    });
+
+    await new Promise<void>((resolve, reject) => {
+      stream.on("end", () => {
+        resolve();
+      });
+      stream.on("error", (err) => {
+        reject(err);
+      });
     });
 
     await pipeline.exec();
