@@ -20,11 +20,11 @@ export const handleStudentCommand = async (
 ): Promise<BaseMessageOptions> => {
   let rarity = `${student.rarity}★`;
 
-  if (student.isLimited) {
+  if (student.isLimitedJP) {
     rarity = `${rarity} (Limited)`;
   }
 
-  if (student.isWelfare) {
+  if (student.isWelfareJP) {
     rarity = `${rarity} (Welfare)`;
   }
 

@@ -105,13 +105,47 @@ class GachaBanner {
     }
   }
 
+  private isStudentLimited(student: Student) {
+    switch (this.kind) {
+      case "Global":
+        return student.isLimitedGlobal;
+      case "JP":
+        return student.isLimitedJP;
+      default:
+        return false;
+    }
+  }
+
+  private isStudentWelfare(student: Student) {
+    switch (this.kind) {
+      case "Global":
+        return student.isWelfareGlobal;
+      case "JP":
+        return student.isWelfareJP;
+      default:
+        return false;
+    }
+  }
+
+  private isStudentArchive(student: Student) {
+    switch (this.kind) {
+      case "Global":
+        return student.isArchiveGlobal;
+      case "JP":
+        return student.isArchiveJP;
+      default:
+        return false;
+    }
+  }
+
   private isPullable(
     student: Student,
     additionalCondition: (student: Student) => boolean,
   ): boolean {
     return (
-      !student.isLimited &&
-      !student.isWelfare &&
+      !this.isStudentLimited(student) &&
+      !this.isStudentWelfare(student) &&
+      !this.isStudentArchive(student) &&
       this.isStudentAvailableInRegion(student) &&
       additionalCondition(student)
     );

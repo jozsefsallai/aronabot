@@ -4,6 +4,7 @@ import { t } from "../utils/localizeTable";
 import { db } from "../db/client";
 import {
   fetchStudentsData,
+  StudentLimitedType,
   type RawEffect,
   type RawStudentData,
   type RawStudentSkillsData,
@@ -264,12 +265,27 @@ async function seedStudents() {
           usesCover: data.Cover,
           weaponType: data.WeaponType,
           rarity: data.StarGrade,
-          isLimited: data.IsLimited === 1 || data.IsLimited === 3,
-          isWelfare: data.IsLimited === 2,
-          isFest: data.IsLimited === 3,
           isReleasedJP: data.IsReleased[0],
           isReleasedGlobal: data.IsReleased[1],
           isReleasedCN: data.IsReleased[2],
+          isLimitedJP:
+            data.IsLimited[0] === StudentLimitedType.Limited ||
+            data.IsLimited[0] === StudentLimitedType.Fest,
+          isLimitedGlobal:
+            data.IsLimited[1] === StudentLimitedType.Limited ||
+            data.IsLimited[1] === StudentLimitedType.Fest,
+          isLimitedCN:
+            data.IsLimited[2] === StudentLimitedType.Limited ||
+            data.IsLimited[2] === StudentLimitedType.Fest,
+          isWelfareJP: data.IsLimited[0] === StudentLimitedType.Welfare,
+          isWelfareGlobal: data.IsLimited[1] === StudentLimitedType.Welfare,
+          isWelfareCN: data.IsLimited[2] === StudentLimitedType.Welfare,
+          isFestJP: data.IsLimited[0] === StudentLimitedType.Fest,
+          isFestGlobal: data.IsLimited[1] === StudentLimitedType.Fest,
+          isFestCN: data.IsLimited[2] === StudentLimitedType.Fest,
+          isArchiveJP: data.IsLimited[0] === StudentLimitedType.Archive,
+          isArchiveGlobal: data.IsLimited[1] === StudentLimitedType.Archive,
+          isArchiveCN: data.IsLimited[2] === StudentLimitedType.Archive,
           searchTags: data.SearchTags,
           equipment: data.Equipment,
           baseVariantId,
@@ -308,12 +324,27 @@ async function seedStudents() {
           usesCover: data.Cover,
           weaponType: data.WeaponType,
           rarity: data.StarGrade,
-          isLimited: data.IsLimited === 1 || data.IsLimited === 3,
-          isWelfare: data.IsLimited === 2,
-          isFest: data.IsLimited === 3,
           isReleasedJP: data.IsReleased[0],
           isReleasedGlobal: data.IsReleased[1],
           isReleasedCN: data.IsReleased[2],
+          isLimitedJP:
+            data.IsLimited[0] === StudentLimitedType.Limited ||
+            data.IsLimited[0] === StudentLimitedType.Fest,
+          isLimitedGlobal:
+            data.IsLimited[1] === StudentLimitedType.Limited ||
+            data.IsLimited[1] === StudentLimitedType.Fest,
+          isLimitedCN:
+            data.IsLimited[2] === StudentLimitedType.Limited ||
+            data.IsLimited[2] === StudentLimitedType.Fest,
+          isWelfareJP: data.IsLimited[0] === StudentLimitedType.Welfare,
+          isWelfareGlobal: data.IsLimited[1] === StudentLimitedType.Welfare,
+          isWelfareCN: data.IsLimited[2] === StudentLimitedType.Welfare,
+          isFestJP: data.IsLimited[0] === StudentLimitedType.Fest,
+          isFestGlobal: data.IsLimited[1] === StudentLimitedType.Fest,
+          isFestCN: data.IsLimited[2] === StudentLimitedType.Fest,
+          isArchiveJP: data.IsLimited[0] === StudentLimitedType.Archive,
+          isArchiveGlobal: data.IsLimited[1] === StudentLimitedType.Archive,
+          isArchiveCN: data.IsLimited[2] === StudentLimitedType.Archive,
           equipment: data.Equipment,
           searchTags: data.SearchTags,
         },

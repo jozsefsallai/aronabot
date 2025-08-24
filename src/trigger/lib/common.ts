@@ -14,6 +14,16 @@ import axios from "axios";
 
 const STUDENTS_TABLE = "https://schaledb.com/data/en/students.min.json";
 
+type PerServerAttribute<T> = [jp: T, global: T, cn: T];
+
+export enum StudentLimitedType {
+  Permanent = 0,
+  Limited = 1,
+  Welfare = 2,
+  Fest = 3,
+  Archive = 4,
+}
+
 export type RawEffect = {
   Type: string;
   Scale: number[];
@@ -44,7 +54,7 @@ export type RawStudentSkillsData = {
 
 export type RawStudentData = {
   Id: number;
-  IsReleased: [boolean, boolean, boolean]; // JP, Global, CN
+  IsReleased: PerServerAttribute<boolean>; // JP, Global, CN
   PathName: string;
   DevName: string;
   Name: string;
@@ -76,7 +86,7 @@ export type RawStudentData = {
   MemoryLobby: number[];
   FavorItemTags: string[];
   FavorItemUniqueTags: string[];
-  IsLimited: number; // 0 = Permanent, 1 = Limited, 2 = Welfare, 3 = Fest
+  IsLimited: PerServerAttribute<StudentLimitedType>;
   LinkedCharacterId?: number | null;
   SearchTags: string[];
 };
