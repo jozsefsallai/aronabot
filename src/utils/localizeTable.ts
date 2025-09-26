@@ -114,6 +114,7 @@ export const localizeTable = {
       CentralControlCenter: "Central Control Center",
       FreightLogisticsDepartment: "Freight Logistics Department",
       OccultClub: "Occult Research Society",
+      FreeTradeCartel: "Special Trade Department",
       EmptyClub: "None",
     },
 
