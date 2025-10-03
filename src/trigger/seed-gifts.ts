@@ -158,7 +158,7 @@ async function seedGifts() {
     }
   }
 
-  setFavorGifts(allGifts);
+  await setFavorGifts(allGifts);
 }
 
 export const seedGiftsTask = task({
