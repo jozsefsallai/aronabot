@@ -54,6 +54,7 @@ export type RawStudentSkillsData = {
 
 export type RawStudentData = {
   Id: number;
+  DefaultOrder: number;
   IsReleased: PerServerAttribute<boolean>; // JP, Global, CN
   PathName: string;
   DevName: string;

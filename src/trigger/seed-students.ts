@@ -240,6 +240,7 @@ async function seedStudents() {
           id: data.PathName,
           devName: data.DevName,
           schaleDbId: data.Id,
+          defaultOrder: data.DefaultOrder,
           name: studentName,
           firstName: data.PersonalName,
           lastName: data.FamilyName,
@@ -299,6 +300,7 @@ async function seedStudents() {
         data: {
           devName: data.DevName,
           schaleDbId: data.Id,
+          defaultOrder: data.DefaultOrder,
           name: studentName,
           firstName: data.PersonalName,
           lastName: data.FamilyName,
