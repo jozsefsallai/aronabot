@@ -289,6 +289,9 @@ async function seedStudents() {
           isArchiveCN: data.IsLimited[2] === StudentLimitedType.Archive,
           searchTags: data.SearchTags,
           equipment: data.Equipment,
+          hasBondGearJP: data.Gear?.Released?.[0] ?? false,
+          hasBondGearGlobal: data.Gear?.Released?.[1] ?? false,
+          hasBondGearCN: data.Gear?.Released?.[2] ?? false,
           baseVariantId,
         },
       });
@@ -348,6 +351,9 @@ async function seedStudents() {
           isArchiveGlobal: data.IsLimited[1] === StudentLimitedType.Archive,
           isArchiveCN: data.IsLimited[2] === StudentLimitedType.Archive,
           equipment: data.Equipment,
+          hasBondGearJP: data.Gear?.Released?.[0] ?? false,
+          hasBondGearGlobal: data.Gear?.Released?.[1] ?? false,
+          hasBondGearCN: data.Gear?.Released?.[2] ?? false,
           searchTags: data.SearchTags,
         },
       });

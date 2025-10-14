@@ -52,6 +52,16 @@ export type RawStudentSkillsData = {
   ExtraPassive: RawPassiveSkill; // Subskill
 };
 
+export type RawGearData = {
+  Released?: PerServerAttribute<boolean>; // JP, Global, CN
+  StatType?: string;
+  StatValue?: number[];
+  Name?: string;
+  Desc?: string;
+  TierUpMaterial?: number[][];
+  TierUpMaterialAmount?: number[][];
+};
+
 export type RawStudentData = {
   Id: number;
   DefaultOrder: number;
@@ -90,6 +100,7 @@ export type RawStudentData = {
   IsLimited: PerServerAttribute<StudentLimitedType>;
   LinkedCharacterId?: number | null;
   SearchTags: string[];
+  Gear?: RawGearData;
 };
 
 export async function fetchStudentsData(): Promise<
