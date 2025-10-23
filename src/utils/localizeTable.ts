@@ -337,6 +337,7 @@ export const localizeTable = {
       Special_CH0291_ExtraPassive: "Watermelon Slice",
       Special_CH0304_ExtraPassive: "Magic Charge",
       Special_CH0317_ExtraPassive: "Operation Plan",
+      Special_CH0326_Public: "Sugar Magical Power",
     },
   },
 } as const;
