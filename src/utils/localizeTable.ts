@@ -115,6 +115,7 @@ export const localizeTable = {
       FreightLogisticsDepartment: "Freight Logistics Department",
       OccultClub: "Occult Research Society",
       FreeTradeCartel: "Special Trade Department",
+      NicomediasTroop: "Nicomedia Troop",
       EmptyClub: "None",
     },
 
@@ -188,6 +189,7 @@ export const localizeTable = {
       PoisonDamagedIncrease: "Poison DMG Taken",
       IgnoreDelayCount: "Ignore Delay",
       MaxCostIncrease: "Maximum COST",
+      SightPoint: "Sighting Range",
     },
 
     buffName: {
@@ -338,6 +340,9 @@ export const localizeTable = {
       Special_CH0304_ExtraPassive: "Magic Charge",
       Special_CH0317_ExtraPassive: "Operation Plan",
       Special_CH0326_Public: "Sugar Magical Power",
+      Special_EN0013_CoreDestroy_DebuffPassive: "Lantern Destruction",
+      Special_CH0309_Ex: "Always Critical",
+      Special_CH0309_Public: "Cartridge Clips",
     },
   },
 } as const;
