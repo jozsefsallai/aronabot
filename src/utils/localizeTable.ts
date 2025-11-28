@@ -116,6 +116,7 @@ export const localizeTable = {
       OccultClub: "Occult Research Society",
       FreeTradeCartel: "Special Trade Department",
       NicomediasTroop: "Nicomedia Troop",
+      PublishingDepartment: "Publishing Department",
       EmptyClub: "None",
     },
 
@@ -343,6 +344,8 @@ export const localizeTable = {
       Special_EN0013_CoreDestroy_DebuffPassive: "Lantern Destruction",
       Special_CH0309_Ex: "Always Critical",
       Special_CH0309_Public: "Cartridge Clips",
+      Special_CH0229_Ex: "Favorable Review",
+      Special_CH0228_Ex: "Sales",
     },
   },
 } as const;
