@@ -3,7 +3,6 @@ import { staffOnlyGuard } from "../../core/guards/staffOnly";
 import type { CommandContext } from "../../core/handler/CommandHandler";
 import { bannerContainer } from "../../containers/banners";
 import type { AutocompleteContext } from "../../core/handler/AutocompleteHandler";
-import { iconsContainer } from "../../containers/icons";
 import type { CardProps } from "../../gacha/components/card";
 import { generateGachaResult } from "../../gacha/generate-result";
 
@@ -38,13 +37,6 @@ export const autocomplete = async (ctx: AutocompleteContext) => {
 export const handler = staffOnlyGuard(async (ctx: CommandContext) => {
   await ctx.interaction.deferReply({ ephemeral: true });
 
-  if (!iconsContainer.isReady) {
-    await ctx.interaction.editReply(
-      "Service currently unavailable. Please try again later...",
-    );
-    return;
-  }
-
   let bannerName = ctx.interaction.options.get("banner")?.value as
     | string
     | undefined;
@@ -76,7 +68,6 @@ export const handler = staffOnlyGuard(async (ctx: CommandContext) => {
           cards.push({
             student,
             isPickup: banner.isPickup(icon),
-            icon: iconsContainer.getIcon(icon) ?? "",
           });
         }
       }

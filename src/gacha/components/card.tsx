@@ -9,7 +9,6 @@ import {
 export interface CardProps {
   student: Student;
   isPickup: boolean;
-  icon: string;
 }
 
 function getCardBeforeBoxShadowForRarity(rarity: number) {
@@ -38,7 +37,7 @@ function getIconBackgroundForRarity(rarity: number) {
   }
 }
 
-export const Card = ({ student, isPickup, icon }: CardProps) => {
+export const Card = ({ student, isPickup }: CardProps) => {
   return (
     <div
       // card
@@ -93,7 +92,7 @@ export const Card = ({ student, isPickup, icon }: CardProps) => {
         <img
           // icon
           alt=""
-          src={`data:image/png;base64,${icon}`}
+          src={`https://aronabot.cdn.nimblebun.works/v2/images/students/icons/${student.id}.png`}
           style={{
             position: "relative",
             flexShrink: 0,

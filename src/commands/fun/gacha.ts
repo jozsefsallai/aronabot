@@ -2,7 +2,6 @@ import type { CommandContext } from "../../core/handler/CommandHandler";
 
 import { bannerContainer } from "../../containers/banners";
 import recruitmentPointsManager from "../../gacha/points";
-import { iconsContainer } from "../../containers/icons";
 import type { AutocompleteContext } from "../../core/handler/AutocompleteHandler";
 import {
   AppIntegrationType,
@@ -46,13 +45,6 @@ export const autocomplete = async (ctx: AutocompleteContext) => {
 export const handler = async (ctx: CommandContext) => {
   await ctx.interaction.deferReply();
 
-  if (!iconsContainer.isReady) {
-    await ctx.interaction.editReply(
-      "Service currently unavailable. Please try again later...",
-    );
-    return;
-  }
-
   let bannerName = ctx.interaction.options.get("banner")?.value as
     | string
     | undefined;
@@ -83,12 +75,9 @@ export const handler = async (ctx: CommandContext) => {
     const students = banner.pullTen();
 
     for (const [student, key] of students) {
-      const icon = iconsContainer.getIcon(key);
-
       cards.push({
         student,
         isPickup: banner.isPickup(key),
-        icon: icon ?? "",
       });
     }
   } catch (err: any) {
