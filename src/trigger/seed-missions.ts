@@ -1,7 +1,7 @@
 import axios from "axios";
 import * as cheerio from "cheerio";
-import type { Mission, MissionDifficulty, Terrain } from "@prisma/client";
-import { db } from "../db/client";
+import type { Mission, MissionDifficulty, Terrain } from "../db/client";
+import { db } from "../db";
 import { logger, task } from "@trigger.dev/sdk";
 
 interface RawMission extends Omit<Mission, "difficulty" | "terrain"> {

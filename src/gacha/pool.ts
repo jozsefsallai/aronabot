@@ -1,4 +1,4 @@
-import type { Student } from "@prisma/client";
+import type { Student } from "../db/client";
 
 export class GachaPool {
   readonly rate: number;

@@ -1,7 +1,7 @@
-import type { SkillType } from "@prisma/client";
+import type { SkillType } from "../db/client";
 
 import { t } from "../utils/localizeTable";
-import { db } from "../db/client";
+import { db } from "../db";
 import {
   fetchStudentsData,
   StudentLimitedType,

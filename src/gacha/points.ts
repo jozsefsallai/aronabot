@@ -1,4 +1,4 @@
-import type { BannerKind } from "@prisma/client";
+import type { BannerKind } from "../db/client";
 import redis from "../utils/redis";
 
 class RecruitmentPointsManager {

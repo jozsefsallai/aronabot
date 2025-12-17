@@ -1,5 +1,5 @@
-import type { Gift, Student } from "@prisma/client";
-import { db } from "../db/client";
+import type { Gift, Student } from "../db/client";
+import { db } from "../db";
 
 export type DetailedGift = Gift & {
   adoredBy: Student[];

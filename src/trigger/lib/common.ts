@@ -8,7 +8,7 @@ import type {
   EquipmentKind,
   School,
   WeaponType,
-} from "@prisma/client";
+} from "../../db/client";
 
 import axios from "axios";
 

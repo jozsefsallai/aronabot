@@ -2,8 +2,8 @@ import { logger, task } from "@trigger.dev/sdk";
 
 import axios from "axios";
 
-import type { ItemRarity } from "@prisma/client";
-import { db } from "../db/client";
+import type { ItemRarity } from "../db/client";
+import { db } from "../db";
 import { fetchStudentsData } from "./lib/common";
 
 const ITEMS_TABLE = "https://schaledb.com/data/en/items.min.json";

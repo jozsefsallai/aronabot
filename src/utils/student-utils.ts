@@ -1,4 +1,4 @@
-import type { AttackType, DefenseType, Student } from "@prisma/client";
+import type { AttackType, DefenseType, Student } from "../db/client";
 import { type Birthday, parseBirthday } from "./date";
 import { GAME_BLUE, GAME_PURPLE, GAME_RED, GAME_YELLOW } from "./constants";
 

@@ -3,7 +3,7 @@ import {
   offsetGameBannersPayload,
   type OffsetGameBannersPayload,
 } from "./schemas";
-import { db } from "../db/client";
+import { db } from "../db";
 
 export const offsetGameBanners = task({
   id: "offset-game-banners",

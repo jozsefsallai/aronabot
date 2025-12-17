@@ -2,7 +2,7 @@ import { SlashCommandBuilder } from "discord.js";
 import { staffOnlyGuard } from "../../core/guards/staffOnly";
 import type { CommandContext } from "../../core/handler/CommandHandler";
 import recruitmentPointsManager from "../../gacha/points";
-import type { BannerKind } from "@prisma/client";
+import type { BannerKind } from "../../db/client";
 
 export const meta = new SlashCommandBuilder()
   .setName("rrp")

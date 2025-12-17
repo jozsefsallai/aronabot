@@ -1,5 +1,5 @@
-import type { Mission } from "@prisma/client";
-import { db } from "../db/client";
+import type { Mission } from "../db/client";
+import { db } from "../db";
 
 export class MissionContainer {
   private missions: Mission[] = [];

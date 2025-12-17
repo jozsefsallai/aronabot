@@ -9,8 +9,8 @@ import {
   DEFAULT_PICKUP_RATE,
   DEFAULT_THREE_STAR_RATE,
 } from "./constants";
-import { db } from "../db/client";
-import type { Banner, Student, BannerKind } from "@prisma/client";
+import { db } from "../db";
+import type { Banner, Student, BannerKind } from "../db/client";
 
 export type DetailedGachaBanner = Banner & {
   pickupPoolStudents: Student[];

@@ -7,7 +7,7 @@ import {
   SlashCommandBuilder,
 } from "../../utils/slashCommandBuilder";
 import { EmbedBuilder } from "discord.js";
-import type { Student } from "@prisma/client";
+import type { Student } from "../../db/client";
 
 export const meta = new SlashCommandBuilder()
   .setName("cafe")

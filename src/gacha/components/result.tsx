@@ -4,7 +4,7 @@ import { Card, type CardProps } from "./card";
 import { CardShadow } from "./card-shadow";
 import { GACHA_BG_BUFFER } from "../preloaded-buffers";
 import { PointsContainer } from "./points-container";
-import type { BannerKind } from "@prisma/client";
+import type { BannerKind } from "../../db/client";
 
 export interface GachaResultProps {
   cards: CardProps[];

@@ -4,8 +4,8 @@ import {
   type AddGameBannersPayload,
   type RawGameBanner,
 } from "./schemas";
-import { db } from "../db/client";
-import type { Student } from "@prisma/client";
+import { db } from "../db";
+import type { Student } from "../db/client";
 
 export const addGameBannersTask = task({
   id: "add-game-banners",

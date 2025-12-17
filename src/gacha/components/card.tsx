@@ -1,5 +1,5 @@
 import React from "react";
-import type { Student } from "@prisma/client";
+import type { Student } from "../../db/client";
 import {
   GACHA_CHARA_CARD_BG_BUFFER,
   GACHA_PICKUP_BUFFER,

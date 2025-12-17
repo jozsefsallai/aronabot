@@ -6,7 +6,7 @@ import {
   AppIntegrationType,
   SlashCommandBuilder,
 } from "../../utils/slashCommandBuilder";
-import type { BannerKind } from "@prisma/client";
+import type { BannerKind } from "../../db/client";
 
 export const meta = new SlashCommandBuilder()
   .setName("spark")

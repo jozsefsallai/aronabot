@@ -1,6 +1,6 @@
-import type { Gift, Skill, Student } from "@prisma/client";
+import type { Gift, Skill, Student } from "../db/client";
 import { similarity } from "../utils/similarity";
-import { db } from "../db/client";
+import { db } from "../db";
 
 export type DetailedStudent = Student & {
   baseVariant?: Student | null;
