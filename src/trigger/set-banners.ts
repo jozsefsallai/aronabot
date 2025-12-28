@@ -171,8 +171,8 @@ export const setBannersTask = task({
       );
 
       const threeStarRate = banner.isFest ? 60 : 30;
-      const pickupRate = banner.isPickup ? 70 : 0;
-      const extraRate = banner.isFest ? 90 : 0;
+      const pickupRate = banner.isPickup ? 7 : 0;
+      const extraRate = banner.isFest ? 9 : 0;
 
       const baseThreeStarRate = banner.isFest ? 60 : 30;
 

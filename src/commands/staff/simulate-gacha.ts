@@ -76,6 +76,10 @@ export const handler = staffOnlyGuard(async (ctx: CommandContext) => {
     let twoStarCount = 0;
     let threeStarCount = 0;
 
+    let pickupCount = 0;
+    let extraCount = 0;
+    let additionalThreeStarCount = 0;
+
     try {
       for (let j = 0; j < pullsPerSimulation; ++j) {
         const students = banner.pullTen();
@@ -88,6 +92,18 @@ export const handler = staffOnlyGuard(async (ctx: CommandContext) => {
           } else if (student.rarity === 3) {
             threeStarCount++;
           }
+
+          if (banner.isPickup(student.id)) {
+            pickupCount++;
+          }
+
+          if (banner.isExtra(student.id)) {
+            extraCount++;
+          }
+
+          if (banner.isAdditionalThreeStar(student.id)) {
+            additionalThreeStarCount++;
+          }
         }
       }
     } catch (err: any) {
@@ -99,14 +115,25 @@ export const handler = staffOnlyGuard(async (ctx: CommandContext) => {
     const twoStarRate = twoStarCount / pullsPerSimulation;
     const threeStarRate = threeStarCount / pullsPerSimulation;
 
+    const pickupRate = pickupCount / pullsPerSimulation;
+    const extraRate = extraCount / pullsPerSimulation;
+    const additionalThreeStarRate =
+      additionalThreeStarCount / pullsPerSimulation;
+
     results.push({
       oneStarCount,
       twoStarCount,
       threeStarCount,
+      pickupCount,
+      extraCount,
+      additionalThreeStarCount,
 
       oneStarRate,
       twoStarRate,
       threeStarRate,
+      pickupRate,
+      extraRate,
+      additionalThreeStarRate,
     });
   }
 
@@ -114,21 +141,34 @@ export const handler = staffOnlyGuard(async (ctx: CommandContext) => {
     oneStarCount: 0,
     twoStarCount: 0,
     threeStarCount: 0,
+    pickupCount: 0,
+    extraCount: 0,
+    additionalThreeStarCount: 0,
 
     oneStarRate: 0,
     twoStarRate: 0,
     threeStarRate: 0,
+    pickupRate: 0,
+    extraRate: 0,
+    additionalThreeStarRate: 0,
   };
 
   for (const result of results) {
     summary.oneStarCount += result.oneStarCount;
     summary.twoStarCount += result.twoStarCount;
     summary.threeStarCount += result.threeStarCount;
+    summary.pickupCount += result.pickupCount;
+    summary.extraCount += result.extraCount;
+    summary.additionalThreeStarCount += result.additionalThreeStarCount;
   }
 
   summary.oneStarRate = summary.oneStarCount / (pullsPerSimulation * count);
   summary.twoStarRate = summary.twoStarCount / (pullsPerSimulation * count);
   summary.threeStarRate = summary.threeStarCount / (pullsPerSimulation * count);
+  summary.pickupRate = summary.pickupCount / (pullsPerSimulation * count);
+  summary.extraRate = summary.extraCount / (pullsPerSimulation * count);
+  summary.additionalThreeStarRate =
+    summary.additionalThreeStarCount / (pullsPerSimulation * count);
 
   const json = JSON.stringify(
     {

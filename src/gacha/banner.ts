@@ -60,6 +60,8 @@ class GachaBanner {
   private _baseTwoStarRate: number;
   private _baseThreeStarRate: number;
 
+  private _additionalThreeStarStudents: Student[] = [];
+
   private _isBootstrapped = false;
 
   constructor(params: GachaBannerParams) {
@@ -86,6 +88,9 @@ class GachaBanner {
     this._threeStarPool = new GachaPool(this.threeStarRate);
 
     this.kind = params.kind;
+
+    this._additionalThreeStarStudents =
+      params.additionalThreeStarStudents ?? [];
 
     this.populatePools(
       params.pickupPoolStudents,
@@ -332,6 +337,16 @@ class GachaBanner {
 
   isPickup(key: string): boolean {
     return this._pickupPool.hasStudent(key);
+  }
+
+  isExtra(key: string): boolean {
+    return this._extraPool.hasStudent(key);
+  }
+
+  isAdditionalThreeStar(key: string): boolean {
+    return this._additionalThreeStarStudents.some(
+      (student) => student.id === key,
+    );
   }
 
   private getRandomIndex(rates: number[]): number {

@@ -71,6 +71,13 @@ export const handler = staffOnlyGuard(async (ctx: CommandContext) => {
           });
         }
       }
+
+      if (points >= 2000) {
+        await ctx.interaction.editReply(
+          "Reached 2000 points without pulling a rate-up student. Stopping simulation.",
+        );
+        return;
+      }
     } catch (err) {
       await ctx.interaction.editReply("Failed to pull 10 students...");
       return;
