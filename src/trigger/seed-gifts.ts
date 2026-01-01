@@ -7,6 +7,7 @@ import { db } from "../db";
 import { fetchStudentsData } from "./lib/common";
 
 const ITEMS_TABLE = "https://schaledb.com/data/en/items.min.json";
+const ITEMS_TABLE_JP = "https://schaledb.com/data/jp/items.min.json";
 
 type RawItemData = {
   Category: string;
@@ -27,6 +28,18 @@ const commonFavorItemTags = ["BC", "Bc", "ew"];
 
 async function fetchGifts() {
   const { data } = await axios.get<Record<string, RawItemData>>(ITEMS_TABLE);
+
+  for (const key in data) {
+    if (data[key].Category !== "Favor") {
+      delete data[key];
+    }
+  }
+
+  return data as Record<string, RawGiftItemData>;
+}
+
+async function fetchGiftsJP() {
+  const { data } = await axios.get<Record<string, RawItemData>>(ITEMS_TABLE_JP);
 
   for (const key in data) {
     if (data[key].Category !== "Favor") {
@@ -118,9 +131,13 @@ async function setFavorGifts(allGifts: RawGiftItemData[]) {
 
 async function seedGifts() {
   const gifts = await fetchGifts();
+  const giftsJP = await fetchGiftsJP();
+
   const allGifts = Object.values(gifts);
 
   for await (const item of allGifts) {
+    const giftJP = giftsJP[item.Id];
+
     let gift = await db.gift.findUnique({
       where: {
         id: item.Id,
@@ -133,6 +150,8 @@ async function seedGifts() {
           id: item.Id,
           name: item.Name,
           description: item.Desc,
+          nameJP: giftJP?.Name ?? "",
+          descriptionJP: giftJP?.Desc ?? "",
           iconName: item.Icon,
           rarity: item.Rarity,
           expValue: item.ExpValue,
@@ -148,6 +167,8 @@ async function seedGifts() {
         data: {
           name: item.Name,
           description: item.Desc,
+          nameJP: giftJP?.Name ?? "",
+          descriptionJP: giftJP?.Desc ?? "",
           iconName: item.Icon,
           rarity: item.Rarity,
           expValue: item.ExpValue,

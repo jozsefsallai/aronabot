@@ -4,6 +4,7 @@ import { t } from "../utils/localizeTable";
 import { db } from "../db";
 import {
   fetchStudentsData,
+  fetchStudentsDataJP,
   StudentLimitedType,
   type RawEffect,
   type RawStudentData,
@@ -213,8 +214,26 @@ function getStudentName(student: RawStudentData): string {
   return student.Name;
 }
 
+function getStudentNameJP(student?: RawStudentData): string {
+  if (!student) {
+    return "";
+  }
+
+  if (student.PathName === "hoshino_battle_dealer") {
+    return `${student.Name} / アタッカー`;
+  }
+
+  if (student.PathName === "hoshino_battle_tank") {
+    return `${student.Name} / タンク`;
+  }
+
+  return student.Name;
+}
+
 async function seedStudents() {
   const studentsData = await fetchStudentsData();
+  const studentsDataJP = await fetchStudentsDataJP();
+
   const rawStudents = Object.values(studentsData).sort(sortAltsLast);
 
   for await (const data of rawStudents) {
@@ -232,6 +251,9 @@ async function seedStudents() {
       },
     });
 
+    const jpStudent = studentsDataJP[data.PathName];
+    const nameJP = getStudentNameJP(jpStudent);
+
     const studentName = getStudentName(data);
 
     if (!student) {
@@ -244,6 +266,9 @@ async function seedStudents() {
           name: studentName,
           firstName: data.PersonalName,
           lastName: data.FamilyName,
+          nameJP,
+          firstNameJP: jpStudent?.PersonalName ?? "",
+          lastNameJP: jpStudent?.FamilyName ?? "",
           school: data.School,
           club: data.Club,
           age: data.CharacterAge,
@@ -307,6 +332,9 @@ async function seedStudents() {
           name: studentName,
           firstName: data.PersonalName,
           lastName: data.FamilyName,
+          nameJP,
+          firstNameJP: jpStudent?.PersonalName ?? "",
+          lastNameJP: jpStudent?.FamilyName ?? "",
           school: data.School,
           club: data.Club,
           age: data.CharacterAge,

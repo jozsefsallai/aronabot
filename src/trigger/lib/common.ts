@@ -13,6 +13,7 @@ import type {
 import axios from "axios";
 
 const STUDENTS_TABLE = "https://schaledb.com/data/en/students.min.json";
+const STUDENTS_TABLE_JP = "https://schaledb.com/data/jp/students.min.json";
 
 type PerServerAttribute<T> = [jp: T, global: T, cn: T];
 
@@ -107,5 +108,12 @@ export async function fetchStudentsData(): Promise<
   Record<string, RawStudentData>
 > {
   const response = await axios.get(STUDENTS_TABLE);
+  return response.data;
+}
+
+export async function fetchStudentsDataJP(): Promise<
+  Record<string, RawStudentData>
+> {
+  const response = await axios.get(STUDENTS_TABLE_JP);
   return response.data;
 }
