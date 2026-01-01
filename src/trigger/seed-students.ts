@@ -251,7 +251,7 @@ async function seedStudents() {
       },
     });
 
-    const jpStudent = studentsDataJP[data.PathName];
+    const jpStudent = studentsDataJP[data.Id];
     const nameJP = getStudentNameJP(jpStudent);
 
     const studentName = getStudentName(data);
