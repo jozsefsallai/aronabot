@@ -256,6 +256,14 @@ async function seedStudents() {
 
     const studentName = getStudentName(data);
 
+    const searchTagsSet = new Set<string>(data.SearchTags);
+
+    if (jpStudent && jpStudent.SearchTags.length > 0) {
+      for (const tag of jpStudent.SearchTags) {
+        searchTagsSet.add(tag);
+      }
+    }
+
     if (!student) {
       student = await db.student.create({
         data: {
@@ -312,7 +320,7 @@ async function seedStudents() {
           isArchiveJP: data.IsLimited[0] === StudentLimitedType.Archive,
           isArchiveGlobal: data.IsLimited[1] === StudentLimitedType.Archive,
           isArchiveCN: data.IsLimited[2] === StudentLimitedType.Archive,
-          searchTags: data.SearchTags,
+          searchTags: Array.from(searchTagsSet),
           equipment: data.Equipment,
           hasBondGearJP: data.Gear?.Released?.[0] ?? false,
           hasBondGearGlobal: data.Gear?.Released?.[1] ?? false,
@@ -382,7 +390,7 @@ async function seedStudents() {
           hasBondGearJP: data.Gear?.Released?.[0] ?? false,
           hasBondGearGlobal: data.Gear?.Released?.[1] ?? false,
           hasBondGearCN: data.Gear?.Released?.[2] ?? false,
-          searchTags: data.SearchTags,
+          searchTags: Array.from(searchTagsSet),
         },
       });
     }
