@@ -11,6 +11,7 @@ export const localizeTable = {
       Mystic: "Mystic",
       Normal: "Normal",
       Sonic: "Sonic",
+      Chemical: "Corrosive",
       Mixed: "Mixed",
     },
 
@@ -19,6 +20,7 @@ export const localizeTable = {
       HeavyArmor: "Heavy",
       Unarmed: "Special",
       ElasticArmor: "Elastic",
+      CompositeArmor: "Composite",
       Normal: "Normal",
       Mixed: "Mixed",
     },
@@ -236,6 +238,7 @@ export const localizeTable = {
       Buff_Stability: "Stability",
       Buff_EnhanceExDamageRate: "EX Skill DMG Dealt",
       Buff_ExtraCostChange: "Add. EX Skill Cost",
+      Buff_NinjaWalking: "Ninja Walking",
       Debuff_AmmoCount: "Mag Count",
       Debuff_ATK: "ATK",
       Debuff_AttackSpeed: "ATK SPD",
