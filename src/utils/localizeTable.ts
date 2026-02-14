@@ -284,6 +284,7 @@ export const localizeTable = {
       Debuff_ChillDamagedIncrease: "Chill DMG Taken",
       Debuff_ElectricShockDamagedIncrease: "Shock DMG Taken",
       Debuff_PoisonDamagedIncrease: "Poison DMG Taken",
+      Debuff_ElectroPulse: "Electromagnetic Pulse",
       CC_Fear: "Fear",
       CC_Stunned: "Stun",
       CC_Provoke: "Taunt",
@@ -349,6 +350,7 @@ export const localizeTable = {
       Special_CH0309_Public: "Cartridge Clips",
       Special_CH0229_Ex: "Favorable Review",
       Special_CH0228_Ex: "Sales",
+      Special_CH0337_Ex: "Marked",
     },
   },
 } as const;
