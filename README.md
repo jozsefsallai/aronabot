@@ -2,8 +2,7 @@
 
 A Blue Archive themed Discord bot.
 
-**INVITE LINK:** currently unavailable. If you'd like to try out the bot, send
-me a DM on Discord (`@joexyz`).
+**INVITE LINK:** https://discord.com/oauth2/authorize?client_id=1155234220906647646
 
 ## Requirements
 
