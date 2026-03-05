@@ -6,6 +6,8 @@ export const rawGameBanner = z.object({
   end: z.tuple([z.number().int(), z.number().int(), z.number().int()]),
   students: z.array(z.string()),
   freePulls: z.number().int().optional(),
+  name: z.string().optional(),
+  isSelectablePickup: z.boolean().optional(),
 });
 
 export type RawGameBanner = z.infer<typeof rawGameBanner>;

@@ -53,14 +53,23 @@ export const addGameBannersTask = task({
         }
       }
 
+      if (studentsToAdd.length === 0) {
+        logger.warn(
+          `No students found for banner ${startDate.toISOString()} to ${endDate.toISOString()}`,
+        );
+        continue;
+      }
+
       await db.gameBanner.create({
         data: {
+          name: banner.name,
           startDate,
           endDate,
           pickupStudents: {
             connect: studentsToAdd.map((s) => ({ id: s.id })),
           },
           freePulls: banner.freePulls,
+          isSelectablePickup: banner.isSelectablePickup,
         },
       });
 
