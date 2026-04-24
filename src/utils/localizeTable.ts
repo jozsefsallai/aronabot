@@ -119,6 +119,7 @@ export const localizeTable = {
       FreeTradeCartel: "Special Trade Department",
       NicomediasTroop: "Nicomedia Troop",
       PublishingDepartment: "Publishing Department",
+      FoxSquad: "FOX Squad",
       EmptyClub: "None",
     },
 
@@ -239,6 +240,7 @@ export const localizeTable = {
       Buff_EnhanceExDamageRate: "EX Skill DMG Dealt",
       Buff_ExtraCostChange: "Add. EX Skill Cost",
       Buff_NinjaWalking: "Ninja Walking",
+      Buff_TacticalShield: "Tactical Barrier",
       Debuff_AmmoCount: "Mag Count",
       Debuff_ATK: "ATK",
       Debuff_AttackSpeed: "ATK SPD",
@@ -351,6 +353,8 @@ export const localizeTable = {
       Special_CH0229_Ex: "Favorable Review",
       Special_CH0228_Ex: "Sales",
       Special_CH0337_Ex: "Marked",
+      Special_CH0172_Ex: "Reconnaissance",
+      Special_CH0174_Ex: "Marked",
     },
   },
 } as const;
