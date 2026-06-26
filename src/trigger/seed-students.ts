@@ -211,6 +211,10 @@ function getStudentName(student: RawStudentData): string {
     return `${student.Name} / Tank`;
   }
 
+  if (student.PathName === "shunling_swimsuit") {
+    return "Shunling (Swimsuit)";
+  }
+
   return student.Name;
 }
 
@@ -225,6 +229,10 @@ function getStudentNameJP(student?: RawStudentData): string {
 
   if (student.PathName === "hoshino_battle_tank") {
     return `${student.Name} / タンク`;
+  }
+
+  if (student.PathName === "shunling_swimsuit") {
+    return "シュエリン（水着）";
   }
 
   return student.Name;
