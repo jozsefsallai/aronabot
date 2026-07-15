@@ -2,6 +2,7 @@ import {
   EmbedBuilder,
   type ChatInputCommandInteraction,
   type SlashCommandOptionsOnlyBuilder,
+  InteractionContextType,
 } from "discord.js";
 import { MONTHS } from "../../utils/date";
 import type { CommandContext } from "../../core/handler/CommandHandler";
@@ -22,6 +23,11 @@ export const meta: SlashCommandOptionsOnlyBuilder = new SlashCommandBuilder()
   .setIntegrationTypes(
     AppIntegrationType.GuildInstall,
     AppIntegrationType.UserInstall,
+  )
+  .setContexts(
+    InteractionContextType.BotDM,
+    InteractionContextType.PrivateChannel,
+    InteractionContextType.Guild,
   )
   .addIntegerOption((option) => {
     return option

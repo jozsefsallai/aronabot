@@ -2,6 +2,7 @@ import {
   EmbedBuilder,
   type ChatInputCommandInteraction,
   type SlashCommandOptionsOnlyBuilder,
+  InteractionContextType,
 } from "discord.js";
 import type { CommandContext } from "../../core/handler/CommandHandler";
 import { missionContainer } from "../../containers/missions";
@@ -17,6 +18,11 @@ export const meta: SlashCommandOptionsOnlyBuilder = new SlashCommandBuilder()
   .setIntegrationTypes(
     AppIntegrationType.GuildInstall,
     AppIntegrationType.UserInstall,
+  )
+  .setContexts(
+    InteractionContextType.BotDM,
+    InteractionContextType.PrivateChannel,
+    InteractionContextType.Guild,
   )
   .addStringOption((option) => {
     return option

@@ -11,6 +11,7 @@ import type { CardProps } from "../../gacha/components/card";
 import { generateGachaResult } from "../../gacha/generate-result";
 import {
   EmbedBuilder,
+  InteractionContextType,
   type ChatInputCommandInteraction,
   type SlashCommandOptionsOnlyBuilder,
 } from "discord.js";
@@ -33,6 +34,11 @@ export const meta: SlashCommandOptionsOnlyBuilder = new SlashCommandBuilder()
   .setIntegrationTypes(
     AppIntegrationType.GuildInstall,
     AppIntegrationType.UserInstall,
+  )
+  .setContexts(
+    InteractionContextType.BotDM,
+    InteractionContextType.PrivateChannel,
+    InteractionContextType.Guild,
   )
   .addStringOption((option) => {
     return option

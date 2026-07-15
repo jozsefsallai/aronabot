@@ -6,7 +6,7 @@ import {
   AppIntegrationType,
   SlashCommandBuilder,
 } from "../../utils/slashCommandBuilder";
-import { EmbedBuilder } from "discord.js";
+import { EmbedBuilder, InteractionContextType } from "discord.js";
 import type { Student } from "../../db/client";
 
 export const meta = new SlashCommandBuilder()
@@ -15,6 +15,11 @@ export const meta = new SlashCommandBuilder()
   .setIntegrationTypes(
     AppIntegrationType.GuildInstall,
     AppIntegrationType.UserInstall,
+  )
+  .setContexts(
+    InteractionContextType.BotDM,
+    InteractionContextType.PrivateChannel,
+    InteractionContextType.Guild,
   );
 
 export const handler = async (ctx: CommandContext) => {
