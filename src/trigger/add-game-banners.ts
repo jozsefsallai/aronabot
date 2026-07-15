@@ -1,4 +1,4 @@
-import { logger, task } from "@trigger.dev/sdk";
+import { logger, task, type Task } from "@trigger.dev/sdk";
 import {
   addGameBannersPayload,
   type AddGameBannersPayload,
@@ -7,7 +7,11 @@ import {
 import { db } from "../db";
 import type { Student } from "../db/client";
 
-export const addGameBannersTask = task({
+export const addGameBannersTask: Task<
+  "add-game-banners",
+  AddGameBannersPayload,
+  void
+> = task({
   id: "add-game-banners",
   run: async (payload: AddGameBannersPayload) => {
     let banners: RawGameBanner[];

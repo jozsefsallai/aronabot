@@ -1,4 +1,4 @@
-import { logger, task } from "@trigger.dev/sdk";
+import { logger, task, type Task } from "@trigger.dev/sdk";
 
 import axios from "axios";
 
@@ -182,7 +182,7 @@ async function seedGifts() {
   await setFavorGifts(allGifts);
 }
 
-export const seedGiftsTask = task({
+export const seedGiftsTask: Task<"seed-gifts", void, void> = task({
   id: "seed-gifts",
   run: async () => {
     await seedGifts();

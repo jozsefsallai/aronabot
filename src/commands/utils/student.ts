@@ -1,3 +1,7 @@
+import type {
+  ChatInputCommandInteraction,
+  SlashCommandOptionsOnlyBuilder,
+} from "discord.js";
 import type { CommandContext } from "../../core/handler/CommandHandler";
 import { StudentContainer, studentContainer } from "../../containers/students";
 import type { AutocompleteContext } from "../../core/handler/AutocompleteHandler";
@@ -7,7 +11,7 @@ import {
   SlashCommandBuilder,
 } from "../../utils/slashCommandBuilder";
 
-export const meta = new SlashCommandBuilder()
+export const meta: SlashCommandOptionsOnlyBuilder = new SlashCommandBuilder()
   .setName("student")
   .setDescription("Get information about a student.")
   .setIntegrationTypes(
@@ -44,7 +48,9 @@ export const autocomplete = async (ctx: AutocompleteContext) => {
   );
 };
 
-export const handler = async (ctx: CommandContext) => {
+export const handler = async (
+  ctx: CommandContext<ChatInputCommandInteraction>,
+) => {
   await ctx.interaction.deferReply();
 
   const name = ctx.interaction.options.get("name")?.value as string;

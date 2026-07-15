@@ -9,7 +9,11 @@ import {
 } from "../../utils/slashCommandBuilder";
 import type { CardProps } from "../../gacha/components/card";
 import { generateGachaResult } from "../../gacha/generate-result";
-import { EmbedBuilder } from "discord.js";
+import {
+  EmbedBuilder,
+  type ChatInputCommandInteraction,
+  type SlashCommandOptionsOnlyBuilder,
+} from "discord.js";
 
 function getBannerChoices() {
   return bannerContainer
@@ -23,7 +27,7 @@ function getBannerChoices() {
     });
 }
 
-export const meta = new SlashCommandBuilder()
+export const meta: SlashCommandOptionsOnlyBuilder = new SlashCommandBuilder()
   .setName("gacha")
   .setDescription("Roll on the current banners.")
   .setIntegrationTypes(
@@ -42,7 +46,9 @@ export const autocomplete = async (ctx: AutocompleteContext) => {
   await ctx.interaction.respond(getBannerChoices());
 };
 
-export const handler = async (ctx: CommandContext) => {
+export const handler = async (
+  ctx: CommandContext<ChatInputCommandInteraction>,
+) => {
   await ctx.interaction.deferReply();
 
   let bannerName = ctx.interaction.options.get("banner")?.value as

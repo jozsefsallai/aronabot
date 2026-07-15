@@ -10,7 +10,7 @@ import {
   type RawStudentData,
   type RawStudentSkillsData,
 } from "./lib/common";
-import { logger, task } from "@trigger.dev/sdk";
+import { logger, task, type Task } from "@trigger.dev/sdk";
 
 const KNOCKBACK_RE = /<kb:(\d+)>/g;
 const BUFFNAME_RE = /<([bcds])*:([a-zA-Z0-9_]+)>/g;
@@ -415,7 +415,7 @@ async function seedStudents() {
   }
 }
 
-export const seedStudentsTask = task({
+export const seedStudentsTask: Task<"seed-students", void, void> = task({
   id: "seed-students",
   run: async () => {
     await seedStudents();

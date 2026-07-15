@@ -1,8 +1,9 @@
 import axios from "axios";
 import * as cheerio from "cheerio";
+import type { Element } from "domhandler";
 import type { Mission, MissionDifficulty, Terrain } from "../db/client";
 import { db } from "../db";
-import { logger, task } from "@trigger.dev/sdk";
+import { logger, task, type Task } from "@trigger.dev/sdk";
 
 interface RawMission extends Omit<Mission, "difficulty" | "terrain"> {
   difficulty?: string | null;
@@ -64,7 +65,7 @@ async function getMissionMap(name: string) {
   return `https:${image}`;
 }
 
-function getDrops($: cheerio.CheerioAPI, row: cheerio.Element) {
+function getDrops($: cheerio.CheerioAPI, row: Element) {
   const drops = [];
 
   const columns = $(row).find("td").toArray().slice(5);
@@ -88,7 +89,7 @@ function getDrops($: cheerio.CheerioAPI, row: cheerio.Element) {
   return drops;
 }
 
-function parseMissionRow($: cheerio.CheerioAPI, row: cheerio.Element) {
+function parseMissionRow($: cheerio.CheerioAPI, row: Element) {
   const details: Partial<RawMission> = {};
 
   details.name = $(row).find("td:nth-child(1)").text().trim();
@@ -202,7 +203,7 @@ async function saveMissionsData() {
   }
 }
 
-export const seedMissionsTask = task({
+export const seedMissionsTask: Task<"seed-missions", void, void> = task({
   id: "seed-missions",
   run: async () => {
     await populateMissions();

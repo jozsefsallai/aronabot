@@ -1,11 +1,15 @@
-import { logger, task } from "@trigger.dev/sdk";
+import { logger, task, type Task } from "@trigger.dev/sdk";
 import {
   offsetGameBannersPayload,
   type OffsetGameBannersPayload,
 } from "./schemas";
 import { db } from "../db";
 
-export const offsetGameBanners = task({
+export const offsetGameBanners: Task<
+  "offset-game-banners",
+  OffsetGameBannersPayload,
+  void
+> = task({
   id: "offset-game-banners",
   run: async (payload: OffsetGameBannersPayload) => {
     let data: OffsetGameBannersPayload;

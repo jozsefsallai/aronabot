@@ -1,4 +1,8 @@
-import { EmbedBuilder } from "discord.js";
+import {
+  EmbedBuilder,
+  type ChatInputCommandInteraction,
+  type SlashCommandOptionsOnlyBuilder,
+} from "discord.js";
 import type { AutocompleteContext } from "../../core/handler/AutocompleteHandler";
 import { giftContainer } from "../../containers/gifts";
 import { StudentContainer, studentContainer } from "../../containers/students";
@@ -15,7 +19,7 @@ enum Params {
   STUDENT = "student",
 }
 
-export const meta = new SlashCommandBuilder()
+export const meta: SlashCommandOptionsOnlyBuilder = new SlashCommandBuilder()
   .setName("gifts")
   .setDescription(
     "Get information about a gift or the gifts liked by a student.",
@@ -79,7 +83,9 @@ export const autocomplete = async (ctx: AutocompleteContext) => {
   await ctx.interaction.respond([]);
 };
 
-export const handler = async (ctx: CommandContext) => {
+export const handler = async (
+  ctx: CommandContext<ChatInputCommandInteraction>,
+) => {
   await ctx.interaction.deferReply();
 
   const gift = ctx.interaction.options.get(Params.GIFT)?.value as

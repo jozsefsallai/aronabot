@@ -1,4 +1,8 @@
-import { EmbedBuilder } from "discord.js";
+import {
+  EmbedBuilder,
+  type ChatInputCommandInteraction,
+  type SlashCommandOptionsOnlyBuilder,
+} from "discord.js";
 import { MONTHS } from "../../utils/date";
 import type { CommandContext } from "../../core/handler/CommandHandler";
 import { studentContainer } from "../../containers/students";
@@ -12,7 +16,7 @@ import {
   studentHasBirthdayToday,
 } from "../../utils/student-utils";
 
-export const meta = new SlashCommandBuilder()
+export const meta: SlashCommandOptionsOnlyBuilder = new SlashCommandBuilder()
   .setName("birthdays")
   .setDescription("Get a list of student birthdays for the a given month.")
   .setIntegrationTypes(
@@ -28,7 +32,9 @@ export const meta = new SlashCommandBuilder()
       );
   });
 
-export const handler = async (ctx: CommandContext) => {
+export const handler = async (
+  ctx: CommandContext<ChatInputCommandInteraction>,
+) => {
   await ctx.interaction.deferReply();
 
   const month =

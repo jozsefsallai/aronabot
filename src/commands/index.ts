@@ -1,6 +1,8 @@
 import type { ApplicationCommandPermissions as ApplicationCommandPermissionData } from "discord.js";
 import type {
+  ChatInputCommandInteraction,
   SlashCommandBuilder as DJSSlashCommandBuilder,
+  SlashCommandOptionsOnlyBuilder,
   SlashCommandSubcommandsOnlyBuilder,
   ContextMenuCommandBuilder,
 } from "discord.js";
@@ -30,10 +32,13 @@ interface CommandData {
   meta:
     | DJSSlashCommandBuilder
     | SlashCommandBuilder
+    | SlashCommandOptionsOnlyBuilder
     | Omit<DJSSlashCommandBuilder, "addSubcommand" | "addSubcommandGroup">
     | SlashCommandSubcommandsOnlyBuilder
     | ContextMenuCommandBuilder;
-  handler: (ctx: CommandContext<any>) => void | Promise<void>;
+  handler: (
+    ctx: CommandContext<ChatInputCommandInteraction>,
+  ) => void | Promise<void>;
   permissions?: ApplicationCommandPermissionData[];
   autocomplete?: (ctx: AutocompleteContext<any>) => void | Promise<void>;
 }

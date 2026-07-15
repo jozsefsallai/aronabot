@@ -1,4 +1,8 @@
-import { EmbedBuilder } from "discord.js";
+import {
+  EmbedBuilder,
+  type ChatInputCommandInteraction,
+  type SlashCommandOptionsOnlyBuilder,
+} from "discord.js";
 import type { CommandContext } from "../../core/handler/CommandHandler";
 import { missionContainer } from "../../containers/missions";
 import {
@@ -7,7 +11,7 @@ import {
 } from "../../utils/slashCommandBuilder";
 import { t } from "../../utils/localizeTable";
 
-export const meta = new SlashCommandBuilder()
+export const meta: SlashCommandOptionsOnlyBuilder = new SlashCommandBuilder()
   .setName("mission")
   .setDescription("Get information and map preview about a mission.")
   .setIntegrationTypes(
@@ -21,7 +25,9 @@ export const meta = new SlashCommandBuilder()
       .setRequired(true);
   });
 
-export const handler = async (ctx: CommandContext) => {
+export const handler = async (
+  ctx: CommandContext<ChatInputCommandInteraction>,
+) => {
   await ctx.interaction.deferReply();
 
   const name = ctx.interaction.options.get("name")?.value as string;

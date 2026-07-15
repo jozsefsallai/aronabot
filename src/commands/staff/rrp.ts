@@ -1,10 +1,14 @@
-import { SlashCommandBuilder } from "discord.js";
+import {
+  SlashCommandBuilder,
+  type ChatInputCommandInteraction,
+  type SlashCommandOptionsOnlyBuilder,
+} from "discord.js";
 import { staffOnlyGuard } from "../../core/guards/staffOnly";
 import type { CommandContext } from "../../core/handler/CommandHandler";
 import recruitmentPointsManager from "../../gacha/points";
 import type { BannerKind } from "../../db/client";
 
-export const meta = new SlashCommandBuilder()
+export const meta: SlashCommandOptionsOnlyBuilder = new SlashCommandBuilder()
   .setName("rrp")
   .setDescription("[STAFF] Reset recruitment points.")
   .setDefaultPermission(false)
@@ -24,7 +28,9 @@ export const meta = new SlashCommandBuilder()
       );
   });
 
-export const handler = staffOnlyGuard(async (ctx: CommandContext) => {
+export const handler: (
+  ctx: CommandContext<ChatInputCommandInteraction>,
+) => Promise<void> = staffOnlyGuard(async (ctx) => {
   await ctx.interaction.deferReply({ ephemeral: true });
 
   let bannerKind = ctx.interaction.options.get("region")?.value as

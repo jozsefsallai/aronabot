@@ -1,4 +1,8 @@
-import { EmbedBuilder } from "discord.js";
+import {
+  EmbedBuilder,
+  type ChatInputCommandInteraction,
+  type SlashCommandOptionsOnlyBuilder,
+} from "discord.js";
 import type { CommandContext } from "../../core/handler/CommandHandler";
 import recruitmentPointsManager from "../../gacha/points";
 import { GAME_BLUE, GAME_RED } from "../../utils/constants";
@@ -8,7 +12,7 @@ import {
 } from "../../utils/slashCommandBuilder";
 import type { BannerKind } from "../../db/client";
 
-export const meta = new SlashCommandBuilder()
+export const meta: SlashCommandOptionsOnlyBuilder = new SlashCommandBuilder()
   .setName("spark")
   .setDescription("Use 200 recruitment points on a game region.")
   .setIntegrationTypes(
@@ -31,7 +35,9 @@ export const meta = new SlashCommandBuilder()
       );
   });
 
-export const handler = async (ctx: CommandContext) => {
+export const handler = async (
+  ctx: CommandContext<ChatInputCommandInteraction>,
+) => {
   await ctx.interaction.deferReply();
 
   let bannerKind = ctx.interaction.options.get("region")?.value as

@@ -1,6 +1,6 @@
 import config from "../config";
 
-import onReady from "../events/ready";
+import onClientReady from "../events/clientReady";
 
 import {
   ActivityType,
@@ -56,7 +56,7 @@ class Client {
         return;
       }
 
-      if (interaction.isCommand() || interaction.isContextMenuCommand()) {
+      if (interaction.isChatInputCommand()) {
         if (config.isMaintenance) {
           await interaction.reply({
             content: "⚠️ Maintenance in progress. Please try again later.",
@@ -85,7 +85,7 @@ class Client {
       }
     });
 
-    this.client.on("ready", () => onReady(this));
+    this.client.on("clientReady", () => onClientReady(this));
   }
 
   async login() {

@@ -1,4 +1,4 @@
-import { logger, task } from "@trigger.dev/sdk/v3";
+import { logger, task, type Task } from "@trigger.dev/sdk";
 import type { RawBanner, SetBannersPayload } from "./schemas";
 import { db } from "../db";
 import type { BannerKind } from "../db/client";
@@ -104,7 +104,8 @@ async function getAnnouncementText(banners: RawBanner[]): Promise<string> {
   return output;
 }
 
-export const setBannersTask = task({
+export const setBannersTask: Task<"set-banners", SetBannersPayload, string> =
+  task({
   id: "set-banners",
   run: async ({ banners }: SetBannersPayload) => {
     const today = new Date();

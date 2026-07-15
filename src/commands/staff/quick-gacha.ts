@@ -1,4 +1,9 @@
-import { EmbedBuilder, SlashCommandBuilder } from "discord.js";
+import {
+  EmbedBuilder,
+  SlashCommandBuilder,
+  type ChatInputCommandInteraction,
+  type SlashCommandOptionsOnlyBuilder,
+} from "discord.js";
 import { staffOnlyGuard } from "../../core/guards/staffOnly";
 import type { CommandContext } from "../../core/handler/CommandHandler";
 import { bannerContainer } from "../../containers/banners";
@@ -18,7 +23,7 @@ function getBannerChoices() {
     });
 }
 
-export const meta = new SlashCommandBuilder()
+export const meta: SlashCommandOptionsOnlyBuilder = new SlashCommandBuilder()
   .setName("quick-gacha")
   .setDescription("[STAFF] Quick gacha.")
   .setDefaultPermission(false)
@@ -34,7 +39,9 @@ export const autocomplete = async (ctx: AutocompleteContext) => {
   await ctx.interaction.respond(getBannerChoices());
 };
 
-export const handler = staffOnlyGuard(async (ctx: CommandContext) => {
+export const handler: (
+  ctx: CommandContext<ChatInputCommandInteraction>,
+) => Promise<void> = staffOnlyGuard(async (ctx) => {
   await ctx.interaction.deferReply({ ephemeral: true });
 
   let bannerName = ctx.interaction.options.get("banner")?.value as

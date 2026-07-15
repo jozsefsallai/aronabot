@@ -1,4 +1,8 @@
-import { EmbedBuilder } from "discord.js";
+import {
+  EmbedBuilder,
+  type ChatInputCommandInteraction,
+  type SlashCommandOptionsOnlyBuilder,
+} from "discord.js";
 import type { CommandContext } from "../../core/handler/CommandHandler";
 import seedrandom from "seedrandom";
 import { studentContainer } from "../../containers/students";
@@ -13,7 +17,7 @@ import {
 } from "../../utils/date";
 import { getAttackTypeColor, getPortraitUrl } from "../../utils/student-utils";
 
-export const meta = new SlashCommandBuilder()
+export const meta: SlashCommandOptionsOnlyBuilder = new SlashCommandBuilder()
   .setName("studentoftheday")
   .setDescription("Find out who your student of the day is!")
   .setIntegrationTypes(
@@ -43,7 +47,9 @@ function getCustomDate(str: string): Date {
   return dateToJST(date);
 }
 
-export const handler = async (ctx: CommandContext) => {
+export const handler = async (
+  ctx: CommandContext<ChatInputCommandInteraction>,
+) => {
   await ctx.interaction.deferReply();
 
   const userId = ctx.interaction.user.id;
