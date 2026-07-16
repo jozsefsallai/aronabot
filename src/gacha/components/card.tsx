@@ -107,7 +107,7 @@ export const Card = ({ student, isPickup }: CardProps) => {
 
         <div
           // TODO: fix border not being taken into account when calculating
-          // transformed clip paths in satori
+          // transformed clip paths in takumi
           style={{
             position: "absolute",
             top: -2,
