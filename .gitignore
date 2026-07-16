@@ -11,3 +11,5 @@ coverage
 
 .trigger
 src/db/generated
+
+/target
