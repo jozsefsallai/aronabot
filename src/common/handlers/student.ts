@@ -6,7 +6,7 @@ import {
   EmbedBuilder,
 } from "discord.js";
 import { embedSeparator } from "../../utils/embedSeparator";
-import type { DetailedStudent } from "../../containers/students";
+import type { DetailedStudent } from "../../db/students";
 import {
   getAttackTypeColor,
   getPortraitUrl,

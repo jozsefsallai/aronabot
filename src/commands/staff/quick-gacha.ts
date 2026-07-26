@@ -6,21 +6,21 @@ import {
 } from "discord.js";
 import { staffOnlyGuard } from "../../core/guards/staffOnly";
 import type { CommandContext } from "../../core/handler/CommandHandler";
-import { bannerContainer } from "../../containers/banners";
+import {
+  findAll as findAllBanners,
+  findById as findBannerById,
+} from "../../db/banners";
 import type { AutocompleteContext } from "../../core/handler/AutocompleteHandler";
 import type { CardProps } from "../../gacha/components/card";
 import { generateGachaResult } from "../../gacha/generate-result";
 
-function getBannerChoices() {
-  return bannerContainer
-    .all()
-    .slice(0, 25)
-    .map((banner) => {
-      return {
-        name: banner.name,
-        value: banner.id,
-      };
-    });
+async function getBannerChoices() {
+  return (await findAllBanners()).slice(0, 25).map((banner) => {
+    return {
+      name: banner.name,
+      value: banner.id,
+    };
+  });
 }
 
 export const meta: SlashCommandOptionsOnlyBuilder = new SlashCommandBuilder()
@@ -36,7 +36,7 @@ export const meta: SlashCommandOptionsOnlyBuilder = new SlashCommandBuilder()
   });
 
 export const autocomplete = async (ctx: AutocompleteContext) => {
-  await ctx.interaction.respond(getBannerChoices());
+  await ctx.interaction.respond(await getBannerChoices());
 };
 
 export const handler: (
@@ -52,7 +52,7 @@ export const handler: (
     bannerName = "regular";
   }
 
-  const banner = bannerContainer.getBanner(bannerName);
+  const banner = await findBannerById(bannerName);
 
   if (!banner) {
     await ctx.interaction.editReply("Invalid banner.");

@@ -5,7 +5,7 @@ import {
   InteractionContextType,
 } from "discord.js";
 import type { CommandContext } from "../../core/handler/CommandHandler";
-import { missionContainer } from "../../containers/missions";
+import { findByName as findMissionByName } from "../../db/missions";
 import {
   AppIntegrationType,
   SlashCommandBuilder,
@@ -38,7 +38,7 @@ export const handler = async (
 
   const name = ctx.interaction.options.get("name")?.value as string;
 
-  const mission = missionContainer.getMissionWithName(name);
+  const mission = await findMissionByName(name);
 
   if (!mission) {
     await ctx.interaction.editReply({

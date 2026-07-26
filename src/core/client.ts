@@ -16,10 +16,6 @@ import ButtonHandler from "./handler/ButtonHandler";
 
 import commands from "../commands";
 import buttons from "../buttons";
-import {
-  areContainersBootstrapped,
-  bootstrapContainers,
-} from "../containers/utils/bootstrap";
 
 class Client {
   private client: Discord;
@@ -89,10 +85,6 @@ class Client {
   }
 
   async login() {
-    if (!areContainersBootstrapped()) {
-      await bootstrapContainers();
-    }
-
     console.log("Updating application commands...");
 
     await this.rest.put(Routes.applicationCommands(config.bot.clientId), {

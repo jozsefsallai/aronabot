@@ -1,5 +1,5 @@
 import seedrandom from "seedrandom";
-import { studentContainer } from "../../containers/students";
+import { findAll as findAllStudents } from "../../db/students";
 import type { CommandContext } from "../../core/handler/CommandHandler";
 import { currentClosestBreakpointJST } from "../../utils/date";
 import {
@@ -30,7 +30,19 @@ export const handler = async (ctx: CommandContext) => {
   const closestBreakpoint = currentClosestBreakpointJST();
   const timestamp = Math.floor(closestBreakpoint.getTime() / 1000);
 
-  const students = studentContainer.getBaseVariants();
+  const allStudents = await findAllStudents();
+  const students = allStudents.filter(
+    (student) => student.baseVariantId === null,
+  );
+  const variantsByBaseId = new Map<string, Student[]>(
+    students.map((base) => [
+      base.id,
+      [
+        base,
+        ...allStudents.filter((student) => student.baseVariantId === base.id),
+      ],
+    ]),
+  );
 
   const seed = Buffer.from(`${timestamp}/${userId}`, "utf-8")
     .toString("base64")
@@ -42,7 +54,7 @@ export const handler = async (ctx: CommandContext) => {
 
   for (let i = 0; i < 10; ++i) {
     const randomBase = students[Math.floor(rng() * students.length)];
-    const variants = studentContainer.getVariantsForBase(randomBase);
+    const variants = variantsByBaseId.get(randomBase.id) ?? [randomBase];
     const randomVariant = variants[Math.floor(rng() * variants.length)];
 
     if (i < 5) {

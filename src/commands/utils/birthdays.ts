@@ -6,7 +6,7 @@ import {
 } from "discord.js";
 import { MONTHS } from "../../utils/date";
 import type { CommandContext } from "../../core/handler/CommandHandler";
-import { studentContainer } from "../../containers/students";
+import { findAll as findAllStudents } from "../../db/students";
 import {
   AppIntegrationType,
   SlashCommandBuilder,
@@ -47,9 +47,9 @@ export const handler = async (
     (ctx.interaction.options.get("month")?.value as number | undefined) ??
     new Date().getMonth();
 
-  const students = studentContainer
-    .getStudents()
-    .filter((student) => studentHasBirthdayOnMonth(student, month));
+  const students = (await findAllStudents()).filter((student) =>
+    studentHasBirthdayOnMonth(student, month),
+  );
 
   if (students.length === 0) {
     await ctx.interaction.editReply({

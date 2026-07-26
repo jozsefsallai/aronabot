@@ -1,6 +1,6 @@
 import type { CommandContext } from "../../core/handler/CommandHandler";
 
-import { bannerContainer } from "../../containers/banners";
+import { findAll as findAllBanners, findById as findBannerById } from "../../db/banners";
 import recruitmentPointsManager from "../../gacha/points";
 import type { AutocompleteContext } from "../../core/handler/AutocompleteHandler";
 import {
@@ -16,16 +16,13 @@ import {
   type SlashCommandOptionsOnlyBuilder,
 } from "discord.js";
 
-function getBannerChoices() {
-  return bannerContainer
-    .all()
-    .slice(0, 25)
-    .map((banner) => {
-      return {
-        name: banner.name,
-        value: banner.id,
-      };
-    });
+async function getBannerChoices() {
+  return (await findAllBanners()).slice(0, 25).map((banner) => {
+    return {
+      name: banner.name,
+      value: banner.id,
+    };
+  });
 }
 
 export const meta: SlashCommandOptionsOnlyBuilder = new SlashCommandBuilder()
@@ -49,7 +46,7 @@ export const meta: SlashCommandOptionsOnlyBuilder = new SlashCommandBuilder()
   });
 
 export const autocomplete = async (ctx: AutocompleteContext) => {
-  await ctx.interaction.respond(getBannerChoices());
+  await ctx.interaction.respond(await getBannerChoices());
 };
 
 export const handler = async (
@@ -68,7 +65,7 @@ export const handler = async (
   const guildId = ctx.interaction.guildId ?? "0";
   const userId = ctx.interaction.user.id;
 
-  const banner = bannerContainer.getBanner(bannerName);
+  const banner = await findBannerById(bannerName);
 
   if (!banner) {
     await ctx.interaction.editReply("Invalid banner.");

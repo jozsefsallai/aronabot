@@ -22,7 +22,6 @@ import * as birthdays from "./utils/birthdays";
 import * as gifts from "./utils/gifts";
 
 import * as quickGacha from "./staff/quick-gacha";
-import * as reload from "./staff/reload";
 import * as rrp from "./staff/rrp";
 import * as simulateGacha from "./staff/simulate-gacha";
 
@@ -54,7 +53,6 @@ const commands: CommandData[] = [
   birthdays,
   gifts,
   quickGacha,
-  reload,
   rrp,
   simulateGacha,
 ];

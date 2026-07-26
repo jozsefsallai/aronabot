@@ -1,5 +1,5 @@
 import { handleStudentCommand } from "../../common/handlers/student";
-import { studentContainer } from "../../containers/students";
+import { findById as findStudentById } from "../../db/students";
 import type { ButtonContext } from "../../core/handler/ButtonHandler";
 
 export const meta = {
@@ -25,7 +25,7 @@ export const handler = async (ctx: ButtonContext) => {
 
   const studentKey = ctx.uniqueId;
 
-  const student = studentContainer.getStudent(studentKey);
+  const student = await findStudentById(studentKey);
   if (!student) {
     await ctx.interaction.reply("Student not found.");
     return;

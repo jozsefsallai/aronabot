@@ -5,7 +5,7 @@ import {
   ButtonStyle,
   EmbedBuilder,
 } from "discord.js";
-import type { DetailedStudent } from "../../containers/students";
+import type { DetailedStudent } from "../../db/students";
 import { getPortraitUrl, getSchaleDBUrl } from "../../utils/student-utils";
 import { t } from "../../utils/localizeTable";
 

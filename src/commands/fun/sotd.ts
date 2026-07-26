@@ -6,7 +6,7 @@ import {
 } from "discord.js";
 import type { CommandContext } from "../../core/handler/CommandHandler";
 import seedrandom from "seedrandom";
-import { studentContainer } from "../../containers/students";
+import { findAll as findAllStudents } from "../../db/students";
 import {
   SlashCommandBuilder,
   AppIntegrationType,
@@ -85,7 +85,7 @@ export const handler = async (
     .replace(/=/g, "");
   const rng = seedrandom(seed);
 
-  const students = studentContainer.getStudents();
+  const students = await findAllStudents();
   const student = students[Math.floor(rng() * students.length)];
 
   const tomorrow = new Date(today);

@@ -5,8 +5,15 @@ import {
   InteractionContextType,
 } from "discord.js";
 import type { AutocompleteContext } from "../../core/handler/AutocompleteHandler";
-import { giftContainer } from "../../containers/gifts";
-import { StudentContainer, studentContainer } from "../../containers/students";
+import {
+  findByName as findGiftByName,
+  findManyByName as findManyGiftsByName,
+} from "../../db/gifts";
+import {
+  findByName as findStudentByName,
+  findManyByName as findManyStudentsByName,
+  sortBySimilarity,
+} from "../../db/students";
 import type { CommandContext } from "../../core/handler/CommandHandler";
 import {
   AppIntegrationType,
@@ -58,7 +65,7 @@ export const autocomplete = async (ctx: AutocompleteContext) => {
   }
 
   if (focusedValue.name === Params.GIFT) {
-    const gifts = giftContainer.findManyByName(focusedValue.value);
+    const gifts = await findManyGiftsByName(focusedValue.value);
     await ctx.interaction.respond(
       gifts.slice(0, 25).map((gift) => {
         return {
@@ -71,10 +78,10 @@ export const autocomplete = async (ctx: AutocompleteContext) => {
   }
 
   if (focusedValue.name === Params.STUDENT) {
-    const students = studentContainer.findManyByName(focusedValue.value);
+    const students = await findManyStudentsByName(focusedValue.value);
     await ctx.interaction.respond(
       students
-        .sort(StudentContainer.sortBySimilarity(focusedValue.value))
+        .sort(sortBySimilarity(focusedValue.value))
         .slice(0, 25)
         .map((student) => {
           return {
@@ -127,7 +134,7 @@ export const handler = async (
 };
 
 const handleGift = async (ctx: CommandContext, gift: string) => {
-  const giftData = giftContainer.getGiftWithName(gift);
+  const giftData = await findGiftByName(gift);
   if (!giftData) {
     await ctx.interaction.editReply({
       content: `Could not find a gift with the name "${gift}".`,
@@ -188,7 +195,7 @@ const handleGift = async (ctx: CommandContext, gift: string) => {
 };
 
 const handleStudent = async (ctx: CommandContext, student: string) => {
-  const studentData = studentContainer.getByName(student);
+  const studentData = await findStudentByName(student);
   if (!studentData) {
     await ctx.interaction.editReply({
       content: `Could not find student "${student}".`,

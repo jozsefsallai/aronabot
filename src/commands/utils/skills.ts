@@ -4,7 +4,7 @@ import {
   InteractionContextType,
 } from "discord.js";
 import type { AutocompleteContext } from "../../core/handler/AutocompleteHandler";
-import { StudentContainer, studentContainer } from "../../containers/students";
+import { findByName, findManyByName, sortBySimilarity } from "../../db/students";
 import type { CommandContext } from "../../core/handler/CommandHandler";
 import { handleStudentSkillsCommand } from "../../common/handlers/skills";
 import {
@@ -40,10 +40,10 @@ export const autocomplete = async (ctx: AutocompleteContext) => {
     return;
   }
 
-  const students = studentContainer.findManyByName(focusedValue);
+  const students = await findManyByName(focusedValue);
   await ctx.interaction.respond(
     students
-      .sort(StudentContainer.sortBySimilarity(focusedValue))
+      .sort(sortBySimilarity(focusedValue))
       .slice(0, 25)
       .map((student) => {
         return {
@@ -60,7 +60,7 @@ export const handler = async (
   await ctx.interaction.deferReply();
 
   const name = ctx.interaction.options.get("name")?.value as string;
-  const student = studentContainer.getByName(name);
+  const student = await findByName(name);
 
   if (!student) {
     await ctx.interaction.editReply({

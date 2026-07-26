@@ -1,4 +1,3 @@
-import { studentContainer } from "../containers/students";
 import { GachaPool } from "./pool";
 
 import {
@@ -9,7 +8,6 @@ import {
   DEFAULT_PICKUP_RATE,
   DEFAULT_THREE_STAR_RATE,
 } from "./constants";
-import { db } from "../db";
 import type { Banner, Student, BannerKind } from "../db/client";
 
 export type DetailedGachaBanner = Banner & {
@@ -31,6 +29,7 @@ export interface GachaBannerParams {
   pickupPoolStudents?: Student[];
   extraPoolStudents?: Student[];
   additionalThreeStarStudents?: Student[];
+  pullableStudents?: Student[];
 
   baseOneStarRate?: number;
   baseTwoStarRate?: number;
@@ -93,66 +92,10 @@ class GachaBanner {
       params.additionalThreeStarStudents ?? [];
 
     this.populatePools(
+      params.pullableStudents ?? [],
       params.pickupPoolStudents,
       params.extraPoolStudents,
       params.additionalThreeStarStudents,
-    );
-  }
-
-  private isStudentAvailableInRegion(student: Student) {
-    switch (this.kind) {
-      case "Global":
-        return student.isReleasedGlobal;
-      case "JP":
-        return student.isReleasedJP;
-      default:
-        return false;
-    }
-  }
-
-  private isStudentLimited(student: Student) {
-    switch (this.kind) {
-      case "Global":
-        return student.isLimitedGlobal;
-      case "JP":
-        return student.isLimitedJP;
-      default:
-        return false;
-    }
-  }
-
-  private isStudentWelfare(student: Student) {
-    switch (this.kind) {
-      case "Global":
-        return student.isWelfareGlobal;
-      case "JP":
-        return student.isWelfareJP;
-      default:
-        return false;
-    }
-  }
-
-  private isStudentArchive(student: Student) {
-    switch (this.kind) {
-      case "Global":
-        return student.isArchiveGlobal;
-      case "JP":
-        return student.isArchiveJP;
-      default:
-        return false;
-    }
-  }
-
-  private isPullable(
-    student: Student,
-    additionalCondition: (student: Student) => boolean,
-  ): boolean {
-    return (
-      !this.isStudentLimited(student) &&
-      !this.isStudentWelfare(student) &&
-      !this.isStudentArchive(student) &&
-      this.isStudentAvailableInRegion(student) &&
-      additionalCondition(student)
     );
   }
 
@@ -169,6 +112,7 @@ class GachaBanner {
   }
 
   private populatePools(
+    pullableStudents: Student[],
     pickupPoolStudents?: Student[],
     extraPoolStudents?: Student[],
     additionalThreeStarStudents?: Student[],
@@ -177,21 +121,27 @@ class GachaBanner {
       return;
     }
 
-    const oneStarStudents = studentContainer.getStudentsWhere((student) =>
-      this.isPullable(student, this.isOneStar),
+    const pickupIds = new Set(
+      pickupPoolStudents?.map((student) => student.id) ?? [],
+    );
+    const extraIds = new Set(
+      extraPoolStudents?.map((student) => student.id) ?? [],
     );
 
-    const twoStarStudents = studentContainer.getStudentsWhere((student) =>
-      this.isPullable(student, this.isTwoStar),
+    const oneStarStudents = pullableStudents.filter((student) =>
+      this.isOneStar(student),
     );
 
-    const threeStarStudents = studentContainer
-      .getStudentsWhere((student) => this.isPullable(student, this.isThreeStar))
-      .filter(
-        (student) =>
-          !pickupPoolStudents?.includes(student) &&
-          !extraPoolStudents?.includes(student),
-      );
+    const twoStarStudents = pullableStudents.filter((student) =>
+      this.isTwoStar(student),
+    );
+
+    const threeStarStudents = pullableStudents.filter(
+      (student) =>
+        this.isThreeStar(student) &&
+        !pickupIds.has(student.id) &&
+        !extraIds.has(student.id),
+    );
 
     oneStarStudents.forEach((student) => this._oneStarPool.addStudent(student));
     twoStarStudents.forEach((student) => this._twoStarPool.addStudent(student));
@@ -370,24 +320,10 @@ class GachaBanner {
     return new GachaBanner(params);
   }
 
-  static async all() {
-    return db.banner
-      .findMany({
-        orderBy: {
-          sortKey: "asc",
-        },
-        include: {
-          pickupPoolStudents: true,
-          extraPoolStudents: true,
-          additionalThreeStarStudents: true,
-        },
-      })
-      .then((entries) => {
-        return entries.map((entry) => GachaBanner.fromDBEntry(entry));
-      });
-  }
-
-  static fromDBEntry(entry: DetailedGachaBanner): GachaBanner {
+  static fromDBEntry(
+    entry: DetailedGachaBanner,
+    pullableStudents: Student[],
+  ): GachaBanner {
     return new GachaBanner({
       id: entry.id,
       name: entry.name,
@@ -399,6 +335,7 @@ class GachaBanner {
       extraPoolStudents: entry.extraPoolStudents ?? undefined,
       additionalThreeStarStudents:
         entry.additionalThreeStarStudents ?? undefined,
+      pullableStudents,
       baseOneStarRate: entry.baseOneStarRate / 1000,
       baseTwoStarRate: entry.baseTwoStarRate / 1000,
       baseThreeStarRate: entry.baseThreeStarRate / 1000,
