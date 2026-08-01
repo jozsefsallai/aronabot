@@ -96,7 +96,7 @@ function Milestone({
             alt=""
             src={GACHA_MILESTONE_100_ICON_BUFFER}
             style={{
-              width: ICON_SIZE,
+              width: ICON_SIZE + 4,
               height: ICON_SIZE,
               objectFit: "cover",
               transform: "skewX(10deg)",
