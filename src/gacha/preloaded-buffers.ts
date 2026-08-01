@@ -24,13 +24,13 @@ export const GACHA_STAR_BUFFER = localFileToDataUri(
   "image",
   path.join(IMAGE_ASSETS_DIR, "gacha", "star.png"),
 );
+export const GACHA_MILESTONE_100_ICON_BUFFER = localFileToDataUri(
+  "image",
+  path.join(IMAGE_ASSETS_DIR, "gacha", "milestone-100.png"),
+);
 
 const FONT_ASSETS_DIR = path.join(__dirname, "../..", "assets/fonts");
 
-export const NOTOSANS_400_BYTES = fs.readFileSync(
-  path.join(FONT_ASSETS_DIR, "notosans-400.ttf"),
-);
-
-export const NOTOSANS_700_BYTES = fs.readFileSync(
-  path.join(FONT_ASSETS_DIR, "notosans-700.ttf"),
+export const NOTOSANS_VARIABLE_BYTES = fs.readFileSync(
+  path.join(FONT_ASSETS_DIR, "notosans-variable.ttf"),
 );

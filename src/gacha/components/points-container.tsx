@@ -34,18 +34,19 @@ export const PointsContainer = ({ points }: PointsContainerProps) => {
           color: "#4b709b",
           fontSize: 18,
           fontWeight: 700,
-          fontFamily: "NotoSansBold",
+          fontFamily: "NotoSans",
           textAlign: "center",
         }}
       >
         <div
           style={{
             position: "absolute",
-            left: 0,
-            top: 0,
-            width: "100%",
-            height: "50%",
+            right: 0,
+            top: 2,
+            width: 146,
+            height: 24,
             background: "white",
+            transform: "skewX(-10deg)",
           }}
         />
 

@@ -14,7 +14,8 @@
     "start": "bun run src/index.ts",
     "db:generate": "prisma generate",
     "jobs:dev": "trigger dev",
-    "jobs:deploy": "trigger deploy"
+    "jobs:deploy": "trigger deploy",
+    "devserver": "bun --watch run src/scripts/dev-server.ts"
   },
   "repository": {
     "type": "git",

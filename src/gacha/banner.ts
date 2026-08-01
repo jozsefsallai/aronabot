@@ -285,6 +285,10 @@ class GachaBanner {
     };
   }
 
+  get pickupStudents(): Student[] {
+    return this._pickupPool.students;
+  }
+
   isPickup(key: string): boolean {
     return this._pickupPool.hasStudent(key);
   }

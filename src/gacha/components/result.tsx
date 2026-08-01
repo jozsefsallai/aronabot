@@ -4,15 +4,27 @@ import { Card, type CardProps } from "./card";
 import { CardShadow } from "./card-shadow";
 import { GACHA_BG_BUFFER } from "../preloaded-buffers";
 import { PointsContainer } from "./points-container";
-import type { BannerKind } from "../../db/client";
+import type { BannerKind, Student } from "../../db/client";
+import { ChargeContainer } from "./charge-container";
+
+export type GachaResultType = "points" | "charge";
 
 export interface GachaResultProps {
   cards: CardProps[];
   bannerKind?: BannerKind;
+  type?: GachaResultType;
   points?: number;
+  charge?: number;
+  pickupStudent?: Student;
 }
 
-export const GachaResult = ({ cards, points }: GachaResultProps) => {
+export const GachaResult = ({
+  cards,
+  type = "points",
+  points,
+  charge,
+  pickupStudent,
+}: GachaResultProps) => {
   return (
     <div
       // gacha-result
@@ -24,6 +36,7 @@ export const GachaResult = ({ cards, points }: GachaResultProps) => {
         position: "relative",
         display: "flex",
         background: `url(${GACHA_BG_BUFFER})`,
+        transform: "scale(2) translate(25%, 25%)",
       }}
     >
       <div
@@ -62,7 +75,11 @@ export const GachaResult = ({ cards, points }: GachaResultProps) => {
         ))}
       </div>
 
-      {points && <PointsContainer points={points} />}
+      {type === "points" && points && <PointsContainer points={points} />}
+
+      {type === "charge" && charge != null && (
+        <ChargeContainer charge={charge} pickupStudent={pickupStudent} />
+      )}
     </div>
   );
 };

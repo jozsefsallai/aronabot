@@ -1,23 +1,15 @@
 import React from "react";
 import { render, renderSvg } from "takumi-js";
 import { GachaResult, type GachaResultProps } from "./components/result";
-import { NOTOSANS_400_BYTES, NOTOSANS_700_BYTES } from "./preloaded-buffers";
+import { NOTOSANS_VARIABLE_BYTES } from "./preloaded-buffers";
 
 const RENDER_OPTIONS = {
-  width: 1120,
-  height: 640,
+  width: 2240,
+  height: 1280,
   fonts: [
     {
       name: "NotoSans",
-      data: NOTOSANS_400_BYTES,
-      weight: 400,
-      style: "normal" as const,
-    },
-    {
-      name: "NotoSansBold",
-      data: NOTOSANS_700_BYTES,
-      weight: 700,
-      style: "normal" as const,
+      data: NOTOSANS_VARIABLE_BYTES,
     },
   ],
 };
