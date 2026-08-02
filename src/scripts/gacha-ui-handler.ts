@@ -6,6 +6,10 @@ import {
   generateGachaResultSVG,
 } from "../gacha/generate-result";
 
+function capitalize(str: string) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
 export async function gachaUiHandler(req: Request) {
   const url = new URL(req.url);
 
@@ -22,7 +26,10 @@ export async function gachaUiHandler(req: Request) {
     );
   }
 
-  const type = (url.searchParams.get("type") ?? "Points") as BannerCounterKind;
+  const rawType = (url.searchParams.get("type") ?? "points") as
+    | "points"
+    | "charge";
+  const type = capitalize(rawType) as BannerCounterKind;
 
   const charge = url.searchParams.get("charge") ?? "0";
   const points = url.searchParams.get("points") ?? "0";
@@ -74,6 +81,7 @@ export async function gachaUiHandler(req: Request) {
         pickupStudent: pickupStudents[0],
         points: points ? Number.parseInt(points) : undefined,
         charge: charge ? Number.parseInt(charge) : undefined,
+        bannerChargeCategory: banner.chargeCategory,
       });
 
       return new Response(svg, {
@@ -90,6 +98,7 @@ export async function gachaUiHandler(req: Request) {
         pickupStudent: pickupStudents[0],
         points: points ? Number.parseInt(points) : undefined,
         charge: charge ? Number.parseInt(charge) : undefined,
+        bannerChargeCategory: banner.chargeCategory,
       });
 
       return new Response(Buffer.from(png), {

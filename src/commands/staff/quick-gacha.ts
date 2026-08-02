@@ -105,6 +105,7 @@ export const handler: (
       points: pointsOrCharge,
       charge: pointsOrCharge,
       pickupStudent: banner.pickupStudents[0],
+      bannerChargeCategory: banner.chargeCategory,
     });
 
     await ctx.interaction.editReply({

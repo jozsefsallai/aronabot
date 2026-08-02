@@ -4,7 +4,12 @@ import { Card, type CardProps } from "./card";
 import { CardShadow } from "./card-shadow";
 import { GACHA_BG_BUFFER } from "../preloaded-buffers";
 import { PointsContainer } from "./points-container";
-import type { BannerCounterKind, BannerKind, Student } from "../../db/client";
+import type {
+  BannerChargeCategory,
+  BannerCounterKind,
+  BannerKind,
+  Student,
+} from "../../db/client";
 import { ChargeContainer } from "./charge-container";
 
 export interface GachaResultProps {
@@ -14,6 +19,7 @@ export interface GachaResultProps {
   points?: number;
   charge?: number;
   pickupStudent?: Student;
+  bannerChargeCategory?: BannerChargeCategory;
 }
 
 export const GachaResult = ({
@@ -22,6 +28,7 @@ export const GachaResult = ({
   points,
   charge,
   pickupStudent,
+  bannerChargeCategory,
 }: GachaResultProps) => {
   return (
     <div
@@ -76,7 +83,11 @@ export const GachaResult = ({
       {type === "Points" && points && <PointsContainer points={points} />}
 
       {type === "Charge" && charge != null && (
-        <ChargeContainer charge={charge} pickupStudent={pickupStudent} />
+        <ChargeContainer
+          charge={charge}
+          pickupStudent={pickupStudent}
+          bannerChargeCategory={bannerChargeCategory}
+        />
       )}
     </div>
   );

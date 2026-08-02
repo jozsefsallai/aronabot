@@ -1,5 +1,5 @@
 import React from "react";
-import type { Student } from "../../db/client";
+import type { BannerChargeCategory, Student } from "../../db/client";
 import {
   GACHA_CHARA_CARD_BG_BUFFER,
   GACHA_MILESTONE_100_ICON_BUFFER,
@@ -9,28 +9,85 @@ const MAX_CHARGE = 200;
 const MID_MILESTONE = 100;
 const BAR_WIDTH = 190;
 const ICON_SIZE = 56;
-const ACCENT = "#fc54d8";
+
+const ACCENT_BASE = "#0ebaf2";
+const ACCENT_LIMITED = "#fc54da";
 const TRACK = "#d4d4d4";
-const TRACK_ACCENT = "#ff8ae5";
+const TRACK_ACCENT_BASE = "#63e3ff";
+const TRACK_ACCENT_LIMITED = "#ff8ae5";
 const LABEL_BORDER = "#a8a9ab";
+const LABEL_BORDER_ACTIVE_BASE = "#36cdff";
+const LABEL_BORDER_ACTIVE_LIMITED = "#ff8ae5";
 const LABEL_TEXT = "#858585";
+const LABEL_TEXT_ACTIVE_BASE = "#2b8bb5";
+const LABEL_TEXT_ACTIVE_LIMITED = "#c14098";
 const FOOTER = "#4d7289";
 const BAR_TOP = 68;
 const LABEL_HEIGHT = 18;
 
 const MILESTONES = [MID_MILESTONE, MAX_CHARGE] as const;
 
+type BannerChargeTheme = {
+  accent: string;
+  track: string;
+  trackAccent: string;
+  labelBorder: string;
+  labelBorderActive: string;
+  labelText: string;
+  labelTextActive: string;
+  footer: string;
+};
+
+const BANNER_CHARGE_BASE_THEME: BannerChargeTheme = {
+  accent: ACCENT_BASE,
+  track: TRACK,
+  trackAccent: TRACK_ACCENT_BASE,
+  labelBorder: LABEL_BORDER,
+  labelBorderActive: LABEL_BORDER_ACTIVE_BASE,
+  labelText: LABEL_TEXT,
+  labelTextActive: LABEL_TEXT_ACTIVE_BASE,
+  footer: FOOTER,
+};
+
+const BANNER_CHARGE_LIMITED_THEME: BannerChargeTheme = {
+  accent: ACCENT_LIMITED,
+  track: TRACK,
+  trackAccent: TRACK_ACCENT_LIMITED,
+  labelBorder: LABEL_BORDER,
+  labelBorderActive: LABEL_BORDER_ACTIVE_LIMITED,
+  labelText: LABEL_TEXT,
+  labelTextActive: LABEL_TEXT_ACTIVE_LIMITED,
+  footer: FOOTER,
+};
+
+function getTheme(
+  bannerChargeCategory: BannerChargeCategory,
+): BannerChargeTheme {
+  switch (bannerChargeCategory) {
+    case "Standard":
+      return BANNER_CHARGE_BASE_THEME;
+    case "Unique":
+    case "Anniversary":
+      return BANNER_CHARGE_LIMITED_THEME;
+  }
+}
+
 export interface ChargeContainerProps {
   charge: number;
   pickupStudent?: Student;
+  bannerChargeCategory?: BannerChargeCategory;
 }
 
 function Milestone({
   value,
   iconUrl,
+  theme,
+  isActive = false,
 }: {
   value: number;
   iconUrl?: string;
+  theme: BannerChargeTheme;
+  isActive?: boolean;
 }) {
   const leftPercent = (value / MAX_CHARGE) * 100;
 
@@ -52,7 +109,7 @@ function Milestone({
           width: ICON_SIZE,
           height: ICON_SIZE,
           borderRadius: 8,
-          border: "1px solid #717479",
+          border: `1px solid ${isActive ? theme.labelBorderActive : theme.labelBorder}`,
           borderBottomWidth: 3,
           background: "#F7F8FA",
           overflow: "hidden",
@@ -112,7 +169,7 @@ function Milestone({
             fontSize: 13,
             fontWeight: 700,
             fontFamily: "NotoSans",
-            color: "#2d4663",
+            color: isActive ? theme.labelTextActive : theme.labelText,
             lineHeight: 1,
             textShadow: "0 0 2px #fff, 0 0 2px #fff",
           }}
@@ -132,7 +189,7 @@ function Milestone({
           style={{
             width: 8,
             height: 8,
-            background: "#717479",
+            background: isActive ? theme.labelBorderActive : theme.labelBorder,
             transform: "rotate(45deg)",
           }}
         />
@@ -146,7 +203,7 @@ function Milestone({
           width: 30,
           height: LABEL_HEIGHT,
           borderRadius: 8,
-          border: `1px solid ${LABEL_BORDER}`,
+          border: `1px solid ${isActive ? theme.labelBorderActive : theme.labelBorder}`,
           background: "#FFFFFF",
           display: "flex",
           alignItems: "center",
@@ -154,7 +211,7 @@ function Milestone({
           fontSize: 11,
           fontWeight: 700,
           fontFamily: "NotoSans",
-          color: LABEL_TEXT,
+          color: isActive ? theme.labelTextActive : theme.labelText,
           zIndex: 10,
         }}
       >
@@ -167,12 +224,17 @@ function Milestone({
 export function ChargeContainer({
   charge,
   pickupStudent,
+  bannerChargeCategory = "Standard",
 }: ChargeContainerProps) {
+  const theme = getTheme(bannerChargeCategory);
   const fillRatio = Math.min(Math.max(charge, 0) / MAX_CHARGE, 1);
   const fillPercent = fillRatio * 100;
   const iconUrl = pickupStudent
     ? `https://aronabot.cdn.nimblebun.works/v2/images/students/icons/${pickupStudent.id}.png`
     : undefined;
+
+  const accent = theme.accent;
+  const trackAccent = theme.trackAccent;
 
   return (
     <div
@@ -209,6 +271,8 @@ export function ChargeContainer({
               key={value}
               value={value}
               iconUrl={value === MID_MILESTONE ? undefined : iconUrl}
+              theme={theme}
+              isActive={charge >= value}
             />
           ))}
 
@@ -225,7 +289,7 @@ export function ChargeContainer({
           >
             <div
               style={{
-                background: ACCENT,
+                background: accent,
                 borderRadius: 12,
                 borderBottomRightRadius: 0,
                 padding: "1px 10px",
@@ -260,7 +324,7 @@ export function ChargeContainer({
               style={{
                 width: `${fillPercent}%`,
                 height: "100%",
-                background: TRACK_ACCENT,
+                background: trackAccent,
                 borderRadius: 2,
               }}
             />
@@ -273,7 +337,7 @@ export function ChargeContainer({
             marginRight: -30,
             fontSize: 10,
             fontFamily: "NotoSans",
-            color: FOOTER,
+            color: theme.footer,
             textAlign: "right",
             whiteSpace: "nowrap",
           }}
