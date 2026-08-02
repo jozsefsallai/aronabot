@@ -130,6 +130,7 @@ export const handler: (
           guildId: ctx.interaction.guildId ?? "0",
           dryRun: true,
           counterOverride: pointsOrCharge,
+          counterKindOverride: counterKind,
         });
 
         pointsOrCharge = counter;

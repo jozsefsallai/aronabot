@@ -1,4 +1,4 @@
-import type { Student } from "../db/client";
+import type { BannerCounterKind, Student } from "../db/client";
 import type { GachaBanner } from "./banner";
 import recruitmentChargeManager from "./charge";
 import recruitmentPointsManager from "./points";
@@ -9,6 +9,7 @@ export type GachaOptions = {
   guildId: string;
   dryRun?: boolean;
   counterOverride?: number;
+  counterKindOverride?: BannerCounterKind;
 };
 
 export type GachaResult = {
@@ -92,7 +93,7 @@ export async function getChargeGachaResult(
 }
 
 export async function gacha(options: GachaOptions): Promise<GachaResult> {
-  switch (options.banner.counterKind) {
+  switch (options.counterKindOverride ?? options.banner.counterKind) {
     case "Points":
       return getPointsGachaResult(options);
     case "Charge":
