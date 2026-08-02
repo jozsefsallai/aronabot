@@ -10,6 +10,8 @@ import {
   findById as findBannerById,
 } from "../../db/banners";
 import type { AutocompleteContext } from "../../core/handler/AutocompleteHandler";
+import type { BannerCounterKind } from "../../db/client";
+import { gacha } from "../../gacha";
 
 async function getBannerChoices() {
   return (await findAllBanners()).slice(0, 25).map((banner) => {
@@ -38,6 +40,24 @@ export const meta: SlashCommandOptionsOnlyBuilder = new SlashCommandBuilder()
     return option
       .setName("pulls-per-simulation")
       .setDescription("The number of pulls per simulation.");
+  })
+  .addStringOption((option) => {
+    return option
+      .setName("counter-kind")
+      .setDescription(
+        "The kind of counter to use. By default, it will use the banner's counter kind.",
+      )
+      .setChoices(
+        {
+          name: "Recruitment Points",
+          value: "Points",
+        },
+        {
+          name: "Recruitment Charge",
+          value: "Charge",
+        },
+      )
+      .setRequired(false);
   });
 
 export const autocomplete = async (ctx: AutocompleteContext) => {
@@ -69,10 +89,24 @@ export const handler: (
     pullsPerSimulation = 1000;
   }
 
+  if (pullsPerSimulation % 10 !== 0) {
+    await ctx.interaction.editReply(
+      "Pulls per simulation must be a multiple of 10.",
+    );
+    return;
+  }
+
   const banner = await findBannerById(bannerName);
   if (!banner) {
     await ctx.interaction.editReply("Banner not found!");
     return;
+  }
+
+  let counterKind = ctx.interaction.options.get("counter-kind")?.value as
+    | BannerCounterKind
+    | undefined;
+  if (!counterKind) {
+    counterKind = banner.counterKind;
   }
 
   const results = [];
@@ -86,9 +120,19 @@ export const handler: (
     let extraCount = 0;
     let additionalThreeStarCount = 0;
 
+    let pointsOrCharge = 0;
+
     try {
-      for (let j = 0; j < pullsPerSimulation; ++j) {
-        const students = banner.pullTen();
+      for (let j = 0; j < pullsPerSimulation; j += 10) {
+        const { students, counter } = await gacha({
+          banner,
+          userId: ctx.interaction.user.id,
+          guildId: ctx.interaction.guildId ?? "0",
+          dryRun: true,
+          counterOverride: pointsOrCharge,
+        });
+
+        pointsOrCharge = counter;
 
         for (const [student, _] of students) {
           if (student.rarity === 1) {
@@ -117,11 +161,20 @@ export const handler: (
       return;
     }
 
+    const pickupCountWithSpark =
+      counterKind === "Points"
+        ? pickupCount + Math.floor(pullsPerSimulation / 200)
+        : null;
+
     const oneStarRate = oneStarCount / pullsPerSimulation;
     const twoStarRate = twoStarCount / pullsPerSimulation;
     const threeStarRate = threeStarCount / pullsPerSimulation;
 
     const pickupRate = pickupCount / pullsPerSimulation;
+    const pickupRateWithSpark =
+      counterKind === "Points"
+        ? (pickupCountWithSpark ?? 0) / pullsPerSimulation
+        : null;
     const extraRate = extraCount / pullsPerSimulation;
     const additionalThreeStarRate =
       additionalThreeStarCount / pullsPerSimulation;
@@ -131,6 +184,7 @@ export const handler: (
       twoStarCount,
       threeStarCount,
       pickupCount,
+      pickupCountWithSpark,
       extraCount,
       additionalThreeStarCount,
 
@@ -138,6 +192,7 @@ export const handler: (
       twoStarRate,
       threeStarRate,
       pickupRate,
+      pickupRateWithSpark,
       extraRate,
       additionalThreeStarRate,
     });
@@ -148,6 +203,7 @@ export const handler: (
     twoStarCount: 0,
     threeStarCount: 0,
     pickupCount: 0,
+    pickupCountWithSpark: 0,
     extraCount: 0,
     additionalThreeStarCount: 0,
 
@@ -155,6 +211,7 @@ export const handler: (
     twoStarRate: 0,
     threeStarRate: 0,
     pickupRate: 0,
+    pickupRateWithSpark: 0,
     extraRate: 0,
     additionalThreeStarRate: 0,
   };
@@ -166,12 +223,18 @@ export const handler: (
     summary.pickupCount += result.pickupCount;
     summary.extraCount += result.extraCount;
     summary.additionalThreeStarCount += result.additionalThreeStarCount;
+
+    if (typeof result.pickupCountWithSpark === "number") {
+      summary.pickupCountWithSpark += result.pickupCountWithSpark;
+    }
   }
 
   summary.oneStarRate = summary.oneStarCount / (pullsPerSimulation * count);
   summary.twoStarRate = summary.twoStarCount / (pullsPerSimulation * count);
   summary.threeStarRate = summary.threeStarCount / (pullsPerSimulation * count);
   summary.pickupRate = summary.pickupCount / (pullsPerSimulation * count);
+  summary.pickupRateWithSpark =
+    summary.pickupCountWithSpark / (pullsPerSimulation * count);
   summary.extraRate = summary.extraCount / (pullsPerSimulation * count);
   summary.additionalThreeStarRate =
     summary.additionalThreeStarCount / (pullsPerSimulation * count);

@@ -1,7 +1,9 @@
 import type { CommandContext } from "../../core/handler/CommandHandler";
 
-import { findAll as findAllBanners, findById as findBannerById } from "../../db/banners";
-import recruitmentPointsManager from "../../gacha/points";
+import {
+  findAll as findAllBanners,
+  findById as findBannerById,
+} from "../../db/banners";
 import type { AutocompleteContext } from "../../core/handler/AutocompleteHandler";
 import {
   AppIntegrationType,
@@ -15,6 +17,7 @@ import {
   type ChatInputCommandInteraction,
   type SlashCommandOptionsOnlyBuilder,
 } from "discord.js";
+import { gacha } from "../../gacha";
 
 async function getBannerChoices() {
   return (await findAllBanners()).slice(0, 25).map((banner) => {
@@ -72,16 +75,19 @@ export const handler = async (
     return;
   }
 
-  const points = await recruitmentPointsManager.incrementAndGet(
-    banner.kind,
-    guildId,
-    userId,
-  );
-
   const cards: CardProps[] = [];
 
+  let pointsOrCharge: number | undefined;
+
   try {
-    const students = banner.pullTen();
+    const { students, counter } = await gacha({
+      banner,
+      userId,
+      guildId,
+      dryRun: false,
+    });
+
+    pointsOrCharge = counter;
 
     for (const [student, key] of students) {
       cards.push({
@@ -97,7 +103,10 @@ export const handler = async (
   try {
     const png = await generateGachaResult({
       cards,
-      points: points && !Number.isNaN(points) ? points : undefined,
+      type: banner.counterKind,
+      points: pointsOrCharge,
+      charge: pointsOrCharge,
+      pickupStudent: banner.pickupStudents[0],
     });
 
     await ctx.interaction.editReply({

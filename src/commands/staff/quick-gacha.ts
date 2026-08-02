@@ -13,6 +13,7 @@ import {
 import type { AutocompleteContext } from "../../core/handler/AutocompleteHandler";
 import type { CardProps } from "../../gacha/components/card";
 import { generateGachaResult } from "../../gacha/generate-result";
+import { gacha } from "../../gacha";
 
 async function getBannerChoices() {
   return (await findAllBanners()).slice(0, 25).map((banner) => {
@@ -61,13 +62,19 @@ export const handler: (
 
   const cards: CardProps[] = [];
   let gotRateUp = false;
-  let points = 0;
+  let pointsOrCharge = 0;
 
   while (!gotRateUp) {
     try {
-      points += 10;
+      const { students, counter } = await gacha({
+        banner,
+        userId: ctx.interaction.user.id,
+        guildId: ctx.interaction.guildId ?? "0",
+        dryRun: true,
+        counterOverride: pointsOrCharge,
+      });
 
-      const students = banner.pullTen();
+      pointsOrCharge = counter;
       gotRateUp = students.some((student) => banner.isPickup(student[1]));
 
       if (gotRateUp) {
@@ -79,7 +86,7 @@ export const handler: (
         }
       }
 
-      if (points >= 2000) {
+      if (banner.counterKind === "Points" && pointsOrCharge >= 2000) {
         await ctx.interaction.editReply(
           "Reached 2000 points without pulling a rate-up student. Stopping simulation.",
         );
@@ -94,7 +101,10 @@ export const handler: (
   try {
     const png = await generateGachaResult({
       cards,
-      points,
+      type: banner.counterKind,
+      points: pointsOrCharge,
+      charge: pointsOrCharge,
+      pickupStudent: banner.pickupStudents[0],
     });
 
     await ctx.interaction.editReply({

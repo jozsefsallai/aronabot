@@ -1,6 +1,6 @@
 import { findById as findBannerById } from "../db/banners";
+import type { BannerCounterKind } from "../db/client";
 import type { CardProps } from "../gacha/components/card";
-import type { GachaResultType } from "../gacha/components/result";
 import {
   generateGachaResult,
   generateGachaResultSVG,
@@ -22,7 +22,7 @@ export async function gachaUiHandler(req: Request) {
     );
   }
 
-  const type = (url.searchParams.get("type") ?? "points") as GachaResultType;
+  const type = (url.searchParams.get("type") ?? "Points") as BannerCounterKind;
 
   const charge = url.searchParams.get("charge") ?? "0";
   const points = url.searchParams.get("points") ?? "0";

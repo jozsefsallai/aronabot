@@ -8,7 +8,13 @@ import {
   DEFAULT_PICKUP_RATE,
   DEFAULT_THREE_STAR_RATE,
 } from "./constants";
-import type { Banner, Student, BannerKind } from "../db/client";
+import type {
+  Banner,
+  Student,
+  BannerKind,
+  BannerCounterKind,
+  BannerChargeCategory,
+} from "../db/client";
 
 export type DetailedGachaBanner = Banner & {
   pickupPoolStudents: Student[];
@@ -36,6 +42,8 @@ export interface GachaBannerParams {
   baseThreeStarRate?: number;
 
   kind: BannerKind;
+  counterKind: BannerCounterKind;
+  chargeCategory: BannerChargeCategory;
 }
 
 class GachaBanner {
@@ -44,6 +52,9 @@ class GachaBanner {
 
   readonly date: Date;
   readonly kind: BannerKind;
+
+  readonly counterKind: BannerCounterKind;
+  readonly chargeCategory: BannerChargeCategory;
 
   private _threeStarRate: number;
   private _pickupRate: number;
@@ -87,6 +98,8 @@ class GachaBanner {
     this._threeStarPool = new GachaPool(this.threeStarRate);
 
     this.kind = params.kind;
+    this.counterKind = params.counterKind;
+    this.chargeCategory = params.chargeCategory;
 
     this._additionalThreeStarStudents =
       params.additionalThreeStarStudents ?? [];
@@ -206,7 +219,7 @@ class GachaBanner {
     ];
   }
 
-  pullTen(): [Student, string][] {
+  pullTen(currentCount?: number): [Student, string][] {
     let hasAtLeastTwoStar = false;
 
     const students: [Student, string][] = [];
@@ -250,6 +263,38 @@ class GachaBanner {
       }
     }
 
+    // if currentCount is provided and falls between the correct ranges, use the
+    // charge logic to determine the nth drops (currentCount represents the
+    // number of charge points so far)
+    if (
+      currentCount &&
+      ((currentCount >= 90 && currentCount < 100) ||
+        (currentCount >= 190 && currentCount < 200))
+    ) {
+      const pickupIndex = students.findIndex((student) =>
+        this.isPickup(student[1]),
+      );
+      const pickupCount =
+        pickupIndex !== -1 ? currentCount + pickupIndex + 1 : 0;
+
+      if (pickupCount > 0 && (pickupCount < 100 || pickupCount < 200)) {
+        // current pull has a PU before the 100th or 200th charge, just return
+        // the students
+        return students;
+      }
+
+      for (let i = 0; i < students.length; ++i) {
+        if (currentCount + i + 1 === 100) {
+          // if this item reaches 100 charge points, pull 50/50
+          const result = this.pull3star5050();
+          students[i] = result;
+        } else if (currentCount + i + 1 === 200) {
+          // if this item reaches 200 charge points, force pull PU
+          students[i] = this.forcePickUp();
+        }
+      }
+    }
+
     return students;
   }
 
@@ -283,6 +328,48 @@ class GachaBanner {
       student,
       isOneStar,
     };
+  }
+
+  pull3star5050(): [Student, string] {
+    const first = [
+      ...this._pickupPool.students.filter((student) =>
+        this.isThreeStar(student),
+      ),
+    ];
+
+    const second = [
+      ...this._threeStarPool.students,
+      ...this._extraPool.students.filter((student) =>
+        this.isThreeStar(student),
+      ),
+    ];
+
+    const isPickup = Math.random() < 0.5 || first.length === 0;
+
+    if (isPickup) {
+      const randomIndex = Math.floor(Math.random() * first.length);
+      const student = first[randomIndex];
+      return [student, student.id];
+    }
+
+    const randomIndex = Math.floor(Math.random() * second.length);
+    const student = second[randomIndex];
+    return [student, student.id];
+  }
+
+  forcePickUp(): [Student, string] {
+    const pickup3stars = [
+      ...this._pickupPool.students.filter((student) =>
+        this.isThreeStar(student),
+      ),
+    ];
+    if (pickup3stars.length === 0) {
+      throw new Error("No pickup 3* students available on this banner");
+    }
+
+    const randomIndex = Math.floor(Math.random() * pickup3stars.length);
+    const student = pickup3stars[randomIndex];
+    return [student, student.id];
   }
 
   get pickupStudents(): Student[] {
@@ -344,6 +431,8 @@ class GachaBanner {
       baseTwoStarRate: entry.baseTwoStarRate / 1000,
       baseThreeStarRate: entry.baseThreeStarRate / 1000,
       kind: entry.kind,
+      counterKind: entry.counterKind,
+      chargeCategory: entry.chargeCategory,
     });
   }
 }
