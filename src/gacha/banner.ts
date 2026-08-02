@@ -337,12 +337,14 @@ class GachaBanner {
       ),
     ];
 
+    const firstIds = first.map((student) => student.id);
+
     const second = [
       ...this._threeStarPool.students,
       ...this._extraPool.students.filter((student) =>
         this.isThreeStar(student),
       ),
-    ];
+    ].filter((student) => !firstIds.includes(student.id));
 
     const isPickup = Math.random() < 0.5 || first.length === 0;
 
