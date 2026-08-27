@@ -20,6 +20,7 @@ enum School {
   Valkyrie
   Highlander
   WildHunt
+  Odyssey
   ETC
   Tokiwadai
   Sakugawa
@@ -75,6 +76,7 @@ enum Club {
   NicomediasTroop
   PublishingDepartment
   FoxSquad
+  DivingClub
   EmptyClub
 }
 
