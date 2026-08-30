@@ -3,7 +3,6 @@ import {
   ButtonBuilder,
   ButtonStyle,
   EmbedBuilder,
-  type InteractionEditReplyOptions,
 } from "discord.js";
 import type { GachaBanner } from "./banner";
 import type { CardProps } from "./components/card";
@@ -15,7 +14,7 @@ export async function createGachaResponse(
   userId: string,
   guildId: string,
   includeButtons = true,
-): Promise<InteractionEditReplyOptions> {
+) {
   const cards: CardProps[] = [];
   const { students, counter, totalPulls } = await gacha({
     banner,

@@ -1,6 +1,7 @@
 import { findById as findBannerById } from "../../db/banners";
 import { createGachaResponse } from "../../gacha/response";
 import type { ButtonContext } from "../../core/handler/ButtonHandler";
+import { Routes } from "discord.js";
 
 export const meta = {
   id: "gacha",
@@ -25,7 +26,18 @@ export const handler = async (ctx: ButtonContext) => {
   }
 
   await ctx.interaction.deferReply();
-  await ctx.interaction.message.edit({ components: [] });
+
+  try {
+    await ctx.interaction.client.rest.patch(
+      Routes.channelMessage(
+        ctx.interaction.channelId,
+        ctx.interaction.message.id,
+      ),
+      { body: { components: [] } },
+    );
+  } catch (err) {
+    console.error("Failed to remove gacha buttons:", err);
+  }
 
   const banner = await findBannerById(bannerId);
   if (!banner) {
@@ -34,9 +46,12 @@ export const handler = async (ctx: ButtonContext) => {
   }
 
   try {
-    await ctx.interaction.editReply(
-      await createGachaResponse(banner, userId, ctx.interaction.guildId ?? "0"),
+    const response = await createGachaResponse(
+      banner,
+      userId,
+      ctx.interaction.guildId ?? "0",
     );
+    await ctx.interaction.editReply(response);
   } catch (err: any) {
     await ctx.interaction.editReply(err.message);
   }
