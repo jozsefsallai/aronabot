@@ -2,6 +2,7 @@ import type { BannerCounterKind, Student } from "../db/client";
 import type { GachaBanner } from "./banner";
 import recruitmentChargeManager from "./charge";
 import recruitmentPointsManager from "./points";
+import gachaPullsManager from "./pulls";
 
 export type GachaOptions = {
   banner: GachaBanner;
@@ -15,6 +16,7 @@ export type GachaOptions = {
 export type GachaResult = {
   students: Array<[Student, string]>;
   counter: number;
+  totalPulls: number;
 };
 
 // Gacha system based on recruitment points. Each pull will grant 1 point. The
@@ -42,6 +44,7 @@ export async function getPointsGachaResult(
   return {
     students,
     counter,
+    totalPulls: counter,
   };
 }
 
@@ -78,17 +81,28 @@ export async function getChargeGachaResult(
     }
   }
 
-  await recruitmentChargeManager.set(
-    options.banner.kind,
-    options.banner.chargeCategory,
-    options.guildId,
-    options.userId,
-    counter,
-  );
+  if (!options.dryRun) {
+    await recruitmentChargeManager.set(
+      options.banner.kind,
+      options.banner.chargeCategory,
+      options.guildId,
+      options.userId,
+      counter,
+    );
+  }
+
+  const totalPulls = options.dryRun
+    ? 0
+    : ((await gachaPullsManager.incrementAndGet(
+        options.banner.kind,
+        options.guildId,
+        options.userId,
+      )) ?? 10);
 
   return {
     students,
     counter,
+    totalPulls,
   };
 }
 

@@ -6,6 +6,7 @@ import {
 import { staffOnlyGuard } from "../../core/guards/staffOnly";
 import type { CommandContext } from "../../core/handler/CommandHandler";
 import recruitmentPointsManager from "../../gacha/points";
+import gachaPullsManager from "../../gacha/pulls";
 import type { BannerKind } from "../../db/client";
 
 export const meta: SlashCommandOptionsOnlyBuilder = new SlashCommandBuilder()
@@ -41,14 +42,17 @@ export const handler: (
     bannerKind = "Global";
   }
 
-  const result = await recruitmentPointsManager.resetAll(bannerKind);
-  if (!result) {
+  const [pointsResult, pullsResult] = await Promise.all([
+    recruitmentPointsManager.resetAll(bannerKind),
+    gachaPullsManager.resetAll(bannerKind),
+  ]);
+  if (!pointsResult || !pullsResult) {
     await ctx.interaction.editReply(
-      "Failed to reset recruitment points. Was the Redis connection established?",
+      "Failed to reset recruitment points and total pulls. Was the Redis connection established?",
     );
   } else {
     await ctx.interaction.editReply(
-      `Recruitment points reset for ${bannerKind}.`,
+      `Recruitment points and total pulls reset for ${bannerKind}.`,
     );
   }
 });

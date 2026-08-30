@@ -9,15 +9,12 @@ import {
   AppIntegrationType,
   SlashCommandBuilder,
 } from "../../utils/slashCommandBuilder";
-import type { CardProps } from "../../gacha/components/card";
-import { generateGachaResult } from "../../gacha/generate-result";
 import {
-  EmbedBuilder,
   InteractionContextType,
   type ChatInputCommandInteraction,
   type SlashCommandOptionsOnlyBuilder,
 } from "discord.js";
-import { gacha } from "../../gacha";
+import { createGachaResponse } from "../../gacha/response";
 
 async function getBannerChoices() {
   return (await findAllBanners()).slice(0, 25).map((banner) => {
@@ -75,60 +72,11 @@ export const handler = async (
     return;
   }
 
-  const cards: CardProps[] = [];
-
-  let pointsOrCharge: number | undefined;
-
   try {
-    const { students, counter } = await gacha({
-      banner,
-      userId,
-      guildId,
-      dryRun: false,
-    });
-
-    pointsOrCharge = counter;
-
-    for (const [student, key] of students) {
-      cards.push({
-        student,
-        isPickup: banner.isPickup(key),
-      });
-    }
+    await ctx.interaction.editReply(
+      await createGachaResponse(banner, userId, guildId),
+    );
   } catch (err: any) {
     await ctx.interaction.editReply(err.message);
-    return;
-  }
-
-  try {
-    const png = await generateGachaResult({
-      cards,
-      type: banner.counterKind,
-      points: pointsOrCharge,
-      charge: pointsOrCharge,
-      pickupStudent: banner.pickupStudents[0],
-      bannerChargeCategory: banner.chargeCategory,
-    });
-
-    await ctx.interaction.editReply({
-      files: [
-        {
-          attachment: png,
-          name: "gacha_result.png",
-        },
-      ],
-    });
-  } catch (err: any) {
-    const students = cards.map((card) => card.student.name).join(", ");
-    const embed = new EmbedBuilder()
-      .setTitle("Error")
-      .setDescription(
-        `An unexpected error occurred and the gacha result image couldn't be rendered. You rolled the following students:\n\`\`\`\n${students}\`\`\``,
-      )
-      .setColor(0xff0000);
-
-    await ctx.interaction.editReply({
-      embeds: [embed],
-    });
   }
 };
