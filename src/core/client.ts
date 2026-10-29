@@ -6,6 +6,7 @@ import {
   ActivityType,
   Client as Discord,
   IntentsBitField,
+  type Interaction,
   Routes,
 } from "discord.js";
 import { REST } from "@discordjs/rest";
@@ -27,11 +28,7 @@ class Client {
 
   constructor() {
     this.client = new Discord({
-      intents: [
-        IntentsBitField.Flags.Guilds,
-        IntentsBitField.Flags.GuildMessages,
-        IntentsBitField.Flags.GuildMessageReactions,
-      ],
+      intents: [IntentsBitField.Flags.Guilds],
     });
 
     this.rest = new REST({ version: "9" }).setToken(config.bot.token);
@@ -41,47 +38,78 @@ class Client {
     this.buttonHandler = new ButtonHandler();
 
     this.client.on("interactionCreate", async (interaction) => {
-      if (interaction.isAutocomplete()) {
-        if (!config.isMaintenance) {
-          await this.autocompleteHandler.emit(interaction.commandName, {
-            interaction,
-            client: this,
-          });
-        }
+      try {
+        await this.handleInteraction(interaction);
+      } catch (err) {
+        console.error("Failed to handle interaction:", err);
+        await this.replyWithError(interaction);
+      }
+    });
+
+    this.client.on("error", (err) => {
+      console.error("Discord client error:", err);
+    });
+
+    this.client.on("clientReady", () => onClientReady(this));
+  }
+
+  private async handleInteraction(interaction: Interaction) {
+    if (interaction.isAutocomplete()) {
+      if (!config.isMaintenance) {
+        await this.autocompleteHandler.emit(interaction.commandName, {
+          interaction,
+          client: this,
+        });
+      }
+
+      return;
+    }
+
+    if (interaction.isChatInputCommand()) {
+      if (config.isMaintenance) {
+        await interaction.reply({
+          content: "⚠️ Maintenance in progress. Please try again later.",
+        });
 
         return;
       }
 
-      if (interaction.isChatInputCommand()) {
-        if (config.isMaintenance) {
-          await interaction.reply({
-            content: "⚠️ Maintenance in progress. Please try again later.",
-          });
+      await this.commandHandler.emit(interaction.commandName, {
+        interaction,
+        client: this,
+      });
+    }
 
-          return;
-        }
+    if (interaction.isButton()) {
+      const idComponents = interaction.customId.split("_");
+      const id = idComponents[0];
+      const uniqueId =
+        idComponents.length > 1 ? idComponents.slice(1).join("_") : undefined;
 
-        await this.commandHandler.emit(interaction.commandName, {
-          interaction,
-          client: this,
-        });
+      await this.buttonHandler.emit(id, {
+        interaction,
+        client: this,
+        uniqueId,
+      });
+    }
+  }
+
+  private async replyWithError(interaction: Interaction) {
+    if (!interaction.isRepliable()) {
+      return;
+    }
+
+    const content = "An unexpected error occurred. Please try again later.";
+
+    try {
+      if (interaction.deferred || interaction.replied) {
+        await interaction.editReply({ content });
+      } else {
+        await interaction.reply({ content, ephemeral: true });
       }
-
-      if (interaction.isButton()) {
-        const idComponents = interaction.customId.split("_");
-        const id = idComponents[0];
-        const uniqueId =
-          idComponents.length > 1 ? idComponents.slice(1).join("_") : undefined;
-
-        await this.buttonHandler.emit(id, {
-          interaction,
-          client: this,
-          uniqueId,
-        });
-      }
-    });
-
-    this.client.on("clientReady", () => onClientReady(this));
+    } catch (err) {
+      console.error("Failed to send error reply:", err);
+    }
   }
 
   async login() {
