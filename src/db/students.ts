@@ -1,11 +1,11 @@
 import { similarity } from "../utils/similarity";
-import type { BannerKind, Gift, Skill, Student } from "./client";
+import type { BannerKind, Gift, Student } from "./client";
 import { Prisma } from "./client";
 import { db } from "./index";
 
 export type DetailedStudent = Student & {
   baseVariant?: Student | null;
-  skills: Skill[];
+  _count: { studentSkills: number };
   giftsAdored: Gift[];
   giftsLoved: Gift[];
   giftsLiked: Gift[];
@@ -13,7 +13,7 @@ export type DetailedStudent = Student & {
 
 const detailedInclude = {
   baseVariant: true,
-  skills: true,
+  _count: { select: { studentSkills: true } },
   giftsAdored: true,
   giftsLoved: true,
   giftsLiked: true,
@@ -40,7 +40,9 @@ export async function findById(id: string): Promise<DetailedStudent | null> {
   });
 }
 
-export async function findByName(name: string): Promise<DetailedStudent | null> {
+export async function findByName(
+  name: string,
+): Promise<DetailedStudent | null> {
   return db.student.findFirst({
     where: {
       name: {

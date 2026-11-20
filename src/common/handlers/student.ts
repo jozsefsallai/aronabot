@@ -138,7 +138,7 @@ export const handleStudentCommand = async (
 
   embed = embed.setThumbnail(portraitUrl);
 
-  if (!student.skills || student.skills.length === 0) {
+  if (student._count.studentSkills === 0) {
     return {
       embeds: [embed],
     };

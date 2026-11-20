@@ -23,7 +23,9 @@ export const handler = async (ctx: ButtonContext) => {
     return;
   }
 
-  const studentKey = ctx.uniqueId;
+  // `${studentId}` or `${studentId}:${page}` for the page buttons.
+  const [studentKey, pageKey] = ctx.uniqueId.split(":");
+  const page = pageKey !== undefined ? Number(pageKey) : 0;
 
   const student = await findStudentById(studentKey);
   if (!student) {
@@ -31,6 +33,9 @@ export const handler = async (ctx: ButtonContext) => {
     return;
   }
 
-  const response = await handleStudentSkillsCommand(student);
+  const response = await handleStudentSkillsCommand(
+    student,
+    Number.isInteger(page) ? page : 0,
+  );
   await ctx.interaction.update(response);
 };

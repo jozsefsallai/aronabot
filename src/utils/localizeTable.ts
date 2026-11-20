@@ -62,6 +62,7 @@ export const localizeTable = {
       ETC: "ETC",
       Tokiwadai: "Tokiwadai Middle School",
       Sakugawa: "Sakugawa Middle School",
+      Odyssey: "Odyssey Maritime School",
     },
 
     terrain: {
