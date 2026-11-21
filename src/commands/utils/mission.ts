@@ -1,20 +1,18 @@
 import {
-  EmbedBuilder,
   type ChatInputCommandInteraction,
   type SlashCommandOptionsOnlyBuilder,
   InteractionContextType,
 } from "discord.js";
 import type { CommandContext } from "../../core/handler/CommandHandler";
-import { findByName as findMissionByName } from "../../db/missions";
+import { handleMissionCommand } from "../../common/handlers/mission";
 import {
   AppIntegrationType,
   SlashCommandBuilder,
 } from "../../utils/slashCommandBuilder";
-import { t } from "../../utils/localizeTable";
 
 export const meta: SlashCommandOptionsOnlyBuilder = new SlashCommandBuilder()
   .setName("mission")
-  .setDescription("Get information and map preview about a mission.")
+  .setDescription("Get information, routes and map preview about a mission.")
   .setIntegrationTypes(
     AppIntegrationType.GuildInstall,
     AppIntegrationType.UserInstall,
@@ -27,7 +25,7 @@ export const meta: SlashCommandOptionsOnlyBuilder = new SlashCommandBuilder()
   .addStringOption((option) => {
     return option
       .setName("name")
-      .setDescription("The name of the mission.")
+      .setDescription("The name of the mission (e.g. 1-1, 25-3H).")
       .setRequired(true);
   });
 
@@ -38,9 +36,9 @@ export const handler = async (
 
   const name = ctx.interaction.options.get("name")?.value as string;
 
-  const mission = await findMissionByName(name);
+  const response = await handleMissionCommand(name);
 
-  if (!mission) {
+  if (!response) {
     await ctx.interaction.editReply({
       content: `Could not find mission "${name}".`,
     });
@@ -48,47 +46,5 @@ export const handler = async (
     return;
   }
 
-  const mirahezeWikiUrl = `https://bluearchive.wiki/wiki/Missions/${mission.name}`;
-
-  let embed = new EmbedBuilder()
-    .setTitle(mission.name)
-    .setURL(mirahezeWikiUrl)
-    .addFields(
-      {
-        name: "Cost",
-        value: mission.cost.toString(),
-        inline: true,
-      },
-      {
-        name: "Difficulty",
-        value: mission.difficulty ?? "Unknown",
-        inline: true,
-      },
-      {
-        name: "Terrain",
-        value: mission.terrain ? t(`terrain.${mission.terrain}`) : "Unknown",
-        inline: true,
-      },
-      {
-        name: "Rec. lvl",
-        value: mission.recommendedLevel.toString(),
-        inline: true,
-      },
-      {
-        name: "Drops",
-        value: mission.drops.join(", "),
-      },
-      {
-        name: "Text guide",
-        value: mirahezeWikiUrl,
-      },
-    );
-
-  if (mission.stageImageUrl) {
-    embed = embed.setImage(mission.stageImageUrl);
-  }
-
-  await ctx.interaction.editReply({
-    embeds: [embed],
-  });
+  await ctx.interaction.editReply(response);
 };
